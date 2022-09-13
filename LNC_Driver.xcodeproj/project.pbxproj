@@ -7,16 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F83A3ECD22CB9EB5A3960BE /* Pods_LNC_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C648C314EE5B303EF28BFB6 /* Pods_LNC_Driver.framework */; };
+		8774A7352F3C7A25E85C5DAF /* Pods_LNC_Driver_LNC_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */; };
 		BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88028C8C40E00B73053 /* AppDelegate.swift */; };
-		BA36D88328C8C40E00B73053 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88228C8C40E00B73053 /* SceneDelegate.swift */; };
-		BA36D88528C8C40E00B73053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88428C8C40E00B73053 /* ViewController.swift */; };
-		BA36D88828C8C40E00B73053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA36D88628C8C40E00B73053 /* Main.storyboard */; };
 		BA36D88B28C8C40E00B73053 /* LNC_Driver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88928C8C40E00B73053 /* LNC_Driver.xcdatamodeld */; };
 		BA36D88D28C8C41200B73053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA36D88C28C8C41200B73053 /* Assets.xcassets */; };
 		BA36D89028C8C41200B73053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA36D88E28C8C41200B73053 /* LaunchScreen.storyboard */; };
 		BA36D89B28C8C41300B73053 /* LNC_DriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D89A28C8C41300B73053 /* LNC_DriverTests.swift */; };
 		BA36D8A528C8C41300B73053 /* LNC_DriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D8A428C8C41300B73053 /* LNC_DriverUITests.swift */; };
 		BA36D8A728C8C41300B73053 /* LNC_DriverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D8A628C8C41300B73053 /* LNC_DriverUITestsLaunchTests.swift */; };
+		BA409B2228D02A1300489F09 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BA409B2128D02A1300489F09 /* background.png */; };
+		BA409B3628D02AA600489F09 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B2428D02AA500489F09 /* ImagePickerManager.swift */; };
+		BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B2528D02AA500489F09 /* HttpRequestHelper.swift */; };
+		BA409B3828D02AA600489F09 /* LncUserConstants .swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B2628D02AA500489F09 /* LncUserConstants .swift */; };
+		BA409B3928D02AA600489F09 /* TextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B2728D02AA500489F09 /* TextFieldHelper.swift */; };
+		BA409B3A28D02AA600489F09 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B2828D02AA500489F09 /* HelperConstants.swift */; };
+		BA409B3B28D02AA600489F09 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B2B28D02AA500489F09 /* Lato-Italic.ttf */; };
+		BA409B3C28D02AA600489F09 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B2C28D02AA500489F09 /* Lato-LightItalic.ttf */; };
+		BA409B3D28D02AA600489F09 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B2D28D02AA500489F09 /* Lato-Thin.ttf */; };
+		BA409B3E28D02AA600489F09 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B2E28D02AA500489F09 /* Lato-Bold.ttf */; };
+		BA409B3F28D02AA600489F09 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B2F28D02AA600489F09 /* Lato-Black.ttf */; };
+		BA409B4028D02AA600489F09 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B3028D02AA600489F09 /* Lato-Regular.ttf */; };
+		BA409B4128D02AA600489F09 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B3128D02AA600489F09 /* Lato-BlackItalic.ttf */; };
+		BA409B4228D02AA600489F09 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA409B3228D02AA600489F09 /* OFL.txt */; };
+		BA409B4328D02AA600489F09 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B3328D02AA600489F09 /* Lato-BoldItalic.ttf */; };
+		BA409B4428D02AA600489F09 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B3428D02AA600489F09 /* Lato-Light.ttf */; };
+		BA409B4528D02AA600489F09 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA409B3528D02AA600489F09 /* Lato-ThinItalic.ttf */; };
+		BA409B4828D02AB700489F09 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B4728D02AB700489F09 /* EmployeesService.swift */; };
+		BA409B4B28D058DE00489F09 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA409B4A28D058DE00489F09 /* Authentication.storyboard */; };
+		BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B5128D0599500489F09 /* LoginViewModel.swift */; };
+		BA409B5428D059B700489F09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B5328D059B700489F09 /* LoginViewController.swift */; };
+		BA409B5628D05A1A00489F09 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B5528D05A1A00489F09 /* LoginUser.swift */; };
+		CF3C81E329A419E350EA6AF6 /* Pods_LNC_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +59,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C648C314EE5B303EF28BFB6 /* Pods_LNC_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4873427D9FC2EE3ECEC2A368 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73725B024857A4A3F5CA6E67 /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78C9D712DCDD31B2C8D4E8CE /* Pods-LNC_Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.release.xcconfig"; sourceTree = "<group>"; };
+		830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_Driver_LNC_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D87D28C8C40E00B73053 /* LNC_Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNC_Driver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D88028C8C40E00B73053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA36D88228C8C40E00B73053 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA36D88428C8C40E00B73053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BA36D88728C8C40E00B73053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA36D88A28C8C40E00B73053 /* LNC_Driver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LNC_Driver.xcdatamodel; sourceTree = "<group>"; };
 		BA36D88C28C8C41200B73053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA36D88F28C8C41200B73053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +75,33 @@
 		BA36D8A028C8C41300B73053 /* LNC_DriverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LNC_DriverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D8A428C8C41300B73053 /* LNC_DriverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNC_DriverUITests.swift; sourceTree = "<group>"; };
 		BA36D8A628C8C41300B73053 /* LNC_DriverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNC_DriverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BA409B2028D029E100489F09 /* LNC_Driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LNC_Driver.entitlements; sourceTree = "<group>"; };
+		BA409B2128D02A1300489F09 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		BA409B2428D02AA500489F09 /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		BA409B2528D02AA500489F09 /* HttpRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestHelper.swift; sourceTree = "<group>"; };
+		BA409B2628D02AA500489F09 /* LncUserConstants .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LncUserConstants .swift"; sourceTree = "<group>"; };
+		BA409B2728D02AA500489F09 /* TextFieldHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
+		BA409B2828D02AA500489F09 /* HelperConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperConstants.swift; sourceTree = "<group>"; };
+		BA409B2B28D02AA500489F09 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		BA409B2C28D02AA500489F09 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		BA409B2D28D02AA500489F09 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		BA409B2E28D02AA500489F09 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		BA409B2F28D02AA600489F09 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		BA409B3028D02AA600489F09 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		BA409B3128D02AA600489F09 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		BA409B3228D02AA600489F09 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		BA409B3328D02AA600489F09 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		BA409B3428D02AA600489F09 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		BA409B3528D02AA600489F09 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		BA409B4728D02AB700489F09 /* EmployeesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
+		BA409B4A28D058DE00489F09 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		BA409B5128D0599500489F09 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BA409B5328D059B700489F09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BA409B5528D05A1A00489F09 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
+		D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.release.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.release.xcconfig"; sourceTree = "<group>"; };
+		D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.debug.xcconfig"; sourceTree = "<group>"; };
+		E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_DriverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F83A3ECD22CB9EB5A3960BE /* Pods_LNC_Driver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3C81E329A419E350EA6AF6 /* Pods_LNC_DriverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +125,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8774A7352F3C7A25E85C5DAF /* Pods_LNC_Driver_LNC_DriverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B452933B2A43FB5E4BD34425 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */,
+				78C9D712DCDD31B2C8D4E8CE /* Pods-LNC_Driver.release.xcconfig */,
+				4873427D9FC2EE3ECEC2A368 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */,
+				73725B024857A4A3F5CA6E67 /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */,
+				D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */,
+				D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B4FC03E6025F454129E58118 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C648C314EE5B303EF28BFB6 /* Pods_LNC_Driver.framework */,
+				830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */,
+				E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA36D87428C8C40E00B73053 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +162,8 @@
 				BA36D89928C8C41300B73053 /* LNC_DriverTests */,
 				BA36D8A328C8C41300B73053 /* LNC_DriverUITests */,
 				BA36D87E28C8C40E00B73053 /* Products */,
+				B452933B2A43FB5E4BD34425 /* Pods */,
+				B4FC03E6025F454129E58118 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +180,13 @@
 		BA36D87F28C8C40E00B73053 /* LNC_Driver */ = {
 			isa = PBXGroup;
 			children = (
+				BA409B2028D029E100489F09 /* LNC_Driver.entitlements */,
 				BA36D88028C8C40E00B73053 /* AppDelegate.swift */,
-				BA36D88228C8C40E00B73053 /* SceneDelegate.swift */,
-				BA36D88428C8C40E00B73053 /* ViewController.swift */,
-				BA36D88628C8C40E00B73053 /* Main.storyboard */,
+				BA409B2328D02AA500489F09 /* Helpers */,
+				BA409B4628D02AB700489F09 /* Services */,
+				BA409B4D28D0591700489F09 /* Screens */,
 				BA36D88C28C8C41200B73053 /* Assets.xcassets */,
+				BA409B2128D02A1300489F09 /* background.png */,
 				BA36D88E28C8C41200B73053 /* LaunchScreen.storyboard */,
 				BA36D89128C8C41200B73053 /* Info.plist */,
 				BA36D88928C8C40E00B73053 /* LNC_Driver.xcdatamodeld */,
@@ -130,6 +211,104 @@
 			path = LNC_DriverUITests;
 			sourceTree = "<group>";
 		};
+		BA409B2328D02AA500489F09 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B2428D02AA500489F09 /* ImagePickerManager.swift */,
+				BA409B2528D02AA500489F09 /* HttpRequestHelper.swift */,
+				BA409B2628D02AA500489F09 /* LncUserConstants .swift */,
+				BA409B2728D02AA500489F09 /* TextFieldHelper.swift */,
+				BA409B2828D02AA500489F09 /* HelperConstants.swift */,
+				BA409B2928D02AA500489F09 /* FontFamily */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BA409B2928D02AA500489F09 /* FontFamily */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B2A28D02AA500489F09 /* Lato */,
+			);
+			path = FontFamily;
+			sourceTree = "<group>";
+		};
+		BA409B2A28D02AA500489F09 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B2B28D02AA500489F09 /* Lato-Italic.ttf */,
+				BA409B2C28D02AA500489F09 /* Lato-LightItalic.ttf */,
+				BA409B2D28D02AA500489F09 /* Lato-Thin.ttf */,
+				BA409B2E28D02AA500489F09 /* Lato-Bold.ttf */,
+				BA409B2F28D02AA600489F09 /* Lato-Black.ttf */,
+				BA409B3028D02AA600489F09 /* Lato-Regular.ttf */,
+				BA409B3128D02AA600489F09 /* Lato-BlackItalic.ttf */,
+				BA409B3228D02AA600489F09 /* OFL.txt */,
+				BA409B3328D02AA600489F09 /* Lato-BoldItalic.ttf */,
+				BA409B3428D02AA600489F09 /* Lato-Light.ttf */,
+				BA409B3528D02AA600489F09 /* Lato-ThinItalic.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		BA409B4628D02AB700489F09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B4728D02AB700489F09 /* EmployeesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA409B4928D058CB00489F09 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B4C28D0591000489F09 /* Login */,
+				BA409B4A28D058DE00489F09 /* Authentication.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BA409B4C28D0591000489F09 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B5028D0597700489F09 /* Model */,
+				BA409B4F28D0597300489F09 /* View */,
+				BA409B4E28D0596B00489F09 /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BA409B4D28D0591700489F09 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B4928D058CB00489F09 /* Auth */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BA409B4E28D0596B00489F09 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B5128D0599500489F09 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA409B4F28D0597300489F09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B5328D059B700489F09 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA409B5028D0597700489F09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA409B5528D05A1A00489F09 /* LoginUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA36D8AA28C8C41300B73053 /* Build configuration list for PBXNativeTarget "LNC_Driver" */;
 			buildPhases = (
+				0672ECC174F47C03BCB3359F /* [CP] Check Pods Manifest.lock */,
 				BA36D87928C8C40E00B73053 /* Sources */,
 				BA36D87A28C8C40E00B73053 /* Frameworks */,
 				BA36D87B28C8C40E00B73053 /* Resources */,
+				F7A871F008C4CD258631785D /* [CP] Embed Pods Frameworks */,
+				41CFD8BF80C35214D1D428AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +336,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA36D8AD28C8C41300B73053 /* Build configuration list for PBXNativeTarget "LNC_DriverTests" */;
 			buildPhases = (
+				C5EAF27B7D18CD893F16593D /* [CP] Check Pods Manifest.lock */,
 				BA36D89228C8C41300B73053 /* Sources */,
 				BA36D89328C8C41300B73053 /* Frameworks */,
 				BA36D89428C8C41300B73053 /* Resources */,
@@ -172,9 +355,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA36D8B028C8C41300B73053 /* Build configuration list for PBXNativeTarget "LNC_DriverUITests" */;
 			buildPhases = (
+				E0999E7173ACF52605880849 /* [CP] Check Pods Manifest.lock */,
 				BA36D89C28C8C41300B73053 /* Sources */,
 				BA36D89D28C8C41300B73053 /* Frameworks */,
 				BA36D89E28C8C41300B73053 /* Resources */,
+				D214863FDCAC115375B8BC31 /* [CP] Embed Pods Frameworks */,
+				B891BAC1B6E435B9EEDC2F6E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,9 +420,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA409B4B28D058DE00489F09 /* Authentication.storyboard in Resources */,
+				BA409B3B28D02AA600489F09 /* Lato-Italic.ttf in Resources */,
+				BA409B3F28D02AA600489F09 /* Lato-Black.ttf in Resources */,
+				BA409B3C28D02AA600489F09 /* Lato-LightItalic.ttf in Resources */,
+				BA409B3D28D02AA600489F09 /* Lato-Thin.ttf in Resources */,
+				BA409B4128D02AA600489F09 /* Lato-BlackItalic.ttf in Resources */,
 				BA36D89028C8C41200B73053 /* LaunchScreen.storyboard in Resources */,
+				BA409B4228D02AA600489F09 /* OFL.txt in Resources */,
+				BA409B4528D02AA600489F09 /* Lato-ThinItalic.ttf in Resources */,
+				BA409B2228D02A1300489F09 /* background.png in Resources */,
 				BA36D88D28C8C41200B73053 /* Assets.xcassets in Resources */,
-				BA36D88828C8C40E00B73053 /* Main.storyboard in Resources */,
+				BA409B4028D02AA600489F09 /* Lato-Regular.ttf in Resources */,
+				BA409B3E28D02AA600489F09 /* Lato-Bold.ttf in Resources */,
+				BA409B4328D02AA600489F09 /* Lato-BoldItalic.ttf in Resources */,
+				BA409B4428D02AA600489F09 /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +454,159 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0672ECC174F47C03BCB3359F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LNC_Driver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41CFD8BF80C35214D1D428AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B891BAC1B6E435B9EEDC2F6E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5EAF27B7D18CD893F16593D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LNC_DriverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D214863FDCAC115375B8BC31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0999E7173ACF52605880849 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LNC_Driver-LNC_DriverUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7A871F008C4CD258631785D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA36D87928C8C40E00B73053 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA36D88528C8C40E00B73053 /* ViewController.swift in Sources */,
+				BA409B4828D02AB700489F09 /* EmployeesService.swift in Sources */,
+				BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */,
+				BA409B3928D02AA600489F09 /* TextFieldHelper.swift in Sources */,
+				BA409B3828D02AA600489F09 /* LncUserConstants .swift in Sources */,
 				BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */,
-				BA36D88328C8C40E00B73053 /* SceneDelegate.swift in Sources */,
+				BA409B3A28D02AA600489F09 /* HelperConstants.swift in Sources */,
 				BA36D88B28C8C40E00B73053 /* LNC_Driver.xcdatamodeld in Sources */,
+				BA409B3628D02AA600489F09 /* ImagePickerManager.swift in Sources */,
+				BA409B5428D059B700489F09 /* LoginViewController.swift in Sources */,
+				BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */,
+				BA409B5628D05A1A00489F09 /* LoginUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +643,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BA36D88628C8C40E00B73053 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA36D88728C8C40E00B73053 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BA36D88E28C8C41200B73053 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,17 +770,23 @@
 		};
 		BA36D8AB28C8C41300B73053 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LNC_Driver/LNC_Driver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W53RYF67AF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LNC_Driver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires to access your camera to set profile pictures.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires to access your photo library to set profile pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -465,17 +805,23 @@
 		};
 		BA36D8AC28C8C41300B73053 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78C9D712DCDD31B2C8D4E8CE /* Pods-LNC_Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LNC_Driver/LNC_Driver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W53RYF67AF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LNC_Driver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires to access your camera to set profile pictures.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires to access your photo library to set profile pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -494,6 +840,7 @@
 		};
 		BA36D8AE28C8C41300B73053 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -514,6 +861,7 @@
 		};
 		BA36D8AF28C8C41300B73053 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,6 +882,7 @@
 		};
 		BA36D8B128C8C41300B73053 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4873427D9FC2EE3ECEC2A368 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -552,6 +901,7 @@
 		};
 		BA36D8B228C8C41300B73053 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73725B024857A4A3F5CA6E67 /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
