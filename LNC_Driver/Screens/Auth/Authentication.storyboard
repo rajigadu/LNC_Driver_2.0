@@ -204,7 +204,7 @@
         <!--Forgot Password-->
         <scene sceneID="zr7-FG-bEY">
             <objects>
-                <viewController id="rEf-e7-P4c" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordViewController" id="rEf-e7-P4c" customClass="ForgotPasswordViewController" customModule="LNC_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RGh-mz-5xx"/>
                         <viewControllerLayoutGuide type="bottom" id="z2j-Yf-CIB"/>
@@ -274,7 +274,7 @@
                                     <color key="titleColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="btn_PasswordactionRef:" destination="rEf-e7-P4c" eventType="touchUpInside" id="yCt-aq-3Sr"/>
+                                    <action selector="forgotPasswordBtn:" destination="rEf-e7-P4c" eventType="touchUpInside" id="DJf-Lw-gH9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -300,7 +300,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="jg1-js-5oK"/>
                     <connections>
-                        <outlet property="passwordTxtFld" destination="gJ9-hR-iUS" id="B7y-FD-EKX"/>
+                        <outlet property="forgotPasswordBtn" destination="UcN-mS-4ad" id="9Uh-dZ-x22"/>
+                        <outlet property="txt_UserMailRef" destination="gJ9-hR-iUS" id="VIP-qp-lTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1CM-n4-qxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,7 +311,7 @@
         <!--Registration-->
         <scene sceneID="RVg-sU-5Zg">
             <objects>
-                <viewController id="Gu7-Qh-DMx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationViewController" id="Gu7-Qh-DMx" customClass="RegistrationViewController" customModule="LNC_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yYU-BK-KYf"/>
                         <viewControllerLayoutGuide type="bottom" id="8F0-uD-aJc"/>
@@ -352,7 +353,7 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="add"/>
                                                 <connections>
-                                                    <action selector="btn_ProfilepicUploadRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="fsK-n3-VUb"/>
+                                                    <action selector="selectProfilePic:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="GOT-7V-nzp"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BjQ-en-ZjE">
@@ -363,6 +364,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="Gu7-Qh-DMx" id="0rh-7S-TSi"/>
                                                 </connections>
@@ -375,6 +381,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="Gu7-Qh-DMx" id="RXH-lI-wJA"/>
                                                 </connections>
@@ -387,11 +398,16 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="Gu7-Qh-DMx" id="QaY-Yh-mf4"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Home Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OKH-vq-TLQ" customClass="MVPlaceSearchTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Home Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OKH-vq-TLQ">
                                                 <rect key="frame" x="10" y="355" width="284" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -399,11 +415,19 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Gu7-Qh-DMx" id="umj-ma-iV1"/>
-                                                    <outlet property="placeSearchDelegate" destination="Gu7-Qh-DMx" id="NCW-mM-ZtL"/>
-                                                </connections>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xd-7x-M97">
+                                                <rect key="frame" x="10" y="355" width="284" height="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="onLaunchClicked:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="igM-KQ-ZSd"/>
+                                                </connections>
+                                            </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Mobile No" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sqt-cg-gaI">
                                                 <rect key="frame" x="10" y="405" width="284" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -412,6 +436,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="Gu7-Qh-DMx" id="VaR-CK-6Lx"/>
                                                 </connections>
@@ -424,6 +453,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="Gu7-Qh-DMx" id="pWl-xd-MBs"/>
                                                 </connections>
@@ -436,6 +470,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="Gu7-Qh-DMx" id="uwr-dM-WfF"/>
                                                 </connections>
@@ -457,6 +496,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="Gu7-Qh-DMx" id="9al-Oe-1MT"/>
                                                 </connections>
@@ -468,6 +512,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vehicle year" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VV3-KV-uWr">
                                                 <rect key="frame" x="5" y="721" width="294" height="40"/>
@@ -476,6 +525,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQ4-yS-irC">
                                                 <rect key="frame" x="27" y="771" width="250" height="113"/>
@@ -492,7 +546,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btn_VehicleImageUploadRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="3D2-zQ-pKg"/>
+                                                            <action selector="selectVehicleImage:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="sRK-iv-Z5W"/>
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="llz-Dr-AJ6">
@@ -540,7 +594,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btn_InsuranceImageUploadRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="kXe-eo-C3H"/>
+                                                            <action selector="selectInsurancePic:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="LjX-je-DCC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -587,7 +641,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btn_LicenseImageUploadRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="iOh-vd-qrS"/>
+                                                            <action selector="selectLicensePic:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="RPe-uc-VTv"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -634,7 +688,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btn_AbstractUploadRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="adZ-2h-YyI"/>
+                                                            <action selector="selectDrivingRecord:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="Knd-6R-zHX"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -664,7 +718,7 @@
                                                         </constraints>
                                                         <state key="normal" image="uncheckimage"/>
                                                         <connections>
-                                                            <action selector="btn_AuthorityActionRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="YHS-Wa-6M8"/>
+                                                            <action selector="selectBackgroundCheckBox:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="Qzi-xI-0Q6"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I authorize Late Night Chauffeurs to conduct a criminal background check" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQY-20-axm">
@@ -699,7 +753,7 @@
                                                         </constraints>
                                                         <state key="normal" image="uncheckimage"/>
                                                         <connections>
-                                                            <action selector="btn_CertifyActionRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="Diy-yp-Hzf"/>
+                                                            <action selector="selectCharSelectCheckBox:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="C1t-dH-Yw8"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH4-UK-vMs">
@@ -735,7 +789,7 @@
                                                     <color key="titleColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="btn_SignUpActionRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="Zt4-T5-Gvk"/>
+                                                    <action selector="registrationBtn:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="gI0-VI-BY1"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEm-ml-BhV">
@@ -749,7 +803,7 @@
                                                         </constraints>
                                                         <state key="normal" image="uncheckimage"/>
                                                         <connections>
-                                                            <action selector="btn_W9FormActionRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="0ss-Pp-gVl"/>
+                                                            <action selector="selectW3CheckBox:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="2nC-Bu-Crf"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ab-2a-07L">
@@ -766,7 +820,7 @@
                                                             </attributedString>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btn_WebviewW9FormActionRef:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="97O-fC-jMN"/>
+                                                            <action selector="openW3Webform:" destination="Gu7-Qh-DMx" eventType="touchUpInside" id="RpV-of-DYQ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -788,6 +842,7 @@
                                             <constraint firstAttribute="trailing" secondItem="s88-m9-zVn" secondAttribute="trailing" constant="10" id="1YP-Cq-2TW"/>
                                             <constraint firstItem="KQd-An-Zh2" firstAttribute="leading" secondItem="PTq-kX-TMh" secondAttribute="leading" id="1pg-me-j8E"/>
                                             <constraint firstAttribute="trailing" secondItem="KIF-ce-hJG" secondAttribute="trailing" constant="10" id="2Wx-Xn-tjs"/>
+                                            <constraint firstItem="7Xd-7x-M97" firstAttribute="trailing" secondItem="OKH-vq-TLQ" secondAttribute="trailing" id="4GK-v7-uI1"/>
                                             <constraint firstItem="w50-GX-SgI" firstAttribute="top" secondItem="BjQ-en-ZjE" secondAttribute="bottom" constant="10" id="61w-fv-FGA"/>
                                             <constraint firstItem="VYi-HR-ggO" firstAttribute="top" secondItem="OhK-w3-DBz" secondAttribute="bottom" constant="78" id="6AT-3W-wCe"/>
                                             <constraint firstAttribute="trailing" secondItem="FL7-KM-bx6" secondAttribute="trailing" constant="5" id="6Ch-8f-C88"/>
@@ -813,8 +868,10 @@
                                             <constraint firstItem="KIF-ce-hJG" firstAttribute="top" secondItem="sqt-cg-gaI" secondAttribute="bottom" constant="10" id="Rig-00-cag"/>
                                             <constraint firstItem="OKH-vq-TLQ" firstAttribute="leading" secondItem="PTq-kX-TMh" secondAttribute="leading" constant="10" id="Rov-66-dbi"/>
                                             <constraint firstItem="xdn-o4-hib" firstAttribute="leading" secondItem="PTq-kX-TMh" secondAttribute="leading" id="Rql-mE-0Tz"/>
+                                            <constraint firstItem="7Xd-7x-M97" firstAttribute="bottom" secondItem="OKH-vq-TLQ" secondAttribute="bottom" id="Tzt-Ns-rtD"/>
                                             <constraint firstAttribute="trailing" secondItem="VV3-KV-uWr" secondAttribute="trailing" constant="5" id="UPJ-Zy-9Qb"/>
                                             <constraint firstItem="oFA-Tk-hxV" firstAttribute="leading" secondItem="PTq-kX-TMh" secondAttribute="leading" id="USw-A3-YVB"/>
+                                            <constraint firstItem="7Xd-7x-M97" firstAttribute="leading" secondItem="OKH-vq-TLQ" secondAttribute="leading" id="Ujy-Mz-L5J"/>
                                             <constraint firstAttribute="trailing" secondItem="Orz-RF-KNk" secondAttribute="trailing" constant="5" id="Vaf-Zm-x8o"/>
                                             <constraint firstItem="OhK-w3-DBz" firstAttribute="top" secondItem="PTq-kX-TMh" secondAttribute="top" constant="8" id="WZI-ky-l8m"/>
                                             <constraint firstItem="VV3-KV-uWr" firstAttribute="top" secondItem="IGd-Am-hqG" secondAttribute="bottom" constant="10" id="Xgs-uc-tsD"/>
@@ -835,6 +892,7 @@
                                             <constraint firstAttribute="trailing" secondItem="NRG-8V-QLx" secondAttribute="trailing" constant="5" id="hgG-Bi-ffA"/>
                                             <constraint firstItem="edJ-Gc-Xze" firstAttribute="leading" secondItem="PTq-kX-TMh" secondAttribute="leading" constant="10" id="hhS-Fk-XLO"/>
                                             <constraint firstItem="cCu-bq-95v" firstAttribute="top" secondItem="OhK-w3-DBz" secondAttribute="bottom" constant="19" id="hqp-yC-PZO"/>
+                                            <constraint firstItem="7Xd-7x-M97" firstAttribute="top" secondItem="OKH-vq-TLQ" secondAttribute="top" id="kLp-hd-GMK"/>
                                             <constraint firstAttribute="trailing" secondItem="OhK-w3-DBz" secondAttribute="trailing" id="nXw-Kw-jBY"/>
                                             <constraint firstItem="oFA-Tk-hxV" firstAttribute="top" secondItem="s88-m9-zVn" secondAttribute="bottom" constant="18" id="nk1-VV-0p2"/>
                                             <constraint firstItem="NRG-8V-QLx" firstAttribute="top" secondItem="xdn-o4-hib" secondAttribute="bottom" constant="70" id="plV-Mt-6Pe"/>
@@ -877,24 +935,30 @@
                     <navigationItem key="navigationItem" title="Registration" id="E6I-cj-SIO"/>
                     <size key="freeformSize" width="320" height="1480"/>
                     <connections>
-                        <outlet property="btn_AuthorityRef" destination="xYQ-Yg-529" id="gZY-GH-wlS"/>
-                        <outlet property="btn_CertifyRef" destination="CLa-da-agJ" id="IU9-77-AKJ"/>
-                        <outlet property="btn_W9FormRef" destination="xwi-SY-hcE" id="Zlz-Oy-hKX"/>
-                        <outlet property="confrimPasswordTxtFld" destination="s88-m9-zVn" id="j5F-ad-Ct2"/>
-                        <outlet property="emailTxtFld" destination="edJ-Gc-Xze" id="Qys-jR-mtl"/>
-                        <outlet property="firstNameTxtFld" destination="BjQ-en-ZjE" id="8zG-Rc-g6R"/>
-                        <outlet property="imageview_AbstractUploadRef" destination="WwG-ZC-2W0" id="6L8-eN-Vzt"/>
-                        <outlet property="imageview_InsuranceRef" destination="7UU-CA-htT" id="0we-ZF-eLB"/>
-                        <outlet property="imageview_LicenseRef" destination="vIH-32-I8M" id="PpV-NS-VDr"/>
-                        <outlet property="imageview_ProfilepicRef" destination="cCu-bq-95v" id="Kgv-GQ-41P"/>
-                        <outlet property="imageview_VehicleRef" destination="llz-Dr-AJ6" id="Yw9-db-gKF"/>
-                        <outlet property="lastNameTxtFld" destination="w50-GX-SgI" id="S5f-tT-ivc"/>
-                        <outlet property="mobileNoTxtFld" destination="sqt-cg-gaI" id="w9R-Yz-6nh"/>
-                        <outlet property="passwordTxtFld" destination="KIF-ce-hJG" id="Jlj-Ka-X8G"/>
-                        <outlet property="txt_HomeAddressRef" destination="OKH-vq-TLQ" id="Ni5-KK-ZxJ"/>
-                        <outlet property="vehicleModelTxtFld" destination="IGd-Am-hqG" id="lms-Pz-lrj"/>
-                        <outlet property="vehicleTypeTxtFld" destination="Orz-RF-KNk" id="oYL-aV-w80"/>
-                        <outlet property="vehicleYearTxtFld" destination="VV3-KV-uWr" id="7d4-ee-b9k"/>
+                        <outlet property="btn_SignRef" destination="NRG-8V-QLx" id="EvP-lw-COt"/>
+                        <outlet property="confrimPasswordTxtFld" destination="s88-m9-zVn" id="kWu-Ix-TPD"/>
+                        <outlet property="drivinfRecordPic" destination="WwG-ZC-2W0" id="LnJ-sc-CWx"/>
+                        <outlet property="drivinfRecordPicButton" destination="Pnp-1B-ywK" id="TSM-hD-9Qa"/>
+                        <outlet property="drivingLicensePic" destination="vIH-32-I8M" id="Iso-3F-SE4"/>
+                        <outlet property="drivingLicensePicButton" destination="kXU-BU-dIv" id="ilQ-C2-n4X"/>
+                        <outlet property="emailTxtFld" destination="edJ-Gc-Xze" id="sU2-Gl-u8F"/>
+                        <outlet property="firstNameTxtFld" destination="BjQ-en-ZjE" id="Lej-gd-GHE"/>
+                        <outlet property="insurancePic" destination="7UU-CA-htT" id="nbP-Ob-PfF"/>
+                        <outlet property="insurancePicButton" destination="UY5-JS-I6I" id="CNh-qn-XjZ"/>
+                        <outlet property="lastNameTxtFld" destination="w50-GX-SgI" id="zUa-9G-GNv"/>
+                        <outlet property="mobileNoTxtFld" destination="sqt-cg-gaI" id="5vD-69-se3"/>
+                        <outlet property="passwordTxtFld" destination="KIF-ce-hJG" id="aEi-9p-hWw"/>
+                        <outlet property="profilePic" destination="cCu-bq-95v" id="6aF-SA-ToZ"/>
+                        <outlet property="profilePicButton" destination="VYi-HR-ggO" id="329-52-CEy"/>
+                        <outlet property="selectBackgroundCheckBoxr" destination="xYQ-Yg-529" id="e2l-fK-kES"/>
+                        <outlet property="selectCharSelectCheckBoxr" destination="CLa-da-agJ" id="w0O-Az-fN9"/>
+                        <outlet property="selectW3CheckBoxr" destination="xwi-SY-hcE" id="iGB-mV-MpY"/>
+                        <outlet property="txt_AdddressRef" destination="OKH-vq-TLQ" id="c5i-gA-cXW"/>
+                        <outlet property="txt_VehicleMakeTxtFld" destination="Orz-RF-KNk" id="oHp-DF-g8L"/>
+                        <outlet property="txt_VehicleModelTxtFld" destination="IGd-Am-hqG" id="4pc-3t-8I5"/>
+                        <outlet property="txt_VehicleYearTxtFld" destination="VV3-KV-uWr" id="9ra-fZ-Lmd"/>
+                        <outlet property="vehiclePic" destination="llz-Dr-AJ6" id="b5E-l5-owh"/>
+                        <outlet property="vehiclePicButton" destination="Ruv-O5-r2L" id="9ns-cE-LDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EC2-TD-zCA" userLabel="First Responder" sceneMemberID="firstResponder"/>

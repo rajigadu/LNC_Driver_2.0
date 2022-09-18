@@ -22,8 +22,10 @@ class LoginViewController: UIViewController {
     //MARK: - Life Cycle Start
     override func viewDidLoad() {
         super.viewDidLoad()
+       // self.txt_PasswordRef.text = "123"
+       // self.txt_UserMailRef.text = "rajesh@anaad.net"
         self.txt_PasswordRef.text = "123"
-        self.txt_UserMailRef.text = "rajesh@anaad.net"
+        self.txt_UserMailRef.text = "venk@gmail.com"
         // Do any additional setup after loading the view.
     }
     
@@ -55,8 +57,8 @@ extension LoginViewController {
                     if success, let LoginedUser = model {
                         DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                            self.showToast(message: LoginedUser.message ?? "Welcome! You are successfully login in your account panel.", font: .systemFont(ofSize: 12.0))
-                            //movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                            //self.showToast(message: LoginedUser.message ?? "Welcome! You are successfully login in your account panel.", font: .systemFont(ofSize: 12.0))
+                            movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
                         }
                     } else {
                         DispatchQueue.main.async { [self] in

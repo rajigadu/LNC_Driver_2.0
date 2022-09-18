@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0F83A3ECD22CB9EB5A3960BE /* Pods_LNC_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C648C314EE5B303EF28BFB6 /* Pods_LNC_Driver.framework */; };
 		8774A7352F3C7A25E85C5DAF /* Pods_LNC_Driver_LNC_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */; };
+		BA2144C028D0708E00DC313B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144BF28D0708E00DC313B /* ForgotPasswordViewModel.swift */; };
+		BA2144C228D070B200DC313B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144C128D070B200DC313B /* ForgotPasswordViewController.swift */; };
+		BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144C328D070CC00DC313B /* ForgotPasswordUser.swift */; };
+		BA2144CA28D07CDD00DC313B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144C928D07CDD00DC313B /* RegistrationViewModel.swift */; };
+		BA2144CC28D07CFA00DC313B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144CB28D07CFA00DC313B /* RegistrationViewController.swift */; };
+		BA2144CE28D07D0E00DC313B /* RegistrationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144CD28D07D0E00DC313B /* RegistrationUser.swift */; };
 		BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88028C8C40E00B73053 /* AppDelegate.swift */; };
 		BA36D88B28C8C40E00B73053 /* LNC_Driver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88928C8C40E00B73053 /* LNC_Driver.xcdatamodeld */; };
 		BA36D88D28C8C41200B73053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA36D88C28C8C41200B73053 /* Assets.xcassets */; };
@@ -38,6 +44,33 @@
 		BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B5128D0599500489F09 /* LoginViewModel.swift */; };
 		BA409B5428D059B700489F09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B5328D059B700489F09 /* LoginViewController.swift */; };
 		BA409B5628D05A1A00489F09 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B5528D05A1A00489F09 /* LoginUser.swift */; };
+		BA5C4A2E28D2B6620034F9B3 /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5C4A2D28D2B6620034F9B3 /* DashBoard.storyboard */; };
+		BA5C4A3028D2B9300034F9B3 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A2F28D2B9300034F9B3 /* DashBoardViewController.swift */; };
+		BA5C4A3228D2BB330034F9B3 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5C4A3128D2BB330034F9B3 /* SideMenu.storyboard */; };
+		BA5C4A3728D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A3628D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift */; };
+		BA5C4A3928D2BCFE0034F9B3 /* MenuSliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A3828D2BCFE0034F9B3 /* MenuSliderViewModel.swift */; };
+		BA5C4A3B28D2BD270034F9B3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A3A28D2BD270034F9B3 /* SideMenuViewController.swift */; };
+		BA5C4A3D28D2BD3C0034F9B3 /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A3C28D2BD3C0034F9B3 /* SideMenuModel.swift */; };
+		BA5C4A4328D2CAA30034F9B3 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A4228D2CAA30034F9B3 /* SettingsTableViewCell.swift */; };
+		BA5C4A4528D2CACB0034F9B3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A4428D2CACB0034F9B3 /* SettingsViewController.swift */; };
+		BA5C4A4728D2CB890034F9B3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5C4A4628D2CB890034F9B3 /* Profile.storyboard */; };
+		BA5C4A4D28D2CC8E0034F9B3 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A4C28D2CC8E0034F9B3 /* ChangePasswordViewModel.swift */; };
+		BA5C4A4F28D2CCB80034F9B3 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A4E28D2CCB80034F9B3 /* ChangePasswordViewController.swift */; };
+		BA5C4A5128D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A5028D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift */; };
+		BA5C4A5728D2CD2F0034F9B3 /* ContactUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A5628D2CD2E0034F9B3 /* ContactUsViewModel.swift */; };
+		BA5C4A5928D2CD480034F9B3 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A5828D2CD480034F9B3 /* ContactUsViewController.swift */; };
+		BA5C4A5B28D2CD690034F9B3 /* ContactUsUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A5A28D2CD690034F9B3 /* ContactUsUserData.swift */; };
+		BA5C4A6128D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A6028D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift */; };
+		BA5C4A6728D2CE510034F9B3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A6628D2CE510034F9B3 /* ProfileViewModel.swift */; };
+		BA5C4A6928D2CE730034F9B3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A6828D2CE730034F9B3 /* ProfileViewController.swift */; };
+		BA5C4A6B28D2CE930034F9B3 /* ProfileUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A6A28D2CE930034F9B3 /* ProfileUserData.swift */; };
+		BA5C4A7128D2D3980034F9B3 /* AddBankDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7028D2D3980034F9B3 /* AddBankDetailsViewModel.swift */; };
+		BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */; };
+		BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */; };
+		BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68DDF528D4E49C00A91082 /* Imageextension.swift */; };
+		BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */; };
+		BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */; };
+		BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */; };
 		CF3C81E329A419E350EA6AF6 /* Pods_LNC_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +97,12 @@
 		73725B024857A4A3F5CA6E67 /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78C9D712DCDD31B2C8D4E8CE /* Pods-LNC_Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.release.xcconfig"; sourceTree = "<group>"; };
 		830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_Driver_LNC_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2144BF28D0708E00DC313B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		BA2144C128D070B200DC313B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		BA2144C328D070CC00DC313B /* ForgotPasswordUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUser.swift; sourceTree = "<group>"; };
+		BA2144C928D07CDD00DC313B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		BA2144CB28D07CFA00DC313B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BA2144CD28D07D0E00DC313B /* RegistrationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUser.swift; sourceTree = "<group>"; };
 		BA36D87D28C8C40E00B73053 /* LNC_Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNC_Driver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D88028C8C40E00B73053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA36D88A28C8C40E00B73053 /* LNC_Driver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LNC_Driver.xcdatamodel; sourceTree = "<group>"; };
@@ -98,6 +137,33 @@
 		BA409B5128D0599500489F09 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BA409B5328D059B700489F09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA409B5528D05A1A00489F09 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
+		BA5C4A2D28D2B6620034F9B3 /* DashBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		BA5C4A2F28D2B9300034F9B3 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		BA5C4A3128D2BB330034F9B3 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		BA5C4A3628D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSliderTableViewCell.swift; sourceTree = "<group>"; };
+		BA5C4A3828D2BCFE0034F9B3 /* MenuSliderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSliderViewModel.swift; sourceTree = "<group>"; };
+		BA5C4A3A28D2BD270034F9B3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		BA5C4A3C28D2BD3C0034F9B3 /* SideMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
+		BA5C4A4228D2CAA30034F9B3 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		BA5C4A4428D2CACB0034F9B3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BA5C4A4628D2CB890034F9B3 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		BA5C4A4C28D2CC8E0034F9B3 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		BA5C4A4E28D2CCB80034F9B3 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		BA5C4A5028D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUserDetails.swift; sourceTree = "<group>"; };
+		BA5C4A5628D2CD2E0034F9B3 /* ContactUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewModel.swift; sourceTree = "<group>"; };
+		BA5C4A5828D2CD480034F9B3 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		BA5C4A5A28D2CD690034F9B3 /* ContactUsUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsUserData.swift; sourceTree = "<group>"; };
+		BA5C4A6028D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyViewController.swift; sourceTree = "<group>"; };
+		BA5C4A6628D2CE510034F9B3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		BA5C4A6828D2CE730034F9B3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BA5C4A6A28D2CE930034F9B3 /* ProfileUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserData.swift; sourceTree = "<group>"; };
+		BA5C4A7028D2D3980034F9B3 /* AddBankDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsViewModel.swift; sourceTree = "<group>"; };
+		BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsViewController.swift; sourceTree = "<group>"; };
+		BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsModel.swift; sourceTree = "<group>"; };
+		BA68DDF528D4E49C00A91082 /* Imageextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageextension.swift; sourceTree = "<group>"; };
+		BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewModel.swift; sourceTree = "<group>"; };
+		BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewController.swift; sourceTree = "<group>"; };
+		BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoModel.swift; sourceTree = "<group>"; };
 		D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.release.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +219,74 @@
 				E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA2144BB28D0704E00DC313B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144BE28D0706400DC313B /* Model */,
+				BA2144BD28D0705F00DC313B /* VIew */,
+				BA2144BC28D0705800DC313B /* ViewModel */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		BA2144BC28D0705800DC313B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144BF28D0708E00DC313B /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA2144BD28D0705F00DC313B /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144C128D070B200DC313B /* ForgotPasswordViewController.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		BA2144BE28D0706400DC313B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144C328D070CC00DC313B /* ForgotPasswordUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA2144C528D077E500DC313B /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144C728D077FB00DC313B /* Model */,
+				BA2144C828D0780300DC313B /* View */,
+				BA2144C628D077F400DC313B /* ViewModel */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		BA2144C628D077F400DC313B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144C928D07CDD00DC313B /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA2144C728D077FB00DC313B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144CD28D07D0E00DC313B /* RegistrationUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA2144C828D0780300DC313B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA2144CB28D07CFA00DC313B /* RegistrationViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BA36D87428C8C40E00B73053 = {
@@ -218,6 +352,7 @@
 				BA409B2528D02AA500489F09 /* HttpRequestHelper.swift */,
 				BA409B2628D02AA500489F09 /* LncUserConstants .swift */,
 				BA409B2728D02AA500489F09 /* TextFieldHelper.swift */,
+				BA68DDF528D4E49C00A91082 /* Imageextension.swift */,
 				BA409B2828D02AA500489F09 /* HelperConstants.swift */,
 				BA409B2928D02AA500489F09 /* FontFamily */,
 			);
@@ -261,6 +396,8 @@
 		BA409B4928D058CB00489F09 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				BA2144C528D077E500DC313B /* Registration */,
+				BA2144BB28D0704E00DC313B /* ForgotPassword */,
 				BA409B4C28D0591000489F09 /* Login */,
 				BA409B4A28D058DE00489F09 /* Authentication.storyboard */,
 			);
@@ -280,6 +417,9 @@
 		BA409B4D28D0591700489F09 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BA5C4A2928D2B5A00034F9B3 /* SideMenu */,
+				BA5C4A2828D2B5990034F9B3 /* Profile */,
+				BA5C4A2728D2B58F0034F9B3 /* DashBoard */,
 				BA409B4928D058CB00489F09 /* Auth */,
 			);
 			path = Screens;
@@ -305,6 +445,325 @@
 			isa = PBXGroup;
 			children = (
 				BA409B5528D05A1A00489F09 /* LoginUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A2728D2B58F0034F9B3 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A2C28D2B5D70034F9B3 /* Model */,
+				BA5C4A2B28D2B5D00034F9B3 /* View */,
+				BA5C4A2A28D2B5C20034F9B3 /* ViewModel */,
+				BA5C4A2D28D2B6620034F9B3 /* DashBoard.storyboard */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		BA5C4A2828D2B5990034F9B3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BADF9C5428D3645A002CA50A /* AddVehicleInfo */,
+				BA5C4A6C28D2D36F0034F9B3 /* AddBankDetails */,
+				BA5C4A6228D2CE0E0034F9B3 /* Profile */,
+				BA5C4A5C28D2CD960034F9B3 /* Terms_Privacy */,
+				BA5C4A5228D2CCF10034F9B3 /* ContactUs */,
+				BA5C4A4828D2CC3C0034F9B3 /* ChangePassword */,
+				BA5C4A3E28D2CA520034F9B3 /* Settings */,
+				BA5C4A4628D2CB890034F9B3 /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BA5C4A2928D2B5A00034F9B3 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A3528D2BC870034F9B3 /* Model */,
+				BA5C4A3428D2BC820034F9B3 /* View */,
+				BA5C4A3328D2BC780034F9B3 /* ViewModel */,
+				BA5C4A3128D2BB330034F9B3 /* SideMenu.storyboard */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		BA5C4A2A28D2B5C20034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A2B28D2B5D00034F9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A2F28D2B9300034F9B3 /* DashBoardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5C4A2C28D2B5D70034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A3328D2BC780034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A3628D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift */,
+				BA5C4A3828D2BCFE0034F9B3 /* MenuSliderViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A3428D2BC820034F9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A3A28D2BD270034F9B3 /* SideMenuViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5C4A3528D2BC870034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A3C28D2BD3C0034F9B3 /* SideMenuModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A3E28D2CA520034F9B3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A4128D2CA660034F9B3 /* Model */,
+				BA5C4A4028D2CA610034F9B3 /* VIew */,
+				BA5C4A3F28D2CA5B0034F9B3 /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BA5C4A3F28D2CA5B0034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A4228D2CAA30034F9B3 /* SettingsTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A4028D2CA610034F9B3 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A4428D2CACB0034F9B3 /* SettingsViewController.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		BA5C4A4128D2CA660034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A4828D2CC3C0034F9B3 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A4B28D2CC6F0034F9B3 /* Model */,
+				BA5C4A4A28D2CC6A0034F9B3 /* View */,
+				BA5C4A4928D2CC640034F9B3 /* ViewModel */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		BA5C4A4928D2CC640034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A4C28D2CC8E0034F9B3 /* ChangePasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A4A28D2CC6A0034F9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A4E28D2CCB80034F9B3 /* ChangePasswordViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5C4A4B28D2CC6F0034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A5028D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A5228D2CCF10034F9B3 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A5428D2CD000034F9B3 /* Model */,
+				BA5C4A5528D2CD050034F9B3 /* View */,
+				BA5C4A5328D2CCF80034F9B3 /* ViewModel */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		BA5C4A5328D2CCF80034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A5628D2CD2E0034F9B3 /* ContactUsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A5428D2CD000034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A5A28D2CD690034F9B3 /* ContactUsUserData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A5528D2CD050034F9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A5828D2CD480034F9B3 /* ContactUsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5C4A5C28D2CD960034F9B3 /* Terms_Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A5F28D2CDA60034F9B3 /* Model */,
+				BA5C4A5E28D2CDA00034F9B3 /* View */,
+				BA5C4A5D28D2CD9A0034F9B3 /* ViewModel */,
+			);
+			path = Terms_Privacy;
+			sourceTree = "<group>";
+		};
+		BA5C4A5D28D2CD9A0034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A5E28D2CDA00034F9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A6028D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5C4A5F28D2CDA60034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A6228D2CE0E0034F9B3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A6528D2CE1E0034F9B3 /* Model */,
+				BA5C4A6428D2CE190034F9B3 /* View */,
+				BA5C4A6328D2CE120034F9B3 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BA5C4A6328D2CE120034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A6628D2CE510034F9B3 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A6428D2CE190034F9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A6828D2CE730034F9B3 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5C4A6528D2CE1E0034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A6A28D2CE930034F9B3 /* ProfileUserData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5C4A6C28D2D36F0034F9B3 /* AddBankDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A6F28D2D3890034F9B3 /* Model */,
+				BA5C4A6E28D2D3840034F9B3 /* View */,
+				BA5C4A6D28D2D37F0034F9B3 /* ViewModel */,
+			);
+			path = AddBankDetails;
+			sourceTree = "<group>";
+		};
+		BA5C4A6D28D2D37F0034F9B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A7028D2D3980034F9B3 /* AddBankDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5C4A6E28D2D3840034F9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5C4A6F28D2D3890034F9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BADF9C5428D3645A002CA50A /* AddVehicleInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BADF9C5728D36474002CA50A /* Model */,
+				BADF9C5628D3646F002CA50A /* View */,
+				BADF9C5528D36468002CA50A /* ViewModel */,
+			);
+			path = AddVehicleInfo;
+			sourceTree = "<group>";
+		};
+		BADF9C5528D36468002CA50A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BADF9C5628D3646F002CA50A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BADF9C5728D36474002CA50A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,10 +882,13 @@
 				BA409B4B28D058DE00489F09 /* Authentication.storyboard in Resources */,
 				BA409B3B28D02AA600489F09 /* Lato-Italic.ttf in Resources */,
 				BA409B3F28D02AA600489F09 /* Lato-Black.ttf in Resources */,
+				BA5C4A2E28D2B6620034F9B3 /* DashBoard.storyboard in Resources */,
 				BA409B3C28D02AA600489F09 /* Lato-LightItalic.ttf in Resources */,
 				BA409B3D28D02AA600489F09 /* Lato-Thin.ttf in Resources */,
+				BA5C4A4728D2CB890034F9B3 /* Profile.storyboard in Resources */,
 				BA409B4128D02AA600489F09 /* Lato-BlackItalic.ttf in Resources */,
 				BA36D89028C8C41200B73053 /* LaunchScreen.storyboard in Resources */,
+				BA5C4A3228D2BB330034F9B3 /* SideMenu.storyboard in Resources */,
 				BA409B4228D02AA600489F09 /* OFL.txt in Resources */,
 				BA409B4528D02AA600489F09 /* Lato-ThinItalic.ttf in Resources */,
 				BA409B2228D02A1300489F09 /* background.png in Resources */,
@@ -596,17 +1058,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA5C4A4D28D2CC8E0034F9B3 /* ChangePasswordViewModel.swift in Sources */,
+				BA5C4A3728D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift in Sources */,
+				BA2144C028D0708E00DC313B /* ForgotPasswordViewModel.swift in Sources */,
+				BA5C4A5B28D2CD690034F9B3 /* ContactUsUserData.swift in Sources */,
+				BA2144CE28D07D0E00DC313B /* RegistrationUser.swift in Sources */,
+				BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */,
 				BA409B4828D02AB700489F09 /* EmployeesService.swift in Sources */,
+				BA5C4A6928D2CE730034F9B3 /* ProfileViewController.swift in Sources */,
+				BA5C4A3B28D2BD270034F9B3 /* SideMenuViewController.swift in Sources */,
 				BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */,
 				BA409B3928D02AA600489F09 /* TextFieldHelper.swift in Sources */,
 				BA409B3828D02AA600489F09 /* LncUserConstants .swift in Sources */,
+				BA5C4A6128D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift in Sources */,
 				BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */,
+				BA5C4A3928D2BCFE0034F9B3 /* MenuSliderViewModel.swift in Sources */,
+				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
+				BA5C4A6728D2CE510034F9B3 /* ProfileViewModel.swift in Sources */,
 				BA409B3A28D02AA600489F09 /* HelperConstants.swift in Sources */,
+				BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */,
+				BA5C4A7128D2D3980034F9B3 /* AddBankDetailsViewModel.swift in Sources */,
+				BA5C4A3028D2B9300034F9B3 /* DashBoardViewController.swift in Sources */,
 				BA36D88B28C8C40E00B73053 /* LNC_Driver.xcdatamodeld in Sources */,
+				BA5C4A5728D2CD2F0034F9B3 /* ContactUsViewModel.swift in Sources */,
+				BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */,
 				BA409B3628D02AA600489F09 /* ImagePickerManager.swift in Sources */,
+				BA2144CC28D07CFA00DC313B /* RegistrationViewController.swift in Sources */,
+				BA2144CA28D07CDD00DC313B /* RegistrationViewModel.swift in Sources */,
+				BA5C4A5128D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift in Sources */,
+				BA5C4A6B28D2CE930034F9B3 /* ProfileUserData.swift in Sources */,
+				BA5C4A3D28D2BD3C0034F9B3 /* SideMenuModel.swift in Sources */,
+				BA5C4A4F28D2CCB80034F9B3 /* ChangePasswordViewController.swift in Sources */,
 				BA409B5428D059B700489F09 /* LoginViewController.swift in Sources */,
+				BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */,
+				BA2144C228D070B200DC313B /* ForgotPasswordViewController.swift in Sources */,
+				BA5C4A4328D2CAA30034F9B3 /* SettingsTableViewCell.swift in Sources */,
+				BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */,
+				BA5C4A5928D2CD480034F9B3 /* ContactUsViewController.swift in Sources */,
 				BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */,
+				BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */,
 				BA409B5628D05A1A00489F09 /* LoginUser.swift in Sources */,
+				BA5C4A4528D2CACB0034F9B3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,9 +1272,9 @@
 				DEVELOPMENT_TEAM = W53RYF67AF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LNC_Driver/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires to access your camera to set profile pictures.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires to access your camera to set profile picture and share your image to driver";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app requires your current location to allow you to utlise cab service by using pickup and drop locations.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your current location to allow you to utlise cab service by using pickup and drop locations.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires to access your photo library to set profile pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -815,9 +1307,9 @@
 				DEVELOPMENT_TEAM = W53RYF67AF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LNC_Driver/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires to access your camera to set profile pictures.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "your device location will only be used while the app is in use to complete service requests that require your current location";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires to access your camera to set profile picture and share your image to driver";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app requires your current location to allow you to utlise cab service by using pickup and drop locations.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your current location to allow you to utlise cab service by using pickup and drop locations.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires to access your photo library to set profile pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

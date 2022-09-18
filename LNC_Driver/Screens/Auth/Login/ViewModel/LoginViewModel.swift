@@ -9,9 +9,9 @@ import Foundation
 
 class LoginViewModel: NSObject {
     
-    private var LoginedServices: LateNightChauffeursUSERServiceProtocol
+    private var LoginedServices: LateNightChauffeursDriverServiceProtocol
     
-    init(ApiService: LateNightChauffeursUSERServiceProtocol = ApiService()) {
+    init(ApiService: LateNightChauffeursDriverServiceProtocol = ApiService()) {
         self.LoginedServices = ApiService
     }
     
@@ -19,18 +19,19 @@ class LoginViewModel: NSObject {
         LoginedServices.getLoginedUserDetails(perams) { success, model, error in
             if success, let LoginedUser = model {
                 if LoginedUser.loginStatus == "1" {
-//                UserDefaults.standard.set(LoginedUser.userDetails?[0].userId, forKey: "UserLoginID")
-//                UserDefaults.standard.set(LoginedUser.userDetails?[0].emailAddress, forKey: "UserEmailID")
-//                UserDefaults.standard.set(LoginedUser.userDetails?[0].firstName, forKey: "UserFirstName")
-//                UserDefaults.standard.set(LoginedUser.userDetails?[0].lastName, forKey: "UserLastName")
-//                UserDefaults.standard.set(LoginedUser.userDetails?[0].mobileNumber, forKey: "UserMobilenumber")
-//                UserDefaults.standard.set(true, forKey: "IsUserLogined")
-//                UserDefaults.standard.set(API_URl.API_BASEIMAGE_URL + (LoginedUser.userDetails?[0].profilePic ?? ""), forKey: "userProfilepic")
-//                UserDefaults.standard.set("Normal Login", forKey: "userLoginType")
-//                UserDefaults.standard.set(LoginedUser.paymentCardStatus, forKey: "CardStatus")
-                completion(true, LoginedUser, nil)
+                    UserDefaults.standard.set(LoginedUser.userDetails?[0].userId, forKey: "DriverLoginID")
+                    UserDefaults.standard.set(LoginedUser.userDetails?[0].email, forKey: "DriverEmailID")
+                    UserDefaults.standard.set(LoginedUser.userDetails?[0].first_name, forKey: "DriverFirstName")
+                    UserDefaults.standard.set(LoginedUser.userDetails?[0].last_name, forKey: "DriverLasttName")
+                    UserDefaults.standard.set(LoginedUser.userDetails?[0].mobile, forKey: "DriverMobilenumber")
+                    UserDefaults.standard.set(LoginedUser.userDetails?[0].rating, forKey: "DriverRating")
+                    UserDefaults.standard.set(true, forKey: "IsUserLogined")
+                    UserDefaults.standard.set(API_URl.API_IMAGEBASE_URL + (LoginedUser.userDetails?[0].profile_pic ?? ""), forKey: "DriverProfilepic")
+                    UserDefaults.standard.set(LoginedUser.userDetails?[0].driver_type, forKey: "DriverType")
+                    UserDefaults.standard.set("Driver", forKey: "InRideDriverType")
+                    completion(true, LoginedUser, nil)
                 } else {
-                  completion(false, nil, LoginedUser.message)
+                    completion(false, nil, LoginedUser.message)
                 }
             } else {
                 completion(false, nil, error)
