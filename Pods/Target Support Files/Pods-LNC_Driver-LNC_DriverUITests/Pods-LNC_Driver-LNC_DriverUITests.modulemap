@@ -1,0 +1,6 @@
+framework module Pods_LNC_Driver_LNC_DriverUITests {
+  umbrella header "Pods-LNC_Driver-LNC_DriverUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

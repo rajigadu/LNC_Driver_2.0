@@ -83,11 +83,11 @@ extension HttpRequestHelper {
         }
         var urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0 * 1000)
         urlRequest.httpMethod = "POST"
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
         
         switch httpHeader {
         case .application_json:
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
         case .application_x_www_form_urlencoded:
             //urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
             //urlRequest.setValue("multipart/form-data", forHTTPHeaderField: "Accept")
@@ -179,9 +179,9 @@ extension HttpRequestHelper {
         
         switch httpHeader {
         case .application_json:
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
         case .application_x_www_form_urlencoded:
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-type")
             urlRequest.setValue("multipart/form-data", forHTTPHeaderField: "Accept")
         case .none: break
         }

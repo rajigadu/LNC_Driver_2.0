@@ -40,7 +40,7 @@ static let WithDrawlKey                               = "Please Enter your withd
 
 class API_URl  {
 
-static let API_SERVER_URL                             = "https://lnc.latenightchauffeurs.com/lnc-administrator/ios/driver/"
+static let API_SERVER_URL                             = "https://lnc.latenightchauffeurs.com/lnc-administrator/ios-test/driver/"
 static let API_IMAGEBASE_URL                          = "https://lnc.latenightchauffeurs.com/lnc-administrator/uploads/"
 static let API_LOGIN_URL                              = API_URl.API_SERVER_URL +  "login.php?"
 static let API_REGISTRATION_URL                        = API_URl.API_SERVER_URL +  "signup.php"

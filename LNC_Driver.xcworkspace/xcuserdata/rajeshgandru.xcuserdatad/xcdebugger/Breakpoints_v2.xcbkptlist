@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D030C920-D1C8-4DFF-98D3-9258D0EE83E9"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC029DDD-BEC2-4C01-885A-1C71DE81F155"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD71E091-1A9B-4BAB-B488-08AEAF280936"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62D20D5D-9EC2-4D97-838E-FDC228BBEA4C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "452"
+            endingLineNumber = "452"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E20FCEE-2B36-4675-9425-51953F4DA929"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3CBEA7B1-26FE-45D2-B06E-CF517CFBB3F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93B419B8-D673-4319-86A7-0701949C0970"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34B6AF00-65A7-4C2A-8B4F-73CC3A522837"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82643DF6-8CD6-4F22-9E67-9C303C418104"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2DBC043-C934-41C0-986A-4752EE5929C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3446122C-7A1B-4911-A0D4-D626CBF4C69A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74D3320D-4EEB-4AD7-84F4-90EFB2B7A249"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE6BA6F4-9122-4B4E-A8FB-5F2AA8B34C02"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AA105D3-49E3-4E89-AC4D-1909952BABB0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "463"
+            endingLineNumber = "463"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB53ADC7-B30B-4761-9C16-5890F39AE43E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "464"
+            endingLineNumber = "464"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94F0E84B-DD78-4290-8C39-8D05757EDCBA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C78587DA-E85E-4DF7-95D2-E6DAC472DF95"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Helpers/HttpRequestHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
+            landmarkName = "uploadImagePOSTForRegistartion(url:params:peramsModel:profilepic_name:profilepic:vehicle_image_name:vehicle_image:documents_image_name:documents_image:license_image_name:license_image:driver_abstract_name:driver_abstract:httpHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
