@@ -71,6 +71,22 @@
 		BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */; };
 		BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */; };
 		BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */; };
+		BAE03E4A28E46105003EE6BA /* PaymentHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4928E46105003EE6BA /* PaymentHistoryViewModel.swift */; };
+		BAE03E4C28E46121003EE6BA /* PaymentHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4B28E46121003EE6BA /* PaymentHistoryViewController.swift */; };
+		BAE03E4E28E4612F003EE6BA /* PaymentHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4D28E4612F003EE6BA /* PaymentHistoryModel.swift */; };
+		BAE03E5028E4619B003EE6BA /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4F28E4619B003EE6BA /* PaymentHistoryTableViewCell.swift */; };
+		BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE537D28E3DAAC0075B091 /* W9FormViewController.swift */; };
+		BAFE538028E3DDF50075B091 /* Terms_PrivacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE537F28E3DDF40075B091 /* Terms_PrivacyViewModel.swift */; };
+		BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE538128E3DE620075B091 /* Terms_PrivacyModel.swift */; };
+		BAFE538828E3E6670075B091 /* WeeklyPaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE538728E3E6660075B091 /* WeeklyPaymentsViewModel.swift */; };
+		BAFE538A28E3E68D0075B091 /* WeeklyPaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE538928E3E68D0075B091 /* WeeklyPaymentsViewController.swift */; };
+		BAFE538C28E3E69F0075B091 /* WeeklyPaymentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE538B28E3E69F0075B091 /* WeeklyPaymentsModel.swift */; };
+		BAFE539228E3E72D0075B091 /* WeekRideinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE539128E3E72D0075B091 /* WeekRideinfoViewController.swift */; };
+		BAFE539428E3E7430075B091 /* WeekRideinfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE539328E3E7430075B091 /* WeekRideinfoViewModel.swift */; };
+		BAFE539628E3E74D0075B091 /* WeekRideinfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE539528E3E74D0075B091 /* WeekRideinfoModel.swift */; };
+		BAFE539828E3E7770075B091 /* WeekrideinfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE539728E3E7770075B091 /* WeekrideinfoCell.swift */; };
+		BAFE539A28E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE539928E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift */; };
+		BAFE539C28E3E8AF0075B091 /* RidesHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFE539B28E3E8AF0075B091 /* RidesHistory.storyboard */; };
 		CF3C81E329A419E350EA6AF6 /* Pods_LNC_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +180,22 @@
 		BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewModel.swift; sourceTree = "<group>"; };
 		BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewController.swift; sourceTree = "<group>"; };
 		BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoModel.swift; sourceTree = "<group>"; };
+		BAE03E4928E46105003EE6BA /* PaymentHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryViewModel.swift; sourceTree = "<group>"; };
+		BAE03E4B28E46121003EE6BA /* PaymentHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryViewController.swift; sourceTree = "<group>"; };
+		BAE03E4D28E4612F003EE6BA /* PaymentHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryModel.swift; sourceTree = "<group>"; };
+		BAE03E4F28E4619B003EE6BA /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		BAFE537D28E3DAAC0075B091 /* W9FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W9FormViewController.swift; sourceTree = "<group>"; };
+		BAFE537F28E3DDF40075B091 /* Terms_PrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms_PrivacyViewModel.swift; sourceTree = "<group>"; };
+		BAFE538128E3DE620075B091 /* Terms_PrivacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms_PrivacyModel.swift; sourceTree = "<group>"; };
+		BAFE538728E3E6660075B091 /* WeeklyPaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPaymentsViewModel.swift; sourceTree = "<group>"; };
+		BAFE538928E3E68D0075B091 /* WeeklyPaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPaymentsViewController.swift; sourceTree = "<group>"; };
+		BAFE538B28E3E69F0075B091 /* WeeklyPaymentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPaymentsModel.swift; sourceTree = "<group>"; };
+		BAFE539128E3E72D0075B091 /* WeekRideinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekRideinfoViewController.swift; sourceTree = "<group>"; };
+		BAFE539328E3E7430075B091 /* WeekRideinfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekRideinfoViewModel.swift; sourceTree = "<group>"; };
+		BAFE539528E3E74D0075B091 /* WeekRideinfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekRideinfoModel.swift; sourceTree = "<group>"; };
+		BAFE539728E3E7770075B091 /* WeekrideinfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekrideinfoCell.swift; sourceTree = "<group>"; };
+		BAFE539928E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPaymentsTableViewCell.swift; sourceTree = "<group>"; };
+		BAFE539B28E3E8AF0075B091 /* RidesHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RidesHistory.storyboard; sourceTree = "<group>"; };
 		D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.release.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -396,6 +428,7 @@
 		BA409B4928D058CB00489F09 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE537928E3DA770075B091 /* W9Form */,
 				BA2144C528D077E500DC313B /* Registration */,
 				BA2144BB28D0704E00DC313B /* ForgotPassword */,
 				BA409B4C28D0591000489F09 /* Login */,
@@ -463,6 +496,8 @@
 		BA5C4A2828D2B5990034F9B3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BAE03E4028E45FBA003EE6BA /* PaymentHistory */,
+				BAFE538328E3E3690075B091 /* WeeklyPayments */,
 				BADF9C5428D3645A002CA50A /* AddVehicleInfo */,
 				BA5C4A6C28D2D36F0034F9B3 /* AddBankDetails */,
 				BA5C4A6228D2CE0E0034F9B3 /* Profile */,
@@ -471,6 +506,7 @@
 				BA5C4A4828D2CC3C0034F9B3 /* ChangePassword */,
 				BA5C4A3E28D2CA520034F9B3 /* Settings */,
 				BA5C4A4628D2CB890034F9B3 /* Profile.storyboard */,
+				BAFE539B28E3E8AF0075B091 /* RidesHistory.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -647,6 +683,7 @@
 		BA5C4A5D28D2CD9A0034F9B3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE537F28E3DDF40075B091 /* Terms_PrivacyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -662,6 +699,7 @@
 		BA5C4A5F28D2CDA60034F9B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE538128E3DE620075B091 /* Terms_PrivacyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -764,6 +802,184 @@
 			isa = PBXGroup;
 			children = (
 				BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE03E4028E45FBA003EE6BA /* PaymentHistory */ = {
+			isa = PBXGroup;
+			children = (
+				BAE03E4228E45FDE003EE6BA /* SecondSeen */,
+				BAE03E4128E45FCA003EE6BA /* FirstSeen */,
+			);
+			path = PaymentHistory;
+			sourceTree = "<group>";
+		};
+		BAE03E4128E45FCA003EE6BA /* FirstSeen */ = {
+			isa = PBXGroup;
+			children = (
+				BAE03E4528E460C4003EE6BA /* Model */,
+				BAE03E4428E460B4003EE6BA /* View */,
+				BAE03E4328E45FF7003EE6BA /* ViewModel */,
+			);
+			path = FirstSeen;
+			sourceTree = "<group>";
+		};
+		BAE03E4228E45FDE003EE6BA /* SecondSeen */ = {
+			isa = PBXGroup;
+			children = (
+				BAE03E4828E460D8003EE6BA /* Model */,
+				BAE03E4728E460D0003EE6BA /* View */,
+				BAE03E4628E460CA003EE6BA /* ViewModel */,
+			);
+			path = SecondSeen;
+			sourceTree = "<group>";
+		};
+		BAE03E4328E45FF7003EE6BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAE03E4928E46105003EE6BA /* PaymentHistoryViewModel.swift */,
+				BAE03E4F28E4619B003EE6BA /* PaymentHistoryTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAE03E4428E460B4003EE6BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAE03E4B28E46121003EE6BA /* PaymentHistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE03E4528E460C4003EE6BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAE03E4D28E4612F003EE6BA /* PaymentHistoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAE03E4628E460CA003EE6BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAE03E4728E460D0003EE6BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAE03E4828E460D8003EE6BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAFE537928E3DA770075B091 /* W9Form */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE537C28E3DA920075B091 /* Model */,
+				BAFE537B28E3DA8C0075B091 /* View */,
+				BAFE537A28E3DA820075B091 /* ViewModel */,
+			);
+			path = W9Form;
+			sourceTree = "<group>";
+		};
+		BAFE537A28E3DA820075B091 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAFE537B28E3DA8C0075B091 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE537D28E3DAAC0075B091 /* W9FormViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAFE537C28E3DA920075B091 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAFE538328E3E3690075B091 /* WeeklyPayments */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE538D28E3E6F60075B091 /* WeekRideinfoVC */,
+				BAFE538628E3E6490075B091 /* Model */,
+				BAFE538528E3E3800075B091 /* View */,
+				BAFE538428E3E3780075B091 /* ViewModel */,
+			);
+			path = WeeklyPayments;
+			sourceTree = "<group>";
+		};
+		BAFE538428E3E3780075B091 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE538728E3E6660075B091 /* WeeklyPaymentsViewModel.swift */,
+				BAFE539928E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAFE538528E3E3800075B091 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE538928E3E68D0075B091 /* WeeklyPaymentsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAFE538628E3E6490075B091 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE538B28E3E69F0075B091 /* WeeklyPaymentsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAFE538D28E3E6F60075B091 /* WeekRideinfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE539028E3E7090075B091 /* Model */,
+				BAFE538F28E3E7010075B091 /* View */,
+				BAFE538E28E3E6FB0075B091 /* ViewModel */,
+			);
+			path = WeekRideinfoVC;
+			sourceTree = "<group>";
+		};
+		BAFE538E28E3E6FB0075B091 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE539328E3E7430075B091 /* WeekRideinfoViewModel.swift */,
+				BAFE539728E3E7770075B091 /* WeekrideinfoCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAFE538F28E3E7010075B091 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE539128E3E72D0075B091 /* WeekRideinfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAFE539028E3E7090075B091 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE539528E3E74D0075B091 /* WeekRideinfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -882,6 +1098,7 @@
 				BA409B4B28D058DE00489F09 /* Authentication.storyboard in Resources */,
 				BA409B3B28D02AA600489F09 /* Lato-Italic.ttf in Resources */,
 				BA409B3F28D02AA600489F09 /* Lato-Black.ttf in Resources */,
+				BAFE539C28E3E8AF0075B091 /* RidesHistory.storyboard in Resources */,
 				BA5C4A2E28D2B6620034F9B3 /* DashBoard.storyboard in Resources */,
 				BA409B3C28D02AA600489F09 /* Lato-LightItalic.ttf in Resources */,
 				BA409B3D28D02AA600489F09 /* Lato-Thin.ttf in Resources */,
@@ -1062,38 +1279,53 @@
 				BA5C4A3728D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift in Sources */,
 				BA2144C028D0708E00DC313B /* ForgotPasswordViewModel.swift in Sources */,
 				BA5C4A5B28D2CD690034F9B3 /* ContactUsUserData.swift in Sources */,
+				BAFE538A28E3E68D0075B091 /* WeeklyPaymentsViewController.swift in Sources */,
+				BAFE539628E3E74D0075B091 /* WeekRideinfoModel.swift in Sources */,
+				BAE03E4C28E46121003EE6BA /* PaymentHistoryViewController.swift in Sources */,
 				BA2144CE28D07D0E00DC313B /* RegistrationUser.swift in Sources */,
 				BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */,
 				BA409B4828D02AB700489F09 /* EmployeesService.swift in Sources */,
 				BA5C4A6928D2CE730034F9B3 /* ProfileViewController.swift in Sources */,
 				BA5C4A3B28D2BD270034F9B3 /* SideMenuViewController.swift in Sources */,
+				BAFE538828E3E6670075B091 /* WeeklyPaymentsViewModel.swift in Sources */,
+				BAE03E4A28E46105003EE6BA /* PaymentHistoryViewModel.swift in Sources */,
 				BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */,
+				BAFE539228E3E72D0075B091 /* WeekRideinfoViewController.swift in Sources */,
 				BA409B3928D02AA600489F09 /* TextFieldHelper.swift in Sources */,
 				BA409B3828D02AA600489F09 /* LncUserConstants .swift in Sources */,
 				BA5C4A6128D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift in Sources */,
 				BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */,
 				BA5C4A3928D2BCFE0034F9B3 /* MenuSliderViewModel.swift in Sources */,
+				BAFE539828E3E7770075B091 /* WeekrideinfoCell.swift in Sources */,
 				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
+				BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */,
+				BAE03E4E28E4612F003EE6BA /* PaymentHistoryModel.swift in Sources */,
 				BA5C4A6728D2CE510034F9B3 /* ProfileViewModel.swift in Sources */,
 				BA409B3A28D02AA600489F09 /* HelperConstants.swift in Sources */,
 				BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */,
 				BA5C4A7128D2D3980034F9B3 /* AddBankDetailsViewModel.swift in Sources */,
 				BA5C4A3028D2B9300034F9B3 /* DashBoardViewController.swift in Sources */,
 				BA36D88B28C8C40E00B73053 /* LNC_Driver.xcdatamodeld in Sources */,
+				BAFE539428E3E7430075B091 /* WeekRideinfoViewModel.swift in Sources */,
+				BAFE538C28E3E69F0075B091 /* WeeklyPaymentsModel.swift in Sources */,
 				BA5C4A5728D2CD2F0034F9B3 /* ContactUsViewModel.swift in Sources */,
 				BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */,
 				BA409B3628D02AA600489F09 /* ImagePickerManager.swift in Sources */,
 				BA2144CC28D07CFA00DC313B /* RegistrationViewController.swift in Sources */,
+				BAE03E5028E4619B003EE6BA /* PaymentHistoryTableViewCell.swift in Sources */,
 				BA2144CA28D07CDD00DC313B /* RegistrationViewModel.swift in Sources */,
 				BA5C4A5128D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift in Sources */,
 				BA5C4A6B28D2CE930034F9B3 /* ProfileUserData.swift in Sources */,
 				BA5C4A3D28D2BD3C0034F9B3 /* SideMenuModel.swift in Sources */,
+				BAFE538028E3DDF50075B091 /* Terms_PrivacyViewModel.swift in Sources */,
 				BA5C4A4F28D2CCB80034F9B3 /* ChangePasswordViewController.swift in Sources */,
 				BA409B5428D059B700489F09 /* LoginViewController.swift in Sources */,
 				BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */,
 				BA2144C228D070B200DC313B /* ForgotPasswordViewController.swift in Sources */,
+				BAFE539A28E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift in Sources */,
 				BA5C4A4328D2CAA30034F9B3 /* SettingsTableViewCell.swift in Sources */,
 				BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */,
+				BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */,
 				BA5C4A5928D2CD480034F9B3 /* ContactUsViewController.swift in Sources */,
 				BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */,
 				BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */,

@@ -119,9 +119,9 @@ PODS:
   - ObjectMapper (4.2.0)
   - PromisesObjC (2.1.1)
   - Reachability (3.2)
-  - SDWebImage (5.13.2):
-    - SDWebImage/Core (= 5.13.2)
-  - SDWebImage/Core (5.13.2)
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
@@ -193,7 +193,7 @@ SPEC CHECKSUMS:
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
 PODFILE CHECKSUM: 7613139a490cbf0e3f371b618489bb94928d7430

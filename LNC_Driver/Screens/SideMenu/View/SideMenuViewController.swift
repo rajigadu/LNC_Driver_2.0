@@ -20,9 +20,9 @@ class SideMenuViewController: UIViewController {
     lazy var viewModel = {
         MenuSliderViewModel()
     }()
-    var arrayResponse = ["Home","Driver Type","Ride Reservations","Accepted Rides","Manage Partners","Ride History","Payment History","Weekly Payments","My Rewards","Trany Videos","Settings","Employee Guidelines","Logout"];//@"Future Ride Info",@"Future Ride History",
+    var arrayResponse = ["Home","Driver Type","Ride Reservations","Accepted Rides","Manage Partners","Ride History","Payment History","Weekly Payments","My Rewards","Settings","Employee Guidelines","Logout"];//@"Future Ride Info",@"Future Ride History","Trany Videos"
     
-    var arr_images = [UIImage(named :"home"),UIImage(named :"user"),UIImage(named :"serviceinfo"),UIImage(named :"serviceinfo"),UIImage(named :"user"),UIImage(named :"history"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"settings"),UIImage(named :"serviceinfo"),UIImage(named :"signout"),]
+    var arr_images = [UIImage(named :"home"),UIImage(named :"user"),UIImage(named :"serviceinfo"),UIImage(named :"serviceinfo"),UIImage(named :"user"),UIImage(named :"history"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"settings"),UIImage(named :"serviceinfo"),UIImage(named :"signout"),]//UIImage(named :"payment")
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -89,6 +89,15 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard",animated:false)
         } else if arrayResponse[indexPath.row] == "Settings" {
             self.movetonextvc(id: "SettingsViewController", storyBordid: "Profile",animated:false)
+        } else if arrayResponse[indexPath.row] == "Employee Guidelines" {
+            let Storyboard : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+            let nxtVC = Storyboard.instantiateViewController(withIdentifier: "TermsAndPrivacyViewController") as! TermsAndPrivacyViewController
+            nxtVC.str_ActionComingFrom = "Employee Guidelines"
+            self.navigationController?.pushViewController(nxtVC, animated:  true)
+        } else if arrayResponse[indexPath.row] == "Weekly Payments" {
+            self.movetonextvc(id: "WeeklyPaymentsViewController", storyBordid: "RidesHistory",animated:false)
+        } else if arrayResponse[indexPath.row] == "Payment History" {
+            self.movetonextvc(id: "PaymentHistoryViewController", storyBordid: "RidesHistory",animated:false)
         }
     }
     

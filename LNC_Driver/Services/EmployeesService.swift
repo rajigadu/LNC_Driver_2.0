@@ -31,6 +31,16 @@ protocol LateNightChauffeursDriverServiceProtocol {
     func requestForGetVehicleDetailsServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: GetVehicleData?, _ error: String?) -> ())
     //MARK: - Post Edit Vehicle Details
    // func requestForEditVehicleDetailsService(_ perams: Dictionary<String, String>,vehicle_image_name: String, vehicle_image: UIImage,documents_image_name: String, documents_image: UIImage,license_image_name: String, license_image: UIImage,driver_abstract_name: String, driver_abstract: UIImage, completion: @escaping (_ success: Bool, _ results: EditVehicleDataModel2?, _ error: String?) -> ())
+    
+    //MARK: - Get Emplyee Guidelines PDF Url
+    func requestForGetEmplyeeGuidelinesServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: TermsPrivacyData?, _ error: String?) -> ())
+    //MARK: - weeklu Payments list
+    func requestForGetWeeklyPaymentslistServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: WeeklyPaymentsWeekData?, _ error: String?) -> ())
+    func requestForGetWeeklyPaymentsInfolistServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: WeekRideinfoData?, _ error: String?) -> ())
+    
+    //MARK: - Payment history
+    func requestForPaymentHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: PaymentHistoryData?, _ error: String?) -> ())
+    
 }
 
 //MARK: - Login
@@ -275,3 +285,84 @@ extension ApiService {
 //        }
 //    }
 //}
+//MARK: - Get Emplyee Guidelines PDF Url
+extension ApiService {
+    func requestForGetEmplyeeGuidelinesServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, TermsPrivacyData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_Handbookbase_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(TermsPrivacyData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
+//MARK: - weekly Payments list
+extension ApiService {
+    func requestForGetWeeklyPaymentslistServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, WeeklyPaymentsWeekData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_WEEKLY_PAYMENTS_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(WeeklyPaymentsWeekData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - weekly Payments list
+extension ApiService {
+    func requestForGetWeeklyPaymentsInfolistServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, WeekRideinfoData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_WeeklyRideinfo_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(WeekRideinfoData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Payment history
+extension ApiService {
+    func requestForPaymentHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, PaymentHistoryData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERRIDEPAYMENTHISTORYLIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(PaymentHistoryData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
