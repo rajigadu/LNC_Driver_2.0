@@ -43,6 +43,19 @@ protocol LateNightChauffeursDriverServiceProtocol {
     
     //MARK: - Ride History
     func requestForRideHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideHistoryViewData?, _ error: String?) -> ())
+    
+    //MARK: - Activate Reward
+    func requestForActivateRewardServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ActivateRewardProgramData?, _ error: String?) -> ())
+    
+    //MARK: - Avilable Reward
+    func requestForAvailableRewardProgramsListServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AvailableRewardProgramsListData?, _ error: String?) -> ())
+    
+    //MARK: - Activated Reward Programs
+    func requestForActivatedRewardProgramsServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ActivatedRewardProgramsData?, _ error: String?) -> ())
+    
+    //MARK: - History Of Reward Programs
+    func requestForHistoryOfRewardProgramsServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: HistoryOfRewardProgramsData?, _ error: String?) -> ())
+        
 }
 
 //MARK: - Login
@@ -378,6 +391,87 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(RideHistoryViewData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
+//MARK: - Avilable Reward
+extension ApiService {
+    func requestForAvailableRewardProgramsListServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, AvailableRewardProgramsListData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_AVAILABLE_REWARD_PROG_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(AvailableRewardProgramsListData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Activate Reward
+extension ApiService {
+    func requestForActivateRewardServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ActivateRewardProgramData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_ACTIVATE_REWARD_PROG_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ActivateRewardProgramData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Activated Reward Programs
+extension ApiService {
+    func requestForActivatedRewardProgramsServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ActivatedRewardProgramsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_MY_REWARDS_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ActivatedRewardProgramsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - History Of Reward Programs
+extension ApiService {
+    func requestForHistoryOfRewardProgramsServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, HistoryOfRewardProgramsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_HISTORY_REWARDS_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(HistoryOfRewardProgramsData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

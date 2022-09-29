@@ -73,6 +73,18 @@
 		BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A428E5299A00517908 /* RideHistoryModel.swift */; };
 		BABCB2AA28E52CC300517908 /* RideHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A928E52CC300517908 /* RideHistoryTableViewCell.swift */; };
 		BABCB2AF28E538C800517908 /* ShowRideLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2AE28E538C800517908 /* ShowRideLocationViewController.swift */; };
+		BABCB2B828E53D8D00517908 /* AvailableRewardProgramsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2B728E53D8D00517908 /* AvailableRewardProgramsListViewModel.swift */; };
+		BABCB2BA28E53DD200517908 /* AvailableRewardProgramsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2B928E53DD200517908 /* AvailableRewardProgramsListViewController.swift */; };
+		BABCB2BC28E53DE900517908 /* AvailableRewardProgramsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2BB28E53DE900517908 /* AvailableRewardProgramsListModel.swift */; };
+		BABCB2BE28E53E0D00517908 /* AvailablerewardsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2BD28E53E0D00517908 /* AvailablerewardsListTableViewCell.swift */; };
+		BABCB2C328E5452600517908 /* ActiveRewardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2C228E5452600517908 /* ActiveRewardsTableViewCell.swift */; };
+		BABCB2C828E5455500517908 /* RewardsHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2C728E5455500517908 /* RewardsHistoryTableViewCell.swift */; };
+		BABCB2CA28E5459F00517908 /* ActivatedRewardProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2C928E5459F00517908 /* ActivatedRewardProgramsViewController.swift */; };
+		BABCB2CC28E545B100517908 /* ActivatedRewardProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2CB28E545B100517908 /* ActivatedRewardProgramsViewModel.swift */; };
+		BABCB2CE28E545BE00517908 /* ActivatedRewardProgramsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2CD28E545BE00517908 /* ActivatedRewardProgramsModel.swift */; };
+		BABCB2D028E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2CF28E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift */; };
+		BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2D128E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift */; };
+		BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2D328E54FCE00517908 /* HistoryOfRewardProgramsModel.swift */; };
 		BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */; };
 		BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */; };
 		BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */; };
@@ -188,6 +200,18 @@
 		BABCB2A428E5299A00517908 /* RideHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryModel.swift; sourceTree = "<group>"; };
 		BABCB2A928E52CC300517908 /* RideHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BABCB2AE28E538C800517908 /* ShowRideLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRideLocationViewController.swift; sourceTree = "<group>"; };
+		BABCB2B728E53D8D00517908 /* AvailableRewardProgramsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableRewardProgramsListViewModel.swift; sourceTree = "<group>"; };
+		BABCB2B928E53DD200517908 /* AvailableRewardProgramsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableRewardProgramsListViewController.swift; sourceTree = "<group>"; };
+		BABCB2BB28E53DE900517908 /* AvailableRewardProgramsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableRewardProgramsListModel.swift; sourceTree = "<group>"; };
+		BABCB2BD28E53E0D00517908 /* AvailablerewardsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailablerewardsListTableViewCell.swift; sourceTree = "<group>"; };
+		BABCB2C228E5452600517908 /* ActiveRewardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActiveRewardsTableViewCell.swift; path = LNC_Driver/Screens/Profile/Reward_Program/Activated_Programs/ViewModel/ActiveRewardsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		BABCB2C728E5455500517908 /* RewardsHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		BABCB2C928E5459F00517908 /* ActivatedRewardProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatedRewardProgramsViewController.swift; sourceTree = "<group>"; };
+		BABCB2CB28E545B100517908 /* ActivatedRewardProgramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatedRewardProgramsViewModel.swift; sourceTree = "<group>"; };
+		BABCB2CD28E545BE00517908 /* ActivatedRewardProgramsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatedRewardProgramsModel.swift; sourceTree = "<group>"; };
+		BABCB2CF28E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsViewController.swift; sourceTree = "<group>"; };
+		BABCB2D128E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsViewModel.swift; sourceTree = "<group>"; };
+		BABCB2D328E54FCE00517908 /* HistoryOfRewardProgramsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsModel.swift; sourceTree = "<group>"; };
 		BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewModel.swift; sourceTree = "<group>"; };
 		BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewController.swift; sourceTree = "<group>"; };
 		BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoModel.swift; sourceTree = "<group>"; };
@@ -508,6 +532,7 @@
 		BA5C4A2828D2B5990034F9B3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BABCB2B028E53D2F00517908 /* Reward_Program */,
 				BABCB29D28E5292900517908 /* RideHistory */,
 				BAE03E4028E45FBA003EE6BA /* PaymentHistory */,
 				BAFE538328E3E3690075B091 /* WeeklyPayments */,
@@ -859,6 +884,121 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BABCB2B028E53D2F00517908 /* Reward_Program */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2B328E53D4D00517908 /* AvailableRewardPrograms */,
+				BABCB2B228E53D3E00517908 /* Activated_Programs */,
+				BABCB2B128E53D3A00517908 /* History_Reward_Program */,
+			);
+			path = Reward_Program;
+			sourceTree = "<group>";
+		};
+		BABCB2B128E53D3A00517908 /* History_Reward_Program */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2C628E5453B00517908 /* Model */,
+				BABCB2C528E5453700517908 /* View */,
+				BABCB2C428E5453100517908 /* ViewModel */,
+			);
+			path = History_Reward_Program;
+			sourceTree = "<group>";
+		};
+		BABCB2B228E53D3E00517908 /* Activated_Programs */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2C128E5450C00517908 /* Model */,
+				BABCB2C028E5450800517908 /* View */,
+				BABCB2BF28E5450200517908 /* ViewModel */,
+			);
+			path = Activated_Programs;
+			sourceTree = "<group>";
+		};
+		BABCB2B328E53D4D00517908 /* AvailableRewardPrograms */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2B628E53D7C00517908 /* Model */,
+				BABCB2B528E53D7800517908 /* View */,
+				BABCB2B428E53D7200517908 /* ViewModel */,
+			);
+			path = AvailableRewardPrograms;
+			sourceTree = "<group>";
+		};
+		BABCB2B428E53D7200517908 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2B728E53D8D00517908 /* AvailableRewardProgramsListViewModel.swift */,
+				BABCB2BD28E53E0D00517908 /* AvailablerewardsListTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BABCB2B528E53D7800517908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2B928E53DD200517908 /* AvailableRewardProgramsListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABCB2B628E53D7C00517908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2BB28E53DE900517908 /* AvailableRewardProgramsListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABCB2BF28E5450200517908 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2CB28E545B100517908 /* ActivatedRewardProgramsViewModel.swift */,
+				BABCB2C228E5452600517908 /* ActiveRewardsTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BABCB2C028E5450800517908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2C928E5459F00517908 /* ActivatedRewardProgramsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABCB2C128E5450C00517908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2CD28E545BE00517908 /* ActivatedRewardProgramsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABCB2C428E5453100517908 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2C728E5455500517908 /* RewardsHistoryTableViewCell.swift */,
+				BABCB2D128E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BABCB2C528E5453700517908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2CF28E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABCB2C628E5453B00517908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2D328E54FCE00517908 /* HistoryOfRewardProgramsModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BADF9C5428D3645A002CA50A /* AddVehicleInfo */ = {
@@ -1368,11 +1508,14 @@
 				BA5C4A4D28D2CC8E0034F9B3 /* ChangePasswordViewModel.swift in Sources */,
 				BA5C4A3728D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift in Sources */,
 				BA2144C028D0708E00DC313B /* ForgotPasswordViewModel.swift in Sources */,
+				BABCB2C828E5455500517908 /* RewardsHistoryTableViewCell.swift in Sources */,
 				BA5C4A5B28D2CD690034F9B3 /* ContactUsUserData.swift in Sources */,
 				BAFE538A28E3E68D0075B091 /* WeeklyPaymentsViewController.swift in Sources */,
+				BABCB2CA28E5459F00517908 /* ActivatedRewardProgramsViewController.swift in Sources */,
 				BAFE539628E3E74D0075B091 /* WeekRideinfoModel.swift in Sources */,
 				BAE03E4C28E46121003EE6BA /* PaymentHistoryViewController.swift in Sources */,
 				BA2144CE28D07D0E00DC313B /* RegistrationUser.swift in Sources */,
+				BABCB2CC28E545B100517908 /* ActivatedRewardProgramsViewModel.swift in Sources */,
 				BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */,
 				BA409B4828D02AB700489F09 /* EmployeesService.swift in Sources */,
 				BA5C4A6928D2CE730034F9B3 /* ProfileViewController.swift in Sources */,
@@ -1382,15 +1525,21 @@
 				BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */,
 				BAFE539228E3E72D0075B091 /* WeekRideinfoViewController.swift in Sources */,
 				BA409B3928D02AA600489F09 /* TextFieldHelper.swift in Sources */,
+				BABCB2D028E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift in Sources */,
 				BA409B3828D02AA600489F09 /* LncUserConstants .swift in Sources */,
+				BABCB2CE28E545BE00517908 /* ActivatedRewardProgramsModel.swift in Sources */,
 				BA5C4A6128D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift in Sources */,
 				BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */,
 				BA5C4A3928D2BCFE0034F9B3 /* MenuSliderViewModel.swift in Sources */,
+				BABCB2BC28E53DE900517908 /* AvailableRewardProgramsListModel.swift in Sources */,
 				BAFE539828E3E7770075B091 /* WeekrideinfoCell.swift in Sources */,
+				BABCB2BA28E53DD200517908 /* AvailableRewardProgramsListViewController.swift in Sources */,
 				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
 				BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */,
+				BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */,
 				BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */,
 				BABCB2AA28E52CC300517908 /* RideHistoryTableViewCell.swift in Sources */,
+				BABCB2BE28E53E0D00517908 /* AvailablerewardsListTableViewCell.swift in Sources */,
 				BAE03E4E28E4612F003EE6BA /* PaymentHistoryModel.swift in Sources */,
 				BA5C4A6728D2CE510034F9B3 /* ProfileViewModel.swift in Sources */,
 				BA409B3A28D02AA600489F09 /* HelperConstants.swift in Sources */,
@@ -1410,6 +1559,7 @@
 				BABCB2AF28E538C800517908 /* ShowRideLocationViewController.swift in Sources */,
 				BA2144CA28D07CDD00DC313B /* RegistrationViewModel.swift in Sources */,
 				BA5C4A5128D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift in Sources */,
+				BABCB2B828E53D8D00517908 /* AvailableRewardProgramsListViewModel.swift in Sources */,
 				BA5C4A6B28D2CE930034F9B3 /* ProfileUserData.swift in Sources */,
 				BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */,
 				BA5C4A3D28D2BD3C0034F9B3 /* SideMenuModel.swift in Sources */,
@@ -1419,10 +1569,12 @@
 				BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */,
 				BA2144C228D070B200DC313B /* ForgotPasswordViewController.swift in Sources */,
 				BAFE539A28E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift in Sources */,
+				BABCB2C328E5452600517908 /* ActiveRewardsTableViewCell.swift in Sources */,
 				BA5C4A4328D2CAA30034F9B3 /* SettingsTableViewCell.swift in Sources */,
 				BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */,
 				BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */,
 				BA5C4A5928D2CD480034F9B3 /* ContactUsViewController.swift in Sources */,
+				BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */,
 				BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */,
 				BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */,
 				BA409B5628D05A1A00489F09 /* LoginUser.swift in Sources */,

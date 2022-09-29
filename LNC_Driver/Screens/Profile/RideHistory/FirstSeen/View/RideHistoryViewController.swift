@@ -34,6 +34,11 @@ class RideHistoryViewController: UIViewController {
 
 }
 extension RideHistoryViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return numberOfSections_nodata(in: tableView, ArrayCount: ary_PaymentHistoryInfo.count, numberOfsections: 1, data_MSG_Str: "No data available")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ary_PaymentHistoryInfo.count
     }

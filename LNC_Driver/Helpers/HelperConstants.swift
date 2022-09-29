@@ -125,6 +125,15 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func ShowAlertWithPush(message : String, className: String, storyBoard: String, Animation: Bool){
+        let alertController = UIAlertController(title: kApptitle, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+            self.movetonextvc(id:className,storyBordid : storyBoard,animated:Animation )
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func ShowAlertWithDismiss(message : String){
         let alertController = UIAlertController(title: kApptitle, message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in

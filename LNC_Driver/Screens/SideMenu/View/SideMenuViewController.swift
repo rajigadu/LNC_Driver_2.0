@@ -100,6 +100,8 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "PaymentHistoryViewController", storyBordid: "RidesHistory",animated:false)
         }else if arrayResponse[indexPath.row] == "Ride History" {
             self.movetonextvc(id: "RideHistoryViewController", storyBordid: "RidesHistory",animated:false) 
+        }else if arrayResponse[indexPath.row] == "My Rewards" {
+            self.movetonextvc(id: "ActivatedRewardProgramsViewController", storyBordid: "RidesHistory",animated:false)
         }
     }
     
