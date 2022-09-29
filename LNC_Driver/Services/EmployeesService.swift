@@ -56,6 +56,27 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - History Of Reward Programs
     func requestForHistoryOfRewardProgramsServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: HistoryOfRewardProgramsData?, _ error: String?) -> ())
         
+    //MARK: - update partner status
+    func requestForUpdatePartnerStatusService(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: UpdateManagePartnersData?, _ error: String?) -> ())
+    
+    //MARK: - get partner list
+    func requestForManagePartnersServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ManagePartnersData?, _ error: String?) -> ())
+    
+    //MARK: - Add Manager Partner
+    func requestForAddManagePartnersServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AddManagePartnersData?, _ error: String?) -> ())
+
+    //MARK: - ActivePartnerAPI
+    func requestForActivePartnerAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverTypeData?, _ error: String?) -> ())
+    
+    //MARK: -  selectDriverTypeAPI
+    func requestForSelectDriverTypeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AddNewPartnerListData?, _ error: String?) -> ())
+    
+    //MARK: - LookingForPartnerAPI
+    func requestForLookingForPartnerAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: UpdateManagePartnersData?, _ error: String?) -> ())
+    
+    //MRK:- PartnerListAPI
+    func requestForPartnerListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: PartnerListData?, _ error: String?) -> ())
+    
 }
 
 //MARK: - Login
@@ -472,6 +493,147 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(HistoryOfRewardProgramsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - update partner status
+extension ApiService {
+    func requestForUpdatePartnerStatusService(_ perams: Dictionary<String, String>, completion: @escaping (Bool, UpdateManagePartnersData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_UPDATE_PARTNER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(UpdateManagePartnersData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
+//MARK: - get partner list
+extension ApiService {
+    func requestForManagePartnersServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ManagePartnersData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_MANAGEPARTNERS_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ManagePartnersData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Add Manager Partner
+extension ApiService {
+    func requestForAddManagePartnersServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, AddManagePartnersData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_ADDPARTNER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(AddManagePartnersData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - ActivePartnerAPI
+extension ApiService {
+    func requestForActivePartnerAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DriverTypeData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_ACTIVATEPARTNER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(DriverTypeData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: -  selectDriverTypeAPI
+extension ApiService {
+    func requestForSelectDriverTypeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, AddNewPartnerListData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_SELECTPARTNERTYPE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(AddNewPartnerListData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - LookingForPartnerAPI
+extension ApiService {
+    func requestForLookingForPartnerAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, UpdateManagePartnersData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERREQUESTTOPARTNER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(UpdateManagePartnersData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MRK:- PartnerListAPI
+extension ApiService {
+    func requestForPartnerListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, PartnerListData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_PARTNERLIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(PartnerListData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

@@ -98,10 +98,14 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "WeeklyPaymentsViewController", storyBordid: "RidesHistory",animated:false)
         } else if arrayResponse[indexPath.row] == "Payment History" {
             self.movetonextvc(id: "PaymentHistoryViewController", storyBordid: "RidesHistory",animated:false)
-        }else if arrayResponse[indexPath.row] == "Ride History" {
+        } else if arrayResponse[indexPath.row] == "Ride History" {
             self.movetonextvc(id: "RideHistoryViewController", storyBordid: "RidesHistory",animated:false) 
-        }else if arrayResponse[indexPath.row] == "My Rewards" {
+        } else if arrayResponse[indexPath.row] == "My Rewards" {
             self.movetonextvc(id: "ActivatedRewardProgramsViewController", storyBordid: "RidesHistory",animated:false)
+        } else if arrayResponse[indexPath.row] == "Manage Partners" {
+            self.movetonextvc(id: "ManagePartnersViewController", storyBordid: "RidesHistory",animated:false)
+        } else if arrayResponse[indexPath.row] == "Driver Type" {
+            self.movetonextvc(id: "DriverTypeViewController", storyBordid: "RidesHistory",animated:false)
         }
     }
     

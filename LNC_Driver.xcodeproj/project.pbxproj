@@ -16,7 +16,6 @@
 		BA2144CC28D07CFA00DC313B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144CB28D07CFA00DC313B /* RegistrationViewController.swift */; };
 		BA2144CE28D07D0E00DC313B /* RegistrationUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144CD28D07D0E00DC313B /* RegistrationUser.swift */; };
 		BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88028C8C40E00B73053 /* AppDelegate.swift */; };
-		BA36D88B28C8C40E00B73053 /* LNC_Driver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA36D88928C8C40E00B73053 /* LNC_Driver.xcdatamodeld */; };
 		BA36D88D28C8C41200B73053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA36D88C28C8C41200B73053 /* Assets.xcassets */; };
 		BA36D89028C8C41200B73053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA36D88E28C8C41200B73053 /* LaunchScreen.storyboard */; };
 		BA36D89B28C8C41300B73053 /* LNC_DriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D89A28C8C41300B73053 /* LNC_DriverTests.swift */; };
@@ -68,6 +67,16 @@
 		BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */; };
 		BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */; };
 		BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68DDF528D4E49C00A91082 /* Imageextension.swift */; };
+		BA8BF59B28E5C4610087CFB1 /* ManagePartnersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF59A28E5C4610087CFB1 /* ManagePartnersViewModel.swift */; };
+		BA8BF59D28E5C4720087CFB1 /* ManagePartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF59C28E5C4720087CFB1 /* ManagePartnersViewController.swift */; };
+		BA8BF5A028E5C48C0087CFB1 /* ManagePartnersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF59F28E5C48C0087CFB1 /* ManagePartnersModel.swift */; };
+		BA8BF5A228E5C4B90087CFB1 /* ManagePartnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5A128E5C4B90087CFB1 /* ManagePartnerTableViewCell.swift */; };
+		BA8BF5A828E5CEB80087CFB1 /* AddManagePartnersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5A728E5CEB80087CFB1 /* AddManagePartnersViewModel.swift */; };
+		BA8BF5AA28E5CED00087CFB1 /* AddManagePartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5A928E5CED00087CFB1 /* AddManagePartnersViewController.swift */; };
+		BA8BF5AC28E5CEDC0087CFB1 /* AddManagePartnersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5AB28E5CEDC0087CFB1 /* AddManagePartnersModel.swift */; };
+		BA8BF5B228E5E07F0087CFB1 /* DriverTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5B128E5E07F0087CFB1 /* DriverTypeViewModel.swift */; };
+		BA8BF5B428E5E1690087CFB1 /* DriverTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5B328E5E1690087CFB1 /* DriverTypeModel.swift */; };
+		BA8BF5B628E5E1820087CFB1 /* DriverTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5B528E5E1820087CFB1 /* DriverTypeViewController.swift */; };
 		BABCB2A128E5296C00517908 /* RideHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A028E5296C00517908 /* RideHistoryViewModel.swift */; };
 		BABCB2A328E5298700517908 /* RideHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A228E5298700517908 /* RideHistoryViewController.swift */; };
 		BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A428E5299A00517908 /* RideHistoryModel.swift */; };
@@ -139,7 +148,6 @@
 		BA2144CD28D07D0E00DC313B /* RegistrationUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUser.swift; sourceTree = "<group>"; };
 		BA36D87D28C8C40E00B73053 /* LNC_Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNC_Driver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D88028C8C40E00B73053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA36D88A28C8C40E00B73053 /* LNC_Driver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LNC_Driver.xcdatamodel; sourceTree = "<group>"; };
 		BA36D88C28C8C41200B73053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA36D88F28C8C41200B73053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA36D89128C8C41200B73053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -195,6 +203,16 @@
 		BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsViewController.swift; sourceTree = "<group>"; };
 		BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsModel.swift; sourceTree = "<group>"; };
 		BA68DDF528D4E49C00A91082 /* Imageextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageextension.swift; sourceTree = "<group>"; };
+		BA8BF59A28E5C4610087CFB1 /* ManagePartnersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnersViewModel.swift; sourceTree = "<group>"; };
+		BA8BF59C28E5C4720087CFB1 /* ManagePartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnersViewController.swift; sourceTree = "<group>"; };
+		BA8BF59F28E5C48C0087CFB1 /* ManagePartnersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnersModel.swift; sourceTree = "<group>"; };
+		BA8BF5A128E5C4B90087CFB1 /* ManagePartnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnerTableViewCell.swift; sourceTree = "<group>"; };
+		BA8BF5A728E5CEB80087CFB1 /* AddManagePartnersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManagePartnersViewModel.swift; sourceTree = "<group>"; };
+		BA8BF5A928E5CED00087CFB1 /* AddManagePartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManagePartnersViewController.swift; sourceTree = "<group>"; };
+		BA8BF5AB28E5CEDC0087CFB1 /* AddManagePartnersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManagePartnersModel.swift; sourceTree = "<group>"; };
+		BA8BF5B128E5E07F0087CFB1 /* DriverTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTypeViewModel.swift; sourceTree = "<group>"; };
+		BA8BF5B328E5E1690087CFB1 /* DriverTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTypeModel.swift; sourceTree = "<group>"; };
+		BA8BF5B528E5E1820087CFB1 /* DriverTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTypeViewController.swift; sourceTree = "<group>"; };
 		BABCB2A028E5296C00517908 /* RideHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryViewModel.swift; sourceTree = "<group>"; };
 		BABCB2A228E5298700517908 /* RideHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryViewController.swift; sourceTree = "<group>"; };
 		BABCB2A428E5299A00517908 /* RideHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryModel.swift; sourceTree = "<group>"; };
@@ -391,7 +409,6 @@
 				BA409B2128D02A1300489F09 /* background.png */,
 				BA36D88E28C8C41200B73053 /* LaunchScreen.storyboard */,
 				BA36D89128C8C41200B73053 /* Info.plist */,
-				BA36D88928C8C40E00B73053 /* LNC_Driver.xcdatamodeld */,
 			);
 			path = LNC_Driver;
 			sourceTree = "<group>";
@@ -532,6 +549,9 @@
 		BA5C4A2828D2B5990034F9B3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BA8BF5AD28E5DF7E0087CFB1 /* DriverType */,
+				BA8BF5A328E5CE800087CFB1 /* AddManagePartners */,
+				BA8BF59528E5C2AA0087CFB1 /* ManagePartners */,
 				BABCB2B028E53D2F00517908 /* Reward_Program */,
 				BABCB29D28E5292900517908 /* RideHistory */,
 				BAE03E4028E45FBA003EE6BA /* PaymentHistory */,
@@ -806,6 +826,109 @@
 			isa = PBXGroup;
 			children = (
 				BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA8BF59528E5C2AA0087CFB1 /* ManagePartners */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF59828E5C2F20087CFB1 /* Model */,
+				BA8BF59728E5C2ED0087CFB1 /* View */,
+				BA8BF59628E5C2E50087CFB1 /* ViewModel */,
+			);
+			path = ManagePartners;
+			sourceTree = "<group>";
+		};
+		BA8BF59628E5C2E50087CFB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF59A28E5C4610087CFB1 /* ManagePartnersViewModel.swift */,
+				BA8BF5A128E5C4B90087CFB1 /* ManagePartnerTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA8BF59728E5C2ED0087CFB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF59C28E5C4720087CFB1 /* ManagePartnersViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA8BF59828E5C2F20087CFB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF59F28E5C48C0087CFB1 /* ManagePartnersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA8BF5A328E5CE800087CFB1 /* AddManagePartners */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5A628E5CE9D0087CFB1 /* Model */,
+				BA8BF5A528E5CE990087CFB1 /* View */,
+				BA8BF5A428E5CE910087CFB1 /* ViewModel */,
+			);
+			path = AddManagePartners;
+			sourceTree = "<group>";
+		};
+		BA8BF5A428E5CE910087CFB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5A728E5CEB80087CFB1 /* AddManagePartnersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA8BF5A528E5CE990087CFB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5A928E5CED00087CFB1 /* AddManagePartnersViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA8BF5A628E5CE9D0087CFB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5AB28E5CEDC0087CFB1 /* AddManagePartnersModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA8BF5AD28E5DF7E0087CFB1 /* DriverType */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5B028E5E06A0087CFB1 /* Model */,
+				BA8BF5AF28E5E0650087CFB1 /* View */,
+				BA8BF5AE28E5E05C0087CFB1 /* ViewModel */,
+			);
+			path = DriverType;
+			sourceTree = "<group>";
+		};
+		BA8BF5AE28E5E05C0087CFB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5B128E5E07F0087CFB1 /* DriverTypeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA8BF5AF28E5E0650087CFB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5B528E5E1820087CFB1 /* DriverTypeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA8BF5B028E5E06A0087CFB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA8BF5B328E5E1690087CFB1 /* DriverTypeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1530,13 +1653,17 @@
 				BABCB2CE28E545BE00517908 /* ActivatedRewardProgramsModel.swift in Sources */,
 				BA5C4A6128D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift in Sources */,
 				BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */,
+				BA8BF5B428E5E1690087CFB1 /* DriverTypeModel.swift in Sources */,
 				BA5C4A3928D2BCFE0034F9B3 /* MenuSliderViewModel.swift in Sources */,
 				BABCB2BC28E53DE900517908 /* AvailableRewardProgramsListModel.swift in Sources */,
 				BAFE539828E3E7770075B091 /* WeekrideinfoCell.swift in Sources */,
 				BABCB2BA28E53DD200517908 /* AvailableRewardProgramsListViewController.swift in Sources */,
+				BA8BF5B628E5E1820087CFB1 /* DriverTypeViewController.swift in Sources */,
+				BA8BF59B28E5C4610087CFB1 /* ManagePartnersViewModel.swift in Sources */,
 				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
 				BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */,
 				BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */,
+				BA8BF5A828E5CEB80087CFB1 /* AddManagePartnersViewModel.swift in Sources */,
 				BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */,
 				BABCB2AA28E52CC300517908 /* RideHistoryTableViewCell.swift in Sources */,
 				BABCB2BE28E53E0D00517908 /* AvailablerewardsListTableViewCell.swift in Sources */,
@@ -1546,10 +1673,11 @@
 				BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */,
 				BA5C4A7128D2D3980034F9B3 /* AddBankDetailsViewModel.swift in Sources */,
 				BA5C4A3028D2B9300034F9B3 /* DashBoardViewController.swift in Sources */,
-				BA36D88B28C8C40E00B73053 /* LNC_Driver.xcdatamodeld in Sources */,
 				BAFE539428E3E7430075B091 /* WeekRideinfoViewModel.swift in Sources */,
+				BA8BF59D28E5C4720087CFB1 /* ManagePartnersViewController.swift in Sources */,
 				BAFE538C28E3E69F0075B091 /* WeeklyPaymentsModel.swift in Sources */,
 				BA5C4A5728D2CD2F0034F9B3 /* ContactUsViewModel.swift in Sources */,
+				BA8BF5AA28E5CED00087CFB1 /* AddManagePartnersViewController.swift in Sources */,
 				BABCB2A128E5296C00517908 /* RideHistoryViewModel.swift in Sources */,
 				BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */,
 				BABCB2A328E5298700517908 /* RideHistoryViewController.swift in Sources */,
@@ -1561,6 +1689,7 @@
 				BA5C4A5128D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift in Sources */,
 				BABCB2B828E53D8D00517908 /* AvailableRewardProgramsListViewModel.swift in Sources */,
 				BA5C4A6B28D2CE930034F9B3 /* ProfileUserData.swift in Sources */,
+				BA8BF5AC28E5CEDC0087CFB1 /* AddManagePartnersModel.swift in Sources */,
 				BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */,
 				BA5C4A3D28D2BD3C0034F9B3 /* SideMenuModel.swift in Sources */,
 				BAFE538028E3DDF50075B091 /* Terms_PrivacyViewModel.swift in Sources */,
@@ -1571,13 +1700,16 @@
 				BAFE539A28E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift in Sources */,
 				BABCB2C328E5452600517908 /* ActiveRewardsTableViewCell.swift in Sources */,
 				BA5C4A4328D2CAA30034F9B3 /* SettingsTableViewCell.swift in Sources */,
+				BA8BF5A228E5C4B90087CFB1 /* ManagePartnerTableViewCell.swift in Sources */,
 				BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */,
 				BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */,
 				BA5C4A5928D2CD480034F9B3 /* ContactUsViewController.swift in Sources */,
 				BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */,
+				BA8BF5A028E5C48C0087CFB1 /* ManagePartnersModel.swift in Sources */,
 				BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */,
 				BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */,
 				BA409B5628D05A1A00489F09 /* LoginUser.swift in Sources */,
+				BA8BF5B228E5E07F0087CFB1 /* DriverTypeViewModel.swift in Sources */,
 				BA5C4A4528D2CACB0034F9B3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1930,19 +2062,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		BA36D88928C8C40E00B73053 /* LNC_Driver.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BA36D88A28C8C40E00B73053 /* LNC_Driver.xcdatamodel */,
-			);
-			currentVersion = BA36D88A28C8C40E00B73053 /* LNC_Driver.xcdatamodel */;
-			path = LNC_Driver.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = BA36D87528C8C40E00B73053 /* Project object */;
 }
