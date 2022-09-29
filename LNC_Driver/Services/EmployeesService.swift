@@ -41,6 +41,8 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - Payment history
     func requestForPaymentHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: PaymentHistoryData?, _ error: String?) -> ())
     
+    //MARK: - Ride History
+    func requestForRideHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideHistoryViewData?, _ error: String?) -> ())
 }
 
 //MARK: - Login
@@ -356,6 +358,26 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(PaymentHistoryData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Ride History
+extension ApiService {
+    func requestForRideHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideHistoryViewData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERRIDEHISTORYLIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideHistoryViewData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

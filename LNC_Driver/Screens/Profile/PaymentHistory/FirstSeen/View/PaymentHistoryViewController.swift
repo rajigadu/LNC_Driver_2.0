@@ -269,33 +269,11 @@ extension PaymentHistoryViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //PickUP Location
-        var Str_OriginalFromdate = ""
-        var Str_Originaltodate = ""
-
-//        if let str_fromDate = self.ary_PaymentHistoryInfo[indexPath.row].from_date, let str_toDate = self.ary_PaymentHistoryInfo[indexPath.row].to_date,str_fromDate != "" || str_toDate != "" {
-//            Str_OriginalFromdate = str_fromDate
-//            Str_Originaltodate = str_toDate
-//        } else if let str_fromDate = self.ary_PaymentHistoryInfo[indexPath.row].effectiveCreditDate, let str_toDate = self.ary_PaymentHistoryInfo[indexPath.row].effectiveDebitDate {
-//            Str_OriginalFromdate = str_fromDate + "04:00 AM"
-//            Str_Originaltodate = str_toDate + "03:59 AM"
-//        }
-        
-//        let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistory", bundle: nil)
-//        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "WeekRideinfoViewController") as! WeekRideinfoViewController
-//        nxtVC.str_Todates = Str_Originaltodate
-//        nxtVC.str_Fromdate = Str_OriginalFromdate
-//        self.navigationController?.pushViewController(nxtVC, animated:  true)
-
-    }
-    
     @objc func selfPartnerPayment(sender: UIButton) {
-        
-    }
-    
-    @objc func viewPaymentDetailsButtonClicked(sender: UIButton) {
-        
+        let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistory", bundle: nil)
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "SelfPartnerDetailsViewController") as! SelfPartnerDetailsViewController
+        nxtVC.dict_RidePartnerDetails = self.ary_PaymentHistoryInfo[sender.tag]
+        self.navigationController?.pushViewController(nxtVC, animated:  true)
     }
     
 }

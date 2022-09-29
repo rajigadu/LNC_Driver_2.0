@@ -98,6 +98,8 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "WeeklyPaymentsViewController", storyBordid: "RidesHistory",animated:false)
         } else if arrayResponse[indexPath.row] == "Payment History" {
             self.movetonextvc(id: "PaymentHistoryViewController", storyBordid: "RidesHistory",animated:false)
+        }else if arrayResponse[indexPath.row] == "Ride History" {
+            self.movetonextvc(id: "RideHistoryViewController", storyBordid: "RidesHistory",animated:false) 
         }
     }
     

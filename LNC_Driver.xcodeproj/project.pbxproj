@@ -68,6 +68,11 @@
 		BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */; };
 		BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */; };
 		BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68DDF528D4E49C00A91082 /* Imageextension.swift */; };
+		BABCB2A128E5296C00517908 /* RideHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A028E5296C00517908 /* RideHistoryViewModel.swift */; };
+		BABCB2A328E5298700517908 /* RideHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A228E5298700517908 /* RideHistoryViewController.swift */; };
+		BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A428E5299A00517908 /* RideHistoryModel.swift */; };
+		BABCB2AA28E52CC300517908 /* RideHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A928E52CC300517908 /* RideHistoryTableViewCell.swift */; };
+		BABCB2AF28E538C800517908 /* ShowRideLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2AE28E538C800517908 /* ShowRideLocationViewController.swift */; };
 		BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */; };
 		BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */; };
 		BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */; };
@@ -75,6 +80,7 @@
 		BAE03E4C28E46121003EE6BA /* PaymentHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4B28E46121003EE6BA /* PaymentHistoryViewController.swift */; };
 		BAE03E4E28E4612F003EE6BA /* PaymentHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4D28E4612F003EE6BA /* PaymentHistoryModel.swift */; };
 		BAE03E5028E4619B003EE6BA /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4F28E4619B003EE6BA /* PaymentHistoryTableViewCell.swift */; };
+		BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E5128E49060003EE6BA /* SelfPartnerDetailsViewController.swift */; };
 		BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE537D28E3DAAC0075B091 /* W9FormViewController.swift */; };
 		BAFE538028E3DDF50075B091 /* Terms_PrivacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE537F28E3DDF40075B091 /* Terms_PrivacyViewModel.swift */; };
 		BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE538128E3DE620075B091 /* Terms_PrivacyModel.swift */; };
@@ -177,6 +183,11 @@
 		BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsViewController.swift; sourceTree = "<group>"; };
 		BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsModel.swift; sourceTree = "<group>"; };
 		BA68DDF528D4E49C00A91082 /* Imageextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageextension.swift; sourceTree = "<group>"; };
+		BABCB2A028E5296C00517908 /* RideHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryViewModel.swift; sourceTree = "<group>"; };
+		BABCB2A228E5298700517908 /* RideHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryViewController.swift; sourceTree = "<group>"; };
+		BABCB2A428E5299A00517908 /* RideHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryModel.swift; sourceTree = "<group>"; };
+		BABCB2A928E52CC300517908 /* RideHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		BABCB2AE28E538C800517908 /* ShowRideLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRideLocationViewController.swift; sourceTree = "<group>"; };
 		BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewModel.swift; sourceTree = "<group>"; };
 		BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewController.swift; sourceTree = "<group>"; };
 		BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoModel.swift; sourceTree = "<group>"; };
@@ -184,6 +195,7 @@
 		BAE03E4B28E46121003EE6BA /* PaymentHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryViewController.swift; sourceTree = "<group>"; };
 		BAE03E4D28E4612F003EE6BA /* PaymentHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryModel.swift; sourceTree = "<group>"; };
 		BAE03E4F28E4619B003EE6BA /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		BAE03E5128E49060003EE6BA /* SelfPartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfPartnerDetailsViewController.swift; sourceTree = "<group>"; };
 		BAFE537D28E3DAAC0075B091 /* W9FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W9FormViewController.swift; sourceTree = "<group>"; };
 		BAFE537F28E3DDF40075B091 /* Terms_PrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms_PrivacyViewModel.swift; sourceTree = "<group>"; };
 		BAFE538128E3DE620075B091 /* Terms_PrivacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms_PrivacyModel.swift; sourceTree = "<group>"; };
@@ -496,6 +508,7 @@
 		BA5C4A2828D2B5990034F9B3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BABCB29D28E5292900517908 /* RideHistory */,
 				BAE03E4028E45FBA003EE6BA /* PaymentHistory */,
 				BAFE538328E3E3690075B091 /* WeeklyPayments */,
 				BADF9C5428D3645A002CA50A /* AddVehicleInfo */,
@@ -772,6 +785,82 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BABCB29D28E5292900517908 /* RideHistory */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB29F28E5293A00517908 /* SecondSeen */,
+				BABCB29E28E5292F00517908 /* FirstSeen */,
+			);
+			path = RideHistory;
+			sourceTree = "<group>";
+		};
+		BABCB29E28E5292F00517908 /* FirstSeen */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2A628E52C8A00517908 /* Model */,
+				BABCB2A728E52C9100517908 /* View */,
+				BABCB2A828E52C9900517908 /* ViewModel */,
+			);
+			path = FirstSeen;
+			sourceTree = "<group>";
+		};
+		BABCB29F28E5293A00517908 /* SecondSeen */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2AD28E538B000517908 /* Model */,
+				BABCB2AC28E538AB00517908 /* View */,
+				BABCB2AB28E538A400517908 /* ViewModel */,
+			);
+			path = SecondSeen;
+			sourceTree = "<group>";
+		};
+		BABCB2A628E52C8A00517908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2A428E5299A00517908 /* RideHistoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BABCB2A728E52C9100517908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2A228E5298700517908 /* RideHistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABCB2A828E52C9900517908 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2A028E5296C00517908 /* RideHistoryViewModel.swift */,
+				BABCB2A928E52CC300517908 /* RideHistoryTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BABCB2AB28E538A400517908 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BABCB2AC28E538AB00517908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BABCB2AE28E538C800517908 /* ShowRideLocationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BABCB2AD28E538B000517908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BADF9C5428D3645A002CA50A /* AddVehicleInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,6 +959,7 @@
 		BAE03E4728E460D0003EE6BA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAE03E5128E49060003EE6BA /* SelfPartnerDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1298,7 +1388,9 @@
 				BA5C4A3928D2BCFE0034F9B3 /* MenuSliderViewModel.swift in Sources */,
 				BAFE539828E3E7770075B091 /* WeekrideinfoCell.swift in Sources */,
 				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
+				BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */,
 				BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */,
+				BABCB2AA28E52CC300517908 /* RideHistoryTableViewCell.swift in Sources */,
 				BAE03E4E28E4612F003EE6BA /* PaymentHistoryModel.swift in Sources */,
 				BA5C4A6728D2CE510034F9B3 /* ProfileViewModel.swift in Sources */,
 				BA409B3A28D02AA600489F09 /* HelperConstants.swift in Sources */,
@@ -1309,13 +1401,17 @@
 				BAFE539428E3E7430075B091 /* WeekRideinfoViewModel.swift in Sources */,
 				BAFE538C28E3E69F0075B091 /* WeeklyPaymentsModel.swift in Sources */,
 				BA5C4A5728D2CD2F0034F9B3 /* ContactUsViewModel.swift in Sources */,
+				BABCB2A128E5296C00517908 /* RideHistoryViewModel.swift in Sources */,
 				BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */,
+				BABCB2A328E5298700517908 /* RideHistoryViewController.swift in Sources */,
 				BA409B3628D02AA600489F09 /* ImagePickerManager.swift in Sources */,
 				BA2144CC28D07CFA00DC313B /* RegistrationViewController.swift in Sources */,
 				BAE03E5028E4619B003EE6BA /* PaymentHistoryTableViewCell.swift in Sources */,
+				BABCB2AF28E538C800517908 /* ShowRideLocationViewController.swift in Sources */,
 				BA2144CA28D07CDD00DC313B /* RegistrationViewModel.swift in Sources */,
 				BA5C4A5128D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift in Sources */,
 				BA5C4A6B28D2CE930034F9B3 /* ProfileUserData.swift in Sources */,
+				BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */,
 				BA5C4A3D28D2BD3C0034F9B3 /* SideMenuModel.swift in Sources */,
 				BAFE538028E3DDF50075B091 /* Terms_PrivacyViewModel.swift in Sources */,
 				BA5C4A4F28D2CCB80034F9B3 /* ChangePasswordViewController.swift in Sources */,
