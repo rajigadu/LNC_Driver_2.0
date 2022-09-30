@@ -6,52 +6,51 @@
 //
 
 import Foundation
+
 typealias DriverTypeData = DriverTypeModel
 struct DriverTypeModel : Codable {
-    let message : String?
+    let msg : String?
     let status : String?
-    let data : [DriverTypeDatar]?
+    let data : DriverTypeDatar?
 
     enum CodingKeys: String, CodingKey {
 
-        case message = "message"
+        case msg = "msg"
         case status = "status"
         case data = "data"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        message = try values.decodeIfPresent(String.self, forKey: .message)
+        msg = try values.decodeIfPresent(String.self, forKey: .msg)
         status = try values.decodeIfPresent(String.self, forKey: .status)
-        data = try values.decodeIfPresent([DriverTypeDatar].self, forKey: .data)
+        data = try values.decodeIfPresent(DriverTypeDatar.self, forKey: .data)
     }
-
 }
 
 struct DriverTypeDatar : Codable {
     let id : String?
     let partner_name : String?
-    let partner_email : String?
     let partner_phone : String?
- 
+    let partner_email : String?
+
     enum CodingKeys: String, CodingKey {
 
         case id = "id"
         case partner_name = "partner_name"
-        case partner_email = "partner_email"
         case partner_phone = "partner_phone"
-     }
+        case partner_email = "partner_email"
+    }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         partner_name = try values.decodeIfPresent(String.self, forKey: .partner_name)
-        partner_email = try values.decodeIfPresent(String.self, forKey: .partner_email)
         partner_phone = try values.decodeIfPresent(String.self, forKey: .partner_phone)
-     }
+        partner_email = try values.decodeIfPresent(String.self, forKey: .partner_email)
+    }
 
 }
-
 
 typealias PartnerListData = PartnerListModel
 struct PartnerListModel : Codable {

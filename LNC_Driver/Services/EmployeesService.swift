@@ -77,6 +77,30 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MRK:- PartnerListAPI
     func requestForPartnerListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: PartnerListData?, _ error: String?) -> ())
     
+    //MRK:- Dummy Partner selectDriverTypeAPI
+    func requestForDummyPartnerSelectForFutureServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverTypeData?, _ error: String?) -> ())
+    
+    //MARK: - DriverfutureRideListAPI
+    func requestFordriverfutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
+    
+    //MARK: -  PartnerfutureRideListAPI
+    func requestForPartnerfutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
+    
+    //MARK: - DriverAcceptfutureRideAPI
+    func requestdriverAcceptFutureRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AcceptedRideReservationsData?, _ error: String?) -> ())
+    
+    //MARK: - partnerAcceptfutureRideAPI
+    func requestForPartnerAcceptFutureRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AcceptedRideReservationsData?, _ error: String?) -> ())
+    
+    //MARK: - Aleready Accepted ride time bases --showing accepted button as partner
+    //MARK: - PartnerfutureRideAccepetedListAPI
+    func requestForpartnerAcceptedFutureRideAcceptedListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AlereadyAcceptedridetimebasesData?, _ error: String?) -> ())
+
+    //MARK: - Aleready Accepted ride time bases --showing accepted button as Driver
+    //MARK: - DriverfutureRideAccepetedListAPI
+    //MARK: - DriverfutureRideListAPI
+    func requestFordriverfutureRideListAcceptedAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AlereadyAcceptedridetimebasesData?, _ error: String?) -> ())
+ 
 }
 
 //MARK: - Login
@@ -634,6 +658,149 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(PartnerListData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MRK:- Dummy Partner selectDriverTypeAPI
+extension ApiService {
+    func requestForDummyPartnerSelectForFutureServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DriverTypeData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_SELECTDUMMYPARTNERTYPEFORFUTURE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(DriverTypeData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - DriverfutureRideListAPI
+extension ApiService {
+    func requestFordriverfutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideReservationsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERFUTURERIDELIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideReservationsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: -  PartnerfutureRideListAPI
+extension ApiService {
+    func requestForPartnerfutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideReservationsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_PARTNERFUTURERIDELIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideReservationsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - DriverAcceptfutureRideAPI
+extension ApiService {
+    func requestdriverAcceptFutureRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, AcceptedRideReservationsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERACCEPTFUTURERIDE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(AcceptedRideReservationsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - partnerAcceptfutureRideAPI
+extension ApiService {
+    func requestForPartnerAcceptFutureRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, AcceptedRideReservationsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_PARTNERACCEPTFUTURERIDE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(AcceptedRideReservationsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Aleready Accepted ride time bases --showing accepted button as partner
+//MARK: - PartnerfutureRideAccepetedListAPI
+extension ApiService {
+    func requestForpartnerAcceptedFutureRideAcceptedListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, AlereadyAcceptedridetimebasesData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_PARTNERACCEPTEDFUTURERIDELIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(AlereadyAcceptedridetimebasesData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Aleready Accepted ride time bases --showing accepted button as Driver
+//MARK: - DriverfutureRideAccepetedListAPI
+//MARK: - DriverfutureRideListAPI
+extension ApiService {
+    func requestFordriverfutureRideListAcceptedAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, AlereadyAcceptedridetimebasesData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERACCEPTEDFUTURERIDELIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(AlereadyAcceptedridetimebasesData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)
