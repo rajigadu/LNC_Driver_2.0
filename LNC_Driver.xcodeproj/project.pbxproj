@@ -102,6 +102,10 @@
 		BABCB2D028E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2CF28E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift */; };
 		BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2D128E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift */; };
 		BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2D328E54FCE00517908 /* HistoryOfRewardProgramsModel.swift */; };
+		BADF5B4C28E8459E0027F75B /* OngoingRideDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF5B4B28E8459E0027F75B /* OngoingRideDetailsViewModel.swift */; };
+		BADF5B4E28E846070027F75B /* OngoingRideDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF5B4D28E846070027F75B /* OngoingRideDetailsViewController.swift */; };
+		BADF5B5028E846270027F75B /* OngoingRideDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF5B4F28E846270027F75B /* OngoingRideDetailsModel.swift */; };
+		BADF5B5228E8678F0027F75B /* OngoingRideDetailsViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF5B5128E8678F0027F75B /* OngoingRideDetailsViewController2.swift */; };
 		BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */; };
 		BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */; };
 		BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */; };
@@ -110,6 +114,11 @@
 		BAE03E4E28E4612F003EE6BA /* PaymentHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4D28E4612F003EE6BA /* PaymentHistoryModel.swift */; };
 		BAE03E5028E4619B003EE6BA /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E4F28E4619B003EE6BA /* PaymentHistoryTableViewCell.swift */; };
 		BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE03E5128E49060003EE6BA /* SelfPartnerDetailsViewController.swift */; };
+		BAF6290228E7D0C90098D763 /* AcceptedRidesInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6290128E7D0C90098D763 /* AcceptedRidesInfoViewModel.swift */; };
+		BAF6290428E7D0E80098D763 /* AcceptedRidesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6290328E7D0E80098D763 /* AcceptedRidesInfoViewController.swift */; };
+		BAF6290628E7D0F70098D763 /* AcceptedRidesInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6290528E7D0F70098D763 /* AcceptedRidesInfoModel.swift */; };
+		BAF6290828E7D1420098D763 /* AcceptedRidesInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6290728E7D1420098D763 /* AcceptedRidesInfoTableViewCell.swift */; };
+		BAF6290A28E7DB9E0098D763 /* EmployeesService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF6290928E7DB9E0098D763 /* EmployeesService2.swift */; };
 		BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE537D28E3DAAC0075B091 /* W9FormViewController.swift */; };
 		BAFE538028E3DDF50075B091 /* Terms_PrivacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE537F28E3DDF40075B091 /* Terms_PrivacyViewModel.swift */; };
 		BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE538128E3DE620075B091 /* Terms_PrivacyModel.swift */; };
@@ -246,6 +255,10 @@
 		BABCB2CF28E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsViewController.swift; sourceTree = "<group>"; };
 		BABCB2D128E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsViewModel.swift; sourceTree = "<group>"; };
 		BABCB2D328E54FCE00517908 /* HistoryOfRewardProgramsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsModel.swift; sourceTree = "<group>"; };
+		BADF5B4B28E8459E0027F75B /* OngoingRideDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingRideDetailsViewModel.swift; sourceTree = "<group>"; };
+		BADF5B4D28E846070027F75B /* OngoingRideDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingRideDetailsViewController.swift; sourceTree = "<group>"; };
+		BADF5B4F28E846270027F75B /* OngoingRideDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingRideDetailsModel.swift; sourceTree = "<group>"; };
+		BADF5B5128E8678F0027F75B /* OngoingRideDetailsViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingRideDetailsViewController2.swift; sourceTree = "<group>"; };
 		BADF9C5828D3648D002CA50A /* AddVehicleInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewModel.swift; sourceTree = "<group>"; };
 		BADF9C5A28D364B2002CA50A /* AddVehicleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoViewController.swift; sourceTree = "<group>"; };
 		BADF9C5C28D364CE002CA50A /* AddVehicleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleInfoModel.swift; sourceTree = "<group>"; };
@@ -254,6 +267,11 @@
 		BAE03E4D28E4612F003EE6BA /* PaymentHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryModel.swift; sourceTree = "<group>"; };
 		BAE03E4F28E4619B003EE6BA /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BAE03E5128E49060003EE6BA /* SelfPartnerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfPartnerDetailsViewController.swift; sourceTree = "<group>"; };
+		BAF6290128E7D0C90098D763 /* AcceptedRidesInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedRidesInfoViewModel.swift; sourceTree = "<group>"; };
+		BAF6290328E7D0E80098D763 /* AcceptedRidesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedRidesInfoViewController.swift; sourceTree = "<group>"; };
+		BAF6290528E7D0F70098D763 /* AcceptedRidesInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedRidesInfoModel.swift; sourceTree = "<group>"; };
+		BAF6290728E7D1420098D763 /* AcceptedRidesInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedRidesInfoTableViewCell.swift; sourceTree = "<group>"; };
+		BAF6290928E7DB9E0098D763 /* EmployeesService2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService2.swift; sourceTree = "<group>"; };
 		BAFE537D28E3DAAC0075B091 /* W9FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W9FormViewController.swift; sourceTree = "<group>"; };
 		BAFE537F28E3DDF40075B091 /* Terms_PrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms_PrivacyViewModel.swift; sourceTree = "<group>"; };
 		BAFE538128E3DE620075B091 /* Terms_PrivacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms_PrivacyModel.swift; sourceTree = "<group>"; };
@@ -490,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				BA409B4728D02AB700489F09 /* EmployeesService.swift */,
+				BAF6290928E7DB9E0098D763 /* EmployeesService2.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -644,6 +663,8 @@
 		BA5C4A2828D2B5990034F9B3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BADF5B4728E844BF0027F75B /* OngoingRideDetails */,
+				BAF628FD28E7D0970098D763 /* AcceptedRidesInfo */,
 				BA4DEF3328E67C04005A5139 /* RideReservations */,
 				BA8BF5AD28E5DF7E0087CFB1 /* DriverType */,
 				BA8BF5A328E5CE800087CFB1 /* AddManagePartners */,
@@ -1220,6 +1241,41 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BADF5B4728E844BF0027F75B /* OngoingRideDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BADF5B4A28E844F40027F75B /* Model */,
+				BADF5B4928E844EF0027F75B /* View */,
+				BADF5B4828E844DC0027F75B /* ViewModel */,
+			);
+			path = OngoingRideDetails;
+			sourceTree = "<group>";
+		};
+		BADF5B4828E844DC0027F75B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BADF5B4B28E8459E0027F75B /* OngoingRideDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BADF5B4928E844EF0027F75B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BADF5B4D28E846070027F75B /* OngoingRideDetailsViewController.swift */,
+				BADF5B5128E8678F0027F75B /* OngoingRideDetailsViewController2.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BADF5B4A28E844F40027F75B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BADF5B4F28E846270027F75B /* OngoingRideDetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BADF9C5428D3645A002CA50A /* AddVehicleInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1326,6 +1382,41 @@
 		BAE03E4828E460D8003EE6BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAF628FD28E7D0970098D763 /* AcceptedRidesInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BAF6290028E7D0AF0098D763 /* Model */,
+				BAF628FF28E7D0A90098D763 /* View */,
+				BAF628FE28E7D09F0098D763 /* ViewModel */,
+			);
+			path = AcceptedRidesInfo;
+			sourceTree = "<group>";
+		};
+		BAF628FE28E7D09F0098D763 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAF6290128E7D0C90098D763 /* AcceptedRidesInfoViewModel.swift */,
+				BAF6290728E7D1420098D763 /* AcceptedRidesInfoTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAF628FF28E7D0A90098D763 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAF6290328E7D0E80098D763 /* AcceptedRidesInfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAF6290028E7D0AF0098D763 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAF6290528E7D0F70098D763 /* AcceptedRidesInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1725,6 +1816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF6290828E7D1420098D763 /* AcceptedRidesInfoTableViewCell.swift in Sources */,
 				BA5C4A4D28D2CC8E0034F9B3 /* ChangePasswordViewModel.swift in Sources */,
 				BA5C4A3728D2BCDA0034F9B3 /* MenuSliderTableViewCell.swift in Sources */,
 				BA2144C028D0708E00DC313B /* ForgotPasswordViewModel.swift in Sources */,
@@ -1742,6 +1834,7 @@
 				BA5C4A3B28D2BD270034F9B3 /* SideMenuViewController.swift in Sources */,
 				BA88E56228E718EC004AFA6E /* RideReservations_Partner_Model.swift in Sources */,
 				BAFE538828E3E6670075B091 /* WeeklyPaymentsViewModel.swift in Sources */,
+				BADF5B5228E8678F0027F75B /* OngoingRideDetailsViewController2.swift in Sources */,
 				BAE03E4A28E46105003EE6BA /* PaymentHistoryViewModel.swift in Sources */,
 				BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */,
 				BAFE539228E3E72D0075B091 /* WeekRideinfoViewController.swift in Sources */,
@@ -1752,16 +1845,20 @@
 				BABCB2CE28E545BE00517908 /* ActivatedRewardProgramsModel.swift in Sources */,
 				BA5C4A6128D2CDC50034F9B3 /* TermsAndPrivacyViewController.swift in Sources */,
 				BA36D88128C8C40E00B73053 /* AppDelegate.swift in Sources */,
+				BAF6290228E7D0C90098D763 /* AcceptedRidesInfoViewModel.swift in Sources */,
 				BA8BF5B428E5E1690087CFB1 /* DriverTypeModel.swift in Sources */,
 				BA5C4A3928D2BCFE0034F9B3 /* MenuSliderViewModel.swift in Sources */,
 				BABCB2BC28E53DE900517908 /* AvailableRewardProgramsListModel.swift in Sources */,
+				BAF6290428E7D0E80098D763 /* AcceptedRidesInfoViewController.swift in Sources */,
 				BAFE539828E3E7770075B091 /* WeekrideinfoCell.swift in Sources */,
 				BABCB2BA28E53DD200517908 /* AvailableRewardProgramsListViewController.swift in Sources */,
 				BA8BF5B628E5E1820087CFB1 /* DriverTypeViewController.swift in Sources */,
 				BA4DEF3C28E67DAB005A5139 /* DummyPartnerSelectForFutureViewController.swift in Sources */,
 				BA8BF59B28E5C4610087CFB1 /* ManagePartnersViewModel.swift in Sources */,
+				BAF6290A28E7DB9E0098D763 /* EmployeesService2.swift in Sources */,
 				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
 				BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */,
+				BADF5B4C28E8459E0027F75B /* OngoingRideDetailsViewModel.swift in Sources */,
 				BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */,
 				BA8BF5A828E5CEB80087CFB1 /* AddManagePartnersViewModel.swift in Sources */,
 				BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */,
@@ -1775,11 +1872,13 @@
 				BADF9C5D28D364CE002CA50A /* AddVehicleInfoModel.swift in Sources */,
 				BA5C4A7128D2D3980034F9B3 /* AddBankDetailsViewModel.swift in Sources */,
 				BA5C4A3028D2B9300034F9B3 /* DashBoardViewController.swift in Sources */,
+				BAF6290628E7D0F70098D763 /* AcceptedRidesInfoModel.swift in Sources */,
 				BAFE539428E3E7430075B091 /* WeekRideinfoViewModel.swift in Sources */,
 				BA8BF59D28E5C4720087CFB1 /* ManagePartnersViewController.swift in Sources */,
 				BAFE538C28E3E69F0075B091 /* WeeklyPaymentsModel.swift in Sources */,
 				BA5C4A5728D2CD2F0034F9B3 /* ContactUsViewModel.swift in Sources */,
 				BA8BF5AA28E5CED00087CFB1 /* AddManagePartnersViewController.swift in Sources */,
+				BADF5B4E28E846070027F75B /* OngoingRideDetailsViewController.swift in Sources */,
 				BABCB2A128E5296C00517908 /* RideHistoryViewModel.swift in Sources */,
 				BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */,
 				BABCB2A328E5298700517908 /* RideHistoryViewController.swift in Sources */,
@@ -1810,6 +1909,7 @@
 				BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */,
 				BA8BF5A028E5C48C0087CFB1 /* ManagePartnersModel.swift in Sources */,
 				BA409B5228D0599500489F09 /* LoginViewModel.swift in Sources */,
+				BADF5B5028E846270027F75B /* OngoingRideDetailsModel.swift in Sources */,
 				BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */,
 				BA409B5628D05A1A00489F09 /* LoginUser.swift in Sources */,
 				BA4DEF4328E68689005A5139 /* RideReservationsViewController.swift in Sources */,

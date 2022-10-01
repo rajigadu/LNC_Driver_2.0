@@ -100,7 +100,48 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - DriverfutureRideAccepetedListAPI
     //MARK: - DriverfutureRideListAPI
     func requestFordriverfutureRideListAcceptedAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AlereadyAcceptedridetimebasesData?, _ error: String?) -> ())
- 
+    
+    //MARK: - Accepted Rides -- DriverOnlineAPI
+    func requestForDriverOnlineAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
+    
+    //MARK: - Accepted Rides -- DriverRoleChangeAPI
+    func requestForDriverRoleChangeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
+
+    //MARK: - Accepted Rides -- DriverfutureRideListAPI
+    func requestForDriverAcceptedFutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
+    
+    //MARK: - Accepted Rides -- PartnerfutureRideListAPI
+    func requestForpartnerAcceptedFutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
+    
+    //MARK: - Ongoing Ride Details --- driverAdditionalStopsAPIwithDriverID
+    func requestFordriverAdditionalStopsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: driverAdditionalStopsData?, _ error: String?) -> ())
+    
+    //MARK: - Ongoing Ride Details ---- WaitingChargesStartAPI
+    func requestForWaitingChargesStartAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: WaitingChargesStartData?, _ error: String?) -> ())
+
+    //MARK: - Ongoing Ride Details --- driverwaiting time APIwithDriverID
+    func requestForDriverWaitingTimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: driverWaitingTimeData?, _ error: String?) -> ())
+
+    //MARK: - Ongoing Ride Details --- AdditionalStopswaitingtime
+    func requestForAdditionalStopswaitingtimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AdditionalStopswaitingtimeData?, _ error: String?) -> ())
+    //MARK: - Ongoing Ride Details --- DriverRideCompleteAPI
+    func requestForDriverRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverRideCompleteData?, _ error: String?) -> ())
+    
+    //MARK: - Ongoing Ride Details --- DriverRideStartAPI
+    func requestForDriverRideStartAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverRideStartData?, _ error: String?) -> ())
+
+    //MARK: - Ongoing Ride Details --- DriverFutureRideDetailsAPI
+    func requestForDriverFutureRideDetailsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverFutureRideDetailsData?, _ error: String?) -> ())
+    
+    //MARK: - Ongoing Ride Details --- PartnerFutureRideDetailsAPI
+    func requestForPartnerFutureRideDetailsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: PartnerFutureRideDetailsData?, _ error: String?) -> ())
+    
+    //MARK: - Ongoing Ride Details --- DriverRidePaymentAPI
+    func requestForDriverRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverRidePaymentData?, _ error: String?) -> ())
+    
+    //MARK: -  Ongoing Ride Details --- IntimateToPartnerStartRideAPI
+    func requestForIntimateToPartnerStartRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: IntimateToPartnerStartRideData?, _ error: String?) -> ())
+
 }
 
 //MARK: - Login

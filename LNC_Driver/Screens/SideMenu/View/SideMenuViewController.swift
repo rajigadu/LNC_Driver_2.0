@@ -108,6 +108,8 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "DriverTypeViewController", storyBordid: "RidesHistory",animated:false)
         } else if arrayResponse[indexPath.row] == "Ride Reservations" {
             self.movetonextvc(id: "RideReservationsViewController", storyBordid: "OngoingRides",animated:false)
+        } else if arrayResponse[indexPath.row] == "Accepted Rides" {
+            self.movetonextvc(id: "AcceptedRidesInfoViewController", storyBordid: "OngoingRides",animated:false)
         }
     }
     

@@ -196,8 +196,7 @@ extension RideReservationsViewController: UITableViewDelegate, UITableViewDataSo
             for i in 0..<ary_FutureRideDropdateRef.count - 1 {
                 let Str_EndDate  = ary_FutureRideDropdateRef[i]
                 let Str_StartDate = ary_FutureRidePickDateRef[i]
-                
-                if NewUpComingRide.isBetween(startDate:Str_StartDate, endDate:Str_EndDate)  {
+                if (Str_StartDate ... Str_EndDate).contains(NewUpComingRide)  {
                     conditionstatus = "yes"
                     self.ShowAlert(message: "You have already another ride on same time")
                     break
@@ -208,15 +207,13 @@ extension RideReservationsViewController: UITableViewDelegate, UITableViewDataSo
             }
         }
         
-        
         if conditionstatus == "No" {
             if ary_FutureRidePickStartDate_PartnerRef.count > 0 || ary_FutureRidePickStartDate_PartnerRef.count == ary_FutureRidePickDropDate_PartnerRef.count {
                 
                 for i in 0..<ary_FutureRidePickStartDate_PartnerRef.count {
                     let Str_EndDate  = ary_FutureRidePickStartDate_PartnerRef[i]
                     let Str_StartDate = ary_FutureRidePickDropDate_PartnerRef[i]
-                    
-                    if NewUpComingRide.isBetween(startDate:Str_StartDate, endDate:Str_EndDate)  {
+                    if (Str_StartDate ... Str_EndDate).contains(NewUpComingRide)  {
                         conditionstatus = "yes"
                         self.ShowAlert(message: "You have already another ride on same time")
                         break
@@ -237,34 +234,27 @@ extension RideReservationsViewController: UITableViewDelegate, UITableViewDataSo
 
     }
     
-    func isDate(_ date: Date, inRangeFirstDate firstDate: Date, last lastDate: Date) -> Bool {
-        return date.compare(firstDate) == .orderedDescending && date.compare(lastDate) == .orderedAscending
-    }
-    
-    func check(_ dateToCheck: Date, starting startingDate: Date, end endDate: Date) -> Bool {
-        var returnValue: Bool
-        
-        if startingDate.compare(endDate) == .orderedDescending {
-            returnValue = dateToCheck.compare(endDate) == .orderedAscending && dateToCheck.compare(startingDate) == .orderedDescending
-        } else if startingDate.compare(endDate) == .orderedAscending {
-            returnValue = dateToCheck.compare(startingDate) == .orderedAscending && dateToCheck.compare(endDate) == .orderedDescending
-        } else {
-            returnValue = dateToCheck.compare(startingDate) == .orderedSame && dateToCheck.compare(endDate) == .orderedSame
-        }
-        return returnValue
-    }
+//    func isDate(_ date: Date, inRangeFirstDate firstDate: Date, last lastDate: Date) -> Bool {
+//        return date.compare(firstDate) == .orderedDescending && date.compare(lastDate) == .orderedAscending
+//    }
+//
+//    func check(_ dateToCheck: Date, starting startingDate: Date, end endDate: Date) -> Bool {
+//        var returnValue: Bool
+//
+//        if startingDate.compare(endDate) == .orderedDescending {
+//            returnValue = dateToCheck.compare(endDate) == .orderedAscending && dateToCheck.compare(startingDate) == .orderedDescending
+//        } else if startingDate.compare(endDate) == .orderedAscending {
+//            returnValue = dateToCheck.compare(startingDate) == .orderedAscending && dateToCheck.compare(endDate) == .orderedDescending
+//        } else {
+//            returnValue = dateToCheck.compare(startingDate) == .orderedSame && dateToCheck.compare(endDate) == .orderedSame
+//        }
+//        return returnValue
+//    }
 }
-extension Date
-{
-    func isBetween(startDate:Date, endDate:Date)->Bool
-    {
-         return (startDate.compare(self) == .orderedAscending) && (endDate.compare(self) == .orderedDescending)
+extension Date {
+    func isBetween(_ date1: Date, and date2: Date) -> Bool {
+        return (min(date1, date2) ... max(date1, date2)).contains(self)
     }
-    
-//    if Str_StartDate.laterDate(NewUpComingRide) == NewUpComingRide && NewUpComingRide.laterDate(Str_EndDate) == Str_EndDate {
-    //                    conditionstatus = "yes"
-    //                }
-
 }
 
 //MARK: - DriverfutureRideListAPI
@@ -379,6 +369,7 @@ extension RideReservationsViewController {
                     indicator.hideActivityIndicator()
                     if userData.defaultstr == "yes" {
                        // self.ShowAlertWithPush(message: userData.message ?? "", className: "DriverAcceptedVC", storyBoard: "RidesHistory", Animation: true)--
+                        self.ShowAlertWithPush(message: userData.message ?? "", className: "AcceptedRidesInfoViewController", storyBoard: "OngoingRides", Animation: true)
                     } else {
                         let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistoy", bundle: nil)
                         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DummyPartnerSelectForFutureViewController") as! DummyPartnerSelectForFutureViewController
@@ -406,6 +397,7 @@ extension RideReservationsViewController {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                       //  self.ShowAlertWithPush(message: userData.message ?? "", className: "DriverAcceptedVC", storyBoard: "RidesHistory", Animation: true)--
+                    self.ShowAlertWithPush(message: userData.message ?? "", className: "AcceptedRidesInfoViewController", storyBoard: "OngoingRides", Animation: true)
                 }
             } else {
                 DispatchQueue.main.async { [self] in
