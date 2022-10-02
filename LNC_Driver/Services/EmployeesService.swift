@@ -180,6 +180,9 @@ protocol LateNightChauffeursDriverServiceProtocol {
     func requestForDriverFutureRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
     //MARK: -  RidePreview -- DriverFutureRideCompleteAPI
     func requestForDriverFutureRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
+    //MARK: - FeedBack Seen
+    func requestForFeedbackAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: FeedBacData?, _ error: String?) -> ())
+
 
 }
 

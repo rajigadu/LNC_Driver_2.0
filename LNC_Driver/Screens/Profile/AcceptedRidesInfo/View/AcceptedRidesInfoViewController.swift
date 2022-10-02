@@ -26,6 +26,7 @@ class AcceptedRidesInfoViewController: UIViewController {
     
     var ary_AcceptedFutureRideInfoRef:[RideReservationsDatar] = []
     var ary_FutureRideEstimatedDropDateRef: [String] = []
+    var str_dateandtime = ""
     lazy var viewModel = {
         AcceptedRidesInfoViewModel()
     }()
@@ -127,7 +128,7 @@ extension AcceptedRidesInfoViewController: UITableViewDelegate, UITableViewDataS
         }
         
         //
-        var str_dateandtime = str_FutureRidedate + " " + str_FutureRideTime
+        str_dateandtime = str_FutureRidedate + " " + str_FutureRideTime
         
         //Notes
         var str_notes = ary_AcceptedFutureRideInfoRef[indexPath.row].notes ?? ""
@@ -236,13 +237,13 @@ extension AcceptedRidesInfoViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-//                    let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-//                    let nxtVC = Storyboard.instantiateViewController(withIdentifier: "FutureRideInfoVC")
-//                    nxtVC.str_ComingFrom = str_SelectedType
-//                    nxtVC.str_SelectedRideID = str_SelectedRideID
-//                    nxtVC.dict_RideInfo = rideInfoDict
-//                    nxtVC.str_Dateandtime = str_dateandtime
-//                    self.navigationController?.pushViewController(nxtVC, animated:  true)
+                    let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
+                    let nxtVC = Storyboard.instantiateViewController(withIdentifier: "OngoingRideDetailsViewController") as! OngoingRideDetailsViewController
+                    nxtVC.str_ComingFrom = str_SelectedType
+                    nxtVC.str_SelectedRideID = str_SelectedRideID
+                    nxtVC.dict_RideInfo = rideInfoDict
+                    nxtVC.str_Dateandtime = str_dateandtime
+                    self.navigationController?.pushViewController(nxtVC, animated:  true)
                 }
             } else {
                 DispatchQueue.main.async { [self] in

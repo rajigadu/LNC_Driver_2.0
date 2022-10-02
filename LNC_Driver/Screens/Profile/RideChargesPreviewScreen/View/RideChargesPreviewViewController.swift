@@ -122,7 +122,7 @@ extension RideChargesPreviewViewController {
                     let alertController = UIAlertController(title: kApptitle, message: userData.message ?? "", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-                        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "FeedbackScreenVC") as! FeedbackScreenVC
+                        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
                         nxtVC.str_UserID = self.str_RideUserID;
                         nxtVC.str_Username = self.str_UserName;
                         nxtVC.str_UserImageUrl = self.str_UserimageUrl;
@@ -163,7 +163,7 @@ extension RideChargesPreviewViewController {
                     let alertController = UIAlertController(title: kApptitle, message: userData.message ?? "", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-                        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "FeedbackScreenVC") as! FeedbackScreenVC
+                        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
                         nxtVC.str_UserID = self.str_RideUserID;
                         nxtVC.str_Username = self.str_UserName;
                         nxtVC.str_UserImageUrl = self.str_UserimageUrl;

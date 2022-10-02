@@ -21,6 +21,7 @@ target 'LNC_Driver' do
     pod 'Crashlytics'
     pod 'Alamofire'
     pod 'ObjectMapper'
+    pod 'Cosmos', '~> 23.0'
 
   target 'LNC_DriverTests' do
     inherit! :search_paths

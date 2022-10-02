@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.2)
+  - Cosmos (23.0.0)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
@@ -126,6 +127,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Cosmos (~> 23.0)
   - Crashlytics
   - Fabric
   - Firebase/Core
@@ -144,6 +146,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - Crashlytics
     - Fabric
     - Firebase
@@ -171,6 +174,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
   Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   Firebase: 5ae8b7cf8efce559a653aef0ad95bab3f427c351
@@ -196,6 +200,6 @@ SPEC CHECKSUMS:
   SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 7613139a490cbf0e3f371b618489bb94928d7430
+PODFILE CHECKSUM: 707e079a53ff70984bace591e8f5b242db6918a8
 
 COCOAPODS: 1.11.3

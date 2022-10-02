@@ -575,3 +575,23 @@ extension ApiService {
         }
     }
 }
+//MARK: - FeedBack Seen
+extension ApiService {
+    func requestForFeedbackAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, FeedBacData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_FEEDBACKTOUSER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(FeedBacData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}

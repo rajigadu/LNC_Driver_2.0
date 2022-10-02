@@ -167,7 +167,7 @@ class OngoingRideDetailsViewController: UIViewController {
         AdditionalWaitingView.isHidden = true
         timecases = "1"
         typecases = "1"
-        timershowview_ref.isHidden = true
+       // timershowview_ref.isHidden = true
         uourridehasbeenstarted_lblref.isHidden = true
         
          Timer.scheduledTimer(timeInterval: 1.0,
@@ -573,7 +573,7 @@ class OngoingRideDetailsViewController: UIViewController {
     }
     
     @IBAction func WitingTimeBtn(_ sender : Any) {
-        timershowview_ref.isHidden = false
+        //timershowview_ref.isHidden = false
         if makingcases == "NO" {
             Timer.scheduledTimer(timeInterval: 1.0,
                                       target: self,
@@ -836,7 +836,7 @@ extension OngoingRideDetailsViewController {
                         btn_StartRideFromDriverRef.setTitle("START RIDE", for: .normal)
                         uourridehasbeenstarted_lblref.isHidden = true
                         makingcases = "yes"
-                        timershowview_ref.isHidden = true
+                        //timershowview_ref.isHidden = true
                     } else {
                         makingcases = "NO"
                         self.btn_WaitingChargesStartRef.isHidden = true
