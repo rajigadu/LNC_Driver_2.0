@@ -14,14 +14,14 @@ import UIKit
 
 //MARK: - DriverOnlineAPI
 extension ApiService {
-    func requestForDriverOnlineAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideReservationsData?, String?) -> ()) {
+    func requestForDriverOnlineAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
         if Connectivity.isNotConnectedToInternet{
             completion(false, nil, "I18n.NoInterNetString")
         }
         HttpRequestHelper().GET(url: API_URl.API_DRIVERONLINE_URL, params: perams, httpHeader: .application_json) { success, data in
             if success {
                 do {
-                    let model = try JSONDecoder().decode(RideReservationsData.self, from: data!)
+                    let model = try JSONDecoder().decode(CancelRideData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)
@@ -275,7 +275,26 @@ extension ApiService {
         }
     }
 }
-//MARK: -  Ongoing Ride Details --- IntimateToPartnerStartRideAPI
+//MARK: -  Ongoing Ride Details --- DriverUpdateCurrentLocationAPI
+extension ApiService {
+    func requestForDriverUpdateCurrentLocationAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DriverUpdateCurrentLocationData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERUPDATECURRENTLOCATION_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(DriverUpdateCurrentLocationData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
 extension ApiService {
     func requestForIntimateToPartnerStartRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, IntimateToPartnerStartRideData?, String?) -> ()) {
         if Connectivity.isNotConnectedToInternet{
@@ -285,6 +304,267 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(IntimateToPartnerStartRideData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Cancel Ride -- DriverFutureCancelRideAPI
+extension ApiService {
+    func requestForDriverFutureCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERFUTURERIDECANCEL_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(CancelRideData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Cancel Ride -- PartnerFutureCancelRideAPI
+extension ApiService {
+    func requestForPartnerFutureCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_PARTNERFUTURERIDECANCEL_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(CancelRideData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Cancel Ride -- DriverCurrentCancelRideAPI
+extension ApiService {
+    func requestForDriverCurrentCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERCURRENTRIDECANCEL_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(CancelRideData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Cancel Ride -- PartnerCurrentCancelRideAPI
+extension ApiService {
+    func requestForPartnerCurrentCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_PARTNERCURRENTRIDECANCEL_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(CancelRideData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Chat -- DriverToUserChattingAPI
+extension ApiService {
+    func requestForDriverToUserChattingAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVER_CHATWITHUSER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ChatData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Chat -- DriverToPartnerChattingAPI
+extension ApiService {
+    func requestForDriverToPartnerChattingAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVER_CHATWITHPARTNER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ChatData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: -  Chat -- PARTNERTOCHATWITHDRIVERApi
+extension ApiService {
+    func requestForPartnerToChatWithDriverAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_PARTNER_CHATWITHDRIVER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ChatData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Chat -- driverCurrentRideDetailsAPI
+extension ApiService {
+    func requestForDriverCurrentRideDetailsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ChatDetailsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERCURRENTRIDEDETAILS_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ChatDetailsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Chat -- partnerCurrentRideDetailsAPI
+extension ApiService {
+    func requestForPartnerCurrentRideDetailsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ChatDetailsData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERCURRENTRIDEDETAILS_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ChatDetailsData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
+//MARK: - RidePreview -- DriverCurrentRideCompleteAPI
+extension ApiService {
+    func requestForDriverCurrentRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideChargesPreviewData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERRIDECOMPLETE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideChargesPreviewData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - RidePreview -- DriverCurrentRidePaymentAPI
+extension ApiService {
+    func requestForDriverCurrentRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideChargesPreviewData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERRIDEPAYMENT_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideChargesPreviewData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: -  RidePreview -- DriverFutureRidePaymentAPI
+extension ApiService {
+    func requestForDriverFutureRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideChargesPreviewData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERFUTURERIDEPAYMENT_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideChargesPreviewData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: -  RidePreview -- DriverFutureRideCompleteAPI
+extension ApiService {
+    func requestForDriverFutureRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideChargesPreviewData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERFUTURERIDECOMPLETE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideChargesPreviewData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

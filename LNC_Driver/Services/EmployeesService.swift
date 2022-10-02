@@ -102,7 +102,7 @@ protocol LateNightChauffeursDriverServiceProtocol {
     func requestFordriverfutureRideListAcceptedAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AlereadyAcceptedridetimebasesData?, _ error: String?) -> ())
     
     //MARK: - Accepted Rides -- DriverOnlineAPI
-    func requestForDriverOnlineAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
+    func requestForDriverOnlineAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
     
     //MARK: - Accepted Rides -- DriverRoleChangeAPI
     func requestForDriverRoleChangeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
@@ -141,14 +141,51 @@ protocol LateNightChauffeursDriverServiceProtocol {
     
     //MARK: -  Ongoing Ride Details --- IntimateToPartnerStartRideAPI
     func requestForIntimateToPartnerStartRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: IntimateToPartnerStartRideData?, _ error: String?) -> ())
+    
+    //MARK: - Ongoing Ride Details --- DriverUpdateCurrentLocationAPI
+    func requestForDriverUpdateCurrentLocationAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverUpdateCurrentLocationData?, _ error: String?) -> ())
+    
+    
+    //MARK: - Cancel Ride -- DriverFutureCancelRideAPI
+    func requestForDriverFutureCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
+    //MARK: - Cancel Ride -- PartnerFutureCancelRideAPI
+    func requestForPartnerFutureCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
+    //MARK: - Cancel Ride -- DriverCurrentCancelRideAPI
+    func requestForDriverCurrentCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
+    
+    //MARK: - Cancel Ride -- PartnerCurrentCancelRideAPI
+    func requestForPartnerCurrentCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
+    
+    //MARK: - Chat -- DriverToUserChattingAPI
+    func requestForDriverToUserChattingAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatData?, _ error: String?) -> ())
+
+    //MARK: - Chat -- DriverToPartnerChattingAPI
+    func requestForDriverToPartnerChattingAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatData?, _ error: String?) -> ())
+    
+    //MARK: - Chat -- PARTNERTOCHATWITHDRIVERApi
+    func requestForPartnerToChatWithDriverAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatData?, _ error: String?) -> ())
+
+    //MARK: - Chat -- driverCurrentRideDetailsAPI
+    func requestForDriverCurrentRideDetailsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatDetailsData?, _ error: String?) -> ())
+    
+    //MARK: - Chat -- partnerCurrentRideDetailsAPI
+    func requestForPartnerCurrentRideDetailsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatDetailsData?, _ error: String?) -> ())
+    
+    //MARK: - RidePreview -- DriverCurrentRideCompleteAPI
+    func requestForDriverCurrentRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
+
+    //MARK: - RidePreview -- DriverCurrentRidePaymentAPI
+    func requestForDriverCurrentRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())    
+    //MARK: -  RidePreview -- DriverFutureRidePaymentAPI
+    func requestForDriverFutureRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
+    //MARK: -  RidePreview -- DriverFutureRideCompleteAPI
+    func requestForDriverFutureRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
 
 }
 
 //MARK: - Login
 class ApiService: LateNightChauffeursDriverServiceProtocol {
-    
-    
-    
+        
     func getLoginedUserDetails(_ perams :Dictionary<String,String>, completion: @escaping (Bool, UserData?, String?) -> ()) {
         if Connectivity.isNotConnectedToInternet{
             completion(false, nil, "I18n.NoInterNetString")

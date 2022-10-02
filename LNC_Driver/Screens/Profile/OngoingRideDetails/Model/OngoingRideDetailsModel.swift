@@ -435,3 +435,21 @@ struct PartnerFutureRideDetailsDatar : Codable {
     }
 
 }
+//12 MARK: - Driver Update Current Location API
+typealias DriverUpdateCurrentLocationData = DriverUpdateCurrentLocationModel
+
+struct DriverUpdateCurrentLocationModel : Codable {
+     let status : String?
+    let message : String?
+
+    enum CodingKeys: String, CodingKey {
+        case status = "status"
+        case message = "msg"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        status = try values.decodeIfPresent(String.self, forKey: .status)
+        message = try values.decodeIfPresent(String.self, forKey: .message)
+    }
+}

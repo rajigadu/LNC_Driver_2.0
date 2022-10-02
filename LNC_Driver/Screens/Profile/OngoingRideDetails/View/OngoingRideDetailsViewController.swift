@@ -121,9 +121,10 @@ class OngoingRideDetailsViewController: UIViewController {
     var makingcases  = String()
     var typecases  = String()
     var pickerView = UIPickerView()
-    var pickerData = Array<Any>()
-    var pickerData2 = Array<Any>()
-    var pickerData3 = Array<Any>()
+    var toolBar = UIToolbar()
+    var pickerData = Array<String>()
+    var pickerData2 = Array<String>()
+    var pickerData3 = Array<String>()
     var picktype  = String()
     var stopsPickerStr = String()
     var waitingTimePickerStr = String()
@@ -138,7 +139,7 @@ class OngoingRideDetailsViewController: UIViewController {
     var str_partnerDrop_lat = String()
     var str_partnerDrop_long = String()
     var str_AppVersion = String()
-    var timer_ForUpdatingDriverCurrentLocation = Timer()
+    var timer_ForUpdatingDriverCurrentLocation: Timer?
   //  var locationManager: CLLocationManager!
     
     let getLocation = GetLocation()
@@ -148,8 +149,8 @@ class OngoingRideDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if timer_ForUpdatingDriverCurrentLocation.isValid {
-            timer_ForUpdatingDriverCurrentLocation.invalidate()
+        if ((timer_ForUpdatingDriverCurrentLocation?.isValid) != nil) {
+            timer_ForUpdatingDriverCurrentLocation?.invalidate()
             timer_ForUpdatingDriverCurrentLocation = nil
         }
         self.driverUpdateLocationmethod()
@@ -169,12 +170,11 @@ class OngoingRideDetailsViewController: UIViewController {
         timershowview_ref.isHidden = true
         uourridehasbeenstarted_lblref.isHidden = true
         
-        Timer.scheduledTimer(
-            timeInterval: 1.0,
-            target: self,
-            selector: Selector(timeNotify),
-            userInfo: nil,
-            repeats: true)
+         Timer.scheduledTimer(timeInterval: 1.0,
+                                   target: self,
+                                 selector: #selector(self.timeNotify),
+                                 userInfo: nil,
+                                  repeats: true)
         
         driverLoginIDString = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? ""
@@ -219,8 +219,7 @@ class OngoingRideDetailsViewController: UIViewController {
             }
             // Location Updating.....
             
-            
-            self.driverFutureRideDetailsAPI(withDriverID: String, withFutureRideID: self.str_SelectedRideID)
+            self.driverFutureRideDetailsAPI(withDriverID: driverLoginIDString, withFutureRideID: self.str_SelectedRideID)
             str_RideStartLocationLatitude = self.dict_RideInfo?.pickup_lat ?? ""
             str_RideStartLocationLatitude = self.dict_RideInfo?.pickup_long ?? ""
             
@@ -237,6 +236,15 @@ class OngoingRideDetailsViewController: UIViewController {
         } else {
             self.partnerFutureRideDetailsAPI(withDriverID: driverLoginIDString, withFutureRideID: self.str_SelectedRideID)
         }
+        
+        
+        self.pickerView = UIPickerView()
+
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
+        
+        self.AdditionalStopsTextfield.inputView = self.pickerView
+        self.waitingTimetextfield.inputView = self.pickerView
     }
 
     
@@ -336,10 +344,10 @@ class OngoingRideDetailsViewController: UIViewController {
         let alertController = UIAlertController(title: kApptitle, message: "Are you sure you want to cancel this ride?", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
             let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-            let nxtVC = Storyboard.instantiateViewController(withIdentifier: "CancelRideVC") as! CancelRideVC
-            nxtVC.str_CurrentRideID = str_CurrentRideID
+            let nxtVC = Storyboard.instantiateViewController(withIdentifier: "CancelRideViewController") as! CancelRideViewController
+            nxtVC.str_CurrentRideID = self.str_CurrentRideID
             nxtVC.str_ComingFrom = "FutureRide"
-            nxtVC.str_PartnerID = str_PartnerIDForDriver
+            nxtVC.str_PartnerID = self.str_PartnerIDForDriver
             self.navigationController?.pushViewController(nxtVC, animated: true)
         }
         
@@ -369,9 +377,9 @@ class OngoingRideDetailsViewController: UIViewController {
         
         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
-        nxtVC.str_ChatStatus = @"";
+        nxtVC.str_ChatStatus = "";
         nxtVC.recevierId = str_RideUserID;
-        nxtVC.str_ChatType = @"ToUser";
+        nxtVC.str_ChatType = "ToUser";
         self.navigationController?.pushViewController(nxtVC, animated: true)
     }
     
@@ -412,6 +420,18 @@ class OngoingRideDetailsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func partnerChattouserbtnref(_ sender: Any) {
+        UserDefaults.standard.set("Coming From Future Ride", forKey: "ChatFromLaunchScreen")
+        
+        let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        nxtVC.str_ChatStatus = ""
+        nxtVC.str_CurrentRideDriverID = str_userIDForPartner
+        nxtVC.str_ChatType = "ToUser"
+        self.navigationController?.pushViewController(nxtVC, animated: true)
+
     }
     
     @IBAction func btn_PartnerDetailsShowInDriverSideRef(_ sender: Any) {
@@ -475,8 +495,8 @@ class OngoingRideDetailsViewController: UIViewController {
     
     @IBAction func btn_PartnerCancelRideActionRef(_ sender: Any) {
         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "CancelRideVC") as! CancelRideVC
-        nxtVC.str_CurrentRideID = str_CurrentRideID
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "CancelRideViewController") as! CancelRideViewController
+        nxtVC.str_CurrentRideID = self.str_CurrentRideID
         nxtVC.str_ComingFrom = "PartnerFutureRide"
         self.navigationController?.pushViewController(nxtVC, animated: true)
     }
@@ -494,7 +514,19 @@ class OngoingRideDetailsViewController: UIViewController {
     }
 
     @IBAction func AdditionalPlanedStopsbtnref(_ sender: Any) {
-        
+        if str_plannedstops != "" || str_plannedstops != "0" {
+        let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "CancelRideViewController") as! CancelRideViewController
+            nxtVC.str_CurrentRideID = self.str_CurrentRideID
+        nxtVC.str_ComingFrom = "PartnerFutureRide"
+        self.navigationController?.pushViewController(nxtVC, animated: true)
+        }
+    }
+    
+    @IBAction func Additionalstops_btn(_ sender: Any) {
+        if makingcases == "NO" {
+            self.driverAdditionalStopsAPI(withRideID:str_CurrentRideID)
+        }
     }
     
     @IBAction func CancelAdditionalWaitingtimeStopsButton(_ sender: Any) {
@@ -537,7 +569,45 @@ class OngoingRideDetailsViewController: UIViewController {
     }
     
     @IBAction func refereshbuttonref(_ sender : Any) {
+        self.driverFutureRideDetailsAPI(withDriverID: driverLoginIDString, withFutureRideID: self.str_SelectedRideID)
+    }
+    
+    @IBAction func WitingTimeBtn(_ sender : Any) {
+        timershowview_ref.isHidden = false
+        if makingcases == "NO" {
+            Timer.scheduledTimer(timeInterval: 1.0,
+                                      target: self,
+                                    selector: #selector(self.timeNotify),
+                                    userInfo: nil,
+                                     repeats: true)
+            if timecases == "1" {
+                var startdate = str_Startdate
+                self.driverwaitingtimeAPI(withRideID: str_CurrentRideID, withstarttime: startdate, withendtime: "")
+                start_timelblRef.text = "\("Waiting Time Was Start :")\(startdate)"
+                timecases = "2"
+            } else if timecases == "2" {
+                self.driverwaitingtimeAPI(withRideID: str_CurrentRideID, withstarttime: str_Startdate, withendtime: str_Stopdate)
+                start_timelblRef.text = "\("Waiting Time Was Stop :")\(str_Stopdate)"
+                timecases = "1"
+            }
+            
+        } else if makingcases == "YES" {
+            
+        }
+    }
+    
+    @objc func timeNotify() {
+        let currentTime = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let resultString = dateFormatter.string(from: currentTime)
+        NormalTimeRef.text = resultString
         
+        if timecases == "1" {
+            str_Startdate = resultString
+        } else {
+            str_Stopdate = resultString
+        }
     }
 }
 
@@ -629,7 +699,7 @@ extension OngoingRideDetailsViewController {
                     Str_AdminFare = userData.admin_fee ?? ""
                     
                     let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-                    let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewScreenVC") as! RideChargesPreviewScreenVC
+                    let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewViewController") as! RideChargesPreviewViewController
                     rideChargesPreviewScreen.str_waitingtime = waitingTimePickerStr;
                     rideChargesPreviewScreen.str_Additionalstops = stopsPickerStr;
                     rideChargesPreviewScreen.str_earnings = str_earnings;
@@ -653,11 +723,9 @@ extension OngoingRideDetailsViewController {
                     
                     let alertController = UIAlertController(title: kApptitle, message: model?.message ?? "Something went wrong!", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-                        self.movetonextvc(id:className,storyBordid : storyBoard,animated:Animation )
-                    
-                    
+                       
                     let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-                    let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewScreenVC") as! RideChargesPreviewScreenVC
+                    let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewViewController") as! RideChargesPreviewViewController
 
                     rideChargesPreviewScreen.str_waitingtime = waitingTimePickerStr;
                     rideChargesPreviewScreen.str_Additionalstops = stopsPickerStr;
@@ -975,5 +1043,141 @@ extension OngoingRideDetailsViewController {
              }
         }
 
+    }
+}
+
+extension OngoingRideDetailsViewController {
+    //MARK: - DriverUpdateCurrentLocationAPI
+    func driverUpdateCurrentLocationAPI(withCurrentLatitude: String, withCurrentLongitude: String) {
+        //rideid=%@&driverid
+        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        indicator.showActivityIndicator()
+        
+        self.viewModel.requestForDriverUpdateCurrentLocationAPIServices(perams: ["driverid":"255","latitude":withCurrentLatitude,"longitude":withCurrentLongitude,"app_version" : str_AppVersion]) { success, model, error in
+            if success, let userData = model {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                }
+             }
+        }
+
+    }
+}
+
+
+extension OngoingRideDetailsViewController {
+    
+    func driverUpdateLocationmethod() {
+        if ((timer_ForUpdatingDriverCurrentLocation?.isValid) != nil) {
+            timer_ForUpdatingDriverCurrentLocation?.invalidate()
+            timer_ForUpdatingDriverCurrentLocation = nil
+        }
+        timer_ForUpdatingDriverCurrentLocation = Timer.scheduledTimer(timeInterval: 15.0,
+                                   target: self,
+                                 selector: #selector(self.method_UpdatingDriverCurrentLocation),
+                                 userInfo: nil,
+                                  repeats: true)
+    }
+    
+    @objc func method_UpdatingDriverCurrentLocation() {
+        self.driverUpdateCurrentLocationAPI(withCurrentLatitude: str_DriverCurrentLocationLatitude,withCurrentLongitude: str_DriverCurrentLocationLongitude)
+    }
+}
+extension OngoingRideDetailsViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         return pickerData.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if selectedTxtFldType == "stops" {
+            return pickerData2[row]
+        } else if selectedTxtFldType == "waitingtime" {
+            return pickerData[row]
+        } else {
+            return ""
+        }
+        
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if selectedTxtFldType == "stops" {
+            self.AdditionalStopsTextfield.text = pickerData2[row]
+            self.stopsPickerStr = pickerData2[row]
+        } else if selectedTxtFldType == "waitingtime" {
+            self.waitingTimetextfield.text = pickerData[row]
+            self.waitingTimePickerStr = pickerData[row]
+        }
+    }
+}
+
+extension OngoingRideDetailsViewController : UITextFieldDelegate {
+    func noOfStopsPickerview(_ sender: Any) {
+        pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        pickerView.showsSelectionIndicator = true
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        self.AdditionalStopsTextfield.inputView = pickerView
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
+        toolBar.barStyle = .blackTranslucent
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTouchedstatus))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action:#selector(cancelTouchedstatus))
+                                           
+        toolBar.items = [cancelButton, UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton]
+        self.AdditionalStopsTextfield.inputAccessoryView = toolBar
+    }
+    
+    func waitingTimepickerview(_ sender: Any){
+        pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        pickerView.showsSelectionIndicator = true
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        self.AdditionalStopsTextfield.inputView = pickerView
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 44))
+        toolBar.barStyle = .blackTranslucent
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTouchedstatus))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action:#selector(cancelTouchedstatus))
+                                           
+        toolBar.items = [cancelButton, UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), doneButton]
+        self.waitingTimetextfield.inputAccessoryView = toolBar
+    }
+    
+    @objc func cancelTouchedstatus(_ sender: UIBarButtonItem) {
+        self.AdditionalStopsTextfield.resignFirstResponder()
+        self.waitingTimetextfield.resignFirstResponder()
+    }
+    
+    @objc func doneTouchedstatus(_ sender: UIBarButtonItem) {
+        if selectedTxtFldType == "stops" {
+            if self.AdditionalStopsTextfield.text?.count == 0 {
+                self.AdditionalStopsTextfield.text = "00"
+            }
+        } else if selectedTxtFldType == "waitingtime" {
+            if waitingTimetextfield.text?.count == 0 {
+                waitingTimetextfield.text = "00"
+            }
+        }
+        self.AdditionalStopsTextfield.resignFirstResponder()
+        self.waitingTimetextfield.resignFirstResponder()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == waitingTimetextfield {
+            selectedTxtFldType = "waitingtime"
+            self.waitingTimepickerview(self)
+        } else if textField == AdditionalStopsTextfield {
+            selectedTxtFldType = "stops"
+            self.noOfStopsPickerview(self)
+        }
     }
 }

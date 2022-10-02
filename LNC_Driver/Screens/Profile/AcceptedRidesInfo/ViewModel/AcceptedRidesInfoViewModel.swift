@@ -17,7 +17,7 @@ class AcceptedRidesInfoViewModel: NSObject {
     }
     
     //MARK: - DriverOnlineAPI
-    func requestForDriverOnlineAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, RideReservationsData?, String?) -> ()) {
+    func requestForDriverOnlineAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
         acceptedRidesInfoServices.requestForDriverOnlineAPIServices(perams){ success, model, error in
             if success, let EditProfileUserData = model {
                 if EditProfileUserData.status == "1" {
