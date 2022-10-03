@@ -25,7 +25,7 @@ class CancelRideViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lbl_messageRef.isHidden = true
+        //self.lbl_messageRef.isHidden = true
         self.title = "Cancel Ride"
         str_DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         // Do any additional setup after loading the view.

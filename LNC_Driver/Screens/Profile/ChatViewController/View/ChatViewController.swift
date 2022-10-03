@@ -143,7 +143,7 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData as? [ChatDatar] {
+                    if let responseData = userData.data as? [ChatDatar] {
                         self.resArr = responseData
                     }
                     if str_SendBtnCheckingStaus == "SendBtnCheckingStaus" {
@@ -179,7 +179,7 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData as? [ChatDatar] {
+                    if let responseData = userData.data as? [ChatDatar] {
                         self.resArr = responseData
                     }
                     if str_SendBtnCheckingStaus == "SendBtnCheckingStaus" {
@@ -213,7 +213,7 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData as? [ChatDatar] {
+                    if let responseData = userData.data as? [ChatDatar] {
                         self.resArr = responseData
                     }
                     if str_SendBtnCheckingStaus == "SendBtnCheckingStaus" {
@@ -333,7 +333,7 @@ extension ChatViewController :UITableViewDelegate, UITableViewDataSource {
         
         cell.backgroundColor = .darkGray
         var typeOfUser = resArr[indexPath.row].sender ?? ""
-        if typeOfUser == "255" {
+        if typeOfUser != "255" {
             cell.ResprofileImgRef.isHidden = true
             cell.ResbagRef.isHidden = true
             cell.ResdateRef.isHidden = true
@@ -436,6 +436,4 @@ extension ChatViewController :UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-    
-    
 }

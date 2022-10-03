@@ -260,6 +260,19 @@ extension UIViewController {
         }
         return numOfSections
     }
+    
+//    override func reloadData() {
+//        super.reloadData()
+//
+//        guard 0 < self.numberOfSections && 0 < self.numberOfRows(inSection: 0) else {
+//            setTableStatus(type: .empty)
+//            return
+//        }
+//
+//        if placeholderStackView != nil {
+//            self.placeholderStackView.removeFromSuperview()
+//        }
+//    }
 }
 extension UITableView {
     

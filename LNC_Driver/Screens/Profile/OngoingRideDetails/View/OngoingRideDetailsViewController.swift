@@ -19,6 +19,7 @@ class OngoingRideDetailsViewController: UIViewController {
         OngoingRideDetailsViewModel()
     }()
     //USER RIDE DETAILS SHOWING......
+    @IBOutlet weak var viewUserScrollref: UIScrollView!
     @IBOutlet weak var view_UserDetailsInfoInDriverSideRef: UIView!
     @IBOutlet weak var imageview_UserNameRef: UIImageView!
     @IBOutlet weak var lbl_UserNameRef: UILabel!
@@ -181,6 +182,7 @@ class OngoingRideDetailsViewController: UIViewController {
         
         self.view_DriverDetailsInPartnerSideRef.isHidden = true
         self.view_UserDetailsInfoInDriverSideRef.isHidden = true
+        self.viewUserScrollref.isHidden = true
         self.imageview_UserNameRef.layer.cornerRadius = 30
         self.imageview_UserNameRef.layer.borderWidth = 1
         self.imageview_UserNameRef.layer.borderColor = UIColor.white.cgColor
@@ -258,7 +260,11 @@ class OngoingRideDetailsViewController: UIViewController {
     }
     @IBAction func btn_StartRideFromDriverActionRef(_ sender: Any) {
         if isCheckingRideStartCompleteStatus == false {
-            var mutableDat = (self.dict_RideInfo?.date ?? "") ?? "" + " " + (self.dict_RideInfo?.time ?? "") ?? ""
+            var mutableDat = ""
+            if let dateStr = self.dict_RideInfo?.date, let timestr = self.dict_RideInfo?.time {
+                mutableDat = dateStr + " " + timestr
+            }
+           // (self.dict_RideInfo?.date ?? "") ?? "" + " " + (self.dict_RideInfo?.time ?? "") ?? ""
             
             let dateFormat = DateFormatter()
             dateFormat.dateFormat = "yyyy-MM-dd hh:mm a"
@@ -288,6 +294,7 @@ class OngoingRideDetailsViewController: UIViewController {
                     
                     if AdditionalWaitingView.isHidden == false {
                         view_UserDetailsInfoInDriverSideRef.isHidden = false
+                        self.viewUserScrollref.isHidden = false
                     }
                 } else {
                     self.driverFutureRideStartAPI(withDriverID: driverLoginIDString,withCurrentTime: str_CurrentgetTime,withCurrentRideID : str_CurrentRideID)
@@ -307,6 +314,7 @@ class OngoingRideDetailsViewController: UIViewController {
 
                 if AdditionalWaitingView.isHidden == false {
                     view_UserDetailsInfoInDriverSideRef.isHidden = false
+                    self.viewUserScrollref.isHidden = false
                 }
             }
         }
@@ -601,7 +609,7 @@ class OngoingRideDetailsViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let resultString = dateFormatter.string(from: currentTime)
-        NormalTimeRef.text = resultString
+        //NormalTimeRef.text = resultString
         
         if timecases == "1" {
             str_Startdate = resultString
@@ -811,14 +819,15 @@ extension OngoingRideDetailsViewController {
                     indicator.hideActivityIndicator()
                     let waitingtimestatus = userData.waiting_status ?? ""
                     if waitingtimestatus == "" {
-                        btn_waitingtimeRef.setTitle(" Waiting Time", for: .normal)
+                       // btn_waitingtimeRef.setTitle(" Waiting Time", for: .normal)
                     } else if waitingtimestatus == "start" {
-                        btn_waitingtimeRef.setTitle(" Stop Waiting Time", for: .normal)
+                       // btn_waitingtimeRef.setTitle(" Stop Waiting Time", for: .normal)
                     }else if waitingtimestatus == "stop" {
-                        btn_waitingtimeRef.setTitle(" Stop Waiting Time", for: .normal)
+                       // btn_waitingtimeRef.setTitle(" Stop Waiting Time", for: .normal)
                     }
                     self.view_DriverDetailsInPartnerSideRef.isHidden = true
                     self.view_UserDetailsInfoInDriverSideRef.isHidden = false
+                    self.viewUserScrollref.isHidden = false
                     //User Details.............
                     if let response  = userData.planned_address as? [DriverFutureRideDetailsPlanned_address] {
                     str_AdditionalStopsArr = response
@@ -907,6 +916,7 @@ extension OngoingRideDetailsViewController {
                     indicator.hideActivityIndicator()
                     self.view_DriverDetailsInPartnerSideRef.isHidden = false
                     self.view_UserDetailsInfoInDriverSideRef.isHidden = true
+                    self.viewUserScrollref.isHidden = true
                     
                     if askEnableLocationService() == "YES" {
                         getLocation.run { [self] in
