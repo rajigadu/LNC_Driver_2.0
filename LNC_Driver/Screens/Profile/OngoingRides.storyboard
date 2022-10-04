@@ -1715,11 +1715,6 @@
             <point key="canvasLocation" x="6783" y="-558"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="FWG-z6-lh7">
-            <size key="intrinsicContentSize" width="170" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="appLogo" width="200" height="90"/>
         <image name="backgroundimage" width="400" height="700"/>

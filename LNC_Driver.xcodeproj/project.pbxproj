@@ -115,6 +115,8 @@
 		BABCB2D028E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2CF28E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift */; };
 		BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2D128E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift */; };
 		BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2D328E54FCE00517908 /* HistoryOfRewardProgramsModel.swift */; };
+		BAC0E6DD28EA866D004D6C25 /* StopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0E6DC28EA866C004D6C25 /* StopsViewModel.swift */; };
+		BAC0E6DF28EA867E004D6C25 /* StopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC0E6DE28EA867E004D6C25 /* StopsViewController.swift */; };
 		BADF5B4C28E8459E0027F75B /* OngoingRideDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF5B4B28E8459E0027F75B /* OngoingRideDetailsViewModel.swift */; };
 		BADF5B4E28E846070027F75B /* OngoingRideDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF5B4D28E846070027F75B /* OngoingRideDetailsViewController.swift */; };
 		BADF5B5028E846270027F75B /* OngoingRideDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADF5B4F28E846270027F75B /* OngoingRideDetailsModel.swift */; };
@@ -281,6 +283,8 @@
 		BABCB2CF28E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsViewController.swift; sourceTree = "<group>"; };
 		BABCB2D128E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsViewModel.swift; sourceTree = "<group>"; };
 		BABCB2D328E54FCE00517908 /* HistoryOfRewardProgramsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOfRewardProgramsModel.swift; sourceTree = "<group>"; };
+		BAC0E6DC28EA866C004D6C25 /* StopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsViewModel.swift; sourceTree = "<group>"; };
+		BAC0E6DE28EA867E004D6C25 /* StopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsViewController.swift; sourceTree = "<group>"; };
 		BADF5B4B28E8459E0027F75B /* OngoingRideDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingRideDetailsViewModel.swift; sourceTree = "<group>"; };
 		BADF5B4D28E846070027F75B /* OngoingRideDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingRideDetailsViewController.swift; sourceTree = "<group>"; };
 		BADF5B4F28E846270027F75B /* OngoingRideDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingRideDetailsModel.swift; sourceTree = "<group>"; };
@@ -689,6 +693,7 @@
 		BA5C4A2828D2B5990034F9B3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BAC0E6D828EA8646004D6C25 /* Stops */,
 				BA83F96F28E99CE5004494A4 /* FeedbackScreen */,
 				BA83F96428E98996004494A4 /* RideChargesPreviewScreen */,
 				BA83F95828E9488C004494A4 /* ChatViewController */,
@@ -1408,6 +1413,39 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BAC0E6D828EA8646004D6C25 /* Stops */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0E6DB28EA8656004D6C25 /* Model */,
+				BAC0E6DA28EA8652004D6C25 /* View */,
+				BAC0E6D928EA864C004D6C25 /* ViewModel */,
+			);
+			path = Stops;
+			sourceTree = "<group>";
+		};
+		BAC0E6D928EA864C004D6C25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0E6DC28EA866C004D6C25 /* StopsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BAC0E6DA28EA8652004D6C25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAC0E6DE28EA867E004D6C25 /* StopsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAC0E6DB28EA8656004D6C25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BADF5B4728E844BF0027F75B /* OngoingRideDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -2028,6 +2066,7 @@
 				BAF6290A28E7DB9E0098D763 /* EmployeesService2.swift in Sources */,
 				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
 				BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */,
+				BAC0E6DD28EA866D004D6C25 /* StopsViewModel.swift in Sources */,
 				BADF5B4C28E8459E0027F75B /* OngoingRideDetailsViewModel.swift in Sources */,
 				BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */,
 				BA8BF5A828E5CEB80087CFB1 /* AddManagePartnersViewModel.swift in Sources */,
@@ -2082,6 +2121,7 @@
 				BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */,
 				BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */,
 				BA5C4A5928D2CD480034F9B3 /* ContactUsViewController.swift in Sources */,
+				BAC0E6DF28EA867E004D6C25 /* StopsViewController.swift in Sources */,
 				BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */,
 				BA83F97828E99D30004494A4 /* FeedbackModel.swift in Sources */,
 				BA8BF5A028E5C48C0087CFB1 /* ManagePartnersModel.swift in Sources */,
