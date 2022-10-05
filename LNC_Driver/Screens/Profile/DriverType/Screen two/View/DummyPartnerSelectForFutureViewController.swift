@@ -167,10 +167,10 @@ extension DummyPartnerSelectForFutureViewController: UIPickerViewDelegate, UIPic
 //MARK: -  selectDriverTypeAPI
 extension DummyPartnerSelectForFutureViewController {
     func selectDriverTypeAPI(withPName: String, withPEmail: String, withPMobile: String, withSelectedType: String, withLoginDriverID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         var perams = [String : String]()
-        perams = ["pname": withPName, "pemail": withPEmail, "pmobile":withPMobile, "driverid":"255","ride_id":self.str_SelectedFutureRideID, "dummy_id" : str_SelectedDummyPartnerID]
+        perams = ["pname": withPName, "pemail": withPEmail, "pmobile":withPMobile, "driverid":DriverLoginID,"ride_id":self.str_SelectedFutureRideID, "dummy_id" : str_SelectedDummyPartnerID]
         
         self.viewModel2.requestForDummyPartnerSelectForFutureServices(perams: perams) { success, model, error in
             if success, let UserData = model {
@@ -193,10 +193,10 @@ extension DummyPartnerSelectForFutureViewController {
 //MRK:- PartnerListAPI
 extension DummyPartnerSelectForFutureViewController {
     func partnerListAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPartnerListAPIServices(perams: ["driverid":"255"]) { success, model, error in
+        self.viewModel.requestForPartnerListAPIServices(perams: ["driverid":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

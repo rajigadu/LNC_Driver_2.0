@@ -27,8 +27,7 @@ class SelfPartnerDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Partner Details"
-        loginDriverIDStr = "255"
-        //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
+        loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         
         //NAME:
         var str_CurrentUsername = (dict_RidePartnerDetails?.first_name ?? "") ?? "" + " " + (dict_RidePartnerDetails?.last_name ?? "") ?? ""

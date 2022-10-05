@@ -27,7 +27,7 @@ var SwitchStatus = "NO"
         self.tableview_ManagePartnersRef.estimatedRowHeight = 1000
         self.tableview_ManagePartnersRef.rowHeight = UITableView.automaticDimension
         // Do any additional setup after loading the view.
-        loginDriverIDStr = "255"
+        loginDriverIDStr =  UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         lbl_NoListRef.isHidden = true
         //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
 
@@ -57,10 +57,10 @@ var SwitchStatus = "NO"
 
 extension ManagePartnersViewController {
     func getListOfManagedPartners() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForManagePartnersServices(perams: ["driverid":"255"]) { success, model, error in
+        self.viewModel.requestForManagePartnersServices(perams: ["driverid":DriverLoginID]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -81,10 +81,10 @@ extension ManagePartnersViewController {
 }
 extension ManagePartnersViewController {
     func activatePartnerAPIwithstatus(partner_id: String, status: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForUpdatePartnerStatusService(perams: ["driverid":"255", "partner_id":partner_id, "status":status]) { success, model, error in
+        self.viewModel.requestForUpdatePartnerStatusService(perams: ["driverid":DriverLoginID, "partner_id":partner_id, "status":status]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

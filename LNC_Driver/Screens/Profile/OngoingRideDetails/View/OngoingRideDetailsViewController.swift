@@ -248,6 +248,20 @@ class OngoingRideDetailsViewController: UIViewController {
         self.AdditionalStopsTextfield.inputView = self.pickerView
         self.waitingTimetextfield.inputView = self.pickerView
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if ((timer_ForUpdatingDriverCurrentLocation?.isValid) != nil) {
+            timer_ForUpdatingDriverCurrentLocation?.invalidate()
+            timer_ForUpdatingDriverCurrentLocation = nil
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if ((timer_ForUpdatingDriverCurrentLocation?.isValid) != nil) {
+            timer_ForUpdatingDriverCurrentLocation?.invalidate()
+            timer_ForUpdatingDriverCurrentLocation = nil
+        }
+    }
 
     
     @IBAction func btn_GoToUserStartLocationNavActionRef(_ sender: Any) {
@@ -300,7 +314,7 @@ class OngoingRideDetailsViewController: UIViewController {
                     self.driverFutureRideStartAPI(withDriverID: driverLoginIDString,withCurrentTime: str_CurrentgetTime,withCurrentRideID : str_CurrentRideID)
                 }
                 
-                self.btn_WaitingChargesStartRef.isHidden = true
+               // self.btn_WaitingChargesStartRef.isHidden = true
                 self.btn_StartRideFromDriverRef.setTitle("COMPLETE RIDE", for: .normal)
                 isCheckingRideStartCompleteStatus = true
 
@@ -524,9 +538,9 @@ class OngoingRideDetailsViewController: UIViewController {
     @IBAction func AdditionalPlanedStopsbtnref(_ sender: Any) {
         if str_plannedstops != "" || str_plannedstops != "0" {
         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "CancelRideViewController") as! CancelRideViewController
-            nxtVC.str_CurrentRideID = self.str_CurrentRideID
-        nxtVC.str_ComingFrom = "PartnerFutureRide"
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "StopsViewController") as! StopsViewController
+        nxtVC.dict_AdditionalStops = self.str_AdditionalStopsArr
+        nxtVC.str_plannedstops = str_plannedstops
         self.navigationController?.pushViewController(nxtVC, animated: true)
         }
     }
@@ -646,10 +660,10 @@ extension OngoingRideDetailsViewController {
     func WaitingChargesStartForFutureRideAPI(BasedOnDriverID: String,withRideID :String,
 withWaitingChargesTime: String) {
         
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForWaitingChargesStartAPIServices(perams: ["driverid":"255","rideid":withRideID,"waiting_charges_start_time": withWaitingChargesTime]) { success, model, error in
+        self.viewModel.requestForWaitingChargesStartAPIServices(perams: ["driverid":DriverLoginID,"rideid":withRideID,"waiting_charges_start_time": withWaitingChargesTime]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -670,7 +684,7 @@ extension OngoingRideDetailsViewController {
     func driverwaitingtimeAPI(withRideID: String,withstarttime :String,
                               withendtime: String) {
         
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
         self.viewModel.requestForDriverWaitingTimeAPIServices(perams: ["ride_id":withRideID,"waiting_start_time":withstarttime,"waiting_end_time": withendtime]) { success, model, error in
@@ -762,10 +776,10 @@ extension OngoingRideDetailsViewController {
 extension OngoingRideDetailsViewController {
     //MARK: - DriverRideCompleteAPI
     func driverRideCompleteAPI(withDriverID: String, withUserID: String, withRideID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverRideCompleteAPIServices(perams: ["driverid":"255","ride_id":withRideID,"userid": withUserID]) { success, model, error in
+        self.viewModel.requestForDriverRideCompleteAPIServices(perams: ["driverid":DriverLoginID,"ride_id":withRideID,"userid": withUserID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -784,10 +798,10 @@ extension OngoingRideDetailsViewController {
 extension OngoingRideDetailsViewController {
     //MARK: - DriverRideStartAPI
     func driverFutureRideStartAPI(withDriverID: String, withCurrentTime: String, withCurrentRideID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverRideStartAPIServices(perams: ["driverid":"255","rideid":withCurrentRideID,"time": withCurrentTime]) { success, model, error in
+        self.viewModel.requestForDriverRideStartAPIServices(perams: ["driverid":DriverLoginID,"rideid":withCurrentRideID,"time": withCurrentTime]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -810,10 +824,10 @@ extension OngoingRideDetailsViewController {
 extension OngoingRideDetailsViewController {
     //MARK: - DriverFutureRideDetailsAPI
     func driverFutureRideDetailsAPI(withDriverID: String, withFutureRideID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverFutureRideDetailsAPIServices(perams: ["driver_id":"255","ride_id":withFutureRideID]) { success, model, error in
+        self.viewModel.requestForDriverFutureRideDetailsAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withFutureRideID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -836,7 +850,7 @@ extension OngoingRideDetailsViewController {
                     
                     if str_FutureRideStart == "" {
                         isCheckingRideStartCompleteStatus = false
-                        self.btn_WaitingChargesStartRef.isHidden = false
+                        //self.btn_WaitingChargesStartRef.isHidden = false
                         btn_StartRideFromDriverRef.setTitle("START RIDE", for: .normal)
                         uourridehasbeenstarted_lblref.isHidden = true
                     } else if str_FutureRideStart == "0" {
@@ -848,7 +862,7 @@ extension OngoingRideDetailsViewController {
                         //timershowview_ref.isHidden = true
                     } else {
                         makingcases = "NO"
-                        self.btn_WaitingChargesStartRef.isHidden = true
+                        //self.btn_WaitingChargesStartRef.isHidden = true
                         isCheckingRideStartCompleteStatus = true
                         uourridehasbeenstarted_lblref.isHidden = false
                         btn_StartRideFromDriverRef.setTitle("COMPLETE RIDE", for: .normal)
@@ -907,10 +921,10 @@ extension OngoingRideDetailsViewController {
     //MARK: - PartnerFutureRideDetailsAPI
     func partnerFutureRideDetailsAPI(withDriverID: String, withFutureRideID: String){
         //driver_id=%@&ride_id
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPartnerFutureRideDetailsAPIServices(perams: ["driver_id":"255","ride_id":withFutureRideID]) { success, model, error in
+        self.viewModel.requestForPartnerFutureRideDetailsAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withFutureRideID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -1036,10 +1050,10 @@ extension OngoingRideDetailsViewController {
     //MARk: - IntimateToPartnerStartRideAPI
     func intimateToPartnerStartRideAPI(withRideID: String, withDriverID: String) {
         //rideid=%@&driverid
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForIntimateToPartnerStartRideAPIServices(perams: ["driverid":"255","rideid":withRideID]) { success, model, error in
+        self.viewModel.requestForIntimateToPartnerStartRideAPIServices(perams: ["driverid":DriverLoginID,"rideid":withRideID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -1060,10 +1074,10 @@ extension OngoingRideDetailsViewController {
     //MARK: - DriverUpdateCurrentLocationAPI
     func driverUpdateCurrentLocationAPI(withCurrentLatitude: String, withCurrentLongitude: String) {
         //rideid=%@&driverid
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverUpdateCurrentLocationAPIServices(perams: ["driverid":"255","latitude":withCurrentLatitude,"longitude":withCurrentLongitude,"app_version" : str_AppVersion]) { success, model, error in
+        self.viewModel.requestForDriverUpdateCurrentLocationAPIServices(perams: ["driverid":DriverLoginID,"latitude":withCurrentLatitude,"longitude":withCurrentLongitude,"app_version" : str_AppVersion]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

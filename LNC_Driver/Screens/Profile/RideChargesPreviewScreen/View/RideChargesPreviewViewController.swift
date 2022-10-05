@@ -77,10 +77,10 @@ extension RideChargesPreviewViewController {
     //MARK: - DriverCurrentRideCompleteAPI
     func driverCurrentRideCompleteAPI(withDriverID : String,
     withUserID : String,withRideID : String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverCurrentRideCompleteAPIServices(perams: ["driverid":"255","userid":withUserID,"ride_id": withRideID]) { success, model, error in
+        self.viewModel.requestForDriverCurrentRideCompleteAPIServices(perams: ["driverid":DriverLoginID,"userid":withUserID,"ride_id": withRideID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -190,10 +190,10 @@ extension RideChargesPreviewViewController {
     //MARK: - DriverFutureRideCompleteAPI
     func driverFutureRideCompleteAPI(withDriverID : String,
                                      withUserID : String, withRideID : String, withAdditionalStops:String, withWaitingTime: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverFutureRideCompleteAPIServices(perams: ["driverid":"255","userid":withUserID,"ride_id": withRideID,"unplanned_stops":withAdditionalStops,"waiting_time":withWaitingTime]) { success, model, error in
+        self.viewModel.requestForDriverFutureRideCompleteAPIServices(perams: ["driverid":DriverLoginID,"userid":withUserID,"ride_id": withRideID,"unplanned_stops":withAdditionalStops,"waiting_time":withWaitingTime]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

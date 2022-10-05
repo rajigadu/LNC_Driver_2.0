@@ -193,7 +193,7 @@ extension RideReservationsViewController: UITableViewDelegate, UITableViewDataSo
         guard let NewUpComingRide = dateFormatterGet.date(from: finalDate) else {return }
         
         if ary_FutureRideDropdateRef.count > 0 || ary_FutureRideDropdateRef.count == ary_FutureRidePickDateRef.count {
-            for i in 0..<ary_FutureRideDropdateRef.count - 1 {
+            for i in 0..<ary_FutureRideDropdateRef.count {
                 let Str_EndDate  = ary_FutureRideDropdateRef[i]
                 let Str_StartDate = ary_FutureRidePickDateRef[i]
                 if (Str_StartDate ... Str_EndDate).contains(NewUpComingRide)  {
@@ -260,10 +260,10 @@ extension Date {
 //MARK: - DriverfutureRideListAPI
 extension RideReservationsViewController {
     func driverfutureRideListAPI(withDriverLoginID: String ) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestFordriverfutureRideListAPIServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestFordriverfutureRideListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -310,10 +310,10 @@ extension RideReservationsViewController {
 extension RideReservationsViewController {
     func partnerfutureRideListAPI(withDriverLoginID: String) {
         
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForpartnerfutureRideListAPIServices(perams: ["driverid":"255"]) { success, model, error in
+        self.viewModel.requestForpartnerfutureRideListAPIServices(perams: ["driverid":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -360,10 +360,10 @@ extension RideReservationsViewController {
 //MARK: -- DriverAcceptfutureRideAPI
 extension RideReservationsViewController {
     func driverAcceptFutureRideAPI(withDriverLoginID: String, withRideID: String, withProgramIdDriver: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestdriverAcceptFutureRideAPIServices(perams: ["driver_id":"255","ride_id":withRideID]) { success, model, error in
+        self.viewModel.requestdriverAcceptFutureRideAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withRideID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -390,9 +390,9 @@ extension RideReservationsViewController {
 //MARK: - partnerAcceptfutureRideAPI
 extension RideReservationsViewController {
     func partnerAcceptFutureRideAPI(withDriverLoginID: String, withRideID: String, withProgramIdDriver: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
-        self.viewModel.requestForPartnerAcceptFutureRideAPIServices(perams: ["driver_id":"255","ride_id":withRideID]) { success, model, error in
+        self.viewModel.requestForPartnerAcceptFutureRideAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withRideID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -414,9 +414,9 @@ extension RideReservationsViewController {
 //MARK: --  DriverfutureRideListAPI
 extension RideReservationsViewController {
     func driverfutureRideListAcceptedAPI(withDriverLoginID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
-        self.viewModel.requestFordriverfutureRideListAcceptedAPIServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestFordriverfutureRideListAcceptedAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -469,9 +469,9 @@ extension RideReservationsViewController {
 //MARK: -- PartnerfutureRideAccepetedListAPI
 extension RideReservationsViewController {
     func partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
-        self.viewModel.requestForpartnerAcceptedFutureRideAcceptedListAPIServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestForpartnerAcceptedFutureRideAcceptedListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

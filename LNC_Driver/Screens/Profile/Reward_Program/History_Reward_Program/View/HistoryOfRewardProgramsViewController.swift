@@ -25,8 +25,7 @@ class HistoryOfRewardProgramsViewController: UIViewController {
         self.tblViewRef.estimatedRowHeight = 1000
         self.tblViewRef.rowHeight = UITableView.automaticDimension
         
-        loginDriverIDStr = "255"
-        //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
+        loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         // Do any additional setup after loading the view.
         self.HistoryOfRewardProgramsAPI()
     }
@@ -70,10 +69,10 @@ extension HistoryOfRewardProgramsViewController {
     
     //MARK: - History Of Reward Programs
     func HistoryOfRewardProgramsAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForHistoryOfRewardProgramsServices(perams: ["driver_id":"255","program_id":rewardProgId,"driver_time":str_driver_time]) { success, model, error in
+        self.viewModel.requestForHistoryOfRewardProgramsServices(perams: ["driver_id":DriverLoginID,"program_id":rewardProgId,"driver_time":str_driver_time]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

@@ -88,6 +88,7 @@
 		BA83F97628E99D21004494A4 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83F97528E99D20004494A4 /* FeedbackViewController.swift */; };
 		BA83F97828E99D30004494A4 /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83F97728E99D30004494A4 /* FeedbackModel.swift */; };
 		BA88E56228E718EC004AFA6E /* RideReservations_Partner_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88E56128E718EC004AFA6E /* RideReservations_Partner_Model.swift */; };
+		BA8B45F528ED696000BC325D /* AdditionalStopsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B45F428ED696000BC325D /* AdditionalStopsCell.swift */; };
 		BA8BF59B28E5C4610087CFB1 /* ManagePartnersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF59A28E5C4610087CFB1 /* ManagePartnersViewModel.swift */; };
 		BA8BF59D28E5C4720087CFB1 /* ManagePartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF59C28E5C4720087CFB1 /* ManagePartnersViewController.swift */; };
 		BA8BF5A028E5C48C0087CFB1 /* ManagePartnersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF59F28E5C48C0087CFB1 /* ManagePartnersModel.swift */; };
@@ -256,6 +257,7 @@
 		BA83F97528E99D20004494A4 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		BA83F97728E99D30004494A4 /* FeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
 		BA88E56128E718EC004AFA6E /* RideReservations_Partner_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideReservations_Partner_Model.swift; sourceTree = "<group>"; };
+		BA8B45F428ED696000BC325D /* AdditionalStopsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalStopsCell.swift; sourceTree = "<group>"; };
 		BA8BF59A28E5C4610087CFB1 /* ManagePartnersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnersViewModel.swift; sourceTree = "<group>"; };
 		BA8BF59C28E5C4720087CFB1 /* ManagePartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnersViewController.swift; sourceTree = "<group>"; };
 		BA8BF59F28E5C48C0087CFB1 /* ManagePartnersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnersModel.swift; sourceTree = "<group>"; };
@@ -1427,6 +1429,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC0E6DC28EA866C004D6C25 /* StopsViewModel.swift */,
+				BA8B45F428ED696000BC325D /* AdditionalStopsCell.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2113,6 +2116,7 @@
 				BA409B5428D059B700489F09 /* LoginViewController.swift in Sources */,
 				BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */,
 				BA2144C228D070B200DC313B /* ForgotPasswordViewController.swift in Sources */,
+				BA8B45F528ED696000BC325D /* AdditionalStopsCell.swift in Sources */,
 				BAFE539A28E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift in Sources */,
 				BABCB2C328E5452600517908 /* ActiveRewardsTableViewCell.swift in Sources */,
 				BA5C4A4328D2CAA30034F9B3 /* SettingsTableViewCell.swift in Sources */,

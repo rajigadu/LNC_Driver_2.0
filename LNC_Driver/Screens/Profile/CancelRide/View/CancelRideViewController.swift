@@ -66,10 +66,10 @@ extension CancelRideViewController {
                                       withRideID : String,
                                    withPartnerID : String){
         
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverFutureCancelRideAPIServices(perams: ["driver_id":"255","ride_id":withRideID,"reason": withReason,"partner_id":withPartnerID]) { success, model, error in
+        self.viewModel.requestForDriverFutureCancelRideAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withRideID,"reason": withReason,"partner_id":withPartnerID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -95,10 +95,10 @@ extension CancelRideViewController {
 extension CancelRideViewController {
     //MARK: - PartnerFutureCancelRideAPI
     func partnerFutureCancelRideAPI(BasedDriverID: String, withReason: String, withRideID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPartnerFutureCancelRideAPIServices(perams: ["driver_id":"255","ride_id":withRideID,"reason": withReason]) { success, model, error in
+        self.viewModel.requestForPartnerFutureCancelRideAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withRideID,"reason": withReason]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -117,10 +117,10 @@ extension CancelRideViewController {
 extension CancelRideViewController {
     //MARK: - DriverOnlineAPI
     func driverOnlineAPI(withDriverID: String, withOnOfflineStatus: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverOnlineAPIServices(perams: ["driverid":"255","status":withOnOfflineStatus]) { success, model, error in
+        self.viewModel.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":withOnOfflineStatus]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -143,10 +143,10 @@ extension CancelRideViewController {
 extension CancelRideViewController {
     //MARK: - DriverCurrentCancelRideAPI
     func driverCurrentCancelRideAPI(BasedDriverID: String, withReason: String, withRideID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverCurrentCancelRideAPIServices(perams: ["driver_id":"255","ride_id":withRideID,"reason": withReason]) { success, model, error in
+        self.viewModel.requestForDriverCurrentCancelRideAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withRideID,"reason": withReason]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -170,10 +170,10 @@ extension CancelRideViewController {
 extension CancelRideViewController {
     //MARK: - PartnerCurrentCancelRideAPI
     func partnerCurrentCancelRideAPI(BasedDriverID: String, withReason: String, withRideID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPartnerCurrentCancelRideAPIServices(perams: ["driver_id":"255","ride_id":withRideID,"reason": withReason]) { success, model, error in
+        self.viewModel.requestForPartnerCurrentCancelRideAPIServices(perams: ["driver_id":DriverLoginID,"ride_id":withRideID,"reason": withReason]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

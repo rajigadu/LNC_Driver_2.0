@@ -136,10 +136,10 @@ class ChatViewController: UIViewController {
 extension ChatViewController {
     //MARK: - DriverToUserChattingAPI
     func chatMethodFromDriverToUser(ByUsingSenderId : String, withReceiverId : String, withMessage : String,withKeyValue: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverToUserChattingAPIServices(perams: ["senderid":"255","recieverid":withReceiverId,"msg": withMessage,"keyvalue":withKeyValue,"date_time":todayDate]) { success, model, error in
+        self.viewModel.requestForDriverToUserChattingAPIServices(perams: ["senderid":DriverLoginID,"recieverid":withReceiverId,"msg": withMessage,"keyvalue":withKeyValue,"date_time":todayDate]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -172,10 +172,10 @@ extension ChatViewController {
 extension ChatViewController {
     //MARK: - DriverToPartnerChattingAPI
     func chatMethodFromDriverToPartner(ByUsingSenderId : String, withReceiverId : String, withMessage : String,withKeyValue: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverToPartnerChattingAPIServices(perams: ["senderid":"255","recieverid":withReceiverId,"msg": withMessage,"type":withKeyValue,"date_time":todayDate]) { success, model, error in
+        self.viewModel.requestForDriverToPartnerChattingAPIServices(perams: ["senderid":DriverLoginID,"recieverid":withReceiverId,"msg": withMessage,"type":withKeyValue,"date_time":todayDate]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -206,10 +206,10 @@ extension ChatViewController {
 extension ChatViewController {
     //MARK: - API_PARTNER_CHATWITHDRIVER_URL
     func chatMethodFromPartnerToDriver(ByUsingSenderId : String, withReceiverId : String, withMessage : String,withKeyValue: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPartnerToChatWithDriverAPIServices(perams: ["senderid":"255","recieverid":withReceiverId,"msg": withMessage,"type":withKeyValue,"date_time":todayDate]) { success, model, error in
+        self.viewModel.requestForPartnerToChatWithDriverAPIServices(perams: ["senderid":DriverLoginID,"recieverid":withReceiverId,"msg": withMessage,"type":withKeyValue,"date_time":todayDate]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -240,9 +240,9 @@ extension ChatViewController {
 extension ChatViewController {
     //MARK: - driverCurrentRideDetailsAPI
     func driverCurrentRideDetailsAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
-        self.viewModel.requestForDriverCurrentRideDetailsAPIServices(perams: ["driver_id":"255","devicetoken":str_DerviceToken,"device_type": "ios","type":str_InRideDriverType]) { success, model, error in
+        self.viewModel.requestForDriverCurrentRideDetailsAPIServices(perams: ["driver_id":DriverLoginID,"devicetoken":str_DerviceToken,"device_type": "ios","type":str_InRideDriverType]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -285,10 +285,10 @@ extension ChatViewController {
 extension ChatViewController {
     //MARK: - partnerCurrentRideDetailsAPI
     func partnerCurrentRideDetailsAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPartnerCurrentRideDetailsAPIServices(perams: ["driver_id":"255","devicetoken":str_DerviceToken,"device_type": "ios","type":str_InRideDriverType]) { success, model, error in
+        self.viewModel.requestForPartnerCurrentRideDetailsAPIServices(perams: ["driver_id":DriverLoginID,"devicetoken":str_DerviceToken,"device_type": "ios","type":str_InRideDriverType]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -333,7 +333,7 @@ extension ChatViewController :UITableViewDelegate, UITableViewDataSource {
         
         cell.backgroundColor = .darkGray
         var typeOfUser = resArr[indexPath.row].sender ?? ""
-        if typeOfUser != "255" {
+        if typeOfUser != loginDriverID {
             cell.ResprofileImgRef.isHidden = true
             cell.ResbagRef.isHidden = true
             cell.ResdateRef.isHidden = true

@@ -22,8 +22,7 @@ class AddManagePartnersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "ADD MANAGE PARTNER"
-        loginDriverIDStr = "255"
-        //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
+        loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         
         self.btn_SubmitRef.layer.cornerRadius = 5.0
         self.btn_SubmitRef.layer.masksToBounds = true
@@ -44,10 +43,10 @@ class AddManagePartnersViewController: UIViewController {
 }
 extension AddManagePartnersViewController {
     func AddNewPartner(pname: String,pemail: String,pmobile:String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let  DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForAddManagePartnersServices(perams: ["driverid":"255","pmobile":pmobile,"pemail":pemail,"pname":pname]) { success, model, error in
+        self.viewModel.requestForAddManagePartnersServices(perams: ["driverid": DriverLoginID,"pmobile":pmobile,"pemail":pemail,"pname":pname]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

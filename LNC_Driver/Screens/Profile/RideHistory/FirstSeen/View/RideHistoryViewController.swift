@@ -25,8 +25,7 @@ class RideHistoryViewController: UIViewController {
         self.tableview_RideInfoRef.estimatedRowHeight = 1000
         self.tableview_RideInfoRef.rowHeight = UITableView.automaticDimension
 
-        loginDriverIDStr = "255"
-        //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
+        loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         self.lbl_NoListRef.isHidden = true
         
         self.rideListAPI()
@@ -131,10 +130,10 @@ extension RideHistoryViewController {
     
     //MARK: - Week Payment Details
     func rideListAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForRideHistoryServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestForRideHistoryServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

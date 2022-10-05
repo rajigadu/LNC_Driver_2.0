@@ -633,8 +633,8 @@
                                 <rect key="frame" x="323" y="5.5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email2" translatesAutoresizingMaskIntoConstraints="NO" id="QF7-e5-ItO">
-                                        <rect key="frame" x="31" y="0.0" width="40" height="33"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QF7-e5-ItO">
+                                        <rect key="frame" x="31" y="0.5" width="40" height="32.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="Z7H-by-8qc"/>
@@ -691,8 +691,8 @@
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="backgroundimage" width="400" height="700"/>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chat" width="32" height="32"/>
-        <image name="email2" width="32" height="32"/>
         <image name="menuicon" width="20" height="20"/>
         <image name="navigation" width="32" height="32"/>
         <image name="phonecall" width="32" height="32"/>

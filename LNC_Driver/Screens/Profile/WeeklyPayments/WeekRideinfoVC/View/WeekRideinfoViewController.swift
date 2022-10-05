@@ -23,8 +23,7 @@ class WeekRideinfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "WEEK RIDE INFO"
-        self.loginDriverIDStr = "255"
-        //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
+        self.loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         self.tableview_PaymentHistoryRef.rowHeight = UITableView.automaticDimension
         self.lbl_NoReacordFoundRef.isHidden = true
         // Do any additional setup after loading the view.
@@ -171,10 +170,10 @@ extension WeekRideinfoViewController: UITableViewDelegate,UITableViewDataSource 
 
 extension WeekRideinfoViewController {
     func WeeklyRideinfoAPI(){
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForWeekRideinfoServices(perams: ["driver_id":"255","to_week": self.str_Todates,"from_week":self.str_Fromdate]) { success, model, error in
+        self.viewModel.requestForWeekRideinfoServices(perams: ["driver_id":DriverLoginID,"to_week": self.str_Todates,"from_week":self.str_Fromdate]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

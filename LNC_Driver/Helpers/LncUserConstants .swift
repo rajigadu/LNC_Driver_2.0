@@ -11,6 +11,7 @@ let kApptitle = "Late Night Chauffeurs"
 class I18n  {
 
 static let NoInterNetString                           = "No Internet,Please Check"
+static let SomethingWentWrong                         = "Something went wrong"
 static let ModelDecodeErrorString                     = "Error: Trying to parse Employees to model"
 static let GetRequestFailedString                     = "Error: Employees GET Request failed"
 static let GOOGLE_PLACE_FILTER_KEY                    = "AIzaSyBRzUCMhC0dooTNbHeIpD2iycfIawOHM6g"

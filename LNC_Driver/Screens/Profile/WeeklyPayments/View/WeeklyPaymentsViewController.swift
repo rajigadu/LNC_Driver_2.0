@@ -111,10 +111,10 @@ extension WeeklyPaymentsViewController {
     
     //MARK: - Week Payment Details
     func getWeekPaymentDeatils() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForWeeklyPaymentsServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestForWeeklyPaymentsServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

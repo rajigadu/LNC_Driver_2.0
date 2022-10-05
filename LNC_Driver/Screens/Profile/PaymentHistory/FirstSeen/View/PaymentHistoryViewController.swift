@@ -26,8 +26,7 @@ class PaymentHistoryViewController: UIViewController {
         self.tableview_PaymentHistoryRef.estimatedRowHeight = 1000
         self.tableview_PaymentHistoryRef.rowHeight = UITableView.automaticDimension
         
-        loginDriverIDStr = "255"
-        //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
+        loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         self.lbl_NoReacordFoundRef.isHidden = true
         
         self.paymentHistoryAPI()
@@ -282,10 +281,10 @@ extension PaymentHistoryViewController {
     
     //MARK: - Week Payment Details
     func paymentHistoryAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPaymentHistoryServices(perams: ["driverid":"255"]) { success, model, error in
+        self.viewModel.requestForPaymentHistoryServices(perams: ["driverid":DriverLoginID]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

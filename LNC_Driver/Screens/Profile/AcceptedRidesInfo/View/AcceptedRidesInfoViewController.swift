@@ -180,7 +180,7 @@ extension AcceptedRidesInfoViewController: UITableViewDelegate, UITableViewDataS
                 
                 cell.btn_RoleChangeBtnRef.isHidden = true
             } else {
-                if RoleChangeStatus_Str == "255" {//loginDriverIDStr {
+                if RoleChangeStatus_Str == loginDriverIDStr {
                     cell.RoleChangeBtnHeight_ref.constant = 0
                     cell.backViewBtn_height_ref.constant = 45
                     cell.btn_RoleChangeBtnRef.isHidden = true
@@ -230,10 +230,10 @@ extension AcceptedRidesInfoViewController: UITableViewDelegate, UITableViewDataS
 //MARK: - DriverOnlineAPI
 extension AcceptedRidesInfoViewController {
     func driverOnlineAPI(withDriverLoginID: String, withOnOfflineStatus: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverOnlineAPIServices(perams: ["driverid":"255","status":withOnOfflineStatus]) { success, model, error in
+        self.viewModel.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":withOnOfflineStatus]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -257,10 +257,10 @@ extension AcceptedRidesInfoViewController {
 //MARK: - DriverRoleChangeAPI
 extension AcceptedRidesInfoViewController {
     func DriverRoleChangeAPI(withDriverLoginID: String, withRideId: String, withswipetype: String ) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverRoleChangeAPIServices(perams: ["driverid":"255","ride_id":withRideId,"swap": withswipetype]) { success, model, error in
+        self.viewModel.requestForDriverRoleChangeAPIServices(perams: ["driverid":DriverLoginID,"ride_id":withRideId,"swap": withswipetype]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -284,10 +284,10 @@ extension AcceptedRidesInfoViewController {
 //MARK: - DriverfutureRideListAPI
 extension AcceptedRidesInfoViewController {
     func driverAcceptedFutureRideListAPI(withDriverLoginID: String ) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverAcceptedFutureRideListAPIServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestForDriverAcceptedFutureRideListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -331,10 +331,10 @@ extension AcceptedRidesInfoViewController {
 //MARK: - PartnerfutureRideListAPI
 extension AcceptedRidesInfoViewController {
     func partnerAcceptedFutureRideListAPI(withDriverLoginID : String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForpartnerAcceptedFutureRideListAPIServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestForpartnerAcceptedFutureRideListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

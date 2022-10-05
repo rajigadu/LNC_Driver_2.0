@@ -22,8 +22,7 @@ class ActivatedRewardProgramsViewController: UIViewController {
         self.tblViewRef.estimatedRowHeight = 1000
         self.tblViewRef.rowHeight = UITableView.automaticDimension
         // Do any additional setup after loading the view.
-        loginDriverIDStr = "255"
-        //UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
+        loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         
         self.ActivatedRewardProgramsAPI()
     }
@@ -98,10 +97,10 @@ extension ActivatedRewardProgramsViewController {
     
     //MARK: - Activated Reward Programs
     func ActivatedRewardProgramsAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForActivatedRewardProgramsServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestForActivatedRewardProgramsServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

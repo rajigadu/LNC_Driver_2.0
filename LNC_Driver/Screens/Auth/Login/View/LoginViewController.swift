@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
        // self.txt_PasswordRef.text = "123"
        // self.txt_UserMailRef.text = "rajesh@anaad.net"
         self.txt_PasswordRef.text = "123"
-        self.txt_UserMailRef.text = "venk@gmail.com"
+        self.txt_UserMailRef.text = "rajesh@anaad.net"
         // Do any additional setup after loading the view.
     }
     

@@ -60,10 +60,10 @@ extension AvailableRewardProgramsListViewController {
     
     //MARK: - Available Reward Programs
     func AvailableRewardProgramsListServices() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForAvailableRewardProgramsListServices(perams: ["driver_id":"255"]) { success, model, error in
+        self.viewModel.requestForAvailableRewardProgramsListServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -86,10 +86,10 @@ extension AvailableRewardProgramsListViewController {
     
     //MARK: - Week Payment Details
     func ActivateRewardServices(program_id: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForActivateRewardServices(perams: ["driver_id":"255","program_id":program_id]) { success, model, error in
+        self.viewModel.requestForActivateRewardServices(perams: ["driver_id":DriverLoginID,"program_id":program_id]) { success, model, error in
             if success, let UserDetails = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

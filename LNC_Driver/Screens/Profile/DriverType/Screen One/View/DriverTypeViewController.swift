@@ -174,10 +174,10 @@ extension DriverTypeViewController: UIPickerViewDelegate, UIPickerViewDataSource
 //MARK: - ActivePartnerAPI
 extension DriverTypeViewController {
     func activePartnerAPI(withDriverID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForActivePartnerAPIServices(perams: ["driverid":"255"]) { success, model, error in
+        self.viewModel.requestForActivePartnerAPIServices(perams: ["driverid":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -217,18 +217,18 @@ extension DriverTypeViewController {
 //MARK: -  selectDriverTypeAPI
 extension DriverTypeViewController {
     func selectDriverTypeAPI(withPName: String, withPEmail: String, withPMobile: String, withSelectedType: String, withLoginDriverID: String) {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         var perams = [String : String]()
         if str_CheckingSelectedDriverType == "1" {
             if self.str_CurrentRide == "" {
-                perams = ["pname": withPName, "pemail": withPEmail, "pmobile":withPMobile, "driver_type":withSelectedType,"driverid":"255","default":"yes"]
+                perams = ["pname": withPName, "pemail": withPEmail, "pmobile":withPMobile, "driver_type":withSelectedType,"driverid":DriverLoginID,"default":"yes"]
             } else {
-                perams = ["pname": withPName, "pemail": withPEmail, "pmobile":withPMobile, "driver_type":withSelectedType,"driverid":"255","default":"yes", "ride_id" : self.str_CurrentRide]
+                perams = ["pname": withPName, "pemail": withPEmail, "pmobile":withPMobile, "driver_type":withSelectedType,"driverid":DriverLoginID,"default":"yes", "ride_id" : self.str_CurrentRide]
             }
             
         } else if str_CheckingSelectedDriverType == "2" {
-            perams = ["driver_type": str_CheckingSelectedDriverType, "driverid": "255", "default":"no"]
+            perams = ["driver_type": str_CheckingSelectedDriverType, "driverid":DriverLoginID, "default":"no"]
         }
         
         self.viewModel.requestForSelectDriverTypeAPIServices(perams: perams) { success, model, error in
@@ -288,10 +288,10 @@ extension DriverTypeViewController {
 //MRK:- PartnerListAPI
 extension DriverTypeViewController {
     func partnerListAPI() {
-        guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForPartnerListAPIServices(perams: ["driverid":"255"]) { success, model, error in
+        self.viewModel.requestForPartnerListAPIServices(perams: ["driverid":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

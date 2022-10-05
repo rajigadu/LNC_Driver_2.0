@@ -38,7 +38,7 @@ class AcceptedRidesInfoViewModel: NSObject {
                 if EditProfileUserData.status == "1" {
                     completion(true, EditProfileUserData, nil)
                 } else {
-                    completion(false, nil, EditProfileUserData.message)
+                    completion(false, nil, I18n.SomethingWentWrong)
                 }
             } else {
                 completion(false, nil, error)
@@ -53,7 +53,7 @@ class AcceptedRidesInfoViewModel: NSObject {
                 if EditProfileUserData.status == "1" {
                     completion(true, EditProfileUserData, nil)
                 } else {
-                    completion(false, nil, EditProfileUserData.message)
+                    completion(false, nil, I18n.SomethingWentWrong)
                 }
             } else {
                 completion(false, nil, error)
@@ -68,7 +68,7 @@ class AcceptedRidesInfoViewModel: NSObject {
                 if EditProfileUserData.status == "1" {
                     completion(true, EditProfileUserData, nil)
                 } else {
-                    completion(false, nil, EditProfileUserData.message)
+                    completion(false, nil, I18n.SomethingWentWrong)
                 }
             } else {
                 completion(false, nil, error)
