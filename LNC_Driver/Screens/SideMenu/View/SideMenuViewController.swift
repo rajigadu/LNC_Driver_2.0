@@ -52,10 +52,11 @@ class SideMenuViewController: UIViewController {
         if let Str_FirstName = UserDefaults.standard.string(forKey: "DriverFirstName"),let Str_LastName = UserDefaults.standard.string(forKey: "DriverLasttName") {
             self.lbl_UserNameRef.text = Str_FirstName + " " +  Str_LastName
         }
-        //Last Name
-        //        if let Str_Email = UserDefaults.standard.string(forKey: "UserEmailID") {
-        //            self.lbl_EmailRef.text = Str_Email
-        //         }
+        //UserRating
+        
+        if let Str_DriverRating = UserDefaults.standard.string(forKey: "DriverRating") {
+            self.lbl_AverageRatingRef.text = "Rating :" + Str_DriverRating
+        }
         
         //User Image
         if let Str_UserImage = UserDefaults.standard.string(forKey: "DriverProfilepic") {
