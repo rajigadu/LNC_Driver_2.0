@@ -58,7 +58,9 @@ extension LoginViewController {
                         DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
                             //self.showToast(message: LoginedUser.message ?? "Welcome! You are successfully login in your account panel.", font: .systemFont(ofSize: 12.0))
-                            movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                           // movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                            self.movetonextvc(id: "DriverTypeViewController", storyBordid: "RidesHistory",animated:false)
+
                         }
                     } else {
                         DispatchQueue.main.async { [self] in

@@ -145,7 +145,6 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - Ongoing Ride Details --- DriverUpdateCurrentLocationAPI
     func requestForDriverUpdateCurrentLocationAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverUpdateCurrentLocationData?, _ error: String?) -> ())
     
-    
     //MARK: - Cancel Ride -- DriverFutureCancelRideAPI
     func requestForDriverFutureCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
     //MARK: - Cancel Ride -- PartnerFutureCancelRideAPI
@@ -185,6 +184,9 @@ protocol LateNightChauffeursDriverServiceProtocol {
 
     //MARK: - Notification List
     func requestForNotificationServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, NotificationData?, String?) -> ())
+    //MARK: - get next ride time
+    func requestForNextRIDETimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardNextRideData?, String?) -> ())
+
 }
 
 //MARK: - Login
@@ -904,6 +906,27 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(NotificationData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
+extension ApiService {
+    //MARK: - get next ride time
+    func requestForNextRIDETimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardNextRideData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, I18n.NoInterNetString)
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVERNextRideTime_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(DashBoardNextRideData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

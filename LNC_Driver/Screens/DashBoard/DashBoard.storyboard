@@ -635,6 +635,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="NextRideTimeShowHeightref" destination="eFm-83-l0m" id="lMN-0o-RRF"/>
+                        <outlet property="NextRideTimeShowViewref" destination="Aqv-II-t5d" id="cp0-Ts-V2o"/>
+                        <outlet property="lbl_FutureRideItimationRef" destination="eFg-dU-zCW" id="9fD-TB-s9K"/>
                         <outlet property="mapView" destination="BCH-T0-Kij" id="Wzn-54-7MV"/>
                     </connections>
                 </viewController>
