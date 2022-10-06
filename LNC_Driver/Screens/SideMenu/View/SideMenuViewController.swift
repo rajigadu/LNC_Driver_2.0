@@ -59,7 +59,7 @@ class SideMenuViewController: UIViewController {
         
         //User Image
         if let Str_UserImage = UserDefaults.standard.string(forKey: "DriverProfilepic") {
-            self.imageview_ProfileRef.sd_setImage(with: URL(string: Str_UserImage), placeholderImage: UIImage(named: "UserPic"))
+            self.imageview_ProfileRef.sd_setImage(with: URL(string: Str_UserImage), placeholderImage: UIImage(named: "personIcon"))
         }
         
         self.tableview_MenuSliderRef.reloadData()
@@ -91,7 +91,7 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "SettingsViewController", storyBordid: "Profile",animated:false)
         } else if arrayResponse[indexPath.row] == "Employee Guidelines" {
             let Storyboard : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-            let nxtVC = Storyboard.instantiateViewController(withIdentifier: "TermsAndPrivacyViewController") as! TermsAndPrivacyViewController
+            let nxtVC = Storyboard.instantiateViewController(withIdentifier: "EmployeeGuideLinesViewController") as! EmployeeGuideLinesViewController
             nxtVC.str_ActionComingFrom = "Employee Guidelines"
             self.navigationController?.pushViewController(nxtVC, animated:  true)
         } else if arrayResponse[indexPath.row] == "Weekly Payments" {
@@ -164,7 +164,7 @@ extension SideMenuViewController {
     //            } else {
     //                DispatchQueue.main.async { [self] in
     //                    indicator.hideActivityIndicator()
-    //                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+    //                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
     //                }
     //            }
     //        }

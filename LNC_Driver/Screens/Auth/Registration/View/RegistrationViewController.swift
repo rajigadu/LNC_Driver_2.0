@@ -73,17 +73,17 @@ class RegistrationViewController: UIViewController {
         selectW3CheckBoxr.setImage(UIImage(named: "uncheckimage"), for: .normal)
         
         
-        self.firstNameTxtFld.text = "Raj"
-        self.lastNameTxtFld.text = "Venk"
-        self.emailTxtFld.text = "venk@gmail.com"
-        self.mobileNoTxtFld.text = "1234567890"
-        self.passwordTxtFld.text = "123"
-        self.confrimPasswordTxtFld.text = "123"
-        self.txt_AdddressRef.text = "mamillapalli"
-        self.addressID = "12"
-        self.txt_VehicleMakeTxtFld.text = "ting"
-        self.txt_VehicleModelTxtFld.text = "tong"
-        self.txt_VehicleYearTxtFld.text = "2012"
+//        self.firstNameTxtFld.text = "Raj"
+//        self.lastNameTxtFld.text = "Venk"
+//        self.emailTxtFld.text = "venk@gmail.com"
+//        self.mobileNoTxtFld.text = "1234567890"
+//        self.passwordTxtFld.text = "123"
+//        self.confrimPasswordTxtFld.text = "123"
+//        self.txt_AdddressRef.text = "mamillapalli"
+//        self.addressID = "12"
+//        self.txt_VehicleMakeTxtFld.text = "ting"
+//        self.txt_VehicleModelTxtFld.text = "tong"
+//        self.txt_VehicleYearTxtFld.text = "2012"
         
     }
     

@@ -183,7 +183,8 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - FeedBack Seen
     func requestForFeedbackAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: FeedBacData?, _ error: String?) -> ())
 
-
+    //MARK: - Notification List
+    func requestForNotificationServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, NotificationData?, String?) -> ())
 }
 
 //MARK: - Login
@@ -882,6 +883,27 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(AlereadyAcceptedridetimebasesData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
+extension ApiService {
+    //MARK: - Notification List
+    func requestForNotificationServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, NotificationData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, I18n.NoInterNetString)
+        }
+        HttpRequestHelper().GET(url: API_URl.API_RichNotification_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(NotificationData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

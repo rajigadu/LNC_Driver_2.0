@@ -33,6 +33,9 @@ class PaymentHistoryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func menuOpenBtnref(_ sender: Any) {
+        self.navigateToSideMenu()
+    }
 }
 extension PaymentHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -297,7 +300,7 @@ extension PaymentHistoryViewController {
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }

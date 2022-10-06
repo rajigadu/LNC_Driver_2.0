@@ -79,6 +79,11 @@ class DriverTypeViewController: UIViewController {
         self.activePartnerAPI(withDriverID: str_DriverLoginID)
     }
     
+    
+    @IBAction func openedMenuBtnref(_ sender: Any) {
+        self.navigateToSideMenu()
+    }
+    
     @IBAction func btn_DriverTypeUpdateAction(_ sender: UIButton) {
         switch sender.tag {
         case 200:
@@ -254,7 +259,7 @@ extension DriverTypeViewController {
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -277,7 +282,7 @@ extension DriverTypeViewController {
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -310,7 +315,7 @@ extension DriverTypeViewController {
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }

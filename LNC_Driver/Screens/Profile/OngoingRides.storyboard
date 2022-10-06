@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMr-iy-I1k">
-                                <rect key="frame" x="0.0" y="49" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omi-lK-MpR">
                                         <rect key="frame" x="8" y="5" width="196" height="38"/>
@@ -71,7 +71,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ivp-v1-XWM">
-                                <rect key="frame" x="5" y="104" width="404" height="753"/>
+                                <rect key="frame" x="5" y="148" width="404" height="709"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FutureRideListVCTableViewCell" rowHeight="135" id="UPN-DA-bqR" customClass="FutureRideListVCTableViewCell" customModule="LNC_Driver" customModuleProvider="target">
@@ -197,6 +197,13 @@
                             <constraint firstItem="Ivp-v1-XWM" firstAttribute="leading" secondItem="Ygb-CE-Pf1" secondAttribute="leading" constant="5" id="zy1-59-voD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xNS-n7-yEt">
+                        <barButtonItem key="leftBarButtonItem" image="list.bullet" catalog="system" id="QJR-Q5-i8P">
+                            <connections>
+                                <action selector="openMenuBtnref:" destination="Jzj-aJ-vj7" id="88l-bz-Qro"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btn_DriverRequestRef" destination="omi-lK-MpR" id="HdD-vS-Bpd"/>
                         <outlet property="btn_PartnerRequestRef" destination="An2-pg-Ta6" id="Pqg-0J-p64"/>
@@ -206,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92a-R8-mEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4550.625" y="143.66197183098592"/>
+            <point key="canvasLocation" x="5459.420289855073" y="143.30357142857142"/>
         </scene>
         <!--Accepted Rides Info View Controller-->
         <scene sceneID="g3X-wY-F05">
@@ -230,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFQ-8O-ARb">
-                                <rect key="frame" x="6" y="49" width="402" height="50"/>
+                                <rect key="frame" x="6" y="93" width="402" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wd6-9f-Rmk">
                                         <rect key="frame" x="8" y="5" width="190" height="38"/>
@@ -270,7 +277,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hnp-ac-Ot9">
-                                <rect key="frame" x="5" y="104" width="404" height="753"/>
+                                <rect key="frame" x="5" y="148" width="404" height="709"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AcceptedRidesInfoTableViewCell" rowHeight="201" id="U31-6R-G3a" customClass="AcceptedRidesInfoTableViewCell" customModule="LNC_Driver" customModuleProvider="target">
@@ -407,6 +414,13 @@
                             <constraint firstItem="Hnp-ac-Ot9" firstAttribute="leading" secondItem="EUw-Zc-PjC" secondAttribute="leading" constant="5" id="zNQ-Bb-w41"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dvC-Dl-MqP">
+                        <barButtonItem key="leftBarButtonItem" image="list.bullet" catalog="system" id="m2T-HE-H98">
+                            <connections>
+                                <action selector="openMenuBtnref:" destination="vvO-GE-kK0" id="4Bk-wo-bRm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btn_DriverAcceptedFutureRideRef" destination="wd6-9f-Rmk" id="AKn-aC-gg2"/>
                         <outlet property="btn_PartnerAcceptedFutureRideRef" destination="uAi-e2-fTP" id="o5o-kb-hpP"/>
@@ -416,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m53-ig-ENo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5280" y="143"/>
+            <point key="canvasLocation" x="7100.0000000000009" y="142.63392857142856"/>
         </scene>
         <!--Ongoing Ride Details View Controller-->
         <scene sceneID="jFb-fA-dY6">
@@ -1153,7 +1167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pg-ij-ceM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6093" y="143"/>
+            <point key="canvasLocation" x="7913.04347826087" y="142.63392857142856"/>
         </scene>
         <!--Cancel Ride View Controller-->
         <scene sceneID="wVP-v6-8Bb">
@@ -1795,7 +1809,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNR-Lh-xEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6783" y="143"/>
+            <point key="canvasLocation" x="8602.898550724638" y="142.63392857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qsc-rP-R7j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dpz-32-1Go" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JrF-RU-YD3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jzj-aJ-vj7" kind="relationship" relationship="rootViewController" id="wp1-Vz-5ld"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lt9-bQ-9LU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4549.275362318841" y="143.30357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JHf-HZ-Cgn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vgH-4b-XGu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C4f-9I-6xg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vvO-GE-kK0" kind="relationship" relationship="rootViewController" id="8nZ-RX-PHA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XwX-Dr-1Jb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6189.8550724637689" y="142.63392857142856"/>
         </scene>
     </scenes>
     <designables>
@@ -1809,6 +1859,7 @@
         <image name="cancel" width="32" height="32"/>
         <image name="chat" width="32" height="32"/>
         <image name="greenbubble" width="375" height="100"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="navigation" width="32" height="32"/>
         <image name="personIcon" width="100" height="100"/>
         <image name="phonecall" width="32" height="32"/>

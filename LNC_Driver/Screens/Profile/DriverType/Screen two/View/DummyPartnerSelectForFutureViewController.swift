@@ -83,6 +83,10 @@ class DummyPartnerSelectForFutureViewController: UIViewController {
         self.partnerListAPI()
     }
     
+    @IBAction func openDriverbtnref(_ sender: Any) {
+        self.navigateToSideMenu()
+    }
+    
     @IBAction func btn_DriverTypeUpdateAction(_ sender: UIButton) {
         switch sender.tag {
         case 200:
@@ -181,7 +185,7 @@ extension DummyPartnerSelectForFutureViewController {
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
             }
         }
@@ -216,7 +220,7 @@ extension DummyPartnerSelectForFutureViewController {
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
             }
         }

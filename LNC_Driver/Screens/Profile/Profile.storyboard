@@ -30,7 +30,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="61W-k9-Z3N">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="61W-k9-Z3N">
                                             <rect key="frame" x="107" y="10" width="200" height="75"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="75" id="CVC-xD-KZg"/>
@@ -124,40 +124,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="qSN-4a-zf0">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="3GD-bI-2FW">
-                            <view key="customView" contentMode="scaleToFill" id="SLP-Gw-JqP">
-                                <rect key="frame" x="20" y="5.5" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuicon" translatesAutoresizingMaskIntoConstraints="NO" id="OjB-9V-PMA">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="bX2-nu-CjV"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBT-KP-5hr">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="33"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="openSideMenu:" destination="eRZ-18-NoC" eventType="touchUpInside" id="qzg-Ks-qxm"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="IpN-lt-N1K"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="FBT-KP-5hr" firstAttribute="leading" secondItem="SLP-Gw-JqP" secondAttribute="leading" id="9Gb-HS-D4X"/>
-                                    <constraint firstAttribute="bottom" secondItem="OjB-9V-PMA" secondAttribute="bottom" id="JCH-QM-ETF"/>
-                                    <constraint firstAttribute="trailing" secondItem="FBT-KP-5hr" secondAttribute="trailing" id="MgQ-uZ-6gq"/>
-                                    <constraint firstItem="OjB-9V-PMA" firstAttribute="top" secondItem="SLP-Gw-JqP" secondAttribute="top" id="NhO-gw-uRb"/>
-                                    <constraint firstItem="OjB-9V-PMA" firstAttribute="leading" secondItem="IpN-lt-N1K" secondAttribute="leading" id="cxj-cH-Sfb"/>
-                                    <constraint firstItem="FBT-KP-5hr" firstAttribute="top" secondItem="SLP-Gw-JqP" secondAttribute="top" id="sdL-co-8xI"/>
-                                    <constraint firstAttribute="bottom" secondItem="FBT-KP-5hr" secondAttribute="bottom" id="szu-9c-Xvn"/>
-                                </constraints>
-                            </view>
+                        <barButtonItem key="leftBarButtonItem" image="list.bullet" catalog="system" id="4yu-bw-x2m">
+                            <connections>
+                                <action selector="openSideMenu:" destination="eRZ-18-NoC" id="Tqf-6G-sHi"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -247,7 +217,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="RIY-u4-8c7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="nTf-tU-55A">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="nTf-tU-55A">
                                 <rect key="frame" x="107" y="64" width="200" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="97y-t1-K8h"/>
@@ -365,7 +335,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="Fp1-2q-Eoz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Up6-Ih-TpA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Up6-Ih-TpA">
                                 <rect key="frame" x="107" y="74" width="200" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0EG-3m-jii"/>
@@ -469,12 +439,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="huv-OE-7cu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personIcon" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-7U-S2r">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personIcon" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-7U-S2r">
                                 <rect key="frame" x="147" y="64" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="t8v-e8-XPh"/>
                                     <constraint firstAttribute="width" constant="120" id="xgo-9O-cC3"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-lo-AMx">
                                 <rect key="frame" x="131.5" y="192" width="151" height="24"/>
@@ -1021,12 +996,82 @@
             </objects>
             <point key="canvasLocation" x="4901" y="948"/>
         </scene>
+        <!--Employee Guide Lines View Controller-->
+        <scene sceneID="x6W-S4-rTd">
+            <objects>
+                <viewController storyboardIdentifier="EmployeeGuideLinesViewController" id="seG-P1-ucb" customClass="EmployeeGuideLinesViewController" customModule="LNC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uzn-9M-Bnf"/>
+                        <viewControllerLayoutGuide type="bottom" id="EOC-P6-rcy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FxT-f5-Mxt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundimage" translatesAutoresizingMaskIntoConstraints="NO" id="mXD-Bi-w9M">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <wkWebView contentMode="scaleAspectFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Cs-Ig-Oz9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jdF-q5-NHf"/>
+                        <color key="backgroundColor" red="0.49060559269999998" green="0.67758250239999995" blue="0.12212634830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mXD-Bi-w9M" firstAttribute="top" secondItem="Uzn-9M-Bnf" secondAttribute="bottom" id="7Wd-hG-XSY"/>
+                            <constraint firstAttribute="trailing" secondItem="8Cs-Ig-Oz9" secondAttribute="trailing" id="7lq-N3-Mfr"/>
+                            <constraint firstItem="jdF-q5-NHf" firstAttribute="trailing" secondItem="mXD-Bi-w9M" secondAttribute="trailing" id="HtK-fR-6Hu"/>
+                            <constraint firstItem="8Cs-Ig-Oz9" firstAttribute="top" secondItem="jdF-q5-NHf" secondAttribute="top" id="Pb9-6L-mmI"/>
+                            <constraint firstItem="EOC-P6-rcy" firstAttribute="top" secondItem="mXD-Bi-w9M" secondAttribute="bottom" id="jTl-EZ-EXd"/>
+                            <constraint firstItem="mXD-Bi-w9M" firstAttribute="leading" secondItem="jdF-q5-NHf" secondAttribute="leading" id="lvY-L6-Mnt"/>
+                            <constraint firstItem="8Cs-Ig-Oz9" firstAttribute="leading" secondItem="jdF-q5-NHf" secondAttribute="leading" id="top-g3-bXM"/>
+                            <constraint firstItem="jdF-q5-NHf" firstAttribute="bottom" secondItem="8Cs-Ig-Oz9" secondAttribute="bottom" id="ua3-5b-upq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bbT-2m-cLL">
+                        <barButtonItem key="leftBarButtonItem" image="list.bullet" catalog="system" id="f2U-wV-NxW">
+                            <connections>
+                                <action selector="openMenuBtnref:" destination="seG-P1-ucb" id="r6W-EJ-0SB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webview_Ref" destination="8Cs-Ig-Oz9" id="SwK-aG-gSl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6D-KT-5Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7910.1449275362329" y="-633.48214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cLI-ig-dej">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="thG-DV-zuV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="knr-do-bLy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="seG-P1-ucb" kind="relationship" relationship="rootViewController" id="dBI-CM-MSc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJE-pZ-NMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7000.0000000000009" y="-633.48214285714278"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add" width="32" height="32"/>
         <image name="appLogo" width="200" height="90"/>
         <image name="backgroundimage" width="400" height="700"/>
-        <image name="menuicon" width="20" height="20"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="personIcon" width="100" height="100"/>
         <image name="placeholder" width="200" height="100.5"/>
         <image name="rightcolor" width="19" height="19"/>

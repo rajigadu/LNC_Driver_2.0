@@ -26,6 +26,11 @@ class ActivatedRewardProgramsViewController: UIViewController {
         
         self.ActivatedRewardProgramsAPI()
     }
+    
+    @IBAction func openMenuBntref(_ sender: Any) {
+        self.navigateToSideMenu()
+    }
+    
 }
 
 extension ActivatedRewardProgramsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -113,7 +118,7 @@ extension ActivatedRewardProgramsViewController {
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "No Such Email Address Found.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
