@@ -41,7 +41,7 @@ static let WithDrawlKey                               = "Please Enter your withd
 
 class API_URl  {
 
-static let API_SERVER_URL                             = "https://lnc.latenightchauffeurs.com/lnc-administrator/ios-test/driver/"
+static let API_SERVER_URL                             = "https://lnc.latenightchauffeurs.com/lnc-administrator/ios-test/driver/"//
 static let API_IMAGEBASE_URL                          = "https://lnc.latenightchauffeurs.com/lnc-administrator/uploads/"
 static let API_LOGIN_URL                              = API_URl.API_SERVER_URL +  "login.php?"
 static let API_REGISTRATION_URL                        = API_URl.API_SERVER_URL +  "signup.php"
@@ -141,5 +141,5 @@ static let API_MY_REWARDS_URL                          = API_URl.API_SERVER_URL 
 
 static let API_HISTORY_REWARDS_URL                     = API_URl.API_SERVER_URL +  "history-reward-program-list.php?" //STATIC
 static let API_RichNotification_URL                   = API_URl.API_SERVER_URL +  "notification-message-list.php?"
-
+static let Api_GET_GOOLE_KEY                           = API_URl.API_SERVER_URL + "google-api-key.php?"
 }

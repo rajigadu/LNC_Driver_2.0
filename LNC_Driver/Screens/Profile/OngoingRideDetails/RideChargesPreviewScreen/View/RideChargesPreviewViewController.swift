@@ -160,7 +160,7 @@ extension RideChargesPreviewViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    let alertController = UIAlertController(title: kApptitle, message: userData.message ?? "", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: kApptitle, message: userData.data?[0].message ?? "", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
                         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController

@@ -73,12 +73,7 @@ extension CancelRideViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    let alertController = UIAlertController(title: kApptitle, message: userData.message ?? "", preferredStyle: .alert)
-                    let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-                        self.driverOnlineAPI(withDriverID : self.str_DriverLoginID, withOnOfflineStatus : "1")
-                    }
-                    alertController.addAction(OKAction)
-                    self.present(alertController, animated: true, completion: nil)
+                    self.ShowAlertWithPush(message: userData.message ?? "Successfully Done" , className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
 
                 }
             } else {

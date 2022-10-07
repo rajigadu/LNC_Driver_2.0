@@ -26,7 +26,8 @@ class DashBoardViewController: UIViewController {
     var str_UserCurrentLocationCity = ""
     let getLocation = GetLocation()
      var str_AppVersion = ""
- 
+ var str_DerviceToken = ""
+    var str_Version = ""
 
     lazy var viewModel = {
         DashBoardViewModel()
@@ -37,13 +38,19 @@ class DashBoardViewController: UIViewController {
     lazy var viewModel3 = {
         OngoingRideDetailsViewModel()
     }()
+    
+    lazy var viewModel4 = {
+        ChatViewModel()
+    }()
     //MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NextRideTimeShowViewref.isHidden = true
         NextRideTimeShowHeightref.constant = 0
-       
+        str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? "" ?? ""
+        str_Version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+
 
        // setupSideMenu()
        // self.swipeRight()
@@ -62,6 +69,8 @@ class DashBoardViewController: UIViewController {
               NSLog("One or more of the map styles failed to load. \(error)")
           }
         
+        self.driverCurrentRideDetailsAPI()
+        self.getgooglekeyListAPI()
         self.getNextRideTime()
         self.driverOnlineAPI()
         self.driverUpdateCurrentLocationAPI()
@@ -71,6 +80,8 @@ class DashBoardViewController: UIViewController {
     
     @IBAction func setupSideMenu(_ sender : Any){
         self.navigateToSideMenu()
+        //fatalError("Crash was triggered")
+
     }
  
     @IBAction func openRichNotificationBtn(_ sender: Any) {
@@ -203,7 +214,7 @@ extension DashBoardViewController {
         guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel3.requestForDriverUpdateCurrentLocationAPIServices(perams: ["driverid":DriverLoginID,"latitude":self.str_UserCurrentLocationLatitude,"longitude":self.str_UserCurrentLocationLongitude,"app_version" : str_AppVersion]) { success, model, error in
+        self.viewModel3.requestForDriverUpdateCurrentLocationAPIServices(perams: ["driverid":DriverLoginID,"latitude":self.str_UserCurrentLocationLatitude,"longitude":self.str_UserCurrentLocationLongitude,"app_version" : str_Version]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
@@ -243,3 +254,42 @@ extension DashBoardViewController {
 //    }
 //}
 
+extension DashBoardViewController {
+    //MARk: -- API REQUEST CLASS DELEGATE
+    //MARK: - request for Google Key
+    func getgooglekeyListAPI() {
+        indicator.showActivityIndicator()
+        self.viewModel.requestForgetgooglekeyListAPIServices(perams: ["":""]) { success, model, error in
+            if success, let UserData = model {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    if UserData.status == "1" {
+                        UserDefaults.standard.set(UserData.data?.key ?? "", forKey: "Googlekeyvalue")
+                    }
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    self.showToast(message: error ?? "no record found.", font: .systemFont(ofSize: 12.0))
+                }
+            }
+        }
+    }
+}
+extension DashBoardViewController {
+    //MARK: - driverCurrentRideDetailsAPI
+    func driverCurrentRideDetailsAPI() {
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        indicator.showActivityIndicator()
+        self.viewModel4.requestForDriverCurrentRideDetailsAPIServices(perams: ["driver_id":DriverLoginID,"devicetoken":str_DerviceToken,"device_type": "ios","type":"DRIVER","app_version":str_Version]) { success, model, error in
+            if success, let userData = model {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    print("success")
+                }
+            }else {
+                print("failure")
+            }
+        }
+    }
+}

@@ -30,6 +30,7 @@ extension AppDelegate {
 
 extension AppDelegate {
     func navigateToRespectivePage(){
+        
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = .clear
         UINavigationBar.appearance().tintColor = UIColor.white

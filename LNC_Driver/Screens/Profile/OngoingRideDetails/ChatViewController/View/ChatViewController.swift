@@ -29,7 +29,7 @@ class ChatViewController: UIViewController {
         ChatViewModel()
     }()
 
-   var loginDriverID = ""
+    var loginDriverID = ""
     var str_DerviceToken = ""
     var str_InRideDriverType = ""
     var keyValueStr = ""
@@ -59,10 +59,10 @@ class ChatViewController: UIViewController {
         var Chatsendertype = UserDefaults.standard.string(forKey: "ChatFromLaunchScreen") ?? ""
         if Chatsendertype == "PartnerFromLaunchScreen" {
             keyValueStr = "partner"
-            self.str_CurrentRideDriverID = recevierId;
+            self.str_CurrentRideDriverID = recevierId
         } else if Chatsendertype == "DriverFromLaunchScreen" {
             keyValueStr = "driver"
-            self.str_CurrentRidePartnerID = recevierId;
+            self.str_CurrentRidePartnerID = recevierId
         } else {
             self.userID = recevierId
             keyValueStr = "driver"
@@ -119,7 +119,7 @@ class ChatViewController: UIViewController {
         dateFormatter.dateFormat = "MM-dd-yyyy hh:mm a"
         todayDate = dateFormatter.string(from: currDate)
 
-        if msgTextRef.text?.count ?? 0 > 0 {
+        if msgTextRef.text?.count ?? 0 <= 0 {
             return
         } else {
             str_SendBtnCheckingStaus = "SendBtnCheckingStaus"
@@ -332,8 +332,11 @@ extension ChatViewController :UITableViewDelegate, UITableViewDataSource {
        guard let cell: ChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as? ChatTableViewCell else {return UITableViewCell()}
         
         cell.backgroundColor = .darkGray
-        var typeOfUser = resArr[indexPath.row].sender ?? ""
-        if typeOfUser != loginDriverID {
+        
+        
+        let typeOfUser = resArr[indexPath.row].sender ?? ""
+        
+        if typeOfUser == loginDriverID {
             cell.ResprofileImgRef.isHidden = true
             cell.ResbagRef.isHidden = true
             cell.ResdateRef.isHidden = true
@@ -341,7 +344,7 @@ extension ChatViewController :UITableViewDelegate, UITableViewDataSource {
             
             //User Image
             if let Str_UserImage = resArr[indexPath.row].profileImageSender as? String {
-                cell.SenprofileImgRef.sd_setImage(with: URL(string: Str_UserImage), placeholderImage: UIImage(named: "responderpic"))
+                cell.SenprofileImgRef.sd_setImage(with: URL(string: API_URl.API_IMAGEBASE_URL +  Str_UserImage), placeholderImage: UIImage(named: "responderpic"))
             }
             cell.SenmsgRef.text = resArr[indexPath.row].mesage ?? ""
             var str_CurrentRideDateTime = resArr[indexPath.row].date_time ?? ""
@@ -389,8 +392,8 @@ extension ChatViewController :UITableViewDelegate, UITableViewDataSource {
             cell.SenmsgRef.isHidden = true
             
             //User Image
-            if let Str_UserImage = resArr[indexPath.row].profileImageSender as? String {
-                cell.ResprofileImgRef.sd_setImage(with: URL(string: Str_UserImage), placeholderImage: UIImage(named: "responderpic"))
+            if let Str_UserImage = resArr[indexPath.row].profileImageReciever as? String {
+                cell.ResprofileImgRef.sd_setImage(with: URL(string: API_URl.API_IMAGEBASE_URL + Str_UserImage), placeholderImage: UIImage(named: "responderpic"))
             }
             
             cell.ResmsgRef.text = resArr[indexPath.row].mesage ?? ""

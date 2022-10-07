@@ -24,7 +24,7 @@ class FeedbackViewModel: NSObject {
                 if userData.status == "1" {
                     completion(true, userData, nil)
                 } else {
-                    completion(false, nil, userData.message ?? "")
+                    completion(false, nil, userData.userData?[0].message ?? "")
                 }
             } else {
                 completion(false, nil, error)

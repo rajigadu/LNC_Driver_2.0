@@ -31,20 +31,17 @@ typealias FeedBacData = FeedBacModel
 
 struct FeedBacModel : Codable {
     let status : String?
-    let message : String?
-    let userData : [FeedBacDatar]?
+     let userData : [FeedBacDatar]?
 
     enum CodingKeys: String, CodingKey {
         case status = "status"
-        case message = "msg"
-        case userData = "data"
+         case userData = "data"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = try values.decodeIfPresent(String.self, forKey: .status)
-        message = try values.decodeIfPresent(String.self, forKey: .message)
-        userData = try values.decodeIfPresent([FeedBacDatar].self, forKey: .userData)
+         userData = try values.decodeIfPresent([FeedBacDatar].self, forKey: .userData)
     }
 
 }
@@ -96,3 +93,35 @@ struct FeedBacDatar : Codable {
 //    }
 //
 //}
+
+typealias RideChargesPaymentPreviewData = RideChargesPaymentPreviewModel
+
+struct RideChargesPaymentPreviewModel : Codable {
+    let status : String?
+   
+    let data : [RideChargesPaymentPreviewDatar]?
+    enum CodingKeys: String, CodingKey {
+        case status = "status"
+        case data = "data"
+     }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        status = try values.decodeIfPresent(String.self, forKey: .status)
+        data = try values.decodeIfPresent([RideChargesPaymentPreviewDatar].self, forKey: .data)
+     }
+
+}
+
+struct RideChargesPaymentPreviewDatar : Codable {
+    let message : String?
+    
+    enum CodingKeys: String, CodingKey {
+         case message = "msg"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+         message = try values.decodeIfPresent(String.self, forKey: .message)
+    }
+}

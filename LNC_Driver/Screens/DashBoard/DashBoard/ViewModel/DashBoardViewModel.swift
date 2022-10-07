@@ -30,6 +30,21 @@ class DashBoardViewModel: NSObject {
             }
         }
     }
+    
+    //MARK: - get google key
+    func requestForgetgooglekeyListAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, DashBoardUserData?, String?) -> ()) {
+        dashBoardServices.requestForgetgooglekeyListAPIServices(perams) { success, model, error in
+            if success, let UserData = model {
+                if UserData.status == "1" {
+                    completion(true, UserData, nil)
+                } else {
+                    completion(false, nil, UserData.msg ?? "")
+                }
+            } else {
+                completion(false, nil, error)
+            }
+        }
+    }
 }
 
 

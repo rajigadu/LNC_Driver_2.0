@@ -24,6 +24,7 @@ class FeedbackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view_ratingViewRef.rating = 0
         self.title = "Feed back"
         self.cosmosViewSetUP()
         self.str_DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
@@ -39,7 +40,7 @@ class FeedbackViewController: UIViewController {
     }
     
     @IBAction func btn_FeedbackSubmitActionRef(_ sender: Any) {
-        if self.textview_descriptionRef.text.count ?? 0 > 0 || str_RatingValue != "" {
+        if self.textview_descriptionRef.text.count ?? 0 <= 0 || str_RatingValue == "" {
             self.ShowAlert(message: I18n.allFieldsEmpty)
         } else {
             //feedback api for user  Calling...
@@ -83,7 +84,7 @@ extension FeedbackViewController {
             if success, let UserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlertWithPush(message: UserData.userData?[0].message ?? "", className: "PaymentHistoryViewController", storyBoard: "RidesHistory", Animation: true)
+                    self.ShowAlertWithPush(message: UserData.userData?[0].message ?? "Your feedback has been submitted.", className: "PaymentHistoryViewController", storyBoard: "RidesHistory", Animation: true)
                 }
             } else {
                 DispatchQueue.main.async { [self] in

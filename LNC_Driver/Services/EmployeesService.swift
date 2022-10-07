@@ -176,7 +176,7 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - RidePreview -- DriverCurrentRidePaymentAPI
     func requestForDriverCurrentRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())    
     //MARK: -  RidePreview -- DriverFutureRidePaymentAPI
-    func requestForDriverFutureRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
+    func requestForDriverFutureRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPaymentPreviewData?, _ error: String?) -> ())
     //MARK: -  RidePreview -- DriverFutureRideCompleteAPI
     func requestForDriverFutureRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
     //MARK: - FeedBack Seen
@@ -186,6 +186,8 @@ protocol LateNightChauffeursDriverServiceProtocol {
     func requestForNotificationServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, NotificationData?, String?) -> ())
     //MARK: - get next ride time
     func requestForNextRIDETimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardNextRideData?, String?) -> ())
+    //MARK: - get Google key
+    func requestForgetgooglekeyListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardUserData?, String?) -> ())
 
 }
 
@@ -927,6 +929,26 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(DashBoardNextRideData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - get Google key
+extension ApiService {
+     func requestForgetgooglekeyListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardUserData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, I18n.NoInterNetString)
+        }
+        HttpRequestHelper().GET(url: API_URl.Api_GET_GOOLE_KEY, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(DashBoardUserData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

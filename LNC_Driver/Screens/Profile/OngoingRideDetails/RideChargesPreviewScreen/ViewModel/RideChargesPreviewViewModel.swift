@@ -47,13 +47,13 @@ class RideChargesPreviewViewModel: NSObject {
     }
     
     //MARK: -  DriverFutureRidePaymentAPI
-    func requestForDriverFutureRidePaymentAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, RideChargesPreviewData?, String?) -> ()) {
+    func requestForDriverFutureRidePaymentAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, RideChargesPaymentPreviewData?, String?) -> ()) {
         RideChargesPreviewServices.requestForDriverFutureRidePaymentAPIServices(perams){ success, model, error in
             if success, let userData = model {
                 if userData.status == "1" {
                     completion(true, userData, nil)
                 } else {
-                    completion(false, nil, userData.message ?? "")
+                    completion(false, nil, userData.data?[0].message ?? "")
                 }
             } else {
                 completion(false, nil, error)

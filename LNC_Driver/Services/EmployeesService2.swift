@@ -537,14 +537,14 @@ extension ApiService {
 }
 //MARK: -  RidePreview -- DriverFutureRidePaymentAPI
 extension ApiService {
-    func requestForDriverFutureRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideChargesPreviewData?, String?) -> ()) {
+    func requestForDriverFutureRidePaymentAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideChargesPaymentPreviewData?, String?) -> ()) {
         if Connectivity.isNotConnectedToInternet{
             completion(false, nil, "I18n.NoInterNetString")
         }
         HttpRequestHelper().GET(url: API_URl.API_DRIVERFUTURERIDEPAYMENT_URL, params: perams, httpHeader: .application_json) { success, data in
             if success {
                 do {
-                    let model = try JSONDecoder().decode(RideChargesPreviewData.self, from: data!)
+                    let model = try JSONDecoder().decode(RideChargesPaymentPreviewData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

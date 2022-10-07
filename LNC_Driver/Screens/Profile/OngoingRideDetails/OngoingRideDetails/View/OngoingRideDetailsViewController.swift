@@ -843,9 +843,9 @@ extension OngoingRideDetailsViewController {
                     self.view_UserDetailsInfoInDriverSideRef.isHidden = false
                     self.viewUserScrollref.isHidden = false
                     //User Details.............
-//                    if let response  = userData.planned_address as? [DriverFutureRideDetailsPlanned_address] {
-//                    str_AdditionalStopsArr = response
-//                    }
+                    if let response  = userData.planned_address as? [DriverFutureRideDetailsPlanned_address] {
+                    str_AdditionalStopsArr = response
+                    }
                     str_FutureRideStart = userData.data?.future_ride_start ?? ""
                     
                     if str_FutureRideStart == "" {
