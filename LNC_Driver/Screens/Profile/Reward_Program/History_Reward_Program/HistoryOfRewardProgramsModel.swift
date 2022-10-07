@@ -12,12 +12,13 @@ struct HistoryOfRewardProgramsModel : Codable {
     let message : String?
     let status : String?
     let data : [HistoryOfRewardProgramsDatar]?
-
+    let total : Int?
     enum CodingKeys: String, CodingKey {
 
         case message = "message"
         case status = "status"
         case data = "data"
+        case total = "total"
     }
 
     init(from decoder: Decoder) throws {
@@ -25,6 +26,7 @@ struct HistoryOfRewardProgramsModel : Codable {
         message = try values.decodeIfPresent(String.self, forKey: .message)
         status = try values.decodeIfPresent(String.self, forKey: .status)
         data = try values.decodeIfPresent([HistoryOfRewardProgramsDatar].self, forKey: .data)
+        total = try values.decodeIfPresent(Int.self, forKey: .total)
     }
 
 }
@@ -43,7 +45,7 @@ struct HistoryOfRewardProgramsDatar : Codable {
         case time = "time"
         case pickup_address = "pickup_address"
         case drop_address = "drop_address"
-        case distance = "craeted_date"
+        case distance = "distance"
         case point = "point"
     }
 

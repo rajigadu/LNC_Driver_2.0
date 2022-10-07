@@ -10,20 +10,20 @@ import Foundation
 typealias RideHistoryViewData = RideHistoryViewModelr
 
 struct RideHistoryViewModelr : Codable {
-    let message : String?
+   // let message : String?
     let status : String?
     let data : [RideHistoryViewDatar]?
 
     enum CodingKeys: String, CodingKey {
 
-        case message = "message"
+      //  case message = "message"
         case status = "status"
         case data = "data"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        message = try values.decodeIfPresent(String.self, forKey: .message)
+       // message = try values.decodeIfPresent(String.self, forKey: .message)
         status = try values.decodeIfPresent(String.self, forKey: .status)
         data = try values.decodeIfPresent([RideHistoryViewDatar].self, forKey: .data)
     }

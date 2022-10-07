@@ -66,7 +66,7 @@ extension WeekRideinfoViewController: UITableViewDelegate,UITableViewDataSource 
         
         // str date and time
         if Str_OriginalFromdate_time != "" {
-            let AttributeStr = "Ride Date/Time : " + Str_OriginalFromdate_time + "\nUser Name : " + Str_UserName
+            let AttributeStr = "Ride Date/Time : " + Str_OriginalFromdate_time + "\n\nUser Name : " + Str_UserName
             let attrStri = NSMutableAttributedString.init(string:AttributeStr)
             var nsRange = NSString(string: AttributeStr).range(of: "Ride Date/Time :", options: String.CompareOptions.caseInsensitive)
             attrStri.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange)

@@ -1176,6 +1176,7 @@
                     </view>
                     <connections>
                         <outlet property="tblViewRef" destination="0fi-u2-pQb" id="qto-LN-hb4"/>
+                        <outlet property="totalPointsref" destination="SGE-6A-T0u" id="F1U-xS-UeN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yc-Ad-6xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

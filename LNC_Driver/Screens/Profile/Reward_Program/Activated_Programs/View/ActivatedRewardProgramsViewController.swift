@@ -43,34 +43,36 @@ extension ActivatedRewardProgramsViewController: UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell:ActiveRewardsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ActiveRewardsTableViewCell", for: indexPath) as? ActiveRewardsTableViewCell else {return UITableViewCell()}
-        var targetPoints = ary_ActivatedRewardInfo[indexPath.row].target ?? ""
-        var bonusPoints = ary_ActivatedRewardInfo[indexPath.row].bonus ?? ""
-        var bonusEarn = ary_ActivatedRewardInfo[indexPath.row].total ?? ""
-        var ProgramTitle = ary_ActivatedRewardInfo[indexPath.row].pname ?? ""
-        var craeted_date = ary_ActivatedRewardInfo[indexPath.row].craeted_date ?? ""
+        let targetPoints = ary_ActivatedRewardInfo[indexPath.row].target ?? ""
+        let bonusPoints = ary_ActivatedRewardInfo[indexPath.row].bonus ?? ""
+        let bonusEarn = ary_ActivatedRewardInfo[indexPath.row].total ?? ""
+        let ProgramTitle = ary_ActivatedRewardInfo[indexPath.row].pname ?? ""
+        let craeted_date = ary_ActivatedRewardInfo[indexPath.row].craeted_date ?? ""
+        
+        cell.lbl_dateTime.text = "Program Created Date: " + craeted_date
         
         let AttributeStr = "Program Name : " + ProgramTitle
         let attrStri = NSMutableAttributedString.init(string:AttributeStr)
         let nsRange = NSString(string: AttributeStr).range(of: "Program Name :", options: String.CompareOptions.caseInsensitive)
-        attrStri.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange)
+        attrStri.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], range: nsRange)
         cell.lbl_progTitle.attributedText = attrStri
 
         let AttributeStr1 = "Target Points : " + targetPoints
         let attrStri1 = NSMutableAttributedString.init(string:AttributeStr1)
         let nsRange1 = NSString(string: AttributeStr1).range(of: "Target Points :", options: String.CompareOptions.caseInsensitive)
-        attrStri1.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange1)
+        attrStri1.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], range: nsRange1)
         cell.lbl_totalPoints.attributedText = attrStri1
 
         let AttributeStr2 = "Bonus Amount : " + bonusPoints
         let attrStri2 = NSMutableAttributedString.init(string:AttributeStr2)
         let nsRange2 = NSString(string: AttributeStr2).range(of: "Bonus Amount :", options: String.CompareOptions.caseInsensitive)
-        attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange2)
+        attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], range: nsRange2)
         cell.lbl_status.attributedText = attrStri2
 
         let AttributeStr3 = "Your Total Earnings: " + bonusEarn
         let attrStri3 = NSMutableAttributedString.init(string:AttributeStr3)
         let nsRange3 = NSString(string: AttributeStr3).range(of: "Your Total Earnings :", options: String.CompareOptions.caseInsensitive)
-        attrStri3.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange3)
+        attrStri3.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.black], range: nsRange3)
         cell.lbl_totalEarnpointsref.attributedText = attrStri3
 
         cell.btn_ViewInfo.tag = indexPath.row

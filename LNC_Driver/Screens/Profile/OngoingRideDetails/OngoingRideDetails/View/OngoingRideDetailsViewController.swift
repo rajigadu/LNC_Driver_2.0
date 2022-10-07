@@ -223,7 +223,7 @@ class OngoingRideDetailsViewController: UIViewController {
             
             self.driverFutureRideDetailsAPI(withDriverID: driverLoginIDString, withFutureRideID: self.str_SelectedRideID)
             str_RideStartLocationLatitude = self.dict_RideInfo?.pickup_lat ?? ""
-            str_RideStartLocationLatitude = self.dict_RideInfo?.pickup_long ?? ""
+            str_RideStartLocationLongitude = self.dict_RideInfo?.pickup_long ?? ""
             
             self.manualTransmission_Lblref.text = "Transmission : " + (self.dict_RideInfo?.car_transmission ?? "") ?? ""
             
@@ -843,9 +843,9 @@ extension OngoingRideDetailsViewController {
                     self.view_UserDetailsInfoInDriverSideRef.isHidden = false
                     self.viewUserScrollref.isHidden = false
                     //User Details.............
-                    if let response  = userData.planned_address as? [DriverFutureRideDetailsPlanned_address] {
-                    str_AdditionalStopsArr = response
-                    }
+//                    if let response  = userData.planned_address as? [DriverFutureRideDetailsPlanned_address] {
+//                    str_AdditionalStopsArr = response
+//                    }
                     str_FutureRideStart = userData.data?.future_ride_start ?? ""
                     
                     if str_FutureRideStart == "" {

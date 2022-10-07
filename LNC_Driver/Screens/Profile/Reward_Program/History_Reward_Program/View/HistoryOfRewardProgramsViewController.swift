@@ -10,6 +10,8 @@ import UIKit
 class HistoryOfRewardProgramsViewController: UIViewController {
 
     @IBOutlet weak var tblViewRef: UITableView!
+    @IBOutlet weak var totalPointsref: UILabel!
+    
     var ary_HistoryOfRewardInfo: [HistoryOfRewardProgramsDatar] = []
     var loginDriverIDStr = ""
     lazy var viewModel = {
@@ -21,6 +23,7 @@ class HistoryOfRewardProgramsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.totalPointsref.text = "TOTAL POINTS: "
         self.title = "Rewards History"
         self.tblViewRef.estimatedRowHeight = 1000
         self.tblViewRef.rowHeight = UITableView.automaticDimension
@@ -73,12 +76,13 @@ extension HistoryOfRewardProgramsViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForHistoryOfRewardProgramsServices(perams: ["driver_id":DriverLoginID,"program_id":rewardProgId,"driver_time":str_driver_time]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let userdetails = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.data {
+                    if let data = userdetails.data {
                         self.ary_HistoryOfRewardInfo = data
-                    }
+                        self.totalPointsref.text = "TOTAL POINTS: \(userdetails.total ?? 0)"
+                     }
 //                    self.ary_PaymentHistoryInfo.reverse()
                     self.tblViewRef.reloadData()
                 }

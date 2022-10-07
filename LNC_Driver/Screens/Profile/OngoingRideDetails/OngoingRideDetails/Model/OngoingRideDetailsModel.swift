@@ -216,7 +216,7 @@ struct DriverFutureRideDetailsModel : Codable {
     let waiting_time_difference : String?
     let waiting_status : String?
     let planned_stops : String?
-    let planned_address : [DriverFutureRideDetailsPlanned_address]?
+ //   let planned_address : [DriverFutureRideDetailsPlanned_address]?
     let unplanned_stops : String?
     let total_cost : String?
     let data : DriverFutureRideDetailsDatar?
@@ -231,7 +231,7 @@ struct DriverFutureRideDetailsModel : Codable {
         case waiting_time_difference = "waiting_time_difference"
         case waiting_status = "waiting_status"
         case planned_stops = "planned_stops"
-        case planned_address = "planned_address"
+      //  case planned_address = "planned_address"
         case unplanned_stops = "unplanned_stops"
         case total_cost = "total_cost"
         case data = "data"
@@ -247,7 +247,7 @@ struct DriverFutureRideDetailsModel : Codable {
         waiting_time_difference = try values.decodeIfPresent(String.self, forKey: .waiting_time_difference)
         waiting_status = try values.decodeIfPresent(String.self, forKey: .waiting_status)
         planned_stops = try values.decodeIfPresent(String.self, forKey: .planned_stops)
-        planned_address = try values.decodeIfPresent([DriverFutureRideDetailsPlanned_address].self, forKey: .planned_address)
+    //    planned_address = try values.decodeIfPresent([DriverFutureRideDetailsPlanned_address].self, forKey: .planned_address)
         unplanned_stops = try values.decodeIfPresent(String.self, forKey: .unplanned_stops)
         total_cost = try values.decodeIfPresent(String.self, forKey: .total_cost)
         data = try values.decodeIfPresent(DriverFutureRideDetailsDatar.self, forKey: .data)
