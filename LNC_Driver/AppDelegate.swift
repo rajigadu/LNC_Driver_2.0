@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navigateToRespectivePage()
         
-        if let GoogleKey = UserDefaults.standard.string(forKey: "Googlekeyvalue") as? String {
+        if let GoogleKey = UserDefaults.standard.string(forKey: "Googlekeyvalue") {
             GOOGLE_API_KEY = GoogleKey
         } else {
             self.getgooglekeyListAPI()

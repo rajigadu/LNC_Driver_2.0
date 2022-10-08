@@ -50,12 +50,8 @@ class CancelRideViewModel: NSObject {
     func requestForDriverOnlineAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
         cancelRideServices.requestForDriverOnlineAPIServices(perams){ success, model, error in
             if success, let userData = model {
-                if userData.status == "1" {
                     completion(true, userData, nil)
-                } else {
-                    completion(false, nil, userData.message ?? "")
-                }
-            } else {
+              } else {
                 completion(false, nil, error)
             }
         }

@@ -70,10 +70,10 @@ class DashBoardViewController: UIViewController {
           }
         
         self.driverCurrentRideDetailsAPI()
-        self.getgooglekeyListAPI()
         self.getNextRideTime()
-        self.driverOnlineAPI()
         self.driverUpdateCurrentLocationAPI()
+        self.getgooglekeyListAPI()
+        self.driverOnlineAPI()
     }
     
     //MARK: - Class Actions
@@ -165,9 +165,11 @@ extension DashBoardViewController: CLLocationManagerDelegate {
             if success, let UserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.lbl_FutureRideItimationRef.text = UserData.time_left ?? ""
+                    if UserData.status == "1" {
+                     self.lbl_FutureRideItimationRef.text = UserData.time_left ?? ""
                     NextRideTimeShowViewref.isHidden = false
                     NextRideTimeShowHeightref.constant = 50
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -188,21 +190,21 @@ extension DashBoardViewController {
         guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel2.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":"1"]) { success, model, error in
+        self.viewModel2.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":"1","app_version" : str_Version,"version":"yes"]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    print("success")
-                }
-            } else {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                    if model?.status == "4" {
+                    if userData.status == "1" {
+                     print("success")
+                    } else if userData.status == "4" {
                         self.ShowAlert(message: model?.message ?? "")
-                    } else {
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
                     }
                 }
+            } else if let userData = model {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                     self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                 }
              }
         }
     }
@@ -218,7 +220,7 @@ extension DashBoardViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    
+                     print("Success")
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -288,7 +290,10 @@ extension DashBoardViewController {
                     print("success")
                 }
             }else {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
                 print("failure")
+                }
             }
         }
     }

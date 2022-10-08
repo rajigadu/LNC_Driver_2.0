@@ -74,6 +74,7 @@
 		BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */; };
 		BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */; };
 		BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68DDF528D4E49C00A91082 /* Imageextension.swift */; };
+		BA7B38FC28F1888400B2E6E9 /* AppDelegateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B38FB28F1888300B2E6E9 /* AppDelegateModel.swift */; };
 		BA7BB7B928F046FE00E0561B /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BB7B828F046FE00E0561B /* AppDelegateExtension.swift */; };
 		BA7BB7BB28F0473900E0561B /* VersionCheckingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BB7BA28F0473900E0561B /* VersionCheckingModel.swift */; };
 		BA7BB7BD28F048A600E0561B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA7BB7BC28F048A600E0561B /* GoogleService-Info.plist */; };
@@ -280,6 +281,7 @@
 		BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsViewController.swift; sourceTree = "<group>"; };
 		BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsModel.swift; sourceTree = "<group>"; };
 		BA68DDF528D4E49C00A91082 /* Imageextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageextension.swift; sourceTree = "<group>"; };
+		BA7B38FB28F1888300B2E6E9 /* AppDelegateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateModel.swift; sourceTree = "<group>"; };
 		BA7BB7B828F046FE00E0561B /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		BA7BB7BA28F0473900E0561B /* VersionCheckingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCheckingModel.swift; sourceTree = "<group>"; };
 		BA7BB7BC28F048A600E0561B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				BA409B2028D029E100489F09 /* LNC_Driver.entitlements */,
 				BA36D88028C8C40E00B73053 /* AppDelegate.swift */,
 				BA7BB7B828F046FE00E0561B /* AppDelegateExtension.swift */,
+				BA7B38FB28F1888300B2E6E9 /* AppDelegateModel.swift */,
 				BA7BB7BA28F0473900E0561B /* VersionCheckingModel.swift */,
 				BA409B2328D02AA500489F09 /* Helpers */,
 				BA409B4628D02AB700489F09 /* Services */,
@@ -2242,6 +2245,7 @@
 				BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */,
 				BA409B4828D02AB700489F09 /* EmployeesService.swift in Sources */,
 				BA5C4A6928D2CE730034F9B3 /* ProfileViewController.swift in Sources */,
+				BA7B38FC28F1888400B2E6E9 /* AppDelegateModel.swift in Sources */,
 				BA5C4A3B28D2BD270034F9B3 /* SideMenuViewController.swift in Sources */,
 				BA88E56228E718EC004AFA6E /* RideReservations_Partner_Model.swift in Sources */,
 				BAFE538828E3E6670075B091 /* WeeklyPaymentsViewModel.swift in Sources */,
@@ -2709,8 +2713,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				kind = exactVersion;
-				version = 9.6.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

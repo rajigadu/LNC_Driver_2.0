@@ -141,5 +141,5 @@ static let API_MY_REWARDS_URL                          = API_URl.API_SERVER_URL 
 
 static let API_HISTORY_REWARDS_URL                     = API_URl.API_SERVER_URL +  "history-reward-program-list.php?" //STATIC
 static let API_RichNotification_URL                   = API_URl.API_SERVER_URL +  "notification-message-list.php?"
-static let Api_GET_GOOLE_KEY                           = API_URl.API_SERVER_URL + "google-api-key.php?"
+static let Api_GET_GOOLE_KEY                           = "https://lnc.latenightchauffeurs.com/lnc-administrator/ios-test/google-api-key.php"
 }

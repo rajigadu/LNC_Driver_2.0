@@ -50,7 +50,7 @@ class FeedbackViewController: UIViewController {
     
     func cosmosViewSetUP(){
         // Change the cosmos view rating
-        view_ratingViewRef.rating = 5
+        view_ratingViewRef.rating = 0
 
         // Change the text
        // viewRating_DriverForFeedbackRef.text = "(123)"

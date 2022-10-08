@@ -13,8 +13,7 @@ target 'LNC_Driver' do
     pod 'GoogleMaps'
     pod 'GooglePlaces'
     pod 'GooglePlacePicker'
-#    pod 'Firebase/Core'
-#    pod 'Firebase/Messaging'
+    
     pod 'JCNotificationBannerPresenter'
     pod 'SideMenu', '~> 6.0'
     pod 'Fabric'
