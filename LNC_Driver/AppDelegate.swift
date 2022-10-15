@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.FireBaseAppDelegateDidFineshMethod(application : application, launchOptions: launchOptions)
 
-        
         navigateToRespectivePage()
         
         if let GoogleKey = UserDefaults.standard.string(forKey: "Googlekeyvalue") {
