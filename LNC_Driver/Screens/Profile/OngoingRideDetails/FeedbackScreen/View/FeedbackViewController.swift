@@ -81,10 +81,14 @@ extension FeedbackViewController {
         "msg":withMessage,
          ]
         self.viewModel.requestForFeedbackAPIServices(perams: perams) { success, model, error in
-            if success, let UserData = model {
+            if success, let userFeedBackData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlertWithPush(message: UserData.userData?[0].message ?? "Your feedback has been submitted.", className: "PaymentHistoryViewController", storyBoard: "RidesHistory", Animation: true)
+                    if userFeedBackData.status == "1" {
+                        self.ShowAlertWithPush(message: userFeedBackData.userData?[0].message ?? "Your feedback has been submitted.", className: "PaymentHistoryViewController", storyBoard: "RidesHistory", Animation: true)
+                    } else {
+                        self.showToast(message: I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in

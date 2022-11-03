@@ -185,7 +185,7 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - Notification List
     func requestForNotificationServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, NotificationData?, String?) -> ())
     //MARK: - get next ride time
-    func requestForNextRIDETimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardNextRideData?, String?) -> ())
+    func requestForNextRIDETimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardDriverUpdateModel?, String?) -> ())
     //MARK: - get Google key
     func requestForgetgooglekeyListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardUserData?, String?) -> ())
 
@@ -921,14 +921,14 @@ extension ApiService {
 
 extension ApiService {
     //MARK: - get next ride time
-    func requestForNextRIDETimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardNextRideData?, String?) -> ()) {
+    func requestForNextRIDETimeAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DashBoardDriverUpdateModel?, String?) -> ()) {
         if Connectivity.isNotConnectedToInternet{
             completion(false, nil, I18n.NoInterNetString)
         }
-        HttpRequestHelper().GET(url: API_URl.API_DRIVERNextRideTime_URL, params: perams, httpHeader: .application_json) { success, data in
+        HttpRequestHelper().GET(url: API_URl.API_UPDATE_DRIVER_INFO_VIA_DASHBOARD_URL, params: perams, httpHeader: .application_json) { success, data in
             if success {
                 do {
-                    let model = try JSONDecoder().decode(DashBoardNextRideData.self, from: data!)
+                    let model = try JSONDecoder().decode(DashBoardDriverUpdateModel.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

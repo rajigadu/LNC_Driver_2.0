@@ -20,12 +20,8 @@ class FeedbackViewModel: NSObject {
     //MARK: - Feedback API
     func requestForFeedbackAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, FeedBacData?, String?) -> ()) {
         FeedbackServices.requestForFeedbackAPIServices(perams){ success, model, error in
-            if success, let userData = model {
-                if userData.status == "1" {
-                    completion(true, userData, nil)
-                } else {
-                    completion(false, nil, userData.userData?[0].message ?? "")
-                }
+            if success, let userFeedBackData = model {
+                     completion(true, userFeedBackData, nil)
             } else {
                 completion(false, nil, error)
             }

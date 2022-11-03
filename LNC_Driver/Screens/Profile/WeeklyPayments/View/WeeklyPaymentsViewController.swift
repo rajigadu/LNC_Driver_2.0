@@ -121,14 +121,20 @@ extension WeeklyPaymentsViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForWeeklyPaymentsServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let WeeklyPaymentsUserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.week {
-                        self.ary_PaymentHistoryInfo = data
+                    if WeeklyPaymentsUserData.status == "1" {
+                        if let data = WeeklyPaymentsUserData.week {
+                            self.ary_PaymentHistoryInfo = data
+                        }
+                        self.ary_PaymentHistoryInfo.reverse()
+                        self.tableview_PaymentHistoryRef.reloadData()
+
+                    } else {
+                        self.showToast(message: WeeklyPaymentsUserData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    self.ary_PaymentHistoryInfo.reverse()
-                    self.tableview_PaymentHistoryRef.reloadData()
+
                 }
             } else {
                 DispatchQueue.main.async { [self] in

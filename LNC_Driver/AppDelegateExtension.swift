@@ -279,6 +279,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
         if let fcmTokenstr = fcmToken {
         newDeviceId = fcmTokenstr
         UserDefaults.standard.set(newDeviceId, forKey:"device_id")
+        UserDefaults.standard.set(newDeviceId, forKey:"FCMDeviceToken")
+
         UserDefaults.standard.synchronize()
         let devicetoken : String!
         devicetoken = UserDefaults.standard.string(forKey:"device_id") as String?

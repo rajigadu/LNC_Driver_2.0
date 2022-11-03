@@ -60,7 +60,11 @@ extension AddBankDetailsViewController {
                 if success, let AddBankDetailsModel = model {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.ShowAlertWithPop(message: AddBankDetailsModel.message ?? "Profile updated  successfully.")
+                        if AddBankDetailsModel.loginStatus == "1" {
+                            self.ShowAlertWithPop(message: AddBankDetailsModel.message ?? "Profile updated  successfully.")
+                        } else {
+                            self.showToast(message: AddBankDetailsModel.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in
@@ -85,21 +89,25 @@ extension AddBankDetailsViewController {
             if success, let GetBankDetailsModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.txt_MobileNumberRef.text = GetBankDetailsModel.userData?[0].mobile
-                    self.txt_FirstNameRef.text = GetBankDetailsModel.userData?[0].fname
-                    self.txt_LastNameRef.text = GetBankDetailsModel.userData?[0].lname
-                    self.txt_ACNumberRef.text = GetBankDetailsModel.userData?[0].accnumber
-                    self.txt_ReEnterACNumberRef.text = GetBankDetailsModel.userData?[0].accnumber
-                    self.txt_RouteNoRef.text = GetBankDetailsModel.userData?[0].routingnumber
-                    self.Txt_BankACRef.text = GetBankDetailsModel.userData?[0].bank_name
-
+                    
+                    if GetBankDetailsModel.loginStatus == "1" {
+                        self.txt_MobileNumberRef.text = GetBankDetailsModel.userData?[0].mobile
+                        self.txt_FirstNameRef.text = GetBankDetailsModel.userData?[0].fname
+                        self.txt_LastNameRef.text = GetBankDetailsModel.userData?[0].lname
+                        self.txt_ACNumberRef.text = GetBankDetailsModel.userData?[0].accnumber
+                        self.txt_ReEnterACNumberRef.text = GetBankDetailsModel.userData?[0].accnumber
+                        self.txt_RouteNoRef.text = GetBankDetailsModel.userData?[0].routingnumber
+                        self.Txt_BankACRef.text = GetBankDetailsModel.userData?[0].bank_name
+                    } else {
+                        self.showToast(message: GetBankDetailsModel.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }

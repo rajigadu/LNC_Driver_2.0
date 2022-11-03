@@ -12,6 +12,8 @@ class I18n  {
 
 static let NoInterNetString                           = "No Internet,Please Check"
 static let SomethingWentWrong                         = "Something went wrong"
+    static let NoRecordFound                         = "No records found!"
+static let TryAgain                                   = "Please try again after some time!"
 static let ModelDecodeErrorString                     = "Error: Trying to parse Employees to model"
 static let GetRequestFailedString                     = "Error: Employees GET Request failed"
 static let GOOGLE_PLACE_FILTER_KEY                    = "AIzaSyBRzUCMhC0dooTNbHeIpD2iycfIawOHM6g"
@@ -70,6 +72,7 @@ static let API_DRIVERCURRENTRIDEDETAILS_URL             = API_URl.API_SERVER_URL
 
 static let API_DRIVERONLINE_URL                         = API_URl.API_SERVER_URL +  "update-online-status.php?version=yes&"
 static let API_DRIVERNextRideTime_URL                         = API_URl.API_SERVER_URL +  "next-ride-time.php?"
+static let API_UPDATE_DRIVER_INFO_VIA_DASHBOARD_URL                         = API_URl.API_SERVER_URL +  "home-page-api.php?"
 static let API_DriverRoleChangeAPI                          = API_URl.API_SERVER_URL +  "swap-role.php?"
     
 static let API_DRIVERONLINESTATUS_URL                   = API_URl.API_SERVER_URL +  "online-status.php?"

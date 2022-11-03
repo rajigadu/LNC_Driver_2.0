@@ -18,12 +18,8 @@ class AvailableRewardProgramsListViewModel: NSObject {
     
     func requestForAvailableRewardProgramsListServices(perams: Dictionary<String,String>, completion: @escaping (Bool, AvailableRewardProgramsListData?, String?) -> ()) {
         availableRewardProgramsListServices.requestForAvailableRewardProgramsListServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let AvailableRewardPrograms = model {
+                completion(true, AvailableRewardPrograms, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -32,12 +28,8 @@ class AvailableRewardProgramsListViewModel: NSObject {
     
     func requestForActivateRewardServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ActivateRewardProgramData?, String?) -> ()) {
         availableRewardProgramsListServices.requestForActivateRewardServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let ActivateReward = model {
+                completion(true, ActivateReward, nil)
             } else {
                 completion(false, nil, error)
             }

@@ -288,14 +288,20 @@ extension PaymentHistoryViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForPaymentHistoryServices(perams: ["driverid":DriverLoginID]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let PaymentHistoryUserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.data {
-                        self.ary_PaymentHistoryInfo = data
+                    
+                    if PaymentHistoryUserData.status == "1" {
+                        if let data = PaymentHistoryUserData.data {
+                            self.ary_PaymentHistoryInfo = data
+                        }
+    //                    self.ary_PaymentHistoryInfo.reverse()
+                        self.tableview_PaymentHistoryRef.reloadData()
+
+                    } else {
+                        self.showToast(message: PaymentHistoryUserData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-//                    self.ary_PaymentHistoryInfo.reverse()
-                    self.tableview_PaymentHistoryRef.reloadData()
                 }
             } else {
                 DispatchQueue.main.async { [self] in

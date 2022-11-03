@@ -18,12 +18,8 @@ class WeeklyPaymentsViewModel: NSObject {
     
     func requestForWeeklyPaymentsServices(perams: Dictionary<String,String>, completion: @escaping (Bool, WeeklyPaymentsWeekData?, String?) -> ()) {
         WeeklyPaymentsServices.requestForGetWeeklyPaymentslistServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let WeeklyPaymentsUserData = model {
+                    completion(true, WeeklyPaymentsUserData, nil)
             } else {
                 completion(false, nil, error)
             }

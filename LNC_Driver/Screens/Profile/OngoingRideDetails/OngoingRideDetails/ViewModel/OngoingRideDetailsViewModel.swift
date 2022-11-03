@@ -18,11 +18,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestFordriverAdditionalStopsAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, driverAdditionalStopsData?, String?) -> ()) {
         ongoingRideDetailsServices.requestFordriverAdditionalStopsAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -33,11 +29,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForWaitingChargesStartAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, WaitingChargesStartData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForWaitingChargesStartAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -48,11 +40,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForDriverWaitingTimeAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, driverWaitingTimeData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForDriverWaitingTimeAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -63,11 +51,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForAdditionalStopswaitingtimeAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, AdditionalStopswaitingtimeData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForAdditionalStopswaitingtimeAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -77,11 +61,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForDriverRideCompleteAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, DriverRideCompleteData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForDriverRideCompleteAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -92,11 +72,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForDriverRideStartAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, DriverRideStartData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForDriverRideStartAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -107,11 +83,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForDriverFutureRideDetailsAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, DriverFutureRideDetailsData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForDriverFutureRideDetailsAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -123,11 +95,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForPartnerFutureRideDetailsAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, PartnerFutureRideDetailsData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForPartnerFutureRideDetailsAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -138,11 +106,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForDriverRidePaymentAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, DriverRidePaymentData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForDriverRidePaymentAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -153,11 +117,7 @@ class OngoingRideDetailsViewModel: NSObject {
     func requestForIntimateToPartnerStartRideAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, IntimateToPartnerStartRideData?, String?) -> ()) {
         ongoingRideDetailsServices.requestForIntimateToPartnerStartRideAPIServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message ?? "")
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }

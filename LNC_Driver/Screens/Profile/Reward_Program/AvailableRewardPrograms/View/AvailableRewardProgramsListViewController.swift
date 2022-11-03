@@ -64,14 +64,17 @@ extension AvailableRewardProgramsListViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForAvailableRewardProgramsListServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let AvailableRewardPrograms = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.data?[0].Program {
-                        self.AvailableRewardProgramsList = data
+                    if AvailableRewardPrograms.status == "1" {
+                        if let data = AvailableRewardPrograms.data?[0].Program {
+                            self.AvailableRewardProgramsList = data
+                        }
+                        self.tableViewRef.reloadData()
+                    } else {
+                        self.showToast(message: AvailableRewardPrograms.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-//                    self.ary_PaymentHistoryInfo.reverse()
-                    self.tableViewRef.reloadData()
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -90,16 +93,19 @@ extension AvailableRewardProgramsListViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForActivateRewardServices(perams: ["driver_id":DriverLoginID,"program_id":program_id]) { success, model, error in
-            if success, let UserDetails = model {
+            if success, let ActivateReward = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlertWithPush(message : UserDetails.message ?? "Successfully activated reward", className: "ActivatedRewardProgramsViewController", storyBoard: "RidesHistory", Animation: true)
+                    if ActivateReward.status == "1" {
+                        self.ShowAlertWithPush(message : ActivateReward.message ?? "Successfully activated reward", className: "ActivatedRewardProgramsViewController", storyBoard: "RidesHistory", Animation: true)
+                    } else {
+                        self.ShowAlertWithPush(message : ActivateReward.message ?? "Successfully activated reward", className: "ActivatedRewardProgramsViewController", storyBoard: "RidesHistory", Animation: true)
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    //self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
-                    self.ShowAlertWithPush(message : error ?? "Successfully activated reward", className: "ActivatedRewardProgramsViewController", storyBoard: "RidesHistory", Animation: true)
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }

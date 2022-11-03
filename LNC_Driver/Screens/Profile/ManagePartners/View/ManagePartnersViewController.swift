@@ -19,7 +19,7 @@ class ManagePartnersViewController: UIViewController {
     }()
     
     var loginDriverIDStr = ""
-var SwitchStatus = "NO"
+    var SwitchStatus = "NO"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,14 +66,18 @@ extension ManagePartnersViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForManagePartnersServices(perams: ["driverid":DriverLoginID]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let ManagePartnersUserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.data {
-                        self.ManagePartnersDatarList = data
+                    if ManagePartnersUserData.status == "1" {
+                        if let data = ManagePartnersUserData.data {
+                            self.ManagePartnersDatarList = data
+                        }
+    //                    self.ary_PaymentHistoryInfo.reverse()
+                        self.tableview_ManagePartnersRef.reloadData()
+                    } else {
+                        self.showToast(message: ManagePartnersUserData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-//                    self.ary_PaymentHistoryInfo.reverse()
-                    self.tableview_ManagePartnersRef.reloadData()
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -90,11 +94,15 @@ extension ManagePartnersViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForUpdatePartnerStatusService(perams: ["driverid":DriverLoginID, "partner_id":partner_id, "status":status]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let UpdatePartnerStatus = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlert(message: GetBankDetailsModel.data?[0].message ?? "")
-                    self.getListOfManagedPartners()
+                     if UpdatePartnerStatus.status == "1" {
+                        self.ShowAlert(message: UpdatePartnerStatus.data?[0].message ?? "")
+                        self.getListOfManagedPartners()
+                     } else {
+                         self.showToast(message: UpdatePartnerStatus.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in

@@ -47,7 +47,7 @@ class ChatViewController: UIViewController {
         self.title = "Chat"
         str_FirstTimeCalling = ""
         loginDriverID = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
-        str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? "" ?? ""
+        str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? "" 
         //Mark CHECKING CONDITION WHEN RIDE IS THERE IS DRIVER/PARTNER..............
         str_InRideDriverType = UserDefaults.standard.string(forKey: "InRideDriverType") ?? ""
 //        if str_InRideDriverType == "" {
@@ -143,6 +143,9 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    
+                    if userData.status == "1" {
+                    
                     if let responseData = userData.data as? [ChatDatar] {
                         self.resArr = responseData
                     }
@@ -158,12 +161,14 @@ extension ChatViewController {
                     }else {
                         str_FirstTimeCalling = ""
                     }
-                    
+                    } else {
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -179,6 +184,7 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     if let responseData = userData.data as? [ChatDatar] {
                         self.resArr = responseData
                     }
@@ -193,11 +199,14 @@ extension ChatViewController {
                     }else {
                         str_FirstTimeCalling = ""
                     }
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -213,6 +222,9 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    
+                    if userData.status == "1" {
+                        
                     if let responseData = userData.data as? [ChatDatar] {
                         self.resArr = responseData
                     }
@@ -227,11 +239,14 @@ extension ChatViewController {
                     }else {
                         str_FirstTimeCalling = ""
                     }
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -246,39 +261,44 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-
-                    self.userID = userData.data?[0].userid ?? ""
-                    if self.str_ChatType == "ToUser" {
-                        self.chatMethodFromDriverToUser(ByUsingSenderId : loginDriverID,
-                                                         withReceiverId : self.userID,
+                    
+                    if userData.status == "1" {
+                        
+                        self.userID = userData.data?[0].userid ?? ""
+                        if self.str_ChatType == "ToUser" {
+                            self.chatMethodFromDriverToUser(ByUsingSenderId : loginDriverID,
+                                                            withReceiverId : self.userID,
                                                             withMessage : msgTextRef.text ?? "",
-                                                           withKeyValue : keyValueStr)
-                    } else if self.str_ChatType == "ToPartner" {
-                        self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRidePartnerID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                     } else if self.str_ChatType == "ToDriver" {
-                        self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRideDriverID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                     }
+                                                            withKeyValue : keyValueStr)
+                        } else if self.str_ChatType == "ToPartner" {
+                            self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRidePartnerID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                        } else if self.str_ChatType == "ToDriver" {
+                            self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRideDriverID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                        }
+                    } else {
+                        if self.isTappedNotification == true {
+                            self.isTappedNotification = false
+                            
+                            if self.str_ChatType == "ToUser" {
+                                self.chatMethodFromDriverToUser(ByUsingSenderId: loginDriverID, withReceiverId: self.userID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                            } else if self.str_ChatType == "ToPartner" {
+                                self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRidePartnerID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                            } else if self.str_ChatType == "ToDriver" {
+                                self.chatMethodFromPartnerToDriver(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRideDriverID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                            }
+                            
+                        } else {
+                            self.movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                        }
+                        
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if self.isTappedNotification == true {
-                        self.isTappedNotification = false
-                        
-                        if self.str_ChatType == "ToUser" {
-                            self.chatMethodFromDriverToUser(ByUsingSenderId: loginDriverID, withReceiverId: self.userID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                        } else if self.str_ChatType == "ToPartner" {
-                            self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRidePartnerID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                        } else if self.str_ChatType == "ToDriver" {
-                            self.chatMethodFromPartnerToDriver(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRideDriverID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                        }
-                        
-                        
-                    } else {
-                        self.movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
-                    }
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }
@@ -292,27 +312,33 @@ extension ChatViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    
+                    if userData.status == "1" {
                     self.userID = userData.data?[0].userid ?? ""
                     self.chatMethodFromPartnerToDriver(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRideDriverID, withMessage: "", withKeyValue: keyValueStr)
+                    } else {
+                        if self.isTappedNotification == true {
+                            self.isTappedNotification = false
+                            
+                            if self.str_ChatType == "ToUser" {
+                                self.chatMethodFromDriverToUser(ByUsingSenderId: loginDriverID, withReceiverId: self.userID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                            } else if self.str_ChatType == "ToPartner" {
+                                self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRidePartnerID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                            } else if self.str_ChatType == "ToDriver" {
+                                self.chatMethodFromPartnerToDriver(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRideDriverID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
+                            }
+                            
+                            
+                        } else {
+                            self.movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                        }
+
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if self.isTappedNotification == true {
-                        self.isTappedNotification = false
-                        
-                        if self.str_ChatType == "ToUser" {
-                            self.chatMethodFromDriverToUser(ByUsingSenderId: loginDriverID, withReceiverId: self.userID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                        } else if self.str_ChatType == "ToPartner" {
-                            self.chatMethodFromDriverToPartner(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRidePartnerID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                        } else if self.str_ChatType == "ToDriver" {
-                            self.chatMethodFromPartnerToDriver(ByUsingSenderId: loginDriverID, withReceiverId: self.str_CurrentRideDriverID, withMessage: msgTextRef.text ?? "", withKeyValue: keyValueStr)
-                        }
-                        
-                        
-                    } else {
-                        self.movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
-                    }
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }

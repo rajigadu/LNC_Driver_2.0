@@ -101,8 +101,12 @@ extension EmployeeGuideLinesViewController {
                 if success, let UserData = model {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
+                        if UserData.loginStatus == "1" {
                         self.guideLinesURL = UserData.pdf_name ?? ""
                         self.LoadGuideLineURL()
+                        } else {
+                            self.showToast(message: UserData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in

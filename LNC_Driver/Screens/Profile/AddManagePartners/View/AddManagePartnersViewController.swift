@@ -47,10 +47,14 @@ extension AddManagePartnersViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForAddManagePartnersServices(perams: ["driverid": DriverLoginID,"pmobile":pmobile,"pemail":pemail,"pname":pname]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let AddManagePartners = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlertWithPop(message: GetBankDetailsModel.message ?? "Successfully addeded")
+                    if AddManagePartners.status == "1" {
+                        self.ShowAlertWithPop(message: AddManagePartners.message ?? "Successfully addeded")
+                    } else {
+                        self.showToast(message: AddManagePartners.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in

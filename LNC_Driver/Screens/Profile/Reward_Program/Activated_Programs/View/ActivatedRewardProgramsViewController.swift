@@ -108,14 +108,17 @@ extension ActivatedRewardProgramsViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForActivatedRewardProgramsServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let ActivatedRewardProgram = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.data {
-                        self.ary_ActivatedRewardInfo = data
+                    if ActivatedRewardProgram.status == "1" {
+                        if let data = ActivatedRewardProgram.data {
+                            self.ary_ActivatedRewardInfo = data
+                        }
+                        self.tblViewRef.reloadData()
+                    } else {
+                        self.showToast(message: ActivatedRewardProgram.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-//                    self.ary_PaymentHistoryInfo.reverse()
-                    self.tblViewRef.reloadData()
                 }
             } else {
                 DispatchQueue.main.async { [self] in

@@ -26,7 +26,7 @@ class DashBoardViewController: UIViewController {
     var str_UserCurrentLocationCity = ""
     let getLocation = GetLocation()
      var str_AppVersion = ""
- var str_DerviceToken = ""
+     var str_DerviceToken = ""
     var str_Version = ""
 
     lazy var viewModel = {
@@ -48,7 +48,7 @@ class DashBoardViewController: UIViewController {
         super.viewDidLoad()
         NextRideTimeShowViewref.isHidden = true
         NextRideTimeShowHeightref.constant = 0
-        str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? "" ?? ""
+        str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? ""
         str_Version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
 
 
@@ -68,12 +68,6 @@ class DashBoardViewController: UIViewController {
           } catch {
               NSLog("One or more of the map styles failed to load. \(error)")
           }
-        
-        self.driverCurrentRideDetailsAPI()
-        self.getNextRideTime()
-        self.driverUpdateCurrentLocationAPI()
-        self.getgooglekeyListAPI()
-        self.driverOnlineAPI()
     }
     
     //MARK: - Class Actions
@@ -125,6 +119,8 @@ class DashBoardViewController: UIViewController {
                     
                     let camera = GMSCameraPosition(target: CLLocationCoordinate2D(latitude: CurrentLatitudeValue, longitude: CurrentLongitudeValue), zoom: 12)
                    self.mapView.animate(to: camera)
+                    
+                    self.getNextRideTime()
                 } else {
                     print("Get Location failed \(self.getLocation.didFailWithError)")
                 }
@@ -155,20 +151,34 @@ extension DashBoardViewController: SideMenuNavigationControllerDelegate {
 // MARK: - CLLocationManagerDelegate
 extension DashBoardViewController: CLLocationManagerDelegate {
     
- //MARK: - NextRIDETime
+    //MARK: - NextRIDETime
     func getNextRideTime() {
         guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? ""
 
         indicator.showActivityIndicator()
-        let perams = [ "driver_id":DriverLoginID]
+        let perams = [ "driver_id":DriverLoginID,
+                       "latitude":self.str_UserCurrentLocationLatitude,
+                       "longitude":self.str_UserCurrentLocationLongitude,
+                       "devicetoken":self.str_DerviceToken,
+                       "type":"driver",
+                       "device_type":"ios",
+                       "app_version":str_Version,
+                       "Online_status": "1"
+        ]
         self.viewModel.requestForNextRIDETimeAPIServices(perams: perams) { success, model, error in
             if success, let UserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if UserData.status == "1" {
-                     self.lbl_FutureRideItimationRef.text = UserData.time_left ?? ""
-                    NextRideTimeShowViewref.isHidden = false
-                    NextRideTimeShowHeightref.constant = 50
+                    // next ride
+                    if let nextRideTime = UserData.time_left, nextRideTime != "" {
+                        self.lbl_FutureRideItimationRef.text = nextRideTime
+                        NextRideTimeShowViewref.isHidden = false
+                        NextRideTimeShowHeightref.constant = 50
+                    }
+                    // google key
+                    if let googleKey = UserData.google_key, googleKey != ""{
+                        UserDefaults.standard.set(googleKey, forKey: "Googlekeyvalue")
                     }
                 }
             } else {
@@ -179,56 +189,55 @@ extension DashBoardViewController: CLLocationManagerDelegate {
             }
             
         }
-
+        
     }
-    
 }
 
 extension DashBoardViewController {
     //MARK: - DriverOnlineAPI
     func driverOnlineAPI() {
-        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
-        indicator.showActivityIndicator()
-        
-        self.viewModel2.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":"1","app_version" : str_Version,"version":"yes"]) { success, model, error in
-            if success, let userData = model {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                    if userData.status == "1" {
-                     print("success")
-                    } else if userData.status == "4" {
-                        self.ShowAlert(message: model?.message ?? "")
-                    }
-                }
-            } else if let userData = model {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                     self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
-                 }
-             }
-        }
+//        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+//        indicator.showActivityIndicator()
+//
+//        self.viewModel2.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":"1","app_version" : str_Version,"version":"yes"]) { success, model, error in
+//            if success, let userData = model {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                    if userData.status == "1" {
+//                     print("success")
+//                    } else if userData.status == "4" {
+//                        self.ShowAlert(message: model?.message ?? "")
+//                    }
+//                }
+//            } else if let userData = model {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                     self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+//                 }
+//             }
+//        }
     }
 }
 extension DashBoardViewController {
     //MARK: - DriverUpdateCurrentLocationAPI
     func driverUpdateCurrentLocationAPI() {
         //rideid=%@&driverid
-        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
-        indicator.showActivityIndicator()
-        
-        self.viewModel3.requestForDriverUpdateCurrentLocationAPIServices(perams: ["driverid":DriverLoginID,"latitude":self.str_UserCurrentLocationLatitude,"longitude":self.str_UserCurrentLocationLongitude,"app_version" : str_Version]) { success, model, error in
-            if success, let userData = model {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                     print("Success")
-                }
-            } else {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
-                }
-             }
-        }
+//        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+//        indicator.showActivityIndicator()
+//
+//        self.viewModel3.requestForDriverUpdateCurrentLocationAPIServices(perams: ["driverid":DriverLoginID,"latitude":self.str_UserCurrentLocationLatitude,"longitude":self.str_UserCurrentLocationLongitude,"app_version" : str_Version]) { success, model, error in
+//            if success, let userData = model {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                     print("Success")
+//                }
+//            } else {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+//                }
+//             }
+//        }
 
     }
 }
@@ -260,41 +269,41 @@ extension DashBoardViewController {
     //MARk: -- API REQUEST CLASS DELEGATE
     //MARK: - request for Google Key
     func getgooglekeyListAPI() {
-        indicator.showActivityIndicator()
-        self.viewModel.requestForgetgooglekeyListAPIServices(perams: ["":""]) { success, model, error in
-            if success, let UserData = model {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                    if UserData.status == "1" {
-                        UserDefaults.standard.set(UserData.data?.key ?? "", forKey: "Googlekeyvalue")
-                    }
-                }
-            } else {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "no record found.", font: .systemFont(ofSize: 12.0))
-                }
-            }
-        }
+//        indicator.showActivityIndicator()
+//        self.viewModel.requestForgetgooglekeyListAPIServices(perams: ["":""]) { success, model, error in
+//            if success, let UserData = model {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                    if UserData.status == "1" {
+//                        UserDefaults.standard.set(UserData.data?.key ?? "", forKey: "Googlekeyvalue")
+//                    }
+//                }
+//            } else {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                    self.showToast(message: error ?? "no record found.", font: .systemFont(ofSize: 12.0))
+//                }
+//            }
+//        }
     }
 }
 extension DashBoardViewController {
     //MARK: - driverCurrentRideDetailsAPI
-    func driverCurrentRideDetailsAPI() {
-        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
-        indicator.showActivityIndicator()
-        self.viewModel4.requestForDriverCurrentRideDetailsAPIServices(perams: ["driver_id":DriverLoginID,"devicetoken":str_DerviceToken,"device_type": "ios","type":"DRIVER","app_version":str_Version]) { success, model, error in
-            if success, let userData = model {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                    print("success")
-                }
-            }else {
-                DispatchQueue.main.async { [self] in
-                    indicator.hideActivityIndicator()
-                print("failure")
-                }
-            }
-        }
-    }
+//    func driverCurrentRideDetailsAPI() {
+//        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+//        indicator.showActivityIndicator()
+//        self.viewModel4.requestForDriverCurrentRideDetailsAPIServices(perams: ["driver_id":DriverLoginID,"devicetoken":str_DerviceToken,"device_type": "ios","type":"DRIVER","app_version":str_Version]) { success, model, error in
+//            if success, let userData = model {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                    print("success")
+//                }
+//            }else {
+//                DispatchQueue.main.async { [self] in
+//                    indicator.hideActivityIndicator()
+//                print("failure")
+//                }
+//            }
+//        }
+//    }
 }

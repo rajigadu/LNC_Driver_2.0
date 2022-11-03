@@ -78,15 +78,21 @@ extension NotificationViewController {
             if success, let UserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let strUserdat = UserData.data as? [NotificationDatar]{
-                    self.notificationListHistory = strUserdat
+                    
+                    if UserData.status == "1" {
+                        if let strUserdat = UserData.data as? [NotificationDatar]{
+                        self.notificationListHistory = strUserdat
+                        }
+                        self.tableviewref.reloadData()
+                    } else {
+                        self.showToast(message: UserData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    self.tableviewref.reloadData()
+
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
             }
             

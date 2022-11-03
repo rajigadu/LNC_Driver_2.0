@@ -97,10 +97,18 @@ extension ProfileViewController {
         } else {
             indicator.showActivityIndicator()
             self.viewModel.requestForEditProfileServices(perams: ["driverid":str_userID,"fname":str_FirstName,"lname":str_LastName,"mobile":str_mobileNumber],picImage: self.profilePic, fileName:  "profilepic", profileStruct: self.profileStruct) { success, model, error in
-                if success, let ForgotPasswordUserData = model {
+                if success, let EditProfileUserData = model {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.ShowAlertWithPop(message: ForgotPasswordUserData.message ?? "Profile updated  successfully.")
+                        if EditProfileUserData.loginStatus == "1" {
+                            UserDefaults.standard.set(EditProfileUserData.userData?[0].FName, forKey: "DriverFirstName")
+                            UserDefaults.standard.set(EditProfileUserData.userData?[0].LName, forKey: "DriverLasttName")
+                            UserDefaults.standard.set(EditProfileUserData.userData?[0].MobileNumber, forKey: "DriverMobilenumber")
+                            UserDefaults.standard.set(API_URl.API_IMAGEBASE_URL + (EditProfileUserData.userData?[0].profilePic ?? ""), forKey: "DriverProfilepic")
+                            self.ShowAlertWithPop(message: EditProfileUserData.message ?? "Profile updated  successfully.")
+                        } else {
+                            self.showToast(message: EditProfileUserData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in

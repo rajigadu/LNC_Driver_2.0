@@ -18,12 +18,8 @@ class ActivatedRewardProgramsViewModel: NSObject {
     
     func requestForActivatedRewardProgramsServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ActivatedRewardProgramsData?, String?) -> ()) {
         activatedRewardProgramsServices.requestForActivatedRewardProgramsServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let ActivatedRewardProgram = model {
+                completion(true, ActivatedRewardProgram, nil)
             } else {
                 completion(false, nil, error)
             }

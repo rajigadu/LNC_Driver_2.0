@@ -20,11 +20,7 @@ class ChatViewModel: NSObject {
     func requestForDriverToUserChattingAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {
         ChatServices.requestForDriverToUserChattingAPIServices(perams){ success, model, error in
             if success, let userData = model {
-                if userData.status == "1" {
-                    completion(true, userData, nil)
-                } else {
-                    completion(false, nil, userData.message ?? "")
-                }
+                completion(true, userData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -35,11 +31,7 @@ class ChatViewModel: NSObject {
     func requestForDriverToPartnerChattingAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {
         ChatServices.requestForDriverToPartnerChattingAPIServices(perams){ success, model, error in
             if success, let userData = model {
-                if userData.status == "1" {
-                    completion(true, userData, nil)
-                } else {
-                    completion(false, nil, userData.message ?? "")
-                }
+                completion(true, userData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -50,11 +42,7 @@ class ChatViewModel: NSObject {
     func requestForPartnerToChatWithDriverAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {
         ChatServices.requestForPartnerToChatWithDriverAPIServices(perams){ success, model, error in
             if success, let userData = model {
-                if userData.status == "1" {
-                    completion(true, userData, nil)
-                } else {
-                    completion(false, nil, userData.message ?? "")
-                }
+                completion(true, userData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -65,11 +53,7 @@ class ChatViewModel: NSObject {
     func requestForDriverCurrentRideDetailsAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ChatDetailsData?, String?) -> ()) {
         ChatServices.requestForDriverCurrentRideDetailsAPIServices(perams){ success, model, error in
             if success, let userData = model {
-                if userData.status == "1" {
-                    completion(true, userData, nil)
-                } else {
-                    completion(false, nil, userData.message ?? "")
-                }
+                completion(true, userData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -80,11 +64,7 @@ class ChatViewModel: NSObject {
     func requestForPartnerCurrentRideDetailsAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ChatDetailsData?, String?) -> ()) {
         ChatServices.requestForPartnerCurrentRideDetailsAPIServices(perams){ success, model, error in
             if success, let userData = model {
-                if userData.status == "1" {
-                    completion(true, userData, nil)
-                } else {
-                    completion(false, nil, userData.message ?? "")
-                }
+                completion(true, userData, nil)
             } else {
                 completion(false, nil, error)
             }

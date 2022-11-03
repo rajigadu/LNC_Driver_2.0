@@ -260,15 +260,19 @@ extension RegistrationViewController {
             let peramModel = registartionStruct(str_fname: str_UserFirstName, str_lname: str_UserLastName, str_email: str_UserEmail, str_mobile: str_UserMobilenumber, str_password: str_Userpassword, str_vtype: str_UserVtype, str_makingyear: str_UserMakingYear, str_vmodel: str_UserVModel, str_address: str_UserAdddress)
             
             self.viewModel.requestForRegistrationServices(["json":perams.json],peramsModel :peramModel, profilepic_name: self.profilepicName, profilepic: profilepicr, vehicle_image_name: vehicleImageName, vehicle_image: vehicleImage, documents_image_name: InsuranceImageName, documents_image: InsuranceImage, license_image_name: license_image_name, license_image: license_image, driver_abstract_name: driver_abstract_name, driver_abstract: driver_abstract){ success, model, error in
-                if success, let ForgotPasswordUserData = model {
+                if success, let RegistrationUserData = model {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.ShowAlertWithPop(message: ForgotPasswordUserData.userData?[0].Message ?? "password sent to your email address.")
+                        if RegistrationUserData.loginStatus == "1" {
+                            self.ShowAlertWithPop(message: RegistrationUserData.userData?[0].Message ?? "password sent to your email address.")
+                        } else {
+                            self.showToast(message: RegistrationUserData.userData?[0].Message ??  I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                        self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                     }
                 }
             }

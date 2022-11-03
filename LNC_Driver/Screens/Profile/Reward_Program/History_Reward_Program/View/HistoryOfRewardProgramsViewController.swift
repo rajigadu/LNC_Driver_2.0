@@ -76,15 +76,19 @@ extension HistoryOfRewardProgramsViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForHistoryOfRewardProgramsServices(perams: ["driver_id":DriverLoginID,"program_id":rewardProgId,"driver_time":str_driver_time]) { success, model, error in
-            if success, let userdetails = model {
+            if success, let HistoryOfRewardProgramUserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = userdetails.data {
-                        self.ary_HistoryOfRewardInfo = data
-                        self.totalPointsref.text = "TOTAL POINTS: \(userdetails.total ?? 0)"
-                     }
-//                    self.ary_PaymentHistoryInfo.reverse()
-                    self.tblViewRef.reloadData()
+                    
+                    if HistoryOfRewardProgramUserData.status == "1" {
+                        if let data = HistoryOfRewardProgramUserData.data {
+                            self.ary_HistoryOfRewardInfo = data
+                            self.totalPointsref.text = "TOTAL POINTS: \(HistoryOfRewardProgramUserData.total ?? 0)"
+                         }
+                        self.tblViewRef.reloadData()
+                    } else {
+                        self.showToast(message: HistoryOfRewardProgramUserData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in

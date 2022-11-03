@@ -21,8 +21,8 @@ class CancelRideViewController: UIViewController {
     lazy var viewModel = {
         CancelRideViewModel()
     }()
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.lbl_messageRef.isHidden = true
@@ -34,27 +34,27 @@ class CancelRideViewController: UIViewController {
     @IBAction func btn_CancelActionRef(_ sender: Any) {
         self.popToBackVC()
     }
-
+    
     @IBAction func btn_SubmitActionRef(_ sender: Any) {
         if self.str_ComingFrom == "PartnerFutureRide" {
             self.partnerFutureCancelRideAPI(BasedDriverID : str_DriverLoginID,
-                                    withReason : self.textview_DescriptionRef.text,
-                                    withRideID : self.str_CurrentRideID)
+                                            withReason : self.textview_DescriptionRef.text,
+                                            withRideID : self.str_CurrentRideID)
         } else if str_ComingFrom == "PartnerCurrentRide" {
             self.partnerCurrentCancelRideAPI(BasedDriverID : str_DriverLoginID,
-                                     withReason : self.textview_DescriptionRef.text,
-                                     withRideID : self.str_CurrentRideID)
-
+                                             withReason : self.textview_DescriptionRef.text,
+                                             withRideID : self.str_CurrentRideID)
+            
         } else if str_ComingFrom == "FutureRide" {
             self.driverFutureCancelRideAPI(BasedDriverID : str_DriverLoginID,
-                                   withReason : self.textview_DescriptionRef.text,
-                                   withRideID : self.str_CurrentRideID,
-                                withPartnerID : str_PartnerID)
+                                           withReason : self.textview_DescriptionRef.text,
+                                           withRideID : self.str_CurrentRideID,
+                                           withPartnerID : str_PartnerID)
         } else {
             self.driverCurrentCancelRideAPI(BasedDriverID : str_DriverLoginID,
-                                    withReason : self.textview_DescriptionRef.text,
-                                    withRideID : self.str_CurrentRideID)
-
+                                            withReason : self.textview_DescriptionRef.text,
+                                            withRideID : self.str_CurrentRideID)
+            
         }
     }
 }
@@ -62,8 +62,8 @@ class CancelRideViewController: UIViewController {
 extension CancelRideViewController {
     //MARK: - DriverFutureCancelRideAPI
     func driverFutureCancelRideAPI(BasedDriverID : String,
-                                      withReason : String,
-                                      withRideID : String,
+                                   withReason : String,
+                                   withRideID : String,
                                    withPartnerID : String){
         
         guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
@@ -73,18 +73,21 @@ extension CancelRideViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlertWithPush(message: userData.message ?? "Successfully Done" , className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
-
+                    if userData.status == "1" {
+                        self.ShowAlertWithPush(message: userData.message ?? "Successfully Done" , className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
+                    } else {
+                        self.showToast(message: error ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
-
+    
 }
 
 extension CancelRideViewController {
@@ -97,14 +100,18 @@ extension CancelRideViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlertWithPush(message: userData.message ?? "Successfully Done" , className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
+                    if userData.status == "1" {
+                        self.ShowAlertWithPush(message: userData.message ?? "Successfully Done" , className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
+                    } else {
+                        self.showToast(message: error ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }
@@ -119,18 +126,20 @@ extension CancelRideViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    print("success")
+                    if userData.status == "1" {
+                        print("success")
+                    } else if userData.status == "4" {
+                        self.ShowAlert(message: model?.message ?? "")
+                    } else {
+                        self.showToast(message: error ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if model?.status == "4" {
-                        self.ShowAlert(message: model?.message ?? "")
-                    } else {
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
-                    }
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }
@@ -145,19 +154,23 @@ extension CancelRideViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    let alertController = UIAlertController(title: kApptitle, message: userData.message ?? "", preferredStyle: .alert)
-                    let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-                        self.driverOnlineAPI(withDriverID : self.str_DriverLoginID, withOnOfflineStatus : "1")
+                    if userData.status == "1" {
+                        let alertController = UIAlertController(title: kApptitle, message: userData.message ?? "", preferredStyle: .alert)
+                        let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+                            self.driverOnlineAPI(withDriverID : self.str_DriverLoginID, withOnOfflineStatus : "1")
+                        }
+                        alertController.addAction(OKAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    } else {
+                        self.showToast(message: error ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    alertController.addAction(OKAction)
-                    self.present(alertController, animated: true, completion: nil)
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }
@@ -172,20 +185,24 @@ extension CancelRideViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    let alertController = UIAlertController(title: kApptitle, message: "Current ride canceled successfully", preferredStyle: .alert)
-                    let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-                        self.driverOnlineAPI(withDriverID : self.str_DriverLoginID, withOnOfflineStatus : "1")
+                    if userData.status == "1" {
+                        let alertController = UIAlertController(title: kApptitle, message: "Current ride canceled successfully", preferredStyle: .alert)
+                        let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+                            self.driverOnlineAPI(withDriverID : self.str_DriverLoginID, withOnOfflineStatus : "1")
+                        }
+                        alertController.addAction(OKAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    } else {
+                        self.showToast(message: error ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    alertController.addAction(OKAction)
-                    self.present(alertController, animated: true, completion: nil)
-
+                    
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }

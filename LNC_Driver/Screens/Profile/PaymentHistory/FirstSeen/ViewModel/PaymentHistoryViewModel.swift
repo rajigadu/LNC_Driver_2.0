@@ -18,12 +18,8 @@ class PaymentHistoryViewModel: NSObject {
     
     func requestForPaymentHistoryServices(perams: Dictionary<String,String>, completion: @escaping (Bool, PaymentHistoryData?, String?) -> ()) {
         paymentHistoryServices.requestForPaymentHistoryServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, I18n.SomethingWentWrong)
-                }
+            if success, let PaymentHistoryUserData = model {
+                    completion(true, PaymentHistoryUserData, nil)
             } else {
                 completion(false, nil, error)
             }

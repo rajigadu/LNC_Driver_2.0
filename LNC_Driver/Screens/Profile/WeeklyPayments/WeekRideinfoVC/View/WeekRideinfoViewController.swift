@@ -174,14 +174,20 @@ extension WeekRideinfoViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForWeekRideinfoServices(perams: ["driver_id":DriverLoginID,"to_week": self.str_Todates,"from_week":self.str_Fromdate]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let WeeklyRideinfoModel = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.data {
-                        self.ary_WeekRideinfoHistory = data
+                    
+                    if WeeklyRideinfoModel.status == "1" {
+                        if let data = WeeklyRideinfoModel.data {
+                            self.ary_WeekRideinfoHistory = data
+                        }
+                        self.ary_WeekRideinfoHistory.reverse()
+                        self.tableview_PaymentHistoryRef.reloadData()
+                    } else {
+                        self.showToast(message: WeeklyRideinfoModel.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    self.ary_WeekRideinfoHistory.reverse()
-                    self.tableview_PaymentHistoryRef.reloadData()
+
                 }
             } else {
                 DispatchQueue.main.async { [self] in

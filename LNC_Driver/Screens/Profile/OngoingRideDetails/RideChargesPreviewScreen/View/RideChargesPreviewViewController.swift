@@ -81,28 +81,33 @@ extension RideChargesPreviewViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForDriverCurrentRideCompleteAPIServices(perams: ["driverid":DriverLoginID,"userid":withUserID,"ride_id": withRideID]) { success, model, error in
-            if success, let userData = model {
+            if success, let DriverCurrentRideComplete = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-
-                    UserDefaults.standard.removeObject(forKey: "PartnerMobileNumberForDriver")
-                    UserDefaults.standard.set(nil, forKey: "PartnerMobileNumberForDriver")
                     
-                    UserDefaults.standard.removeObject(forKey: "PartnerIDForDriver")
-                    UserDefaults.standard.set(nil, forKey: "PartnerIDForDriver")
+                    if DriverCurrentRideComplete.status == "1" {
+                        UserDefaults.standard.removeObject(forKey: "PartnerMobileNumberForDriver")
+                        UserDefaults.standard.set(nil, forKey: "PartnerMobileNumberForDriver")
+                        
+                        UserDefaults.standard.removeObject(forKey: "PartnerIDForDriver")
+                        UserDefaults.standard.set(nil, forKey: "PartnerIDForDriver")
 
-                    UserDefaults.standard.removeObject(forKey: "PartnerDetailsFromServer")
-                    UserDefaults.standard.set(nil, forKey: "PartnerDetailsFromServer")
+                        UserDefaults.standard.removeObject(forKey: "PartnerDetailsFromServer")
+                        UserDefaults.standard.set(nil, forKey: "PartnerDetailsFromServer")
 
-                    UserDefaults.standard.removeObject(forKey: "DriverServiceType")
-                    UserDefaults.standard.set(nil, forKey: "DriverServiceType")
+                        UserDefaults.standard.removeObject(forKey: "DriverServiceType")
+                        UserDefaults.standard.set(nil, forKey: "DriverServiceType")
 
-                    self.driverCurrentRidePaymentAPI(withUserID: self.str_RideUserID, withRideID: self.str_CurrentRideID)
+                        self.driverCurrentRidePaymentAPI(withUserID: self.str_RideUserID, withRideID: self.str_CurrentRideID)
+
+                    } else {
+                        self.showToast(message: DriverCurrentRideComplete.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -119,6 +124,7 @@ extension RideChargesPreviewViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     let alertController = UIAlertController(title: kApptitle, message: userData.message ?? "", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
@@ -134,6 +140,9 @@ extension RideChargesPreviewViewController {
                     alertController.addAction(OKAction)
                     alertController.addAction(CancellAction)
                     self.present(alertController, animated: true, completion: nil)
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
 
                 }
             } else {
@@ -160,6 +169,7 @@ extension RideChargesPreviewViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     let alertController = UIAlertController(title: kApptitle, message: userData.data?[0].message ?? "", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
@@ -170,12 +180,14 @@ extension RideChargesPreviewViewController {
                         self.navigationController?.pushViewController(nxtVC, animated: true)
                     }
                     
-                    let CancellAction = UIAlertAction(title: "Cancel", style: .default) { (UIAlertAction) in
-                    }
+//                    let CancellAction = UIAlertAction(title: "Cancel", style: .default) { (UIAlertAction) in
+//                    }
                     alertController.addAction(OKAction)
-                    alertController.addAction(CancellAction)
+                   // alertController.addAction(CancellAction)
                     self.present(alertController, animated: true, completion: nil)
-
+                } else {
+                    self.showToast(message: I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -198,7 +210,11 @@ extension RideChargesPreviewViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     self.driverFutureRidePaymentAPI(withUserID: self.str_RideUserID, withRideID: self.str_CurrentRideID)
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in

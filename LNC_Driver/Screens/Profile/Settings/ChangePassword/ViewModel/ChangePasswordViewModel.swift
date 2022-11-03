@@ -18,11 +18,7 @@ class ChangePasswordViewModel: NSObject {
     func requestForChangePasswordServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ChangePasswordUserData?, String?) -> ()) {
         ChangePasswordServices.requestForChangePasswordServices(perams) { success, model, error in
             if success, let ChangePasswordUserData = model {
-                if ChangePasswordUserData.loginStatus == "1" {
-                    completion(true, ChangePasswordUserData, nil)
-                } else {
-                    completion(false, nil, ChangePasswordUserData.userData?[0].Message)
-                }
+                completion(true, ChangePasswordUserData, nil)
             } else {
                 completion(false, nil, error)
             }

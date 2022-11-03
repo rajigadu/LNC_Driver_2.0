@@ -57,7 +57,7 @@ class AddVehicleInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Edit Vehicle Info"
-        self.getBankDeatils()
+        self.getVehicleDeatils()
     }
     
     //MARK: - Class Actions
@@ -154,20 +154,22 @@ class AddVehicleInfoViewController: UIViewController {
 extension AddVehicleInfoViewController {
     
     //MARK: - Get Bank Details
-    func getBankDeatils() {
+    func getVehicleDeatils() {
         guard let str_userID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
         self.viewModel.requestForGetVehicleDetailsServices(perams: ["driverid":str_userID]) { success, model, error in
-            if success, let AddBankDetailsModel = model {
+            if success, let getVehicleInfo = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.txt_VehicleMakeTxtFld.text = AddBankDetailsModel.userData?.vehicle_type
-                    self.txt_VehicleYearTxtFld.text = AddBankDetailsModel.userData?.vehile_making_year
-                    self.txt_VehicleModelTxtFld.text = AddBankDetailsModel.userData?.vehicle_model
+                    
+                    if getVehicleInfo.loginStatus == "1" {
+                    self.txt_VehicleMakeTxtFld.text = getVehicleInfo.userData?.vehicle_type
+                    self.txt_VehicleYearTxtFld.text = getVehicleInfo.userData?.vehile_making_year
+                    self.txt_VehicleModelTxtFld.text = getVehicleInfo.userData?.vehicle_model
                     
                     //vehicle image
-                    if let Str_VehicleImage = API_URl.API_IMAGEBASE_URL + (AddBankDetailsModel.userData?.vehicle_image ?? "") as? String {
+                    if let Str_VehicleImage = API_URl.API_IMAGEBASE_URL + (getVehicleInfo.userData?.vehicle_image ?? "") as? String {
                         self.vehiclePic.sd_setImage(with: URL(string: Str_VehicleImage), placeholderImage: UIImage(named: "placeholder"))
                         self.vehicleImageName = "vehicle_image"
                         self.vehicleStruct.Imagepic = self.vehiclePic.image
@@ -179,7 +181,7 @@ extension AddVehicleInfoViewController {
                     }
                     
                     //license image
-                    if let Str_LicenseImage = API_URl.API_IMAGEBASE_URL + (AddBankDetailsModel.userData?.license_image ?? "") as? String {
+                    if let Str_LicenseImage = API_URl.API_IMAGEBASE_URL + (getVehicleInfo.userData?.license_image ?? "") as? String {
                         self.drivingLicensePic.sd_setImage(with: URL(string: Str_LicenseImage), placeholderImage: UIImage(named: "placeholder"))
                         self.license_image_name = "license_image"
                         
@@ -191,7 +193,7 @@ extension AddVehicleInfoViewController {
                         self.insurancePic.image = UIImage(named: "placeholder")
                     }
                     //document image
-                    if let Str_DocumentImage = API_URl.API_IMAGEBASE_URL + (AddBankDetailsModel.userData?.document_image ?? "") as? String {
+                    if let Str_DocumentImage = API_URl.API_IMAGEBASE_URL + (getVehicleInfo.userData?.document_image ?? "") as? String {
                         self.insurancePic.sd_setImage(with: URL(string: Str_DocumentImage), placeholderImage: UIImage(named: "placeholder"))
                         self.InsuranceImageName = "documents_image"
                         
@@ -204,7 +206,7 @@ extension AddVehicleInfoViewController {
                         self.drivingLicensePic.image = UIImage(named: "placeholder")
                     }
                     //abstract image
-                    if let Str_AbstractImage = API_URl.API_IMAGEBASE_URL + (AddBankDetailsModel.userData?.abstract_image ?? "") as? String {
+                    if let Str_AbstractImage = API_URl.API_IMAGEBASE_URL + (getVehicleInfo.userData?.abstract_image ?? "") as? String {
                         self.drivinfRecordPic.sd_setImage(with: URL(string: Str_AbstractImage), placeholderImage: UIImage(named: "placeholder"))
                         self.driver_abstract_name = "driver_abstract"
                         
@@ -215,6 +217,9 @@ extension AddVehicleInfoViewController {
 
                     } else {
                         self.drivinfRecordPic.image = UIImage(named: "placeholder")
+                    }
+                    } else {
+                        self.showToast(message: getVehicleInfo.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
                 }
             } else {
@@ -260,16 +265,19 @@ extension AddVehicleInfoViewController {
             
             self.viewModel.requestForPostVehicleDetailsServices(perams, vehicle_image_name: self.vehicleImageName, vehicle_image: self.vehicleImage, documents_image_name: self.InsuranceImageName, documents_image: self.InsuranceImage, license_image_name: self.license_image_name, license_image: self.license_image, driver_abstract_name: self.driver_abstract_name, driver_abstract: self.driver_abstract, vehicleImageStruct: self.vehicleStruct, documentImageStruct: self.InsuranceStruct, licenseImageStruct: self.licenseStrct, driverAbstactImageStruct: self.driverAbstractStruct) { success, model, error in
             
-           // self.viewModel.requestForPostVehicleDetailsServices(perams, vehicleImageStruct: self.vehicleStruct, documentImageStruct: self.InsuranceStruct, licenseImageStruct: self.licenseStrct, driverAbstactImageStruct: self.driverAbstractStruct) { success, model, error in
                 if success, let PostVehicleDetails = model {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.ShowAlertWithPop(message: PostVehicleDetails.message ?? "password sent to your email address.")
+                        if PostVehicleDetails.status == "1" {
+                            self.ShowAlertWithPop(message: PostVehicleDetails.message ?? "password sent to your email address.")
+                        } else {
+                            self.showToast(message: PostVehicleDetails.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                        self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                     }
                 }
             }

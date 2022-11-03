@@ -18,12 +18,8 @@ class ForgotPasswordViewModel: NSObject {
     func requestForForgotPasswordServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ForgotPasswordUserData?, String?) -> ()) {
         ForgotPasswordServices.requestForForgotPasswordServices(perams) { success, model, error in
             if success, let ForgotPasswordUserData = model {
-                if ForgotPasswordUserData.loginStatus == "1" {
-                    completion(true, ForgotPasswordUserData, nil)
-                } else {
-                    completion(false, nil, ForgotPasswordUserData.Message)
-                }
-            } else {
+                completion(true, ForgotPasswordUserData, nil)
+             } else {
                 completion(false, nil, error)
             }
         }

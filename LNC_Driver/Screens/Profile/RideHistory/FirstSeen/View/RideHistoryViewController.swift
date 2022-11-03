@@ -139,14 +139,21 @@ extension RideHistoryViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForRideHistoryServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
-            if success, let GetBankDetailsModel = model {
+            if success, let RideHistoryUserData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let data = GetBankDetailsModel.data {
-                        self.ary_PaymentHistoryInfo = data
+                    
+                    if RideHistoryUserData.status == "1" {
+                        if let data = RideHistoryUserData.data {
+                            self.ary_PaymentHistoryInfo = data
+                        }
+    //                    self.ary_PaymentHistoryInfo.reverse()
+                        self.tableview_RideInfoRef.reloadData()
+
+                    } else {
+                        self.showToast(message: I18n.NoRecordFound, font: .systemFont(ofSize: 12.0))
                     }
-//                    self.ary_PaymentHistoryInfo.reverse()
-                    self.tableview_RideInfoRef.reloadData()
+
                 }
             } else {
                 DispatchQueue.main.async { [self] in

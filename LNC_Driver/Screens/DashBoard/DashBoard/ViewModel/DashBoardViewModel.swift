@@ -17,7 +17,7 @@ class DashBoardViewModel: NSObject {
     }
     
     //MARK: - NextRIDETime
-    func requestForNextRIDETimeAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, DashBoardNextRideData?, String?) -> ()) {
+    func requestForNextRIDETimeAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, DashBoardDriverUpdateModel?, String?) -> ()) {
         dashBoardServices.requestForNextRIDETimeAPIServices(perams) { success, model, error in
             if success, let UserData = model {
                     completion(true, UserData, nil)

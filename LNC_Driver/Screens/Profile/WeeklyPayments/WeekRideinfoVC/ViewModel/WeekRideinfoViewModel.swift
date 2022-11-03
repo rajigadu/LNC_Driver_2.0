@@ -19,11 +19,7 @@ class WeekRideinfoViewModel: NSObject {
     func requestForWeekRideinfoServices(perams: Dictionary<String,String>, completion: @escaping (Bool, WeekRideinfoData?, String?) -> ()) {
         WeekRideinfoServices.requestForGetWeeklyPaymentsInfolistServices(perams){ success, model, error in
             if success, let UserData = model {
-                if UserData.status == "1" {
-                    completion(true, UserData, nil)
-                } else {
-                    completion(false, nil, UserData.message)
-                }
+                completion(true, UserData, nil)
             } else {
                 completion(false, nil, error)
             }

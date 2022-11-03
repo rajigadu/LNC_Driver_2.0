@@ -18,12 +18,8 @@ class ManagePartnersViewModel: NSObject {
     
     func requestForManagePartnersServices(perams: Dictionary<String,String>, completion: @escaping (Bool, ManagePartnersData?, String?) -> ()) {
         ManagePartnersServices.requestForManagePartnersServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let ManagePartnersUserData = model {
+                completion(true, ManagePartnersUserData, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -32,12 +28,8 @@ class ManagePartnersViewModel: NSObject {
     
     func requestForUpdatePartnerStatusService(perams: Dictionary<String,String>, completion: @escaping (Bool, UpdateManagePartnersData?, String?) -> ()) {
         ManagePartnersServices.requestForUpdatePartnerStatusService(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let UpdatePartnerStatus = model {
+                completion(true, UpdatePartnerStatus, nil)
             } else {
                 completion(false, nil, error)
             }

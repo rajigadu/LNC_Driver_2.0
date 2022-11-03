@@ -183,40 +183,43 @@ extension DriverTypeViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForActivePartnerAPIServices(perams: ["driverid":DriverLoginID]) { success, model, error in
-            if success, let userData = model {
+            if success, let ActivePartner = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    str_CheckingSelectedDriverType = userData.status ?? ""
-                    self.txt_PartnerMobilenumberRef.isUserInteractionEnabled = true
-                    self.txt_PartnerNameref.isUserInteractionEnabled = true
-                    self.txt_PartnerMailRef.isUserInteractionEnabled = true
-                    
-                    self.txt_PartnerNameref.text = userData.data?.partner_name ?? ""
-                    self.txt_PartnerMailRef.text = userData.data?.partner_email ?? ""
-                    self.txt_PartnerMobilenumberRef.text = userData.data?.partner_phone ?? ""
-                    
-                    self.btn_DriverType1Ref.setImage(UIImage(named: "Circle"), for: .normal)
-                    self.btn_DriverType2Ref.setImage(UIImage(named: "emptyCircle"), for: .normal)
-                     
-                    self.partnerListAPI()
-                }
+                     if ActivePartner.status == "1" {
+                        str_CheckingSelectedDriverType = ActivePartner.status ?? ""
+                        self.txt_PartnerMobilenumberRef.isUserInteractionEnabled = true
+                        self.txt_PartnerNameref.isUserInteractionEnabled = true
+                        self.txt_PartnerMailRef.isUserInteractionEnabled = true
+                        
+                        self.txt_PartnerNameref.text = ActivePartner.data?.partner_name ?? ""
+                        self.txt_PartnerMailRef.text = ActivePartner.data?.partner_email ?? ""
+                        self.txt_PartnerMobilenumberRef.text = ActivePartner.data?.partner_phone ?? ""
+                        
+                        self.btn_DriverType1Ref.setImage(UIImage(named: "Circle"), for: .normal)
+                        self.btn_DriverType2Ref.setImage(UIImage(named: "emptyCircle"), for: .normal)
+                         
+                        self.partnerListAPI()
+
+                    } else {
+                        str_CheckingSelectedDriverType = "1"
+                        self.txt_PartnerMobilenumberRef.isUserInteractionEnabled = true
+                        self.txt_PartnerNameref.isUserInteractionEnabled = true
+                        self.txt_PartnerMailRef.isUserInteractionEnabled = true
+                        self.btn_DriverType1Ref.setImage(UIImage(named: "Circle"), for: .normal)
+                        self.btn_DriverType2Ref.setImage(UIImage(named: "emptyCircle"), for: .normal)
+                        
+                        self.partnerListAPI()
+                    }
+                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    
-                    str_CheckingSelectedDriverType = "1"
-                    self.txt_PartnerMobilenumberRef.isUserInteractionEnabled = true
-                    self.txt_PartnerNameref.isUserInteractionEnabled = true
-                    self.txt_PartnerMailRef.isUserInteractionEnabled = true
-                    self.btn_DriverType1Ref.setImage(UIImage(named: "Circle"), for: .normal)
-                    self.btn_DriverType2Ref.setImage(UIImage(named: "emptyCircle"), for: .normal)
-                    
-                    self.partnerListAPI()
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
-
-    }
+     }
 }
 
 //MARK: -  selectDriverTypeAPI
@@ -237,23 +240,26 @@ extension DriverTypeViewController {
         }
         
         self.viewModel.requestForSelectDriverTypeAPIServices(perams: perams) { success, model, error in
-            if success, let UserData = model {
+            if success, let SelectDriverType = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     
-                    if self.str_CheckingFromRide == "AcceptRideCase" {
-                        if str_CheckingSelectedDriverType == "1" {
-                            UserDefaults.standard.set("1", forKey: "DriverServiceType")
-                            self.movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                    if SelectDriverType.status == "1" {
+                        if self.str_CheckingFromRide == "AcceptRideCase" {
+                            if str_CheckingSelectedDriverType == "1" {
+                                UserDefaults.standard.set("1", forKey: "DriverServiceType")
+                                self.movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                            } else {
+                                UserDefaults.standard.set("2", forKey: "DriverServiceType")
+                                self.lookingForPartnerAPI(WithRequestID: self.str_CurrentRide, withStatus: "p")
+                            }
                         } else {
-                            UserDefaults.standard.set("2", forKey: "DriverServiceType")
-                            self.lookingForPartnerAPI(WithRequestID: self.str_CurrentRide, withStatus: "p")
+                            var str_ServiceType = SelectDriverType.data?[1].service_type ?? ""
+                            UserDefaults.standard.set(str_ServiceType, forKey: "DriverServiceType")
+                            self.ShowAlertWithPush(message: SelectDriverType.data?[0].message ?? "", className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
                         }
                     } else {
-                        var str_ServiceType = UserData.data?[1].service_type ?? ""
-                        UserDefaults.standard.set(str_ServiceType, forKey: "DriverServiceType")
-                        self.ShowAlertWithPush(message: UserData.data?[0].message ?? "", className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
-
+                        self.showToast(message: SelectDriverType.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
                 }
             } else {
@@ -274,10 +280,15 @@ extension DriverTypeViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForLookingForPartnerAPIServices(perams: ["request_id":WithRequestID, "status":withStatus]) { success, model, error in
-            if success, let UserData = model {
+            if success, let LookingForPartner = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlertWithPush(message: UserData.message ?? "", className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
+ 
+                    if LookingForPartner.status == "1" {
+                        self.ShowAlertWithPush(message: LookingForPartner.message ?? "", className: "DashBoardViewController", storyBoard: "DashBoard", Animation: true)
+                    } else {
+                        self.showToast(message: LookingForPartner.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -297,21 +308,27 @@ extension DriverTypeViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForPartnerListAPIServices(perams: ["driverid":DriverLoginID]) { success, model, error in
-            if success, let userData = model {
+            if success, let PartnerList = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData.data {
-                        array_PartnerListReff = responseData
+                    
+                    if PartnerList.status == "1" {
+                        if let responseData = PartnerList.data {
+                            array_PartnerListReff = responseData
+                        }
+                       
+                        for response in array_PartnerListReff {
+                            let str_PartnerName = response.partner_name ?? ""
+                            let str_PartnerPhone = response.partner_phone ?? ""
+                            let str_PartnerEmail = response.partner_email ?? ""
+                            self.ary_PartnerListRef.append(partnerAdd(partner_name: str_PartnerName, partner_phone: str_PartnerPhone, partner_email: str_PartnerEmail))
+                        }
+                        self.partnerPicker.reloadAllComponents()
+
+                    } else {
+                        self.showToast(message: PartnerList.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                   
-                    for response in array_PartnerListReff {
-                        let str_PartnerName = response.partner_name ?? ""
-                        let str_PartnerPhone = response.partner_phone ?? ""
-                        let str_PartnerEmail = response.partner_email ?? ""
-                        self.ary_PartnerListRef.append(partnerAdd(partner_name: str_PartnerName, partner_phone: str_PartnerPhone, partner_email: str_PartnerEmail))
-                    }
-                    self.partnerPicker.reloadAllComponents()
-                }
+                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()

@@ -201,21 +201,27 @@ extension DummyPartnerSelectForFutureViewController {
         indicator.showActivityIndicator()
         
         self.viewModel.requestForPartnerListAPIServices(perams: ["driverid":DriverLoginID]) { success, model, error in
-            if success, let userData = model {
+            if success, let DummyPartnerSelectForFuture = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData.data {
-                        array_PartnerListReff = responseData
-                    }
                     
-                    for response in array_PartnerListReff {
-                        let str_PartnerName = response.partner_name ?? ""
-                        let str_PartnerPhone = response.partner_phone ?? ""
-                        let str_PartnerEmail = response.partner_email ?? ""
-                        let str_PartnerId = response.id ?? ""
-                        self.ary_PartnerListRef.append(partnerAdd2(partner_name: str_PartnerName, partner_phone: str_PartnerPhone, partner_email: str_PartnerEmail,partner_id: str_PartnerId))
+                    if DummyPartnerSelectForFuture.status == "1" {
+                        if let responseData = DummyPartnerSelectForFuture.data {
+                            array_PartnerListReff = responseData
+                        }
+                        
+                        for response in array_PartnerListReff {
+                            let str_PartnerName = response.partner_name ?? ""
+                            let str_PartnerPhone = response.partner_phone ?? ""
+                            let str_PartnerEmail = response.partner_email ?? ""
+                            let str_PartnerId = response.id ?? ""
+                            self.ary_PartnerListRef.append(partnerAdd2(partner_name: str_PartnerName, partner_phone: str_PartnerPhone, partner_email: str_PartnerEmail,partner_id: str_PartnerId))
+                        }
+                        self.partnerPicker.reloadAllComponents()
+
+                    } else {
+                        self.showToast(message: DummyPartnerSelectForFuture.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    self.partnerPicker.reloadAllComponents()
                 }
             } else {
                 DispatchQueue.main.async { [self] in

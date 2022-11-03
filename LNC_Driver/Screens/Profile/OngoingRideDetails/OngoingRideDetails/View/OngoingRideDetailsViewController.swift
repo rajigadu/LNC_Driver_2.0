@@ -644,12 +644,16 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     self.ShowAlert(message: userData.message ?? "")
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -667,12 +671,16 @@ withWaitingChargesTime: String) {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     self.ShowAlert(message: userData.message ?? "")
+                    } else {
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -691,12 +699,16 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     self.ShowAlert(message: userData.message ?? "")
+                    } else {
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -716,6 +728,8 @@ extension OngoingRideDetailsViewController {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                    
+                    if userData.status == "1" {
+                    
                     str_earnings = userData.earnings ?? ""
                     str_ride_fare = userData.ride_fare ?? ""
                     Str_AdminFare = userData.admin_fee ?? ""
@@ -737,35 +751,37 @@ extension OngoingRideDetailsViewController {
                     rideChargesPreviewScreen.str_UserimageUrl = str_CurrentRideUserImageUrl;
                     self.navigationController?.pushViewController(rideChargesPreviewScreen, animated: true)
 
-                    
+                    } else {
+                        let alertController = UIAlertController(title: kApptitle, message: model?.message ?? "Something went wrong!", preferredStyle: .alert)
+                        let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+                           
+                        let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
+                        let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewViewController") as! RideChargesPreviewViewController
+
+                        rideChargesPreviewScreen.str_waitingtime = waitingTimePickerStr;
+                        rideChargesPreviewScreen.str_Additionalstops = stopsPickerStr;
+                        rideChargesPreviewScreen.str_earnings = str_earnings;
+                        rideChargesPreviewScreen.str_Ridefare = str_ride_fare;
+                        rideChargesPreviewScreen.str_RideCost = str_RideCost;
+                        rideChargesPreviewScreen.str_WaitingCharges = str_WaitingCharges;
+                        rideChargesPreviewScreen.str_TotalRideCost = str_TotalCharges;
+                        rideChargesPreviewScreen.str_CurrentRideID = self.str_SelectedRideID;
+                        rideChargesPreviewScreen.str_RideUserID = str_RideUserID;
+                        rideChargesPreviewScreen.str_ComingFrom = "Future Ride";
+                        rideChargesPreviewScreen.str_UserName = str_CurrentRideUsername;
+                        rideChargesPreviewScreen.str_UserimageUrl = str_CurrentRideUserImageUrl;
+
+                        self.navigationController?.pushViewController(rideChargesPreviewScreen, animated: true)
+                        }
+                        alertController.addAction(OKAction)
+                        self.present(alertController, animated: true, completion: nil)
+
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    
-                    let alertController = UIAlertController(title: kApptitle, message: model?.message ?? "Something went wrong!", preferredStyle: .alert)
-                    let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-                       
-                    let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-                    let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewViewController") as! RideChargesPreviewViewController
-
-                    rideChargesPreviewScreen.str_waitingtime = waitingTimePickerStr;
-                    rideChargesPreviewScreen.str_Additionalstops = stopsPickerStr;
-                    rideChargesPreviewScreen.str_earnings = str_earnings;
-                    rideChargesPreviewScreen.str_Ridefare = str_ride_fare;
-                    rideChargesPreviewScreen.str_RideCost = str_RideCost;
-                    rideChargesPreviewScreen.str_WaitingCharges = str_WaitingCharges;
-                    rideChargesPreviewScreen.str_TotalRideCost = str_TotalCharges;
-                    rideChargesPreviewScreen.str_CurrentRideID = self.str_SelectedRideID;
-                    rideChargesPreviewScreen.str_RideUserID = str_RideUserID;
-                    rideChargesPreviewScreen.str_ComingFrom = "Future Ride";
-                    rideChargesPreviewScreen.str_UserName = str_CurrentRideUsername;
-                    rideChargesPreviewScreen.str_UserimageUrl = str_CurrentRideUserImageUrl;
-
-                    self.navigationController?.pushViewController(rideChargesPreviewScreen, animated: true)
-                    }
-                    alertController.addAction(OKAction)
-                    self.present(alertController, animated: true, completion: nil)
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -783,12 +799,16 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     self.driverRidePaymentAPI(withUserID: str_RideUserID, withRideID: str_CurrentRideID)
+                    } else {
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -805,16 +825,20 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     self.str_RideCost = userData.ride_cost ?? ""
                     self.str_WaitingCharges = userData.waiting_charge ?? ""
                     self.str_TotalCharges = userData.total_cost ?? ""
 
                     self.ShowAlert(message: userData.message ?? "Started...")
+                    } else {
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -831,6 +855,9 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    
+                    if userData.status == "1" {
+                    
                     let waitingtimestatus = userData.waiting_status ?? ""
                     if waitingtimestatus == "" {
                        // btn_waitingtimeRef.setTitle(" Waiting Time", for: .normal)
@@ -906,11 +933,14 @@ extension OngoingRideDetailsViewController {
                     nsRange = NSString(string: AttributeStr).range(of: "Ride To :", options: String.CompareOptions.caseInsensitive)
                     attrStri.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.green], range: nsRange)
                     self.lbl_UserRideInfoRef.attributedText = attrStri
+                    } else {
+                        self.ShowAlert(message: model?.message ??  I18n.SomethingWentWrong)
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlert(message: model?.message ??  "Something went wrong")
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -928,6 +958,8 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    
+                    if userData.status == "1" {
                     self.view_DriverDetailsInPartnerSideRef.isHidden = false
                     self.view_UserDetailsInfoInDriverSideRef.isHidden = true
                     self.viewUserScrollref.isHidden = true
@@ -1010,12 +1042,14 @@ extension OngoingRideDetailsViewController {
                     } else {
                         self.imageview_DriverImageRef.image = UIImage(named: "personIcon")
                     }
-                    
+                    } else {
+                        self.ShowAlert(message: model?.message ??  I18n.SomethingWentWrong)
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlert(message: model?.message ??  "Something Went wrong")
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }
@@ -1033,16 +1067,20 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlert(message: "Payment Done Successfully")
+                    if userData.status == "1" {
+                        self.ShowAlert(message: "Payment Done Successfully")
+                    } else {
+                        self.ShowAlert(message: model?.message ??  "Payment failed")
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.ShowAlert(message: model?.message ??  "Payment failed")
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
-
+        
     }
 }
 
@@ -1057,12 +1095,16 @@ extension OngoingRideDetailsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     self.ShowAlert(message: userData.message ?? "success")
+                    } else {
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
              }
         }

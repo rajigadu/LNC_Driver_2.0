@@ -41,7 +41,11 @@ extension ForgotPasswordViewController {
                 if success, let ForgotPasswordUserData = model {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.ShowAlertWithPop(message: ForgotPasswordUserData.Message ?? "password sent to your email address.")
+                         if ForgotPasswordUserData.loginStatus == "1" {
+                            self.ShowAlertWithPop(message: ForgotPasswordUserData.Message ?? "password sent to your email address.")
+                        } else {
+                            self.showToast(message: ForgotPasswordUserData.Message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in

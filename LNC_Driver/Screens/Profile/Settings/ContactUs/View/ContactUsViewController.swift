@@ -47,10 +47,14 @@ extension ContactUsViewController {
         } else {
             indicator.showActivityIndicator()
             self.viewModel.requestForContactUsServices(perams: ["fullname":str_Username,"email":str_Email,"message":str_message,"userid":str_userID]) { success, model, error in
-                if success, let ForgotPasswordUserData = model {
+                if success, let ContactUsUserData = model {
                     DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                        self.ShowAlertWithPop(message: ForgotPasswordUserData.userData?[0].Message ?? "Thanks for contacting with us. We will get back to you as soon as possible .")
+                        if ContactUsUserData.loginStatus == "1" {
+                            self.ShowAlertWithPop(message: ContactUsUserData.userData?[0].Message ?? "Thanks for contacting with us. We will get back to you as soon as possible .")
+                        } else {
+                            self.showToast(message: ContactUsUserData.userData?[0].Message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        }
                     }
                 } else {
                     DispatchQueue.main.async { [self] in

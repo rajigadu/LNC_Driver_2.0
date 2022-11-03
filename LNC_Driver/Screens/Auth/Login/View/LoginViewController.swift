@@ -22,11 +22,6 @@ class LoginViewController: UIViewController {
     //MARK: - Life Cycle Start
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.txt_PasswordRef.text = "123"
-       // self.txt_UserMailRef.text = "rajesh@anaad.net"
-        self.txt_PasswordRef.text = "123"
-        self.txt_UserMailRef.text = "rajesh@anaad.net"
-        // Do any additional setup after loading the view.
     }
     
     //MARK: - UI-Button Actions
@@ -52,22 +47,34 @@ extension LoginViewController {
         if userEmail.isEmpty || !isValidEmail(userEmail) || userPassword.isEmpty {
             self.ShowAlert(message: "Please Eneter Valid Credentials!")
         } else {
-                indicator.showActivityIndicator()
-                self.viewModel.getUserDetails(perams: ["emailid":userEmail,"password":userPassword]) { success, model, error in
-                    if success, let LoginedUser = model {
-                        DispatchQueue.main.async { [self] in
+            indicator.showActivityIndicator()
+            self.viewModel.getUserDetails(perams: ["emailid":userEmail,"password":userPassword]) { success, model, error in
+                if success, let LoginedUser = model {
+                    DispatchQueue.main.async { [self] in
                         indicator.hideActivityIndicator()
-                            //self.showToast(message: LoginedUser.message ?? "Welcome! You are successfully login in your account panel.", font: .systemFont(ofSize: 12.0))
-                           // movetonextvc(id: "DashBoardViewController", storyBordid: "DashBoard", animated: true)
+                        if LoginedUser.loginStatus == "1" {
+                            UserDefaults.standard.set(LoginedUser.userDetails?[0].userId, forKey: "DriverLoginID")
+                            UserDefaults.standard.set(LoginedUser.userDetails?[0].email, forKey: "DriverEmailID")
+                            UserDefaults.standard.set(LoginedUser.userDetails?[0].first_name, forKey: "DriverFirstName")
+                            UserDefaults.standard.set(LoginedUser.userDetails?[0].last_name, forKey: "DriverLasttName")
+                            UserDefaults.standard.set(LoginedUser.userDetails?[0].mobile, forKey: "DriverMobilenumber")
+                            UserDefaults.standard.set(LoginedUser.userDetails?[0].rating, forKey: "DriverRating")
+                            UserDefaults.standard.set(true, forKey: "IsUserLogined")
+                            UserDefaults.standard.set(API_URl.API_IMAGEBASE_URL + (LoginedUser.userDetails?[0].profile_pic ?? ""), forKey: "DriverProfilepic")
+                            UserDefaults.standard.set(LoginedUser.userDetails?[0].driver_type, forKey: "DriverType")
+                            UserDefaults.standard.set("Driver", forKey: "InRideDriverType")
+                            
                             self.movetonextvc(id: "DriverTypeViewController", storyBordid: "RidesHistory",animated:false)
-
-                        }
-                    } else {
-                        DispatchQueue.main.async { [self] in
-                        indicator.hideActivityIndicator()
-                        self.showToast(message: error ?? "Invalid email or password.", font: .systemFont(ofSize: 12.0))
+                        } else {
+                            self.showToast(message: LoginedUser.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                         }
                     }
+                } else {
+                    DispatchQueue.main.async { [self] in
+                        indicator.hideActivityIndicator()
+                        self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
+                    }
+                }
             }
         }
     }
