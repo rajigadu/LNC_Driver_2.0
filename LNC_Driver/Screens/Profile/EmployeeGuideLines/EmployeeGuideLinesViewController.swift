@@ -25,6 +25,7 @@ class EmployeeGuideLinesViewController: UIViewController {
     //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.swipeRight()
         self.title = str_ActionComingFrom
         var websiteUrl: URL?
         webview_Ref.isOpaque = false

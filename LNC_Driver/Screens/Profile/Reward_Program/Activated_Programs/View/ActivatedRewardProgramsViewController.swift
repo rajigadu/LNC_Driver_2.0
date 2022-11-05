@@ -19,6 +19,7 @@ class ActivatedRewardProgramsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "My Rewards"
+        self.swipeRight()
         self.tblViewRef.estimatedRowHeight = 1000
         self.tblViewRef.rowHeight = UITableView.automaticDimension
         // Do any additional setup after loading the view.

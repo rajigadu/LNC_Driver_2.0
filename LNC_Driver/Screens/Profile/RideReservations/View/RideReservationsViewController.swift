@@ -43,7 +43,7 @@ class RideReservationsViewController: UIViewController {
 //    var ary_FutureRideEstimatedDropDate_PartnerRef: [String] = []
     
    
-    
+    var vcCmgFrom = ""
     var str_SelectedRideID = ""
 
     lazy var viewModel = {
@@ -54,6 +54,7 @@ class RideReservationsViewController: UIViewController {
         super.viewDidLoad()
         conditionstatus = "No"
         self.title = "Ride Reservations"
+        self.swipeRight()
         self.btn_DriverRequestRef.tag = 100;
         self.btn_PartnerRequestRef.tag = 101;
         self.tableview_FutureRideList.estimatedRowHeight = 1000;
@@ -66,7 +67,23 @@ class RideReservationsViewController: UIViewController {
         self.btn_DriverRequestRef.backgroundColor = .green
         self.btn_PartnerRequestRef.backgroundColor = .gray
         self.driverfutureRideListAPI(withDriverLoginID : loginDriverIDStr)
+        
+        if vcCmgFrom == "AppDelegate" {
+         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(backToMenu))
+        } else {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backToDashboard))
+            navigationController?.navigationBar.barTintColor = UIColor.black
+        }
+   }
+    
+    @objc func backToMenu() {
+        self.navigateToSideMenu()
     }
+
+    @objc func backToDashboard() {
+        self.popToBackVC()
+    }
+
     
     @IBAction func openMenuBtnref(_ sender: Any) {
         self.navigateToSideMenu()

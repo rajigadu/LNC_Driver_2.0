@@ -184,7 +184,7 @@ extension UIViewController {
             switch swipeGesture.direction {
             case .right:
                 print("Swiped right")
-                // self.navigateToSideMenu()
+                 self.navigateToSideMenu()
             case .down:
                 print("Swiped down")
             case .left:

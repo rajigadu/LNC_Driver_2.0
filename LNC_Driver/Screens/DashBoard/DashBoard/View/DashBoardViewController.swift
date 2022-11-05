@@ -43,7 +43,6 @@ class DashBoardViewController: UIViewController {
         ChatViewModel()
     }()
     //MARK: - View life cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         NextRideTimeShowViewref.isHidden = true
@@ -51,7 +50,7 @@ class DashBoardViewController: UIViewController {
         str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? ""
         str_Version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
        // setupSideMenu()
-       // self.swipeRight()
+        self.swipeRight()
         self.mapView.isMyLocationEnabled = true
         self.str_AppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
 

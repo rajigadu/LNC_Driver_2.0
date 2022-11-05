@@ -21,6 +21,7 @@ class WeeklyPaymentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Weekly Payment"
+        self.swipeRight()
         self.getWeekPaymentDeatils()
         self.lbl_NoReacordFoundRef.isHidden = true
         // Do any additional setup after loading the view.

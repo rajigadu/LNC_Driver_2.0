@@ -22,6 +22,7 @@ class RideHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Ride History"
+        self.swipeRight()
         self.tableview_RideInfoRef.estimatedRowHeight = 1000
         self.tableview_RideInfoRef.rowHeight = UITableView.automaticDimension
 

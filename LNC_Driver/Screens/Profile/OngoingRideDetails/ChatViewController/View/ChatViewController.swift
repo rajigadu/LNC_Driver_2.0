@@ -22,6 +22,7 @@ class ChatViewController: UIViewController {
     var str_SendBtnCheckingStaus = ""
     var str_FirstTimeCalling = ""
     var resArr:[ChatDatar] = []
+    var spinner = UIActivityIndicatorView()
 
     var str_ChatMethod = ""
     
@@ -34,12 +35,43 @@ class ChatViewController: UIViewController {
     var str_InRideDriverType = ""
     var keyValueStr = ""
     
+    //App delegate perams
+    var d_senderID = ""
+    var d_receiverID = ""
+    var userChatNotification = ""
+    var chatFromLaunchScreen = ""
+    var vcCmgFrom = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        initialMethod()
+        
+        if vcCmgFrom == "AppDelegate" {
+         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(backToMenu))
+        } else {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backToDashboard))
+            navigationController?.navigationBar.barTintColor = UIColor.black
+        }
+   }
+    
+    @objc func backToMenu() {
+        self.navigateToSideMenu()
+    }
+
+    @objc func backToDashboard() {
+        self.popToBackVC()
+    }
+        
+    func initialMethod(){
+        spinner = UIActivityIndicatorView(style: .large)
+        spinner.stopAnimating()
+        spinner.hidesWhenStopped = true
+        spinner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 60)
+        tableRef.tableFooterView = spinner
+        
         let currDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy hh:mm a"
@@ -50,17 +82,11 @@ class ChatViewController: UIViewController {
         str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? "" 
         //Mark CHECKING CONDITION WHEN RIDE IS THERE IS DRIVER/PARTNER..............
         str_InRideDriverType = UserDefaults.standard.string(forKey: "InRideDriverType") ?? ""
-//        if str_InRideDriverType == "" {
-//            keyValueStr = "partner"
-//        } else {
-//            keyValueStr = "driver"
-//        }
         
-        var Chatsendertype = UserDefaults.standard.string(forKey: "ChatFromLaunchScreen") ?? ""
-        if Chatsendertype == "PartnerFromLaunchScreen" {
+        if chatFromLaunchScreen == "PartnerFromLaunchScreen" {
             keyValueStr = "partner"
             self.str_CurrentRideDriverID = recevierId
-        } else if Chatsendertype == "DriverFromLaunchScreen" {
+        } else if chatFromLaunchScreen == "DriverFromLaunchScreen" {
             keyValueStr = "driver"
             self.str_CurrentRidePartnerID = recevierId
         } else {
@@ -71,8 +97,7 @@ class ChatViewController: UIViewController {
         self.tableRef.backgroundColor = .darkGray
         self.tableRef.backgroundView?.backgroundColor = .darkGray
         
-        str_ChatMethod = UserDefaults.standard.string(forKey: "ChatFromLaunchScreen") ?? ""
-        if str_ChatMethod == "UserFromLaunchScreen" {
+         if chatFromLaunchScreen == "UserFromLaunchScreen" {
             self.str_ChatType = "ToUser"
             UserDefaults.standard.removeObject(forKey: "UserFromLaunchScreen")
             UserDefaults.standard.set(nil, forKey: "UserFromLaunchScreen")
@@ -84,7 +109,7 @@ class ChatViewController: UIViewController {
             UserDefaults.standard.set(nil, forKey: "PartnerFromLaunchScreen")
             //Call Ride API Here..
             self.partnerCurrentRideDetailsAPI()
-        } else if str_ChatMethod == "DriverFromLaunchScreen" {
+        } else if chatFromLaunchScreen == "DriverFromLaunchScreen" {
             self.str_ChatType = "ToPartner"
             UserDefaults.standard.removeObject(forKey: "DriverFromLaunchScreen")
             UserDefaults.standard.set(nil, forKey: "DriverFromLaunchScreen")
@@ -154,6 +179,7 @@ extension ChatViewController {
                         str_SendBtnCheckingStaus = ""
                     }
                     self.tableRef.reloadData()
+                        self.scrollToBottom()
                     if str_FirstTimeCalling == "" {
                         str_FirstTimeCalling = "Done"
                         self.tableRef.scrollToBottom(isAnimated: false)
@@ -193,6 +219,7 @@ extension ChatViewController {
                         str_SendBtnCheckingStaus = ""
                     }
                     self.tableRef.reloadData()
+                        self.scrollToBottom()
                     if str_FirstTimeCalling == "" {
                         str_FirstTimeCalling = "Done"
                         self.tableRef.scrollToBottom(isAnimated: false)
@@ -233,6 +260,7 @@ extension ChatViewController {
                         str_SendBtnCheckingStaus = ""
                     }
                     self.tableRef.reloadData()
+                        self.scrollToBottom()
                     if str_FirstTimeCalling == "" {
                         str_FirstTimeCalling = "Done"
                         self.tableRef.scrollToBottom(isAnimated: false)
@@ -465,4 +493,34 @@ extension ChatViewController :UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
+    
+    func scrollToBottom(){
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: self.resArr.count-1, section: 0)
+            self.tableRef.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offset = scrollView.contentOffset
+        let bounds = scrollView.bounds
+        let size = scrollView.contentSize
+        let inset = scrollView.contentInset
+        
+        let y = offset.y + bounds.size.height - inset.bottom
+        let h = size.height
+        
+        let reloadDistance = CGFloat(30.0)
+        if y > h + reloadDistance {
+            print("fetch more data")
+            //API Intigration
+            self.initialMethod()
+            spinner.startAnimating()
+        }
+    }
+    
+    enum scrollsTo {
+        case top,bottom
+    }
+
 }

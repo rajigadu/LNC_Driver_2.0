@@ -46,6 +46,7 @@ class DriverTypeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Driver Type"
+        self.swipeRight()
         str_CheckingSelectedDriverType = "1"
         isDefaultpartner = "yes"
         isPartnerStatusEnabled = true

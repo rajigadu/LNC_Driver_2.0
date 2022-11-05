@@ -30,11 +30,12 @@ class AcceptedRidesInfoViewController: UIViewController {
     lazy var viewModel = {
         AcceptedRidesInfoViewModel()
     }()
-    
+    var vcCmgFrom = ""
     var RoleChangeStatus_Str = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.swipeRight()
         self.btn_DriverAcceptedFutureRideRef.tag = 100
         self.btn_PartnerAcceptedFutureRideRef.tag = 101
         self.tableview_AcceptedFutureRideList.estimatedRowHeight = 1000
@@ -76,6 +77,20 @@ class AcceptedRidesInfoViewController: UIViewController {
             self.driverAcceptedFutureRideListAPI(withDriverLoginID: loginDriverIDStr)
         }
 
+        if vcCmgFrom == "AppDelegate" {
+         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(backToMenu))
+        } else {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backToDashboard))
+            navigationController?.navigationBar.barTintColor = UIColor.black
+        }
+   }
+    
+    @objc func backToMenu() {
+        self.navigateToSideMenu()
+    }
+
+    @objc func backToDashboard() {
+        self.popToBackVC()
     }
     
     @IBAction func openMenuBtnref(_ sender: Any) {

@@ -22,7 +22,7 @@ class PaymentHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Payment History"
-        
+        self.swipeRight()
         self.tableview_PaymentHistoryRef.estimatedRowHeight = 1000
         self.tableview_PaymentHistoryRef.rowHeight = UITableView.automaticDimension
         

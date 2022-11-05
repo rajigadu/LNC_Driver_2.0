@@ -24,6 +24,7 @@ class ManagePartnersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Manage Partners"
+        self.swipeRight()
         self.tableview_ManagePartnersRef.estimatedRowHeight = 1000
         self.tableview_ManagePartnersRef.rowHeight = UITableView.automaticDimension
         // Do any additional setup after loading the view.

@@ -22,6 +22,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.swipeRight()
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         lbl_AppVersionRef.text = "Version : \(version ?? "")"
         self.swipeRight()
