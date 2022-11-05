@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F83A3ECD22CB9EB5A3960BE /* Pods_LNC_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C648C314EE5B303EF28BFB6 /* Pods_LNC_Driver.framework */; };
-		8774A7352F3C7A25E85C5DAF /* Pods_LNC_Driver_LNC_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */; };
+		4D1AE937256CF73CC54655AF /* Pods_LNC_Driver_LNC_DriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE40BFE33BD34DE40300125 /* Pods_LNC_Driver_LNC_DriverUITests.framework */; };
 		BA2144C028D0708E00DC313B /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144BF28D0708E00DC313B /* ForgotPasswordViewModel.swift */; };
 		BA2144C228D070B200DC313B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144C128D070B200DC313B /* ForgotPasswordViewController.swift */; };
 		BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2144C328D070CC00DC313B /* ForgotPasswordUser.swift */; };
@@ -103,9 +102,6 @@
 		BA8BF5B228E5E07F0087CFB1 /* DriverTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5B128E5E07F0087CFB1 /* DriverTypeViewModel.swift */; };
 		BA8BF5B428E5E1690087CFB1 /* DriverTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5B328E5E1690087CFB1 /* DriverTypeModel.swift */; };
 		BA8BF5B628E5E1820087CFB1 /* DriverTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8BF5B528E5E1820087CFB1 /* DriverTypeViewController.swift */; };
-		BAA753222913FC18007AD952 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BAA753212913FC18007AD952 /* FirebaseAnalytics */; };
-		BAA753242913FC18007AD952 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BAA753232913FC18007AD952 /* FirebaseCrashlytics */; };
-		BAA753262913FC18007AD952 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BAA753252913FC18007AD952 /* FirebaseMessaging */; };
 		BABCB2A128E5296C00517908 /* RideHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A028E5296C00517908 /* RideHistoryViewModel.swift */; };
 		BABCB2A328E5298700517908 /* RideHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A228E5298700517908 /* RideHistoryViewController.swift */; };
 		BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCB2A428E5299A00517908 /* RideHistoryModel.swift */; };
@@ -161,7 +157,8 @@
 		BAFE539828E3E7770075B091 /* WeekrideinfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE539728E3E7770075B091 /* WeekrideinfoCell.swift */; };
 		BAFE539A28E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE539928E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift */; };
 		BAFE539C28E3E8AF0075B091 /* RidesHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFE539B28E3E8AF0075B091 /* RidesHistory.storyboard */; };
-		CF3C81E329A419E350EA6AF6 /* Pods_LNC_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */; };
+		CB6E166092DCF51A2C2FB01B /* Pods_LNC_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D7B16244695639C4F5994E /* Pods_LNC_Driver.framework */; };
+		E47041E5E30EFA427CACDDE7 /* Pods_LNC_DriverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E6AF8AF977B71C689E0442 /* Pods_LNC_DriverTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,11 +179,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C648C314EE5B303EF28BFB6 /* Pods_LNC_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4873427D9FC2EE3ECEC2A368 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		73725B024857A4A3F5CA6E67 /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; sourceTree = "<group>"; };
-		78C9D712DCDD31B2C8D4E8CE /* Pods-LNC_Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.release.xcconfig"; sourceTree = "<group>"; };
-		830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_Driver_LNC_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24892B5404417BBEE8D4CDFC /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		44D7B16244695639C4F5994E /* Pods_LNC_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45E6AF8AF977B71C689E0442 /* Pods_LNC_DriverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_DriverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		474223A437B9A93695C9F686 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		497DAEB0074BF433D3D994A9 /* Pods-LNC_Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.release.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.release.xcconfig"; sourceTree = "<group>"; };
+		51F68377F99ACD4BF59D0FD3 /* Pods-LNC_DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		67008B565637E37D36117211 /* Pods-LNC_DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.release.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA2144BF28D0708E00DC313B /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		BA2144C128D070B200DC313B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		BA2144C328D070CC00DC313B /* ForgotPasswordUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUser.swift; sourceTree = "<group>"; };
@@ -341,10 +340,8 @@
 		BAFE539728E3E7770075B091 /* WeekrideinfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekrideinfoCell.swift; sourceTree = "<group>"; };
 		BAFE539928E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPaymentsTableViewCell.swift; sourceTree = "<group>"; };
 		BAFE539B28E3E8AF0075B091 /* RidesHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RidesHistory.storyboard; sourceTree = "<group>"; };
-		D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.release.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.release.xcconfig"; sourceTree = "<group>"; };
-		D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_DriverTests.debug.xcconfig"; path = "Target Support Files/Pods-LNC_DriverTests/Pods-LNC_DriverTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.debug.xcconfig"; sourceTree = "<group>"; };
-		E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_DriverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2EEE4365506E4985FFA9CD /* Pods-LNC_Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNC_Driver.debug.xcconfig"; path = "Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver.debug.xcconfig"; sourceTree = "<group>"; };
+		ECE40BFE33BD34DE40300125 /* Pods_LNC_Driver_LNC_DriverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNC_Driver_LNC_DriverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,10 +349,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA753262913FC18007AD952 /* FirebaseMessaging in Frameworks */,
-				BAA753242913FC18007AD952 /* FirebaseCrashlytics in Frameworks */,
-				BAA753222913FC18007AD952 /* FirebaseAnalytics in Frameworks */,
-				0F83A3ECD22CB9EB5A3960BE /* Pods_LNC_Driver.framework in Frameworks */,
+				CB6E166092DCF51A2C2FB01B /* Pods_LNC_Driver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +357,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF3C81E329A419E350EA6AF6 /* Pods_LNC_DriverTests.framework in Frameworks */,
+				E47041E5E30EFA427CACDDE7 /* Pods_LNC_DriverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,34 +365,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8774A7352F3C7A25E85C5DAF /* Pods_LNC_Driver_LNC_DriverUITests.framework in Frameworks */,
+				4D1AE937256CF73CC54655AF /* Pods_LNC_Driver_LNC_DriverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B234FB5D175C50161522B3C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44D7B16244695639C4F5994E /* Pods_LNC_Driver.framework */,
+				ECE40BFE33BD34DE40300125 /* Pods_LNC_Driver_LNC_DriverUITests.framework */,
+				45E6AF8AF977B71C689E0442 /* Pods_LNC_DriverTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B452933B2A43FB5E4BD34425 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */,
-				78C9D712DCDD31B2C8D4E8CE /* Pods-LNC_Driver.release.xcconfig */,
-				4873427D9FC2EE3ECEC2A368 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */,
-				73725B024857A4A3F5CA6E67 /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */,
-				D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */,
-				D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */,
+				DE2EEE4365506E4985FFA9CD /* Pods-LNC_Driver.debug.xcconfig */,
+				497DAEB0074BF433D3D994A9 /* Pods-LNC_Driver.release.xcconfig */,
+				474223A437B9A93695C9F686 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */,
+				24892B5404417BBEE8D4CDFC /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */,
+				51F68377F99ACD4BF59D0FD3 /* Pods-LNC_DriverTests.debug.xcconfig */,
+				67008B565637E37D36117211 /* Pods-LNC_DriverTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		B4FC03E6025F454129E58118 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1C648C314EE5B303EF28BFB6 /* Pods_LNC_Driver.framework */,
-				830DDA033DB609CF219BD70C /* Pods_LNC_Driver_LNC_DriverUITests.framework */,
-				E0B29B8BBA92C08FF2778F2A /* Pods_LNC_DriverTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA2144BB28D0704E00DC313B /* ForgotPassword */ = {
@@ -477,7 +471,7 @@
 				BA36D8A328C8C41300B73053 /* LNC_DriverUITests */,
 				BA36D87E28C8C40E00B73053 /* Products */,
 				B452933B2A43FB5E4BD34425 /* Pods */,
-				B4FC03E6025F454129E58118 /* Frameworks */,
+				B234FB5D175C50161522B3C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1842,13 +1836,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA36D8AA28C8C41300B73053 /* Build configuration list for PBXNativeTarget "LNC_Driver" */;
 			buildPhases = (
-				0672ECC174F47C03BCB3359F /* [CP] Check Pods Manifest.lock */,
+				CDA3B776DDE6AC4FF6CEF96D /* [CP] Check Pods Manifest.lock */,
 				BA36D87928C8C40E00B73053 /* Sources */,
 				BA36D87A28C8C40E00B73053 /* Frameworks */,
 				BA36D87B28C8C40E00B73053 /* Resources */,
-				F7A871F008C4CD258631785D /* [CP] Embed Pods Frameworks */,
-				41CFD8BF80C35214D1D428AE /* [CP] Copy Pods Resources */,
 				BA7BB7C028F0654C00E0561B /* ShellScript */,
+				6F691DD3861843A5FD679448 /* [CP] Embed Pods Frameworks */,
+				F842B53060214A56F964AB15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1856,9 +1850,6 @@
 			);
 			name = LNC_Driver;
 			packageProductDependencies = (
-				BAA753212913FC18007AD952 /* FirebaseAnalytics */,
-				BAA753232913FC18007AD952 /* FirebaseCrashlytics */,
-				BAA753252913FC18007AD952 /* FirebaseMessaging */,
 			);
 			productName = LNC_Driver;
 			productReference = BA36D87D28C8C40E00B73053 /* LNC_Driver.app */;
@@ -1868,7 +1859,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA36D8AD28C8C41300B73053 /* Build configuration list for PBXNativeTarget "LNC_DriverTests" */;
 			buildPhases = (
-				C5EAF27B7D18CD893F16593D /* [CP] Check Pods Manifest.lock */,
+				C794C950FA82DC55A7ADFEC5 /* [CP] Check Pods Manifest.lock */,
 				BA36D89228C8C41300B73053 /* Sources */,
 				BA36D89328C8C41300B73053 /* Frameworks */,
 				BA36D89428C8C41300B73053 /* Resources */,
@@ -1887,12 +1878,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA36D8B028C8C41300B73053 /* Build configuration list for PBXNativeTarget "LNC_DriverUITests" */;
 			buildPhases = (
-				E0999E7173ACF52605880849 /* [CP] Check Pods Manifest.lock */,
+				B70521FB09B37F5E4D908C88 /* [CP] Check Pods Manifest.lock */,
 				BA36D89C28C8C41300B73053 /* Sources */,
 				BA36D89D28C8C41300B73053 /* Frameworks */,
 				BA36D89E28C8C41300B73053 /* Resources */,
-				D214863FDCAC115375B8BC31 /* [CP] Embed Pods Frameworks */,
-				B891BAC1B6E435B9EEDC2F6E /* [CP] Copy Pods Resources */,
+				057C6067831997380FB128D9 /* [CP] Embed Pods Frameworks */,
+				3B144BDBE92BF6DACE2F69B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1937,7 +1928,6 @@
 			);
 			mainGroup = BA36D87428C8C40E00B73053;
 			packageReferences = (
-				BAA753202913FC18007AD952 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = BA36D87E28C8C40E00B73053 /* Products */;
 			projectDirPath = "";
@@ -1996,104 +1986,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0672ECC174F47C03BCB3359F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LNC_Driver-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		41CFD8BF80C35214D1D428AE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B891BAC1B6E435B9EEDC2F6E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA7BB7C028F0654C00E0561B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(/Users/rajeshgandru/Documents/IOS LNC/LNC_Driver_2.0/LNC_Driver)",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n\n";
-		};
-		C5EAF27B7D18CD893F16593D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LNC_DriverTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D214863FDCAC115375B8BC31 /* [CP] Embed Pods Frameworks */ = {
+		057C6067831997380FB128D9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2110,7 +2003,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0999E7173ACF52605880849 /* [CP] Check Pods Manifest.lock */ = {
+		3B144BDBE92BF6DACE2F69B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver-LNC_DriverUITests/Pods-LNC_Driver-LNC_DriverUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F691DD3861843A5FD679448 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B70521FB09B37F5E4D908C88 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2132,21 +2059,84 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7A871F008C4CD258631785D /* [CP] Embed Pods Frameworks */ = {
+		BA7BB7C028F0654C00E0561B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-frameworks.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\n";
+		};
+		C794C950FA82DC55A7ADFEC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LNC_DriverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDA3B776DDE6AC4FF6CEF96D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LNC_Driver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F842B53060214A56F964AB15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LNC_Driver/Pods-LNC_Driver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2362,6 +2352,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2422,6 +2413,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2444,7 +2436,7 @@
 		};
 		BA36D8AB28C8C41300B73053 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE888E20FF768799AD240099 /* Pods-LNC_Driver.debug.xcconfig */;
+			baseConfigurationReference = DE2EEE4365506E4985FFA9CD /* Pods-LNC_Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2465,12 +2457,13 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.36;
+				MARKETING_VERSION = 1.0.37;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2481,7 +2474,7 @@
 		};
 		BA36D8AC28C8C41300B73053 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78C9D712DCDD31B2C8D4E8CE /* Pods-LNC_Driver.release.xcconfig */;
+			baseConfigurationReference = 497DAEB0074BF433D3D994A9 /* Pods-LNC_Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2501,12 +2494,13 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.36;
+				MARKETING_VERSION = 1.0.37;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2517,7 +2511,7 @@
 		};
 		BA36D8AE28C8C41300B73053 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D628BAC93113C3916D829E17 /* Pods-LNC_DriverTests.debug.xcconfig */;
+			baseConfigurationReference = 51F68377F99ACD4BF59D0FD3 /* Pods-LNC_DriverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2538,7 +2532,7 @@
 		};
 		BA36D8AF28C8C41300B73053 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5094724FDB73BF36F00C90F /* Pods-LNC_DriverTests.release.xcconfig */;
+			baseConfigurationReference = 67008B565637E37D36117211 /* Pods-LNC_DriverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2559,7 +2553,7 @@
 		};
 		BA36D8B128C8C41300B73053 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4873427D9FC2EE3ECEC2A368 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */;
+			baseConfigurationReference = 474223A437B9A93695C9F686 /* Pods-LNC_Driver-LNC_DriverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2578,7 +2572,7 @@
 		};
 		BA36D8B228C8C41300B73053 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73725B024857A4A3F5CA6E67 /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */;
+			baseConfigurationReference = 24892B5404417BBEE8D4CDFC /* Pods-LNC_Driver-LNC_DriverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2635,35 +2629,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		BAA753202913FC18007AD952 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		BAA753212913FC18007AD952 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BAA753202913FC18007AD952 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		BAA753232913FC18007AD952 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BAA753202913FC18007AD952 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		BAA753252913FC18007AD952 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BAA753202913FC18007AD952 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA36D87528C8C40E00B73053 /* Project object */;
 }

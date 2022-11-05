@@ -19,12 +19,8 @@ class RideReservationsViewModel: NSObject {
     //MARK: - DriverfutureRideListAPI
     func requestFordriverfutureRideListAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, RideReservationsData?, String?) -> ()) {
         rideReservationsServices.requestFordriverfutureRideListAPIServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, I18n.SomethingWentWrong)
-                }
+            if success, let driverfutureRideList = model {
+                completion(true, driverfutureRideList, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -34,12 +30,8 @@ class RideReservationsViewModel: NSObject {
     //MARK: -  PartnerfutureRideListAPI
     func requestForpartnerfutureRideListAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, RideReservationsData?, String?) -> ()) {
         rideReservationsServices.requestForPartnerfutureRideListAPIServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, I18n.SomethingWentWrong)
-                }
+            if success, let partnerfutureRideList = model {
+                completion(true, partnerfutureRideList, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -49,12 +41,8 @@ class RideReservationsViewModel: NSObject {
     //MARK: - DriverAcceptfutureRideAPI
     func requestdriverAcceptFutureRideAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, AcceptedRideReservationsData?, String?) -> ()) {
         rideReservationsServices.requestdriverAcceptFutureRideAPIServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let driverAcceptFutureRide = model {
+                completion(true, driverAcceptFutureRide, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -64,12 +52,8 @@ class RideReservationsViewModel: NSObject {
     //MRK:- partnerAcceptfutureRideAPI
     func requestForPartnerAcceptFutureRideAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, AcceptedRideReservationsData?, String?) -> ()) {
         rideReservationsServices.requestForPartnerAcceptFutureRideAPIServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let PartnerAcceptFutureRide = model {
+                completion(true, PartnerAcceptFutureRide, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -80,12 +64,8 @@ class RideReservationsViewModel: NSObject {
     //MARK: - PartnerfutureRideAccepetedListAPI
     func requestForpartnerAcceptedFutureRideAcceptedListAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, AlereadyAcceptedridetimebasesData?, String?) -> ()) {
         rideReservationsServices.requestForpartnerAcceptedFutureRideAcceptedListAPIServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let partnerAcceptedFutureRideAcceptedList = model {
+                completion(true, partnerAcceptedFutureRideAcceptedList, nil)
             } else {
                 completion(false, nil, error)
             }
@@ -97,12 +77,8 @@ class RideReservationsViewModel: NSObject {
     //MARK: - DriverfutureRideListAPI
     func requestFordriverfutureRideListAcceptedAPIServices(perams: Dictionary<String,String>, completion: @escaping (Bool, AlereadyAcceptedridetimebasesData?, String?) -> ()) {
         rideReservationsServices.requestFordriverfutureRideListAcceptedAPIServices(perams){ success, model, error in
-            if success, let EditProfileUserData = model {
-                if EditProfileUserData.status == "1" {
-                    completion(true, EditProfileUserData, nil)
-                } else {
-                    completion(false, nil, EditProfileUserData.message)
-                }
+            if success, let driverfutureRideListAccepted = model {
+                completion(true, driverfutureRideListAccepted, nil)
             } else {
                 completion(false, nil, error)
             }

@@ -10,17 +10,30 @@ target 'LNC_Driver' do
     pod 'IQKeyboardManager'
     pod 'Reachability'
     pod 'SDWebImage'
-    pod 'GoogleMaps'
-    pod 'GooglePlaces'
-    pod 'GooglePlacePicker'
-    
-    pod 'JCNotificationBannerPresenter'
-    pod 'SideMenu', '~> 6.0'
-    pod 'Fabric'
-    pod 'Crashlytics'
     pod 'Alamofire'
-    pod 'ObjectMapper'
-    pod 'Cosmos', '~> 23.0'
+    pod 'SideMenu', '~> 6.0'
+    
+   # pod 'Firebase/Core'
+    
+#    pod 'JJMaterialTextField'
+     pod 'GoogleMaps'
+     pod 'GooglePlaces'
+     pod 'GooglePlacePicker'
+     
+     pod 'Firebase/Core'
+     pod 'Firebase/Messaging'
+     pod 'Firebase/Crashlytics'
+     pod 'Firebase/Analytics'
+     pod 'Firebase/Messaging'
+#    pod 'JCNotificationBannerPresenter'
+#
+#    pod 'GoogleSignIn'
+#    pod 'Stripe'
+#    pod 'Fabric'
+#    pod 'Crashlytics'
+#    pod 'Alamofire', '~> 4.9.1’
+#    pod 'ObjectMapper'
+     pod 'Cosmos', '~> 23.0'
 
   target 'LNC_DriverTests' do
     inherit! :search_paths

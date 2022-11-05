@@ -50,11 +50,8 @@ class DashBoardViewController: UIViewController {
         NextRideTimeShowHeightref.constant = 0
         str_DerviceToken = UserDefaults.standard.string(forKey: "FCMDeviceToken") ?? ""
         str_Version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-
-
        // setupSideMenu()
        // self.swipeRight()
-         initializeTheLocationManager()
         self.mapView.isMyLocationEnabled = true
         self.str_AppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
 
@@ -68,6 +65,10 @@ class DashBoardViewController: UIViewController {
           } catch {
               NSLog("One or more of the map styles failed to load. \(error)")
           }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initializeTheLocationManager()
     }
     
     //MARK: - Class Actions

@@ -404,51 +404,51 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
 extension AppDelegate {
     // Move to Chat Screen
     func MoveChatScreen(DriverId: String){
-//        var navigation = UINavigationController()
-//        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-//        let initialViewControlleripad : ChatViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
-//        initialViewControlleripad.str_DriverID = DriverId
-//        initialViewControlleripad.vcCmgFrom = "AppDelegate"
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        navigation = UINavigationController(rootViewController: initialViewControlleripad)
-//
-//        self.window?.rootViewController = navigation
-//        self.window?.makeKeyAndVisible()
+        var navigation = UINavigationController()
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let initialViewControlleripad : ChatViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+       // initialViewControlleripad.str_DriverID = DriverId
+       // initialViewControlleripad.vcCmgFrom = "AppDelegate"
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        navigation = UINavigationController(rootViewController: initialViewControlleripad)
+
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
 
     }
     
     // Move to ride history
-    func goToUserRideHistory() {
-//        var navigation = UINavigationController()
-//        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-//
-//        let initialViewControlleripad : RideHistoryViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "RideHistoryViewController") as! RideHistoryViewController
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        navigation = UINavigationController(rootViewController: initialViewControlleripad)
-//        self.window?.rootViewController = navigation
-//        self.window?.makeKeyAndVisible()
+    func goToDriverRideReservations() {
+        var navigation = UINavigationController()
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+
+        let initialViewControlleripad : RideHistoryViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "RideHistoryViewController") as! RideHistoryViewController
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        navigation = UINavigationController(rootViewController: initialViewControlleripad)
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
     }
     
     // Move to rich Notifications
     func goToUserRichNotifications() {
-//        var navigation = UINavigationController()
-//        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-//
-//        let initialViewControlleripad : NotificationViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
-//        initialViewControlleripad.vcCmgFrom = "AppDelegate"
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        navigation = UINavigationController(rootViewController: initialViewControlleripad)
-//
-//        self.window?.rootViewController = navigation
-//        self.window?.makeKeyAndVisible()
+        var navigation = UINavigationController()
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+
+        let initialViewControlleripad : NotificationViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
+        //initialViewControlleripad.vcCmgFrom = "AppDelegate"
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        navigation = UINavigationController(rootViewController: initialViewControlleripad)
+
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
 
     }
     
     // Move to Feed back Page
     func goToUserFeedBackPage(str_RideIDr:String,str_UserIDr: String,str_SelectedDriverFirstNameget: String , str_SelectedDriverLastNameget: String,str_SelectedDriverProfilepicget: String) {
-//        var navigation = UINavigationController()
-//        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
-//
+        var navigation = UINavigationController()
+        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+
 //        let nxtVC : RiseHistoryFeedBackViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "RiseHistoryFeedBackViewController") as! RiseHistoryFeedBackViewController
 //        nxtVC.str_ComingFrom = "RideHistory"
 //        nxtVC.str_RideIDr = str_RideIDr
@@ -459,9 +459,9 @@ extension AppDelegate {
 //        nxtVC.vcCmgFrom = "AppDelegate"
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
 //        navigation = UINavigationController(rootViewController: nxtVC)
-//
-//        self.window?.rootViewController = navigation
-//        self.window?.makeKeyAndVisible()
+
+        self.window?.rootViewController = navigation
+        self.window?.makeKeyAndVisible()
 
     }
 }

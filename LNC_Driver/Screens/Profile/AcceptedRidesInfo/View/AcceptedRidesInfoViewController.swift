@@ -86,21 +86,22 @@ class AcceptedRidesInfoViewController: UIViewController {
     @IBAction func btn_DriverPartnerAcceptedFutureRideAction(_ sender: UIButton) {
         self.btn_DriverAcceptedFutureRideRef.backgroundColor = .gray
         self.btn_PartnerAcceptedFutureRideRef.backgroundColor = .gray
-        
+        self.ary_AcceptedFutureRideInfoRef.removeAll()
+        self.tableview_AcceptedFutureRideList.reloadData()
         switch sender.tag {
         case 100:
             str_SelectedType = "Driver"
             self.btn_DriverAcceptedFutureRideRef.backgroundColor = .green
             self.btn_PartnerAcceptedFutureRideRef.backgroundColor = .gray
 //Api Calling
-            self.driverAcceptedFutureRideListAPI(withDriverLoginID: loginDriverIDStr)
+             self.driverAcceptedFutureRideListAPI(withDriverLoginID: loginDriverIDStr)
             break
         case 101:
             str_SelectedType = "Partner"
             self.btn_DriverAcceptedFutureRideRef.backgroundColor = .gray
             self.btn_PartnerAcceptedFutureRideRef.backgroundColor = .green
 //Api Calling
-            self.partnerAcceptedFutureRideListAPI(withDriverLoginID: loginDriverIDStr)
+             self.partnerAcceptedFutureRideListAPI(withDriverLoginID: loginDriverIDStr)
             break
             
         default:
@@ -238,10 +239,11 @@ extension AcceptedRidesInfoViewController {
         guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
         
-        self.viewModel.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":withOnOfflineStatus]) { success, model, error in
+        self.viewModel.requestForDriverOnlineAPIServices(perams: ["driverid":DriverLoginID,"status":withOnOfflineStatus,"version":"yes"]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
                     let nxtVC = Storyboard.instantiateViewController(withIdentifier: "OngoingRideDetailsViewController") as! OngoingRideDetailsViewController
                     nxtVC.str_ComingFrom = str_SelectedType
@@ -249,6 +251,9 @@ extension AcceptedRidesInfoViewController {
                     nxtVC.dict_RideInfo = rideInfoDict
                     nxtVC.str_Dateandtime = str_dateandtime
                     self.navigationController?.pushViewController(nxtVC, animated:  true)
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -269,13 +274,16 @@ extension AcceptedRidesInfoViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    
+                    if userData.status == "1" {
                     str_SelectedType = "Partner"
                     self.btn_DriverAcceptedFutureRideRef.backgroundColor = .gray
                     self.btn_PartnerAcceptedFutureRideRef.backgroundColor = .green
 
                     //API Calling....
                     self.partnerAcceptedFutureRideListAPI(withDriverLoginID:loginDriverIDStr)
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -291,11 +299,11 @@ extension AcceptedRidesInfoViewController {
     func driverAcceptedFutureRideListAPI(withDriverLoginID: String ) {
         guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
-        
-        self.viewModel.requestForDriverAcceptedFutureRideListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
+         self.viewModel.requestForDriverAcceptedFutureRideListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     if let responseData = userData.data {
                         ary_AcceptedFutureRideInfoRef = responseData
                     }
@@ -323,6 +331,9 @@ extension AcceptedRidesInfoViewController {
                     }
                     ary_FutureRideEstimatedDropDateRef = arr_DropDate
                     self.tableview_AcceptedFutureRideList.reloadData()
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -338,11 +349,11 @@ extension AcceptedRidesInfoViewController {
     func partnerAcceptedFutureRideListAPI(withDriverLoginID : String) {
         guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
         indicator.showActivityIndicator()
-        
-        self.viewModel.requestForpartnerAcceptedFutureRideListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
+         self.viewModel.requestForpartnerAcceptedFutureRideListAPIServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
+                    if userData.status == "1" {
                     if let responseData = userData.data {
                         ary_AcceptedFutureRideInfoRef = responseData
                     }
@@ -370,6 +381,9 @@ extension AcceptedRidesInfoViewController {
                     }
                     ary_FutureRideEstimatedDropDateRef = arr_DropDate
                     self.tableview_AcceptedFutureRideList.reloadData()
+                } else {
+                    self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                }
                 }
             } else {
                 DispatchQueue.main.async { [self] in

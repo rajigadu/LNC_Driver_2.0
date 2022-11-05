@@ -75,7 +75,7 @@ class RideReservationsViewController: UIViewController {
     @IBAction func btn_DriverPartnerRequestAction(_ sender: UIButton) {
         self.btn_DriverRequestRef.backgroundColor = .gray
         self.btn_PartnerRequestRef.backgroundColor = .gray
-        
+        self.ary_FutureRideInfoRef.removeAll()
         switch sender.tag {
         case 100:
             str_SelectedType = "Driver"
@@ -214,8 +214,8 @@ extension RideReservationsViewController: UITableViewDelegate, UITableViewDataSo
             if ary_FutureRidePickStartDate_PartnerRef.count > 0 || ary_FutureRidePickStartDate_PartnerRef.count == ary_FutureRidePickDropDate_PartnerRef.count {
                 
                 for i in 0..<ary_FutureRidePickStartDate_PartnerRef.count {
-                    let Str_EndDate  = ary_FutureRidePickStartDate_PartnerRef[i]
-                    let Str_StartDate = ary_FutureRidePickDropDate_PartnerRef[i]
+                    let Str_StartDate  = ary_FutureRidePickStartDate_PartnerRef[i]
+                    let Str_EndDate = ary_FutureRidePickDropDate_PartnerRef[i]
                     if (Str_StartDate ... Str_EndDate).contains(NewUpComingRide)  {
                         conditionstatus = "yes"
                         self.ShowAlert(message: "You have already another ride on same time")
@@ -270,41 +270,45 @@ extension RideReservationsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData.data {
-                        ary_FutureRideInfoRef = responseData
-                    }
-                    var arr_DropDate:[String] = []
-                    for response in ary_FutureRideInfoRef {
-                        let str_EstimatedSec = response.second ?? "0"
-                        let str_FutureRidedate = response.otherdate ?? ""
-                        let str_FutureRideTime = response.time ?? ""
-                        let finalDate = str_FutureRidedate + " " + str_FutureRideTime
-                        
-                        let dateFormatterGet = DateFormatter()
-                        dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
-                        guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
-                        
-                        let hoursToAdd = Int(str_EstimatedSec)
-                        let gregorian = Calendar(identifier: .gregorian)
-                        var comps = DateComponents()
-                        comps.second = hoursToAdd
-                        let EndDate = gregorian.date(byAdding: comps, to: StartDate)
-                        var Str_DropOffDate_time: String = ""
-                        if let str_EndDate = EndDate {
-                            Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                    if userData.status == "1" {
+                        if let responseData = userData.data {
+                            ary_FutureRideInfoRef = responseData
                         }
-                        arr_DropDate.append(Str_DropOffDate_time)
+                        var arr_DropDate:[String] = []
+                        for response in ary_FutureRideInfoRef {
+                            let str_EstimatedSec = response.second ?? "0"
+                            let str_FutureRidedate = response.otherdate ?? ""
+                            let str_FutureRideTime = response.time ?? ""
+                            let finalDate = str_FutureRidedate + " " + str_FutureRideTime
+                            
+                            let dateFormatterGet = DateFormatter()
+                            dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
+                            guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
+                            
+                            let hoursToAdd = Int(str_EstimatedSec)
+                            let gregorian = Calendar(identifier: .gregorian)
+                            var comps = DateComponents()
+                            comps.second = hoursToAdd
+                            let EndDate = gregorian.date(byAdding: comps, to: StartDate)
+                            var Str_DropOffDate_time: String = ""
+                            if let str_EndDate = EndDate {
+                                Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                            }
+                            arr_DropDate.append(Str_DropOffDate_time)
+                        }
+                        ary_FutureRideEstimatedDropDateRef = arr_DropDate
+                        self.driverfutureRideListAcceptedAPI(withDriverLoginID: self.loginDriverIDStr)
+                        self.tableview_FutureRideList.reloadData()
+                    } else {
+                        self.showToast(message: userData.message ?? "No ride available here.", font: .systemFont(ofSize: 12.0))
                     }
-                    ary_FutureRideEstimatedDropDateRef = arr_DropDate
-                    self.driverfutureRideListAcceptedAPI(withDriverLoginID: self.loginDriverIDStr)
-                    self.tableview_FutureRideList.reloadData()
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }
@@ -320,43 +324,47 @@ extension RideReservationsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData.data {
-                        ary_FutureRideInfoRef = responseData
-                    }
-                    var arr_DropDate:[String] = []
-                    for response in ary_FutureRideInfoRef {
-                        let str_EstimatedSec = response.second ?? "0"
-                        let str_FutureRidedate = response.otherdate ?? ""
-                        let str_FutureRideTime = response.time ?? ""
-                        let finalDate = str_FutureRidedate + " " + str_FutureRideTime
-                        
-                        let dateFormatterGet = DateFormatter()
-                        dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
-                        guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
-                        
-                        let hoursToAdd = Int(str_EstimatedSec)
-                        let gregorian = Calendar(identifier: .gregorian)
-                        var comps = DateComponents()
-                        comps.second = hoursToAdd
-                        let EndDate = gregorian.date(byAdding: comps, to: StartDate)
-                        var Str_DropOffDate_time: String = ""
-                        if let str_EndDate = EndDate {
-                            Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                    if userData.status == "1" {
+                        if let responseData = userData.data {
+                            ary_FutureRideInfoRef = responseData
                         }
-                        arr_DropDate.append(Str_DropOffDate_time)
+                        var arr_DropDate:[String] = []
+                        for response in ary_FutureRideInfoRef {
+                            let str_EstimatedSec = response.second ?? "0"
+                            let str_FutureRidedate = response.otherdate ?? ""
+                            let str_FutureRideTime = response.time ?? ""
+                            let finalDate = str_FutureRidedate + " " + str_FutureRideTime
+                            
+                            let dateFormatterGet = DateFormatter()
+                            dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
+                            guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
+                            
+                            let hoursToAdd = Int(str_EstimatedSec)
+                            let gregorian = Calendar(identifier: .gregorian)
+                            var comps = DateComponents()
+                            comps.second = hoursToAdd
+                            let EndDate = gregorian.date(byAdding: comps, to: StartDate)
+                            var Str_DropOffDate_time: String = ""
+                            if let str_EndDate = EndDate {
+                                Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                            }
+                            arr_DropDate.append(Str_DropOffDate_time)
+                        }
+                        ary_FutureRideEstimatedDropDateRef = arr_DropDate
+                        self.partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID: self.loginDriverIDStr)
+                        self.tableview_FutureRideList.reloadData()
+                    } else {
+                        self.showToast(message: userData.message ?? "No ride available here.", font: .systemFont(ofSize: 12.0))
                     }
-                    ary_FutureRideEstimatedDropDateRef = arr_DropDate
-                    self.partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID: self.loginDriverIDStr)
-                    self.tableview_FutureRideList.reloadData()
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
-
+        
     }
 }
 
@@ -370,14 +378,18 @@ extension RideReservationsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if userData.defaultstr == "yes" {
-                       // self.ShowAlertWithPush(message: userData.message ?? "", className: "DriverAcceptedVC", storyBoard: "RidesHistory", Animation: true)--
-                        self.ShowAlertWithPush(message: userData.message ?? "", className: "AcceptedRidesInfoViewController", storyBoard: "OngoingRides", Animation: true)
+                    if userData.status == "1" {
+                        if userData.defaultstr == "yes" {
+                            // self.ShowAlertWithPush(message: userData.message ?? "", className: "DriverAcceptedVC", storyBoard: "RidesHistory", Animation: true)--
+                            self.ShowAlertWithPush(message: userData.message ?? "", className: "AcceptedRidesInfoViewController", storyBoard: "OngoingRides", Animation: true)
+                        } else {
+                            let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistoy", bundle: nil)
+                            let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DummyPartnerSelectForFutureViewController") as! DummyPartnerSelectForFutureViewController
+                            nxtVC.str_SelectedFutureRideID = str_SelectedRideID
+                            self.navigationController?.pushViewController(nxtVC, animated: true)
+                        }
                     } else {
-                        let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistoy", bundle: nil)
-                        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DummyPartnerSelectForFutureViewController") as! DummyPartnerSelectForFutureViewController
-                        nxtVC.str_SelectedFutureRideID = str_SelectedRideID
-                        self.navigationController?.pushViewController(nxtVC, animated: true)
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
                 }
             } else {
@@ -385,7 +397,7 @@ extension RideReservationsViewController {
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }
@@ -399,15 +411,19 @@ extension RideReservationsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                      //  self.ShowAlertWithPush(message: userData.message ?? "", className: "DriverAcceptedVC", storyBoard: "RidesHistory", Animation: true)--
-                    self.ShowAlertWithPush(message: userData.message ?? "", className: "AcceptedRidesInfoViewController", storyBoard: "OngoingRides", Animation: true)
+                    if userData.status == "1" {
+                        //  self.ShowAlertWithPush(message: userData.message ?? "", className: "DriverAcceptedVC", storyBoard: "RidesHistory", Animation: true)--
+                        self.ShowAlertWithPush(message: userData.message ?? "", className: "AcceptedRidesInfoViewController", storyBoard: "OngoingRides", Animation: true)
+                    } else {
+                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }
@@ -423,48 +439,52 @@ extension RideReservationsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData.data {
-                        self.ary_AlreadyFutureRideAcceptedInfoRef = responseData
-                    }
-                    
-                    var arr_RidePickStartDate:[Date] = []
-                    var arr_RidePickDropDate:[Date] = []
-                    
-                    for response in ary_AlreadyFutureRideAcceptedInfoRef {
-                        let str_EstimatedSec = response.second ?? "0"
-                        let str_FutureRidedate = response.otherdate ?? ""
-                        let str_FutureRideTime = response.time ?? ""
-                        let finalDate = str_FutureRidedate + " " + str_FutureRideTime
-                        
-                        let dateFormatterGet = DateFormatter()
-                        dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
-                        guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
-                        
-                        let hoursToAdd = Int(str_EstimatedSec)
-                        let gregorian = Calendar(identifier: .gregorian)
-                        var comps = DateComponents()
-                        comps.second = hoursToAdd
-                        guard let EndDate = gregorian.date(byAdding: comps, to: StartDate) else {return }
-                        var Str_DropOffDate_time: String = ""
-                        if let str_EndDate = EndDate as? Date {
-                            Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                    if userData.status == "1" {
+                        if let responseData = userData.data {
+                            self.ary_AlreadyFutureRideAcceptedInfoRef = responseData
                         }
-                        arr_RidePickStartDate.append(StartDate)
-                        arr_RidePickDropDate.append(EndDate)
+                        
+                        var arr_RidePickStartDate:[Date] = []
+                        var arr_RidePickDropDate:[Date] = []
+                        
+                        for response in ary_AlreadyFutureRideAcceptedInfoRef {
+                            let str_EstimatedSec = response.second ?? "0"
+                            let str_FutureRidedate = response.otherdate ?? ""
+                            let str_FutureRideTime = response.time ?? ""
+                            let finalDate = str_FutureRidedate + " " + str_FutureRideTime
+                            
+                            let dateFormatterGet = DateFormatter()
+                            dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
+                            guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
+                            
+                            let hoursToAdd = Int(str_EstimatedSec)
+                            let gregorian = Calendar(identifier: .gregorian)
+                            var comps = DateComponents()
+                            comps.second = hoursToAdd
+                            guard let EndDate = gregorian.date(byAdding: comps, to: StartDate) else {return }
+                            var Str_DropOffDate_time: String = ""
+                            if let str_EndDate = EndDate as? Date {
+                                Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                            }
+                            arr_RidePickStartDate.append(StartDate)
+                            arr_RidePickDropDate.append(EndDate)
+                        }
+                        
+                        ary_FutureRidePickDateRef = arr_RidePickStartDate
+                        ary_FutureRideDropdateRef = arr_RidePickDropDate
+                        self.partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID: self.loginDriverIDStr)
+                    } else {
+                        //self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    
-                    ary_FutureRidePickDateRef = arr_RidePickStartDate
-                    ary_FutureRideDropdateRef = arr_RidePickDropDate
-                    self.partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID: self.loginDriverIDStr)
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
-
+        
     }
 }
 
@@ -478,47 +498,51 @@ extension RideReservationsViewController {
             if success, let userData = model {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    if let responseData = userData.data {
-                        self.ary_AlreadyFutureRideAcceptedInfoRef = responseData
-                    }
-                    
-                    var arr_RidePickStartDate:[Date] = []
-                    var arr_RidePickDropDate:[Date] = []
-                    
-                    for response in ary_AlreadyFutureRideAcceptedInfoRef {
-                        let str_EstimatedSec = response.second ?? "0"
-                        let str_FutureRidedate = response.otherdate ?? ""
-                        let str_FutureRideTime = response.time ?? ""
-                        let finalDate = str_FutureRidedate + " " + str_FutureRideTime
-                        
-                        let dateFormatterGet = DateFormatter()
-                        dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
-                        guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
-                        
-                        let hoursToAdd = Int(str_EstimatedSec)
-                        let gregorian = Calendar(identifier: .gregorian)
-                        var comps = DateComponents()
-                        comps.second = hoursToAdd
-                        guard let EndDate = gregorian.date(byAdding: comps, to: StartDate) else {return }
-                        var Str_DropOffDate_time: String = ""
-                        if let str_EndDate = EndDate as? Date {
-                            Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                    if userData.status == "1" {
+                        if let responseData = userData.data {
+                            self.ary_AlreadyFutureRideAcceptedInfoRef = responseData
                         }
-                        arr_RidePickStartDate.append(StartDate)
-                        arr_RidePickDropDate.append(EndDate)
+                        
+                        var arr_RidePickStartDate:[Date] = []
+                        var arr_RidePickDropDate:[Date] = []
+                        
+                        for response in ary_AlreadyFutureRideAcceptedInfoRef {
+                            let str_EstimatedSec = response.second ?? "0"
+                            let str_FutureRidedate = response.otherdate ?? ""
+                            let str_FutureRideTime = response.time ?? ""
+                            let finalDate = str_FutureRidedate + " " + str_FutureRideTime
+                            
+                            let dateFormatterGet = DateFormatter()
+                            dateFormatterGet.dateFormat = "MM-dd-yyyy hh:mm a"
+                            guard let StartDate = dateFormatterGet.date(from: finalDate) else {return }
+                            
+                            let hoursToAdd = Int(str_EstimatedSec)
+                            let gregorian = Calendar(identifier: .gregorian)
+                            var comps = DateComponents()
+                            comps.second = hoursToAdd
+                            guard let EndDate = gregorian.date(byAdding: comps, to: StartDate) else {return }
+                            var Str_DropOffDate_time: String = ""
+                            if let str_EndDate = EndDate as? Date {
+                                Str_DropOffDate_time = dateFormatterGet.string(from: str_EndDate)
+                            }
+                            arr_RidePickStartDate.append(StartDate)
+                            arr_RidePickDropDate.append(EndDate)
+                        }
+                        
+                        ary_FutureRidePickStartDate_PartnerRef = arr_RidePickStartDate
+                        ary_FutureRidePickDropDate_PartnerRef = arr_RidePickDropDate
+                        
+                        self.tableview_FutureRideList.reloadData()
+                    } else {
+                        //self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
-                    
-                    ary_FutureRidePickStartDate_PartnerRef = arr_RidePickStartDate
-                    ary_FutureRidePickDropDate_PartnerRef = arr_RidePickDropDate
-                    
-                    self.tableview_FutureRideList.reloadData()
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? I18n.SomethingWentWrong, font: .systemFont(ofSize: 12.0))
                 }
-             }
+            }
         }
     }
 }

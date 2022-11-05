@@ -7,192 +7,352 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91AE4A30-2E51-4C75-8EE1-3DE8D9989788"
+            uuid = "6296BA35-EAFA-41A6-BC73-2326DE2E57FC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1125"
-            endingLineNumber = "1125"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38D1371D-123F-4837-A833-E65AF7E22504"
+            uuid = "A5148B6B-65C1-4D3A-B248-4D4D0432F4D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1124"
-            endingLineNumber = "1124"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B11A2247-EA38-4BF4-8C58-164348C1560D"
+            uuid = "EDA69BCE-00EE-4CAA-9EB2-FFF69DF521E6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1123"
-            endingLineNumber = "1123"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C3D16AD-4642-4AA1-9801-1A195028C18D"
+            uuid = "4DE5D5AB-E0F5-494C-9FCA-4AE5F3D18541"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1130"
-            endingLineNumber = "1130"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "532"
+            endingLineNumber = "532"
+            landmarkName = "partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "65AE1DD6-24B4-4CAF-9B04-DE84637EBEBD"
+            uuid = "18DE0858-AE77-4B8A-9505-8E916C067CEB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1131"
-            endingLineNumber = "1131"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
+            landmarkName = "partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ECA07A9F-9CBE-4A6C-AB05-6BB686A30201"
+            uuid = "1AC5F9E2-D501-487E-AE22-3F4627064A48"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1133"
-            endingLineNumber = "1133"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
+            landmarkName = "partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A165EB3-793B-4D25-ACB2-1F65F257969E"
+            uuid = "ED3265AC-4CFE-488D-882D-FE44D8D8535B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1132"
-            endingLineNumber = "1132"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "513"
+            endingLineNumber = "513"
+            landmarkName = "partnerAcceptedFutureRideAcceptedListAPI(withDriverLoginID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B4697632-0C5C-4E97-86E9-4E5F7D6D9BD5"
+            uuid = "5BD7BDCE-7751-47A0-A0C1-9A12007CB3F1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/Profile/OngoingRideDetails/OngoingRideDetails/View/OngoingRideDetailsViewController.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1122"
-            endingLineNumber = "1122"
-            landmarkName = "driverUpdateCurrentLocationAPI(withCurrentLatitude:withCurrentLongitude:)"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
+            landmarkName = "driverfutureRideListAcceptedAPI(withDriverLoginID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "837CFBEB-3282-4DEA-86A5-632CBD347D8F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/DashBoard/DashBoard/View/DashBoardViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D4158353-D5D9-4271-BC87-173A879143CB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/Screens/DashBoard/DashBoard/View/DashBoardViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "getNextRideTime()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0C5F0680-E900-4C75-8266-0AED073A8920"
+            uuid = "7858F4A6-FDE5-46E7-8434-493C3B857820"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/AppDelegateExtension.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
+            landmarkName = "driverfutureRideListAcceptedAPI(withDriverLoginID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0589DE7C-2F5A-4662-BB71-9D6D93021884"
+            uuid = "E392AEBA-1852-4EA6-9D80-7241686418BB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LNC_Driver/AppDelegateExtension.swift"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "messaging(_:didRefreshRegistrationToken:)"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "129AE4E9-D1A4-44BF-9875-AE6CFAD72E7C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C384537-4335-4B85-A0B0-E23DE26F54B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "444C6115-137F-4702-A9A0-ED1C00240A66"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0700BF3-BD92-465C-AA0B-60FB30AC9DDE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5651B5E-6999-4DF0-B705-7F6FE01E25D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8721E844-F336-49E8-A5D1-1819B2DEE982"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "164FE092-1494-47AF-9502-6637FD3C421F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0449014-F0EC-4592-8ED3-1023C9D85624"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA6523B4-71F9-4D40-8FE3-E7A2852BAAEF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E13D5BC0-77FC-4EFF-9B0B-EC6D9D391CDC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36D71A77-6DE1-4711-A1D2-A0A6D6264DBB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "AcceptedRideDetailsButtonClicked(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27F630DF-9593-4DBD-AC21-B887587B5707"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LNC_Driver/Screens/Profile/RideReservations/View/RideReservationsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "btn_DriverPartnerRequestAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
