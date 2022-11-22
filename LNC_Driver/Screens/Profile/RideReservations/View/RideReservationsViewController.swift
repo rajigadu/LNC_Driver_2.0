@@ -68,7 +68,7 @@ class RideReservationsViewController: UIViewController {
         self.btn_PartnerRequestRef.backgroundColor = .gray
         self.driverfutureRideListAPI(withDriverLoginID : loginDriverIDStr)
         
-        if vcCmgFrom == "AppDelegate" {
+        if vcCmgFrom != "AppDelegate" {
          self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(backToMenu))
         } else {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backToDashboard))
@@ -400,13 +400,13 @@ extension RideReservationsViewController {
                             // self.ShowAlertWithPush(message: userData.message ?? "", className: "DriverAcceptedVC", storyBoard: "RidesHistory", Animation: true)--
                             self.ShowAlertWithPush(message: userData.message ?? "", className: "AcceptedRidesInfoViewController", storyBoard: "OngoingRides", Animation: true)
                         } else {
-                            let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistoy", bundle: nil)
+                            let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistory", bundle: nil)
                             let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DummyPartnerSelectForFutureViewController") as! DummyPartnerSelectForFutureViewController
                             nxtVC.str_SelectedFutureRideID = str_SelectedRideID
                             self.navigationController?.pushViewController(nxtVC, animated: true)
                         }
                     } else {
-                        self.showToast(message: userData.message ?? I18n.TryAgain, font: .systemFont(ofSize: 12.0))
+                        self.showToast(message: I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
                 }
             } else {

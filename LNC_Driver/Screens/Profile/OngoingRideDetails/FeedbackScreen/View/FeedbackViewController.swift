@@ -9,7 +9,7 @@ import UIKit
 import Cosmos
 class FeedbackViewController: UIViewController {
     var str_UserID = ""
-    var str_Username = ""
+    var str_Username = "User Name"
     var str_UserImageUrl = ""
     var str_DriverLoginID = ""
     var str_RatingValue = ""
@@ -32,7 +32,7 @@ class FeedbackViewController: UIViewController {
         if let Str_UserImage = self.str_UserImageUrl as? String {
             self.imageview_UserProlfileRef.sd_setImage(with: URL(string: API_URl.API_IMAGEBASE_URL +  Str_UserImage), placeholderImage: UIImage(named: "personIcon"))
         }
-
+        self.lbl_Usernameref.text = str_Username
         self.textview_descriptionRef.layer.cornerRadius = 5.0
         self.textview_descriptionRef.layer.masksToBounds = true
        // self.textview_descriptionRef.delegate = self

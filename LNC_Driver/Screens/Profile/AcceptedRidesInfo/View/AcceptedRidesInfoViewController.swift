@@ -3,7 +3,7 @@
 //  LNC_Driver
 //
 //  Created by rajesh gandru on 01/10/22.
-//
+//RidesHistory
 
 import UIKit
 
@@ -77,7 +77,7 @@ class AcceptedRidesInfoViewController: UIViewController {
             self.driverAcceptedFutureRideListAPI(withDriverLoginID: loginDriverIDStr)
         }
 
-        if vcCmgFrom == "AppDelegate" {
+        if vcCmgFrom != "AppDelegate" {
          self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(backToMenu))
         } else {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(backToDashboard))

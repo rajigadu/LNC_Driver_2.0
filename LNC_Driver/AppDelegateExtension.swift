@@ -171,7 +171,7 @@ extension AppDelegate : MessagingDelegate{
                             self.goToUserRichNotifications()
                         }
                         //MARK: - New Ride.........
-                        else if let ride = alertstr?[0].ride as? String, ride == "newride" {
+                        else if let ride = alertstr?[0].ride as? String, ride == "future_notification" {
                             self.goToDriverRideReservations()
                         }
                         
@@ -264,7 +264,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
                         self.goToUserRichNotifications()
                     }
                     //MARK: - New Ride.........
-                    else if let ride = alertstr?[0].ride as? String, ride == "newride" {
+                    else if let ride = alertstr?[0].ride as? String, ride == "future_notification" {
                         self.goToDriverRideReservations()
                     }
                     
@@ -373,7 +373,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
                         //MARK: - Messages
                         if let ride = alertstr?[0].ride as? String, ride == "newusermessage" {
                             if let message = alertstr?[0].message as? String,
-                               let userid = alertstr?[0].userid as? String, let partnerID = alertstr?[0].partnerid as? String,
+                               let userid = alertstr?[0].userid as? String,
                                let driver_id = alertstr?[0].driverid as? String
                             {
                                 print(message,userid,driver_id,ride)
@@ -382,7 +382,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
                             }
                         } else if let ride = alertstr?[0].ride as? String, ride == "newdrivermessage" {
                             if let message = alertstr?[0].message as? String,
-                               let userid = alertstr?[0].userid as? String, let partnerID = alertstr?[0].partnerid as? String,
+                               let userid = alertstr?[0].userid as? String,
                                let driver_id = alertstr?[0].driverid as? String
                             {
                                 print(message,userid,driver_id,ride)
@@ -413,7 +413,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
                             self.goToUserRichNotifications()
                         }
                         //MARK: - New Ride.........
-                        else if let ride = alertstr?[0].ride as? String, ride == "newride" {
+                        else if let ride = alertstr?[0].ride as? String, ride == "future_notification" {
                             self.goToDriverRideReservations()
                         }
                         
@@ -524,3 +524,32 @@ extension AppDelegate {
         self.window?.makeKeyAndVisible()
     }
 }
+/*
+ [AnyHashable("aps"): {
+     alert =     {
+         title = "New Ride Request.";
+     };
+     sound = default;
+ }, AnyHashable("google.c.a.e"): 1, AnyHashable("gcm.notification.text"): A Reservation has been placed please open the app if you would like to accept., AnyHashable("google.c.sender.id"): 12677790788, AnyHashable("google.c.fid"): fO8i6xKd406VkCO865XtOw, AnyHashable("gcm.message_id"): 1667666306073671, AnyHashable("gcm.notification.data"): [{
+ "userid":"701",
+ "start_location":"KommalaPadu,AndhraPradesh523303,India",
+ "end_location":"Addanki,AndhraPradesh523201,India",
+ "ride":"future_notification",
+ "message":"A Reservation has been placed please open the app if you would like to accept.",
+ "ride_id":"24249"}]]
+ 
+ 
+ 
+ 
+ 
+ ["aps": {
+     alert =     {
+         title = "New Message";
+     };
+     sound = default;
+ }, "google.c.fid": fO8i6xKd406VkCO865XtOw, "gcm.notification.text": sdfasdfsad, "gcm.notification.data": [{
+                     "message":"sdfasdfsad",
+                     "driverid":"24",
+                     "user_id":"701",
+                     "ride":"newusermessage"}], "google.c.sender.id": 12677790788, "google.c.a.e": 1, "gcm.message_id": 1667666877913914]
+ */

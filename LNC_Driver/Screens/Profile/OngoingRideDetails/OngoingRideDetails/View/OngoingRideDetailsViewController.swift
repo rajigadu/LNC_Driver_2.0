@@ -899,12 +899,12 @@ extension OngoingRideDetailsViewController {
                     }
                     let userFirstName = userData.data?.userfname ?? ""
                     let userLastName = userData.data?.userlname ?? ""
-                    self.lbl_UserNameRef.text = userFirstName + userLastName
-                    str_CurrentRideUsername = (userFirstName ?? "") + " " + (userLastName ?? "")
+                    self.lbl_UserNameRef.text = userFirstName + " " + userLastName
+                    str_CurrentRideUsername = self.lbl_UserNameRef.text ?? userFirstName + " " + userLastName
                     str_UserMobileNumber = userData.data?.usermobile ?? ""
                     self.lbl_UserNumberRef.text = str_UserMobileNumber
                     str_plannedstops = userData.planned_stops ?? ""
-                    self.plannedstopslbl_ref.text = "Planned Stops :" + (str_plannedstops ?? "")
+                    self.plannedstopslbl_ref.text = "Planned Stops :" + (str_plannedstops)
                     btnplannedstops.isHidden = str_plannedstops.count > 0 ? false : true
                     str_RideUserID = userData.data?.userid ?? ""
                     str_CurrentRideID = userData.data?.rideid ?? ""

@@ -1626,8 +1626,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWG-z6-lh7" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="107" y="224" width="200" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="127" y="224" width="200" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="SXr-Td-rEG"/>
                                     <constraint firstAttribute="height" constant="40" id="zyd-Uh-HKS"/>
@@ -1712,7 +1712,7 @@
                             <constraint firstItem="ABH-xq-3WY" firstAttribute="top" secondItem="FWG-z6-lh7" secondAttribute="bottom" constant="26" id="h9c-5E-IC8"/>
                             <constraint firstItem="vsw-XM-U7q" firstAttribute="trailing" secondItem="8IQ-p2-EsA" secondAttribute="trailing" constant="15" id="hbn-di-e5K"/>
                             <constraint firstItem="FWG-z6-lh7" firstAttribute="top" secondItem="8IQ-p2-EsA" secondAttribute="bottom" constant="8" id="hey-pL-SI8"/>
-                            <constraint firstItem="FWG-z6-lh7" firstAttribute="centerX" secondItem="cEX-yg-pNy" secondAttribute="centerX" id="iIc-qc-Zfb"/>
+                            <constraint firstItem="FWG-z6-lh7" firstAttribute="centerX" secondItem="cEX-yg-pNy" secondAttribute="centerX" constant="20" id="iIc-qc-Zfb"/>
                             <constraint firstItem="5rf-P4-fKG" firstAttribute="leading" secondItem="vsw-XM-U7q" secondAttribute="leading" constant="10" id="xGN-SS-BTz"/>
                             <constraint firstItem="rYs-4K-deO" firstAttribute="leading" secondItem="vsw-XM-U7q" secondAttribute="leading" constant="10" id="zXy-fd-7AN"/>
                         </constraints>
