@@ -100,7 +100,7 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
         } else if arrayResponse[indexPath.row] == "Payment History" {
             self.movetonextvc(id: "PaymentHistoryViewController", storyBordid: "RidesHistory",animated:false)
         } else if arrayResponse[indexPath.row] == "Ride History" {
-            self.movetonextvc(id: "RideHistoryViewController", storyBordid: "RidesHistory",animated:false) 
+            self.movetonextvc(id: "RideHistoryViewController", storyBordid: "RidesHistory",animated:false)
         } else if arrayResponse[indexPath.row] == "My Rewards" {
             self.movetonextvc(id: "ActivatedRewardProgramsViewController", storyBordid: "RidesHistory",animated:false)
         } else if arrayResponse[indexPath.row] == "Manage Partners" {
@@ -133,7 +133,7 @@ extension SideMenuViewController {
                 UserDefaults.standard.set("", forKey: "DriverRating")
                 UserDefaults.standard.set(false, forKey: "IsUserLogined")
                 UserDefaults.standard.set("", forKey: "DriverType")
-
+                
                 self.resetDefaults()
                 if let delegate = UIApplication.shared.delegate as? AppDelegate {
                     delegate.MoveToLogin()

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kIu-iv-icn">
-                                <rect key="frame" x="0.0" y="108" width="414" height="722.5"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="672.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="1Ms-hl-D6g">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -106,18 +107,46 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jw4-ag-Ou9">
+                                <rect key="frame" x="8" y="780.5" width="398" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AnP-su-8RI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteAccountBtnClick:" destination="eRZ-18-NoC" eventType="touchUpInside" id="gd3-1d-5HP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rej-E8-nUo"/>
                         <color key="backgroundColor" red="0.49060559269999998" green="0.67758250239999995" blue="0.12212634830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Jw4-ag-Ou9" firstAttribute="leading" secondItem="Rej-E8-nUo" secondAttribute="leading" constant="8" id="3eE-IV-2Qa"/>
                             <constraint firstItem="uK2-VN-yiQ" firstAttribute="leading" secondItem="Rej-E8-nUo" secondAttribute="leading" constant="5" id="4Qh-kD-cuc"/>
                             <constraint firstItem="aMM-Na-GWe" firstAttribute="trailing" secondItem="Rej-E8-nUo" secondAttribute="trailing" id="7g5-Vk-i3t"/>
                             <constraint firstItem="kIu-iv-icn" firstAttribute="top" secondItem="KJn-35-NW3" secondAttribute="bottom" constant="20" id="9OS-gh-ER5"/>
+                            <constraint firstItem="Rej-E8-nUo" firstAttribute="trailing" secondItem="Jw4-ag-Ou9" secondAttribute="trailing" constant="8" id="BCb-d5-Ske"/>
                             <constraint firstItem="aMM-Na-GWe" firstAttribute="top" secondItem="P88-qa-oh2" secondAttribute="top" id="H9p-3E-xIW"/>
+                            <constraint firstItem="Jw4-ag-Ou9" firstAttribute="top" secondItem="kIu-iv-icn" secondAttribute="bottom" id="M3f-68-b9G"/>
                             <constraint firstItem="aMM-Na-GWe" firstAttribute="leading" secondItem="Rej-E8-nUo" secondAttribute="leading" id="MtV-HH-xwa"/>
-                            <constraint firstItem="uK2-VN-yiQ" firstAttribute="top" secondItem="kIu-iv-icn" secondAttribute="bottom" constant="5" id="Xyk-XU-2nU"/>
                             <constraint firstItem="aKt-zj-bv9" firstAttribute="top" secondItem="aMM-Na-GWe" secondAttribute="bottom" id="aJj-v6-jkP"/>
                             <constraint firstItem="kIu-iv-icn" firstAttribute="leading" secondItem="Rej-E8-nUo" secondAttribute="leading" id="d7y-fX-ixq"/>
+                            <constraint firstItem="uK2-VN-yiQ" firstAttribute="top" secondItem="Jw4-ag-Ou9" secondAttribute="bottom" constant="5" id="fOk-oL-Ty7"/>
                             <constraint firstItem="kIu-iv-icn" firstAttribute="trailing" secondItem="Rej-E8-nUo" secondAttribute="trailing" id="mSb-E1-FWR"/>
                             <constraint firstItem="aKt-zj-bv9" firstAttribute="top" secondItem="uK2-VN-yiQ" secondAttribute="bottom" constant="5" id="nEh-vw-44d"/>
                             <constraint firstItem="Rej-E8-nUo" firstAttribute="trailing" secondItem="uK2-VN-yiQ" secondAttribute="trailing" constant="5" id="pRw-Y3-B8n"/>
@@ -137,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jm-VR-gJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5200" y="-621.42857142857144"/>
+            <point key="canvasLocation" x="5198.5507246376819" y="-621.42857142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j7S-cY-2fY">
@@ -1075,5 +1104,8 @@
         <image name="personIcon" width="100" height="100"/>
         <image name="placeholder" width="200" height="100.5"/>
         <image name="rightcolor" width="19" height="19"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

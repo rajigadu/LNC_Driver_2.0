@@ -17,6 +17,8 @@ protocol LateNightChauffeursDriverServiceProtocol {
     func requestForRegistrationServices(_ perams: Dictionary<String, String>,peramsModel:registartionStruct, profilepic_name: String, profilepic: UIImage, vehicle_image_name: String, vehicle_image: UIImage, documents_image_name: String, documents_image: UIImage, license_image_name: String, license_image: UIImage, driver_abstract_name: String, driver_abstract: UIImage, completion: @escaping (_ success: Bool, _ results: RegistrationUserData?, _ error: String?) -> ())
     //MARK: Logout
     func requestForLogoutServices(_ perams: Dictionary<String,String>, completion: @escaping (_ success: Bool, _ results: SideMenuUserData?, _ error: String?) -> ())
+    //MARK: Delete Account
+    func requestForDeleteAccountServices(_ perams: Dictionary<String,String>, completion: @escaping (_ success: Bool, _ results: SideMenuUserData?, _ error: String?) -> ())
     //MARK: Contact US
     func requestForContactUsServices(_ perams: Dictionary<String,String>,  completion: @escaping (_ success: Bool, _ results: ContactUsUserData?, _ error: String?) -> ())
     //MARK: Change Password
@@ -949,6 +951,26 @@ extension ApiService {
             if success {
                 do {
                     let model = try JSONDecoder().decode(DashBoardUserData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - Delete Account
+extension ApiService {
+    func requestForDeleteAccountServices(_ perams :Dictionary<String,String>, completion: @escaping (Bool, SideMenuUserData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, I18n.NoInterNetString)
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DELETEACCOUNT_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(SideMenuUserData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

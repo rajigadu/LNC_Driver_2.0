@@ -16,7 +16,9 @@ class SettingsViewController: UIViewController {
     
     //MARK: - Class Propeties
     let arrayResponse = ["Edit Profile Info","Edit Vehicle Info","Add Bank Account","Change Password","Contact Us","Privacy Policy","Terms & Conditions"]
-
+    lazy var viewModel = {
+        MenuSliderViewModel()
+    }()
     
     //MARK: - View life cycle
     
@@ -44,6 +46,9 @@ class SettingsViewController: UIViewController {
         self.navigateToSideMenu()
     }
     
+    @IBAction func deleteAccountBtnClick(_ sender: Any) {
+        self.callDeleteAccountAction()
+    }
 }
 
 extension SettingsViewController: UITableViewDelegate,UITableViewDataSource {
@@ -79,6 +84,50 @@ extension SettingsViewController: UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "AddBankDetailsViewController", storyBordid: "Profile", animated: true)
         } else if arrayResponse[indexPath.row] == "Edit Vehicle Info" {
             self.movetonextvc(id: "AddVehicleInfoViewController", storyBordid: "Profile", animated: true)
+        }
+    }
+
+}
+extension SettingsViewController {
+    func callDeleteAccountAction() {
+        let alertController = UIAlertController(title: I18n.deleteAccountTitle, message: I18n.DeleteAccountAlert, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+            self.deleteAccountApiCalling()
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    //Delete Account Api Intigartion
+    func deleteAccountApiCalling(){
+        guard let DriverLoginID = UserDefaults.standard.string(forKey: "DriverLoginID") else{return}
+        indicator.showActivityIndicator()
+        self.viewModel.requestForDeleteAccountServices(perams: ["driver_id":DriverLoginID]) { success, model, error in
+            if success {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    UserDefaults.standard.set("", forKey: "DriverLoginID")
+                    UserDefaults.standard.set("", forKey: "DriverEmailID")
+                    UserDefaults.standard.set("", forKey: "DriverFirstName")
+                    UserDefaults.standard.set("", forKey: "DriverLasttName")
+                    UserDefaults.standard.set("", forKey: "DriverMobilenumber")
+                    UserDefaults.standard.set("", forKey: "DriverRating")
+                    UserDefaults.standard.set(false, forKey: "IsUserLogined")
+                    UserDefaults.standard.set("", forKey: "DriverType")
+                    
+                    self.resetDefaults()
+                    if let delegate = UIApplication.shared.delegate as? AppDelegate {
+                        delegate.MoveToLogin()
+                    }
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                }
+            }
         }
     }
 

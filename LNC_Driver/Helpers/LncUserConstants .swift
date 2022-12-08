@@ -38,6 +38,8 @@ static let GoogleAPIKey                               = "AIzaSyDac9yBJCmt8Tyry6J
 static let UploadImage                                = "Please upload image"
 static let WithDrawlVadiation                         = "Please Enter lessthan earned Salary"
 static let WithDrawlKey                               = "Please Enter your withdrawl Salary"
+    static let deleteAccountTitle                         = "Delete Account"
+    static let DeleteAccountAlert                         = "Are you sure you want to delete your account? This will permanently erase your account."
 
 }
 
@@ -74,7 +76,6 @@ static let API_DRIVERONLINE_URL                         = API_URl.API_SERVER_URL
 static let API_DRIVERNextRideTime_URL                         = API_URl.API_SERVER_URL +  "next-ride-time.php?"
 static let API_UPDATE_DRIVER_INFO_VIA_DASHBOARD_URL                         = API_URl.API_SERVER_URL +  "home-page-api.php?"
 static let API_DriverRoleChangeAPI                          = API_URl.API_SERVER_URL +  "swap-role.php?"
-    
 static let API_DRIVERONLINESTATUS_URL                   = API_URl.API_SERVER_URL +  "online-status.php?"
 static let API_DRIVERUPDATECURRENTLOCATION_URL          = API_URl.API_SERVER_URL +  "update-driver-location.php?"
 static let API_DRIVERACCEPTRIDEREQUEST_URL              = API_URl.API_SERVER_URL +  "driver-response.php?"
@@ -144,5 +145,6 @@ static let API_MY_REWARDS_URL                          = API_URl.API_SERVER_URL 
 
 static let API_HISTORY_REWARDS_URL                     = API_URl.API_SERVER_URL +  "history-reward-program-list.php?" //STATIC
 static let API_RichNotification_URL                   = API_URl.API_SERVER_URL +  "notification-message-list.php?"
-static let Api_GET_GOOLE_KEY                           = "https://lnc.latenightchauffeurs.com/lnc-administrator/ios-test/google-api-key.php"
+static let Api_GET_GOOLE_KEY                           = API_URl.API_SERVER_URL + "google-api-key.php"
+static let  API_DELETEACCOUNT_URL                      = API_URl.API_SERVER_URL + "driver/remove-d-acc.php?"
 }
