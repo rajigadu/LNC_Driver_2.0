@@ -30,6 +30,7 @@ class RideChargesPreviewViewController: UIViewController {
     var str_earnings = ""
     var Str_AdminFare = ""
     var loginDriverID = ""
+    var str_waitingtime2 = ""
     
     lazy var viewModel = {
         RideChargesPreviewViewModel()
@@ -40,16 +41,16 @@ class RideChargesPreviewViewController: UIViewController {
         self.title = "Ride Preview"
         loginDriverID = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         
-        if str_Additionalstops.count ?? 0 > 0 {
+        if Int(str_Additionalstops ?? "0") ?? 0 <= 0 {
             Unpanedstopslbl_ref.text = "Unplanned Stops  : 0"
         } else {
-            Unpanedstopslbl_ref.text = "Unplanned Stops  : \(str_Additionalstops ?? "")"
+            Unpanedstopslbl_ref.text = "Unplanned Stops  : \(str_Additionalstops )"
         }
         
-        if str_waitingtime.count ?? 0 > 0 {
-            Waitingtimelblref.text = "Waiting Time : 00:00"
+        if Int(str_waitingtime ?? "0") ?? 0 <= 0 {
+            Waitingtimelblref.text = "Waiting Time : 00:00 Minutes"
         } else {
-            Waitingtimelblref.text = "Waiting Time : \(str_waitingtime) Minutes"
+            Waitingtimelblref.text = "Waiting Time : \(str_waitingtime2)"
         }
         self.lbl_TotalRideCostRef.text = "Ride Fare : $" + str_Ridefare
         self.lbl_EarningsRef.text = "Earnings : $" + str_earnings

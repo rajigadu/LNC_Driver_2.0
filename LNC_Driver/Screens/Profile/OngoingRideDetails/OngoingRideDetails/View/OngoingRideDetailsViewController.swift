@@ -129,6 +129,7 @@ class OngoingRideDetailsViewController: UIViewController {
     var picktype  = String()
     var stopsPickerStr = String()
     var waitingTimePickerStr = String()
+    var waitingTimePickerStr2 = String()
     var selectedTxtFldType = String()
     var str_datEtime = String()
     var complitebuttonstatus = String()
@@ -736,6 +737,7 @@ extension OngoingRideDetailsViewController {
                     
                     let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
                     let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewViewController") as! RideChargesPreviewViewController
+                        rideChargesPreviewScreen.str_waitingtime2 = waitingTimePickerStr2
                     rideChargesPreviewScreen.str_waitingtime = waitingTimePickerStr;
                     rideChargesPreviewScreen.str_Additionalstops = stopsPickerStr;
                     rideChargesPreviewScreen.str_earnings = str_earnings;
@@ -757,7 +759,7 @@ extension OngoingRideDetailsViewController {
                            
                         let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
                         let rideChargesPreviewScreen = Storyboard.instantiateViewController(withIdentifier: "RideChargesPreviewViewController") as! RideChargesPreviewViewController
-
+                            rideChargesPreviewScreen.str_waitingtime2 = waitingTimePickerStr2
                         rideChargesPreviewScreen.str_waitingtime = waitingTimePickerStr;
                         rideChargesPreviewScreen.str_Additionalstops = stopsPickerStr;
                         rideChargesPreviewScreen.str_earnings = str_earnings;
@@ -1182,7 +1184,8 @@ extension OngoingRideDetailsViewController: UIPickerViewDelegate, UIPickerViewDa
             self.stopsPickerStr = pickerData2[row]
         } else if selectedTxtFldType == "waitingtime" {
             self.waitingTimetextfield.text = pickerData[row]
-            self.waitingTimePickerStr = pickerData[row]
+            self.waitingTimePickerStr = pickerData3[row]
+            self.waitingTimePickerStr2 = pickerData[row]
         }
     }
 }

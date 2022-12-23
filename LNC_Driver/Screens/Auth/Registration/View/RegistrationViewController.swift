@@ -95,7 +95,13 @@ class RegistrationViewController: UIViewController {
     
     @IBAction func onLaunchClicked(_ sender: UIButton) {
         let acController = GMSAutocompleteViewController()
+        
+        let searchBarTextAttributes: [NSAttributedString.Key : AnyObject] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white, NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont.systemFont(ofSize: UIFont.systemFontSize)]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = searchBarTextAttributes
+        
         acController.delegate = self
+        acController.modalPresentationStyle = .fullScreen
+        acController.tintColor = .white
         present(acController, animated: true, completion: nil)
     }
     

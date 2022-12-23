@@ -180,11 +180,13 @@ extension DashBoardViewController: CLLocationManagerDelegate {
                     if let googleKey = UserData.google_key, googleKey != ""{
                         UserDefaults.standard.set(googleKey, forKey: "Googlekeyvalue")
                     }
+                    self.getgooglekeyListAPI()
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
+                    self.getgooglekeyListAPI()
                 }
             }
             
@@ -269,22 +271,22 @@ extension DashBoardViewController {
     //MARk: -- API REQUEST CLASS DELEGATE
     //MARK: - request for Google Key
     func getgooglekeyListAPI() {
-//        indicator.showActivityIndicator()
-//        self.viewModel.requestForgetgooglekeyListAPIServices(perams: ["":""]) { success, model, error in
-//            if success, let UserData = model {
-//                DispatchQueue.main.async { [self] in
-//                    indicator.hideActivityIndicator()
-//                    if UserData.status == "1" {
-//                        UserDefaults.standard.set(UserData.data?.key ?? "", forKey: "Googlekeyvalue")
-//                    }
-//                }
-//            } else {
-//                DispatchQueue.main.async { [self] in
-//                    indicator.hideActivityIndicator()
-//                    self.showToast(message: error ?? "no record found.", font: .systemFont(ofSize: 12.0))
-//                }
-//            }
-//        }
+        indicator.showActivityIndicator()
+        self.viewModel.requestForgetgooglekeyListAPIServices(perams: ["":""]) { success, model, error in
+            if success, let UserData = model {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    if UserData.status == "1" {
+                        UserDefaults.standard.set(UserData.data?.key ?? "", forKey: "Googlekeyvalue")
+                    }
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    self.showToast(message: error ?? "no record found.", font: .systemFont(ofSize: 12.0))
+                }
+            }
+        }
     }
 }
 extension DashBoardViewController {
