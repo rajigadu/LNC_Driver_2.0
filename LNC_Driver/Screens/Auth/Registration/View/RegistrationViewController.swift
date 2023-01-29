@@ -7,6 +7,7 @@
 
 import UIKit
 import GooglePlaces
+import GoogleMaps
 class RegistrationViewController: UIViewController {
     
     //MARK: - Class outlets
@@ -45,6 +46,9 @@ class RegistrationViewController: UIViewController {
     lazy var viewModel = {
         RegistrationViewModel()
     }()
+    lazy var viewModel2 = {
+        DashBoardViewModel()
+    }()
     var addressID:String?
     var isBackgroundChecked = false
     var isCharTestPassChecked = false
@@ -71,7 +75,13 @@ class RegistrationViewController: UIViewController {
         selectCharSelectCheckBoxr.setImage(UIImage(named: "uncheckimage"), for: .normal)
         selectBackgroundCheckBoxr.setImage(UIImage(named: "uncheckimage"), for: .normal)
         selectW3CheckBoxr.setImage(UIImage(named: "uncheckimage"), for: .normal)
-        
+        self.getgooglekeyListAPI()
+//        if let GoogleKey = UserDefaults.standard.string(forKey: "Googlekeyvalue") {
+//            GOOGLE_API_KEY = GoogleKey
+//        } else {
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.getgooglekeyListAPI()
+//        }
         
 //        self.firstNameTxtFld.text = "Raj"
 //        self.lastNameTxtFld.text = "Venk"
@@ -94,6 +104,11 @@ class RegistrationViewController: UIViewController {
     
     
     @IBAction func onLaunchClicked(_ sender: UIButton) {
+        if GOOGLE_API_KEY != "" {
+            GMSServices.provideAPIKey(GOOGLE_API_KEY)
+            GMSPlacesClient.provideAPIKey(GOOGLE_API_KEY)
+        }
+        
         let acController = GMSAutocompleteViewController()
         
         let searchBarTextAttributes: [NSAttributedString.Key : AnyObject] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white, NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont.systemFont(ofSize: UIFont.systemFontSize)]
@@ -299,13 +314,16 @@ extension RegistrationViewController: GMSAutocompleteViewControllerDelegate {
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         // TODO: handle the error.
-        print("Error: \(error)")
+        print("Error: \(error)")        
         dismiss(animated: true, completion: nil)
     }
     
     // User cancelled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         print("Autocomplete was cancelled.")
+        //UserDefaults.standard.string(forKey: "Googlekeyvalue")
+       
+
         dismiss(animated: true, completion: nil)
     }
 }
@@ -326,3 +344,27 @@ extension Dictionary {
     }
     
 }
+extension RegistrationViewController {
+    //MARk: -- API REQUEST CLASS DELEGATE
+    //MARK: - request for Google Key
+    func getgooglekeyListAPI() {
+        indicator.showActivityIndicator()
+        self.viewModel2.requestForgetgooglekeyListAPIServices(perams: ["":""]) { success, model, error in
+            if success, let UserData = model {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                    if UserData.status == "1" {
+                        UserDefaults.standard.set(UserData.data?.key ?? "", forKey: "Googlekeyvalue")
+                        GOOGLE_API_KEY = UserData.data?.key ?? ""
+                    }
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    indicator.hideActivityIndicator()
+                   // self.showToast(message: error ?? "no record found.", font: .systemFont(ofSize: 12.0))
+                }
+            }
+        }
+    }
+}
+

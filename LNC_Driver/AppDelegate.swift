@@ -12,7 +12,7 @@ import GoogleMaps
 var LognedUserType = ""
 var newDeviceId = ""
 var inServerSavedDeviceId = ""
-var GOOGLE_API_KEY = "AIzaSyCNjXOJCvESsba4C2xYW208pVngaJyRGEY"
+var GOOGLE_API_KEY = "AIzaSyAQ4RbMix1acd0EGLmhR3MRXBfEmU60nok"
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

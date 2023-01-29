@@ -180,13 +180,13 @@ extension DashBoardViewController: CLLocationManagerDelegate {
                     if let googleKey = UserData.google_key, googleKey != ""{
                         UserDefaults.standard.set(googleKey, forKey: "Googlekeyvalue")
                     }
-                    self.getgooglekeyListAPI()
+                    //self.getgooglekeyListAPI()
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     self.showToast(message: error ?? "Something went wrong.", font: .systemFont(ofSize: 12.0))
-                    self.getgooglekeyListAPI()
+                    //self.getgooglekeyListAPI()
                 }
             }
             
