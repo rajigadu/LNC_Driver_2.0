@@ -20,9 +20,9 @@ class SideMenuViewController: UIViewController {
     lazy var viewModel = {
         MenuSliderViewModel()
     }()
-    var arrayResponse = ["Home","Driver Type","Ride Reservations","Accepted Rides","Manage Partners","Ride History","Payment History","Weekly Payments","My Rewards","Settings","Employee Guidelines","Logout"];//@"Future Ride Info",@"Future Ride History","Trany Videos"
+    var arrayResponse = ["Home","Driver Type","Ride Reservations","Accepted Rides","DBH Assign Rides","Manage Partners","Ride History","Payment History","Weekly Payments","My Rewards","Settings","Employee Guidelines","Logout"];//@"Future Ride Info",@"Future Ride History","Trany Videos"
     
-    var arr_images = [UIImage(named :"home"),UIImage(named :"user"),UIImage(named :"serviceinfo"),UIImage(named :"serviceinfo"),UIImage(named :"user"),UIImage(named :"history"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"settings"),UIImage(named :"serviceinfo"),UIImage(named :"signout"),]//UIImage(named :"payment")
+    var arr_images = [UIImage(named :"home"),UIImage(named :"user"),UIImage(named :"serviceinfo"),UIImage(named :"serviceinfo"),UIImage(named :"serviceinfo"),UIImage(named :"user"),UIImage(named :"history"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"payment"),UIImage(named :"settings"),UIImage(named :"serviceinfo"),UIImage(named :"signout"),]//UIImage(named :"payment")
     
     //MARK: - View life cycle
     override func viewDidLoad() {
@@ -111,6 +111,8 @@ extension SideMenuViewController :UITableViewDelegate,UITableViewDataSource {
             self.movetonextvc(id: "RideReservationsViewController", storyBordid: "OngoingRides",animated:false)
         } else if arrayResponse[indexPath.row] == "Accepted Rides" {
             self.movetonextvc(id: "AcceptedRidesInfoViewController", storyBordid: "OngoingRides",animated:false)
+        } else if arrayResponse[indexPath.row] == "DBH Assign Rides" {
+            self.movetonextvc(id: "ListOfAssignRidesViewController", storyBordid: "DriverByTheHour",animated:false)
         }
     }
     

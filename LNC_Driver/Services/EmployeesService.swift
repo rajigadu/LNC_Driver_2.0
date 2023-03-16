@@ -82,6 +82,9 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MRK:- Dummy Partner selectDriverTypeAPI
     func requestForDummyPartnerSelectForFutureServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverTypeData?, _ error: String?) -> ())
     
+    //MARK: - DBH Assign Ride List
+    func requestForDBHAssignRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ListOfAssignRidesData?, _ error: String?) -> ())
+    
     //MARK: - DriverfutureRideListAPI
     func requestFordriverfutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideReservationsData?, _ error: String?) -> ())
     
@@ -776,6 +779,28 @@ extension ApiService {
         }
     }
 }
+
+//MARK: - DBH Assign Ride List
+extension ApiService {
+    func requestForDBHAssignRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ListOfAssignRidesData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DBH_ASSIGN_RIDES_LIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ListOfAssignRidesData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
 //MARK: - DriverfutureRideListAPI
 extension ApiService {
     func requestFordriverfutureRideListAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideReservationsData?, String?) -> ()) {
