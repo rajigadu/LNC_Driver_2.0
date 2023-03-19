@@ -354,6 +354,28 @@ extension ApiService {
         }
     }
 }
+
+//MARK: - Cancel Ride -- DriverCurrentCancelRideAPI
+extension ApiService {
+    func requestForDriverDBHRideCancelAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVER_DBH_RIDE_CANCEL_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(CancelRideData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
 //MARK: - Cancel Ride -- DriverCurrentCancelRideAPI
 extension ApiService {
     func requestForDriverCurrentCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, CancelRideData?, String?) -> ()) {
@@ -575,6 +597,8 @@ extension ApiService {
         }
     }
 }
+
+
 //MARK: - FeedBack Seen
 extension ApiService {
     func requestForFeedbackAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, FeedBacData?, String?) -> ()) {
@@ -582,6 +606,26 @@ extension ApiService {
             completion(false, nil, "I18n.NoInterNetString")
         }
         HttpRequestHelper().GET(url: API_URl.API_FEEDBACKTOUSER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(FeedBacData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+//MARK: - DBH - FeedBack Seen
+extension ApiService {
+    func requestForDBHRideFeedbackAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, FeedBacData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DBH_FEEDBACKTOUSER_URL, params: perams, httpHeader: .application_json) { success, data in
             if success {
                 do {
                     let model = try JSONDecoder().decode(FeedBacData.self, from: data!)

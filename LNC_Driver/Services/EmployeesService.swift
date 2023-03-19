@@ -43,11 +43,19 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - Payment history
     func requestForPaymentHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: PaymentHistoryData?, _ error: String?) -> ())
     
+    //MARK: - DBH Ride History
+    func requestForDBHRideHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DBHRideHistoryData?, _ error: String?) -> ())
+    
     //MARK: - Ride History
     func requestForRideHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideHistoryViewData?, _ error: String?) -> ())
     
     //MARK: - Activate Reward
     func requestForActivateRewardServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ActivateRewardProgramData?, _ error: String?) -> ())
+    //MARK: - DBH Ride End Api
+    func requestForDbhRideEndApiServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DbhRideStartData?, _ error: String?) -> ())
+    
+    //MARK: - DBH Ride Start Api
+    func requestForDbhRidestartApiServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DbhRideStartData?, _ error: String?) -> ())
     
     //MARK: - Avilable Reward
     func requestForAvailableRewardProgramsListServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: AvailableRewardProgramsListData?, _ error: String?) -> ())
@@ -150,6 +158,8 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - Ongoing Ride Details --- DriverUpdateCurrentLocationAPI
     func requestForDriverUpdateCurrentLocationAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DriverUpdateCurrentLocationData?, _ error: String?) -> ())
     
+    //MARK: - DBH Cancel Ride -- Driver cancel dbh ride
+    func requestForDriverDBHRideCancelAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
     //MARK: - Cancel Ride -- DriverFutureCancelRideAPI
     func requestForDriverFutureCancelRideAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: CancelRideData?, _ error: String?) -> ())
     //MARK: - Cancel Ride -- PartnerFutureCancelRideAPI
@@ -186,7 +196,8 @@ protocol LateNightChauffeursDriverServiceProtocol {
     func requestForDriverFutureRideCompleteAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: RideChargesPreviewData?, _ error: String?) -> ())
     //MARK: - FeedBack Seen
     func requestForFeedbackAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: FeedBacData?, _ error: String?) -> ())
-
+    //MARK: - FeedBack Seen
+    func requestForDBHRideFeedbackAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: FeedBacData?, _ error: String?) -> ())
     //MARK: - Notification List
     func requestForNotificationServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, NotificationData?, String?) -> ())
     //MARK: - get next ride time
@@ -517,6 +528,28 @@ extension ApiService {
         }
     }
 }
+
+//MARK: - DBH - Ride History
+extension ApiService {
+    func requestForDBHRideHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DBHRideHistoryData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DRIVER_DBH_RIDE_HISTORY_LIST_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(RideHistoryViewData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
 //MARK: - Ride History
 extension ApiService {
     func requestForRideHistoryServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, RideHistoryViewData?, String?) -> ()) {
@@ -558,6 +591,49 @@ extension ApiService {
         }
     }
 }
+
+//MARK: - DBH Ride End Api
+extension ApiService {
+    func requestForDbhRideEndApiServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DbhRideStartData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DBH_END_RIDE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(DbhRideStartData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
+//MARK: - DBH Ride Start Api
+extension ApiService {
+    func requestForDbhRidestartApiServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DbhRideStartData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DBH_START_RIDE_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(DbhRideStartData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
 //MARK: - Activate Reward
 extension ApiService {
     func requestForActivateRewardServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ActivateRewardProgramData?, String?) -> ()) {

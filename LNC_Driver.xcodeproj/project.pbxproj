@@ -20,6 +20,9 @@
 		BA36D89B28C8C41300B73053 /* LNC_DriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D89A28C8C41300B73053 /* LNC_DriverTests.swift */; };
 		BA36D8A528C8C41300B73053 /* LNC_DriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D8A428C8C41300B73053 /* LNC_DriverUITests.swift */; };
 		BA36D8A728C8C41300B73053 /* LNC_DriverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA36D8A628C8C41300B73053 /* LNC_DriverUITestsLaunchTests.swift */; };
+		BA3F793729C3666B009CA117 /* DBHRidePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F793629C3666B009CA117 /* DBHRidePreviewViewController.swift */; };
+		BA3F793929C3668D009CA117 /* DBHRidePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F793829C3668D009CA117 /* DBHRidePreviewViewModel.swift */; };
+		BA3F793B29C3669C009CA117 /* DBHRidePreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F793A29C3669C009CA117 /* DBHRidePreviewModel.swift */; };
 		BA409B2228D02A1300489F09 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BA409B2128D02A1300489F09 /* background.png */; };
 		BA409B3628D02AA600489F09 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B2428D02AA500489F09 /* ImagePickerManager.swift */; };
 		BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA409B2528D02AA500489F09 /* HttpRequestHelper.swift */; };
@@ -77,6 +80,16 @@
 		BA5C4A7128D2D3980034F9B3 /* AddBankDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7028D2D3980034F9B3 /* AddBankDetailsViewModel.swift */; };
 		BA5C4A7328D2D3AB0034F9B3 /* AddBankDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */; };
 		BA5C4A7528D2D3B90034F9B3 /* AddBankDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */; };
+		BA5D796029C7157F00F1A6F6 /* DBHCancelRideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D795F29C7157F00F1A6F6 /* DBHCancelRideModel.swift */; };
+		BA5D796229C7159500F1A6F6 /* DBHCancelRideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D796129C7159500F1A6F6 /* DBHCancelRideViewModel.swift */; };
+		BA5D796429C715AC00F1A6F6 /* DBHCancelRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D796329C715AC00F1A6F6 /* DBHCancelRideViewController.swift */; };
+		BA5D796A29C7226000F1A6F6 /* DBHFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D796929C7226000F1A6F6 /* DBHFeedbackViewController.swift */; };
+		BA5D796C29C7228600F1A6F6 /* DBHFeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D796B29C7228600F1A6F6 /* DBHFeedbackViewModel.swift */; };
+		BA5D796E29C7229900F1A6F6 /* DBHFeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D796D29C7229900F1A6F6 /* DBHFeedbackModel.swift */; };
+		BA5D797429C7268300F1A6F6 /* DBHRideHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797329C7268300F1A6F6 /* DBHRideHistoryViewController.swift */; };
+		BA5D797629C7269500F1A6F6 /* DBHRideHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797529C7269500F1A6F6 /* DBHRideHistoryModel.swift */; };
+		BA5D797829C726A500F1A6F6 /* DBHRideHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797729C726A500F1A6F6 /* DBHRideHistoryViewModel.swift */; };
+		BA5D797A29C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797929C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift */; };
 		BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68DDF528D4E49C00A91082 /* Imageextension.swift */; };
 		BA7B38FC28F1888400B2E6E9 /* AppDelegateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B38FB28F1888300B2E6E9 /* AppDelegateModel.swift */; };
 		BA7BB7B928F046FE00E0561B /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BB7B828F046FE00E0561B /* AppDelegateExtension.swift */; };
@@ -207,6 +220,9 @@
 		BA36D8A028C8C41300B73053 /* LNC_DriverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LNC_DriverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA36D8A428C8C41300B73053 /* LNC_DriverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNC_DriverUITests.swift; sourceTree = "<group>"; };
 		BA36D8A628C8C41300B73053 /* LNC_DriverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNC_DriverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BA3F793629C3666B009CA117 /* DBHRidePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRidePreviewViewController.swift; sourceTree = "<group>"; };
+		BA3F793829C3668D009CA117 /* DBHRidePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRidePreviewViewModel.swift; sourceTree = "<group>"; };
+		BA3F793A29C3669C009CA117 /* DBHRidePreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRidePreviewModel.swift; sourceTree = "<group>"; };
 		BA409B2028D029E100489F09 /* LNC_Driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LNC_Driver.entitlements; sourceTree = "<group>"; };
 		BA409B2128D02A1300489F09 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BA409B2428D02AA500489F09 /* ImagePickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
@@ -265,6 +281,16 @@
 		BA5C4A7028D2D3980034F9B3 /* AddBankDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsViewModel.swift; sourceTree = "<group>"; };
 		BA5C4A7228D2D3AB0034F9B3 /* AddBankDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsViewController.swift; sourceTree = "<group>"; };
 		BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankDetailsModel.swift; sourceTree = "<group>"; };
+		BA5D795F29C7157F00F1A6F6 /* DBHCancelRideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHCancelRideModel.swift; sourceTree = "<group>"; };
+		BA5D796129C7159500F1A6F6 /* DBHCancelRideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHCancelRideViewModel.swift; sourceTree = "<group>"; };
+		BA5D796329C715AC00F1A6F6 /* DBHCancelRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHCancelRideViewController.swift; sourceTree = "<group>"; };
+		BA5D796929C7226000F1A6F6 /* DBHFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHFeedbackViewController.swift; sourceTree = "<group>"; };
+		BA5D796B29C7228600F1A6F6 /* DBHFeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHFeedbackViewModel.swift; sourceTree = "<group>"; };
+		BA5D796D29C7229900F1A6F6 /* DBHFeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHFeedbackModel.swift; sourceTree = "<group>"; };
+		BA5D797329C7268300F1A6F6 /* DBHRideHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRideHistoryViewController.swift; sourceTree = "<group>"; };
+		BA5D797529C7269500F1A6F6 /* DBHRideHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRideHistoryModel.swift; sourceTree = "<group>"; };
+		BA5D797729C726A500F1A6F6 /* DBHRideHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRideHistoryViewModel.swift; sourceTree = "<group>"; };
+		BA5D797929C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRideHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BA68DDF528D4E49C00A91082 /* Imageextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageextension.swift; sourceTree = "<group>"; };
 		BA7B38FB28F1888300B2E6E9 /* AppDelegateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateModel.swift; sourceTree = "<group>"; };
 		BA7BB7B828F046FE00E0561B /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
@@ -532,6 +558,40 @@
 			path = LNC_DriverUITests;
 			sourceTree = "<group>";
 		};
+		BA3F793229C36631009CA117 /* DBHRidePreview */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F793529C36644009CA117 /* ViewModel */,
+				BA3F793429C36640009CA117 /* View */,
+				BA3F793329C3663A009CA117 /* Model */,
+			);
+			path = DBHRidePreview;
+			sourceTree = "<group>";
+		};
+		BA3F793329C3663A009CA117 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F793A29C3669C009CA117 /* DBHRidePreviewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA3F793429C36640009CA117 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F793629C3666B009CA117 /* DBHRidePreviewViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA3F793529C36644009CA117 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F793829C3668D009CA117 /* DBHRidePreviewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BA409B2328D02AA500489F09 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +782,10 @@
 		BA54E5E829C238B3005D9B97 /* DriverByTheHour */ = {
 			isa = PBXGroup;
 			children = (
+				BA5D796F29C7264B00F1A6F6 /* DBHHistory */,
+				BA5D796529C7221700F1A6F6 /* DBHFeedback */,
+				BA5D795B29C7153F00F1A6F6 /* DBHCancelRide */,
+				BA3F793229C36631009CA117 /* DBHRidePreview */,
 				BA54E5EC29C2AC9C005D9B97 /* ListOfAssignRides */,
 				BA54E5E929C238DF005D9B97 /* DriverByTheHour.storyboard */,
 			);
@@ -1054,6 +1118,109 @@
 			isa = PBXGroup;
 			children = (
 				BA5C4A7428D2D3B90034F9B3 /* AddBankDetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5D795B29C7153F00F1A6F6 /* DBHCancelRide */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D795E29C7155800F1A6F6 /* View */,
+				BA5D795D29C7155100F1A6F6 /* ViewModel */,
+				BA5D795C29C7154B00F1A6F6 /* Model */,
+			);
+			path = DBHCancelRide;
+			sourceTree = "<group>";
+		};
+		BA5D795C29C7154B00F1A6F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D795F29C7157F00F1A6F6 /* DBHCancelRideModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5D795D29C7155100F1A6F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D796129C7159500F1A6F6 /* DBHCancelRideViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5D795E29C7155800F1A6F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D796329C715AC00F1A6F6 /* DBHCancelRideViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5D796529C7221700F1A6F6 /* DBHFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D796829C7223300F1A6F6 /* Model */,
+				BA5D796729C7222B00F1A6F6 /* ViewModel */,
+				BA5D796629C7222600F1A6F6 /* View */,
+			);
+			path = DBHFeedback;
+			sourceTree = "<group>";
+		};
+		BA5D796629C7222600F1A6F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D796929C7226000F1A6F6 /* DBHFeedbackViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5D796729C7222B00F1A6F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D796B29C7228600F1A6F6 /* DBHFeedbackViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5D796829C7223300F1A6F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D796D29C7229900F1A6F6 /* DBHFeedbackModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5D796F29C7264B00F1A6F6 /* DBHHistory */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D797229C7266100F1A6F6 /* Model */,
+				BA5D797129C7265D00F1A6F6 /* View */,
+				BA5D797029C7265400F1A6F6 /* ViewModel */,
+			);
+			path = DBHHistory;
+			sourceTree = "<group>";
+		};
+		BA5D797029C7265400F1A6F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D797729C726A500F1A6F6 /* DBHRideHistoryViewModel.swift */,
+				BA5D797929C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA5D797129C7265D00F1A6F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D797329C7268300F1A6F6 /* DBHRideHistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5D797229C7266100F1A6F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D797529C7269500F1A6F6 /* DBHRideHistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2215,10 +2382,12 @@
 				BAFE539628E3E74D0075B091 /* WeekRideinfoModel.swift in Sources */,
 				BAE03E4C28E46121003EE6BA /* PaymentHistoryViewController.swift in Sources */,
 				BA2144CE28D07D0E00DC313B /* RegistrationUser.swift in Sources */,
+				BA5D796429C715AC00F1A6F6 /* DBHCancelRideViewController.swift in Sources */,
 				BABCB2CC28E545B100517908 /* ActivatedRewardProgramsViewModel.swift in Sources */,
 				BADF9C5B28D364B2002CA50A /* AddVehicleInfoViewController.swift in Sources */,
 				BA409B4828D02AB700489F09 /* EmployeesService.swift in Sources */,
 				BA5C4A6928D2CE730034F9B3 /* ProfileViewController.swift in Sources */,
+				BA5D796229C7159500F1A6F6 /* DBHCancelRideViewModel.swift in Sources */,
 				BA7B38FC28F1888400B2E6E9 /* AppDelegateModel.swift in Sources */,
 				BA5C4A3B28D2BD270034F9B3 /* SideMenuViewController.swift in Sources */,
 				BA88E56228E718EC004AFA6E /* RideReservations_Partner_Model.swift in Sources */,
@@ -2228,6 +2397,7 @@
 				BA54E5F329C2AFD0005D9B97 /* ListOfAssignRidesViewController.swift in Sources */,
 				BA409B3728D02AA600489F09 /* HttpRequestHelper.swift in Sources */,
 				BAFE539228E3E72D0075B091 /* WeekRideinfoViewController.swift in Sources */,
+				BA5D796C29C7228600F1A6F6 /* DBHFeedbackViewModel.swift in Sources */,
 				BA409B3928D02AA600489F09 /* TextFieldHelper.swift in Sources */,
 				BABCB2D028E54ECA00517908 /* HistoryOfRewardProgramsViewController.swift in Sources */,
 				BA409B3828D02AA600489F09 /* LncUserConstants .swift in Sources */,
@@ -2251,6 +2421,7 @@
 				BAF6290A28E7DB9E0098D763 /* EmployeesService2.swift in Sources */,
 				BA2144C428D070CC00DC313B /* ForgotPasswordUser.swift in Sources */,
 				BAE03E5228E49060003EE6BA /* SelfPartnerDetailsViewController.swift in Sources */,
+				BA3F793B29C3669C009CA117 /* DBHRidePreviewModel.swift in Sources */,
 				BAC0E6DD28EA866D004D6C25 /* StopsViewModel.swift in Sources */,
 				BADF5B4C28E8459E0027F75B /* OngoingRideDetailsViewModel.swift in Sources */,
 				BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */,
@@ -2277,17 +2448,20 @@
 				BA83F97628E99D21004494A4 /* FeedbackViewController.swift in Sources */,
 				BA83F95728E936D9004494A4 /* CancelRideViewController.swift in Sources */,
 				BA5C4A5728D2CD2F0034F9B3 /* ContactUsViewModel.swift in Sources */,
+				BA5D797A29C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift in Sources */,
 				BA8BF5AA28E5CED00087CFB1 /* AddManagePartnersViewController.swift in Sources */,
 				BADF5B4E28E846070027F75B /* OngoingRideDetailsViewController.swift in Sources */,
 				BABCB2A128E5296C00517908 /* RideHistoryViewModel.swift in Sources */,
 				BADF9C5928D3648D002CA50A /* AddVehicleInfoViewModel.swift in Sources */,
 				BABCB2A328E5298700517908 /* RideHistoryViewController.swift in Sources */,
 				BA409B3628D02AA600489F09 /* ImagePickerManager.swift in Sources */,
+				BA5D796029C7157F00F1A6F6 /* DBHCancelRideModel.swift in Sources */,
 				BA2144CC28D07CFA00DC313B /* RegistrationViewController.swift in Sources */,
 				BAE03E5028E4619B003EE6BA /* PaymentHistoryTableViewCell.swift in Sources */,
 				BABCB2AF28E538C800517908 /* ShowRideLocationViewController.swift in Sources */,
 				BA2144CA28D07CDD00DC313B /* RegistrationViewModel.swift in Sources */,
 				BAD16C7028EEF92600719662 /* NotificationViewModel.swift in Sources */,
+				BA3F793729C3666B009CA117 /* DBHRidePreviewViewController.swift in Sources */,
 				BA54E5F129C2AF39005D9B97 /* ListOfAssignRidesModel.swift in Sources */,
 				BA83F96C28E989F6004494A4 /* RideChargesPreviewViewController.swift in Sources */,
 				BA5C4A5128D2CCCF0034F9B3 /* ChangePasswordUserDetails.swift in Sources */,
@@ -2297,7 +2471,9 @@
 				BABCB2A528E5299A00517908 /* RideHistoryModel.swift in Sources */,
 				BA5C4A3D28D2BD3C0034F9B3 /* SideMenuModel.swift in Sources */,
 				BAD16C7428EEFBBF00719662 /* NotificationCell.swift in Sources */,
+				BA5D796A29C7226000F1A6F6 /* DBHFeedbackViewController.swift in Sources */,
 				BAFE538028E3DDF50075B091 /* Terms_PrivacyViewModel.swift in Sources */,
+				BA5D796E29C7229900F1A6F6 /* DBHFeedbackModel.swift in Sources */,
 				BA83F96128E94957004494A4 /* ChatModel.swift in Sources */,
 				BA4DEF4528E68696005A5139 /* RideReservations_Driver_Model.swift in Sources */,
 				BA5C4A4F28D2CCB80034F9B3 /* ChangePasswordViewController.swift in Sources */,
@@ -2307,6 +2483,8 @@
 				BA8B45F528ED696000BC325D /* AdditionalStopsCell.swift in Sources */,
 				BAD16C7628EF019C00719662 /* DashBoardViewModel.swift in Sources */,
 				BA54E5F529C2AFEE005D9B97 /* ListOfAssignRidesViewModel.swift in Sources */,
+				BA5D797429C7268300F1A6F6 /* DBHRideHistoryViewController.swift in Sources */,
+				BA5D797829C726A500F1A6F6 /* DBHRideHistoryViewModel.swift in Sources */,
 				BAFE539A28E3E79D0075B091 /* WeeklyPaymentsTableViewCell.swift in Sources */,
 				BABCB2C328E5452600517908 /* ActiveRewardsTableViewCell.swift in Sources */,
 				BA5C4A4328D2CAA30034F9B3 /* SettingsTableViewCell.swift in Sources */,
@@ -2317,6 +2495,7 @@
 				BAFE537E28E3DAAC0075B091 /* W9FormViewController.swift in Sources */,
 				BA5C4A5928D2CD480034F9B3 /* ContactUsViewController.swift in Sources */,
 				BAC0E6DF28EA867E004D6C25 /* StopsViewController.swift in Sources */,
+				BA3F793929C3668D009CA117 /* DBHRidePreviewViewModel.swift in Sources */,
 				BABCB2D428E54FCE00517908 /* HistoryOfRewardProgramsModel.swift in Sources */,
 				BA83F97828E99D30004494A4 /* FeedbackModel.swift in Sources */,
 				BA8BF5A028E5C48C0087CFB1 /* ManagePartnersModel.swift in Sources */,
@@ -2329,6 +2508,7 @@
 				BA4DEF4328E68689005A5139 /* RideReservationsViewController.swift in Sources */,
 				BAD16C6E28EEF91600719662 /* NotificationViewController.swift in Sources */,
 				BA8BF5B228E5E07F0087CFB1 /* DriverTypeViewModel.swift in Sources */,
+				BA5D797629C7269500F1A6F6 /* DBHRideHistoryModel.swift in Sources */,
 				BA5C4A4528D2CACB0034F9B3 /* SettingsViewController.swift in Sources */,
 				BA83F95528E936BA004494A4 /* CancelRideModel.swift in Sources */,
 			);

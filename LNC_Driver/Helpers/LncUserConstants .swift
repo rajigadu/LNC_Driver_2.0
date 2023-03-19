@@ -31,6 +31,7 @@ static let BankAccountNoCheck                         = "ACNumber and ReEnterACN
 static let passwordcharacters                         = "password must include 6 Characters"
 static let passwordRequiredChar             = "password should be atleast one number and one capital letter"
 static let LogoutAlert                                = "Are you sure you want to logout?"
+static let completeRide                                = "Are you sure you want to complete the ride?"
 static let ServerLoading                              = "Loading..."
 static let EmaildPasswordValid                        = "Email & password Should mandatory"
 static let EmaildValid                                = "Please Enter Your EmailID"
@@ -64,10 +65,12 @@ static let API_ADDBANKACCOUNTDETAILS_URL               = API_URl.API_SERVER_URL 
 static let API_BANKACCOUNTDETAILS_URL                  = API_URl.API_SERVER_URL +  "get-account-detail.php?"
 static let API_CURRENTRIDESTOPLIST_URL                 = API_URl.API_SERVER_URL +  "num-stops-addres-list.php?"
 static let API_FEEDBACKTOUSER_URL                      = API_URl.API_SERVER_URL +  "user-rating.php?"
+static let API_DBH_FEEDBACKTOUSER_URL                      = API_URl.API_SERVER_URL +  "dbh-user-rating.php?"
 static let API_W9FORM_URL                             = "https://lnc.latenightchauffeurs.com/lnc-administrator/admin/lnc-form/index-pay.php"
 //DRIVER API'S....
 static let API_LOCATIONLIST_URL                         = API_URl.API_SERVER_URL +  "location.php"
 static let API_DRIVERRIDEHISTORYLIST_URL                = API_URl.API_SERVER_URL +  "ride-histroy.php?"
+    static let API_DRIVER_DBH_RIDE_HISTORY_LIST_URL                = API_URl.API_SERVER_URL +  "dbh-ride-histroy.php?"
 static let API_DRIVERRIDEPAYMENTHISTORYLIST_URL         = API_URl.API_SERVER_URL +  "payment-history-complete-cancel.php?"
 static let API_DRIVERDERVICETOKEN_URL                   = API_URl.API_SERVER_URL +  "update_device_token.php?"
 static let API_DRIVERCURRENTRIDEDETAILS_URL             = API_URl.API_SERVER_URL +  "current-ride.php?"
@@ -84,6 +87,7 @@ static let API_DRIVERFUTURERIDECOMPLETE_URL             = API_URl.API_SERVER_URL
 static let API_DRIVERFUTURERIDECANCEL_URL               = API_URl.API_SERVER_URL +  "future-ride-cancel-by-driver.php?"
 static let API_PARTNERFUTURERIDECANCEL_URL              = API_URl.API_SERVER_URL +  "future-ride-cancel-by-partner.php?"
 static let API_DRIVERCURRENTRIDECANCEL_URL              = API_URl.API_SERVER_URL +  "cancel-ride.php?"
+static let API_DRIVER_DBH_RIDE_CANCEL_URL              = API_URl.API_SERVER_URL +  "dbh-cancel-ride.php?"
 static let API_PARTNERCURRENTRIDECANCEL_URL             = API_URl.API_SERVER_URL +  "ride-cancel-by-partner.php?"
 static let API_DRIVERFUTURERIDEPAYMENT_URL              = API_URl.API_SERVER_URL +  "do-payment-future.php?"// "do-payment-future.php?"//
 static let API_DRIVERRIDEPAYMENT_URL                    = API_URl.API_SERVER_URL +  "do-payment.php?"//do-payment-future.php
@@ -142,6 +146,8 @@ static let API_WAITINGCHARGESSTART_URL                 = API_URl.API_SERVER_URL 
 //Reward Program
 static let API_AVAILABLE_REWARD_PROG_URL               = API_URl.API_SERVER_URL +  "reward-program-list.php?"
 static let API_ACTIVATE_REWARD_PROG_URL                = API_URl.API_SERVER_URL +  "active-reward-program.php?"
+static let API_DBH_START_RIDE_URL                = API_URl.API_SERVER_URL +  "dbh-start-ride.php?"
+static let API_DBH_END_RIDE_URL                = API_URl.API_SERVER_URL +  "dbh-end-ride.php?"
 static let API_MY_REWARDS_URL                          = API_URl.API_SERVER_URL +  "my-reward-program-list.php?"
 
 static let API_HISTORY_REWARDS_URL                     = API_URl.API_SERVER_URL +  "history-reward-program-list.php?" //STATIC

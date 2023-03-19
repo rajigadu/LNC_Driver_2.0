@@ -73,13 +73,13 @@ extension ListOfAssignRidesViewController : UITableViewDelegate,UITableViewDataS
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let rideInfo = listofAssginRides[indexPath.row] as? ListOfAssignRidesDataR else {return}
-//        let Storyboard : UIStoryboard = UIStoryboard(name: "DriverByTheHour", bundle: nil)
-//        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DBHRidePreviewViewController") as! DBHRidePreviewViewController
-//        nxtVC.assignRideDetails = rideInfo
-//        self.navigationController?.pushViewController(nxtVC, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let rideInfo = listofAssginRides[indexPath.row] as? ListOfAssignRidesDataR else {return}
+        let Storyboard : UIStoryboard = UIStoryboard(name: "DriverByTheHour", bundle: nil)
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DBHRidePreviewViewController") as! DBHRidePreviewViewController
+        nxtVC.assignRideDetails = rideInfo
+        self.navigationController?.pushViewController(nxtVC, animated: true)
+    }
     
 }
 extension ListOfAssignRidesViewController {

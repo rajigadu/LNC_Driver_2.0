@@ -13,6 +13,8 @@ var LognedUserType = ""
 var newDeviceId = ""
 var inServerSavedDeviceId = ""
 var GOOGLE_API_KEY = "AIzaSyCNjXOJCvESsba4C2xYW208pVngaJyRGEY"
+var CurrentLatitude = ""
+var CurrentLongitude = ""
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -95,7 +95,8 @@ class DashBoardViewController: UIViewController {
                     let CurrentLongitudeValue = location.coordinate.longitude
                     self.str_UserCurrentLocationLatitude = String(CurrentLatitudeValue)
                     self.str_UserCurrentLocationLongitude = String(CurrentLongitudeValue)
-                    
+                    CurrentLatitude = String(CurrentLatitudeValue)
+                    CurrentLongitude = String(CurrentLongitudeValue)
                     let location = CLLocation(latitude: CurrentLatitudeValue, longitude: CurrentLongitudeValue)
                     CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
                         
