@@ -178,6 +178,9 @@ protocol LateNightChauffeursDriverServiceProtocol {
     
     //MARK: - Chat -- PARTNERTOCHATWITHDRIVERApi
     func requestForPartnerToChatWithDriverAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatData?, _ error: String?) -> ())
+    
+    //MARK: - DBH Chat -- driverCurrentRideDetailsAPI
+    func requestForDBHDriverToUserChattingAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatData?, _ error: String?) -> ())
 
     //MARK: - Chat -- driverCurrentRideDetailsAPI
     func requestForDriverCurrentRideDetailsAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ChatDetailsData?, _ error: String?) -> ())
@@ -538,7 +541,7 @@ extension ApiService {
         HttpRequestHelper().GET(url: API_URl.API_DRIVER_DBH_RIDE_HISTORY_LIST_URL, params: perams, httpHeader: .application_json) { success, data in
             if success {
                 do {
-                    let model = try JSONDecoder().decode(RideHistoryViewData.self, from: data!)
+                    let model = try JSONDecoder().decode(DBHRideHistoryData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

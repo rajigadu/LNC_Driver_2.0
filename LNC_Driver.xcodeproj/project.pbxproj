@@ -90,6 +90,8 @@
 		BA5D797629C7269500F1A6F6 /* DBHRideHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797529C7269500F1A6F6 /* DBHRideHistoryModel.swift */; };
 		BA5D797829C726A500F1A6F6 /* DBHRideHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797729C726A500F1A6F6 /* DBHRideHistoryViewModel.swift */; };
 		BA5D797A29C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797929C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift */; };
+		BA5D798029C72FC700F1A6F6 /* DBHChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D797F29C72FC700F1A6F6 /* DBHChatViewController.swift */; };
+		BA5D798229C7304300F1A6F6 /* DBHChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D798129C7304300F1A6F6 /* DBHChatViewModel.swift */; };
 		BA68DDF628D4E49C00A91082 /* Imageextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68DDF528D4E49C00A91082 /* Imageextension.swift */; };
 		BA7B38FC28F1888400B2E6E9 /* AppDelegateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B38FB28F1888300B2E6E9 /* AppDelegateModel.swift */; };
 		BA7BB7B928F046FE00E0561B /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7BB7B828F046FE00E0561B /* AppDelegateExtension.swift */; };
@@ -291,6 +293,8 @@
 		BA5D797529C7269500F1A6F6 /* DBHRideHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRideHistoryModel.swift; sourceTree = "<group>"; };
 		BA5D797729C726A500F1A6F6 /* DBHRideHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRideHistoryViewModel.swift; sourceTree = "<group>"; };
 		BA5D797929C72A0A00F1A6F6 /* DBHRideHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHRideHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		BA5D797F29C72FC700F1A6F6 /* DBHChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHChatViewController.swift; sourceTree = "<group>"; };
+		BA5D798129C7304300F1A6F6 /* DBHChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHChatViewModel.swift; sourceTree = "<group>"; };
 		BA68DDF528D4E49C00A91082 /* Imageextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageextension.swift; sourceTree = "<group>"; };
 		BA7B38FB28F1888300B2E6E9 /* AppDelegateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateModel.swift; sourceTree = "<group>"; };
 		BA7BB7B828F046FE00E0561B /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
@@ -782,6 +786,7 @@
 		BA54E5E829C238B3005D9B97 /* DriverByTheHour */ = {
 			isa = PBXGroup;
 			children = (
+				BA5D797B29C72F6000F1A6F6 /* DBHChat */,
 				BA5D796F29C7264B00F1A6F6 /* DBHHistory */,
 				BA5D796529C7221700F1A6F6 /* DBHFeedback */,
 				BA5D795B29C7153F00F1A6F6 /* DBHCancelRide */,
@@ -1223,6 +1228,39 @@
 				BA5D797529C7269500F1A6F6 /* DBHRideHistoryModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5D797B29C72F6000F1A6F6 /* DBHChat */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D797E29C72F7800F1A6F6 /* ViewModel */,
+				BA5D797D29C72F7400F1A6F6 /* Model */,
+				BA5D797C29C72F6E00F1A6F6 /* View */,
+			);
+			path = DBHChat;
+			sourceTree = "<group>";
+		};
+		BA5D797C29C72F6E00F1A6F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D797F29C72FC700F1A6F6 /* DBHChatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA5D797D29C72F7400F1A6F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA5D797E29C72F7800F1A6F6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA5D798129C7304300F1A6F6 /* DBHChatViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BA83F94C28E93645004494A4 /* CancelRide */ = {
@@ -2425,6 +2463,7 @@
 				BAC0E6DD28EA866D004D6C25 /* StopsViewModel.swift in Sources */,
 				BADF5B4C28E8459E0027F75B /* OngoingRideDetailsViewModel.swift in Sources */,
 				BABCB2D228E54FC000517908 /* HistoryOfRewardProgramsViewModel.swift in Sources */,
+				BA5D798029C72FC700F1A6F6 /* DBHChatViewController.swift in Sources */,
 				BA8BF5A828E5CEB80087CFB1 /* AddManagePartnersViewModel.swift in Sources */,
 				BAD16C7228EEF93200719662 /* NotificationModel.swift in Sources */,
 				BAFE538228E3DE620075B091 /* Terms_PrivacyModel.swift in Sources */,
@@ -2459,6 +2498,7 @@
 				BA2144CC28D07CFA00DC313B /* RegistrationViewController.swift in Sources */,
 				BAE03E5028E4619B003EE6BA /* PaymentHistoryTableViewCell.swift in Sources */,
 				BABCB2AF28E538C800517908 /* ShowRideLocationViewController.swift in Sources */,
+				BA5D798229C7304300F1A6F6 /* DBHChatViewModel.swift in Sources */,
 				BA2144CA28D07CDD00DC313B /* RegistrationViewModel.swift in Sources */,
 				BAD16C7028EEF92600719662 /* NotificationViewModel.swift in Sources */,
 				BA3F793729C3666B009CA117 /* DBHRidePreviewViewController.swift in Sources */,

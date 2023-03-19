@@ -16,8 +16,12 @@ class ListOfAssignRidesViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.driverGetAssignRidesListAPI()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.driverGetAssignRidesListAPI()
     }
     @IBAction func openMenuBtnref(_ sender: Any) {
         self.navigateToSideMenu()

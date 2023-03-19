@@ -25,7 +25,7 @@ struct DBHRideHistoryModel : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
        // message = try values.decodeIfPresent(String.self, forKey: .message)
         status = try values.decodeIfPresent(String.self, forKey: .status)
-        data = try values.decodeIfPresent([RideHistoryViewDatar].self, forKey: .data)
+        data = try values.decodeIfPresent([DBHRideHistoryDatar].self, forKey: .data)
     }
 
 }

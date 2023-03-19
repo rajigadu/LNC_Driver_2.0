@@ -93,6 +93,7 @@ static let API_DRIVERFUTURERIDEPAYMENT_URL              = API_URl.API_SERVER_URL
 static let API_DRIVERRIDEPAYMENT_URL                    = API_URl.API_SERVER_URL +  "do-payment.php?"//do-payment-future.php
 static let API_HAILEDRIDEFEATURE_URL                    = API_URl.API_SERVER_URL +  "countpeople.php?"
 static let API_DRIVER_CHATWITHUSER_URL                  = API_URl.API_SERVER_URL +  "chat.php?"
+static let API_DBH_DRIVER_CHATWITHUSER_URL                  = API_URl.API_SERVER_URL +  "dbh-chat.php?"
 static let API_DRIVER_CHATWITHPARTNER_URL               = API_URl.API_SERVER_URL +  "driver-chat.php?"
 static let API_DRIVERSLIST_URL                          = API_URl.API_SERVER_URL +  "all_drivers.php"
 static let API_ALLDRIVERSCHATHISTORY_URL                = API_URl.API_SERVER_URL +  "driver_chat_history.php"

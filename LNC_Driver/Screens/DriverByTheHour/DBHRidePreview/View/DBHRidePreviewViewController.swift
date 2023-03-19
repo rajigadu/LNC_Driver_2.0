@@ -16,6 +16,7 @@ class DBHRidePreviewViewController: UIViewController {
     @IBOutlet weak var RideBookingDateLabel: UILabel!
     @IBOutlet weak var RideStatusLabel: UILabel!
     @IBOutlet weak var StartRideButton: UIButton!
+    @IBOutlet weak var CnacelRideButton: UIButton!
     
     var assignRideDetails: ListOfAssignRidesDataR?
     
@@ -34,8 +35,23 @@ class DBHRidePreviewViewController: UIViewController {
         self.CustomerNumberLabel.text = assignRideDetails?.mobile ?? ""
         self.PickUpAddressLabel.text = "Pickup: " + (assignRideDetails?.pickup_address ?? "")
         self.RideBookingDateLabel.text = "Pickup Date/Time: " + (assignRideDetails?.otherdate ?? "") + " " + (assignRideDetails?.time ?? "")
-        //self.RideStatusLabel.isHidden = true
-        self.RideStatusLabel.isHidden = self.StartRideButton.currentTitle == "COMPLETE RIDE" ? false : true
+        
+        self.CnacelRideButton.isHidden = false
+        if self.assignRideDetails?.status  == "0" {
+            //not yet Started
+            self.StartRideButton.setTitle("START RIDE", for: .normal)
+            self.RideStatusLabel.isHidden = true
+        } else if self.assignRideDetails?.status  == "1" {
+            //Started
+            self.StartRideButton.setTitle("COMPLETE RIDE", for: .normal)
+            self.RideStatusLabel.isHidden = false
+            self.CnacelRideButton.isHidden = true
+        } else if self.assignRideDetails?.status  == "2" {
+            //Completed
+            self.StartRideButton.setTitle("RIDE COMPLETEd", for: .normal)
+            self.StartRideButton.isUserInteractionEnabled = false
+            self.RideStatusLabel.isHidden = true
+        }
     }
 
     @IBAction func CallToUserButton(_ sender: Any) {
@@ -58,11 +74,9 @@ class DBHRidePreviewViewController: UIViewController {
             return
         }
         UserDefaults.standard.set("Coming From Future Ride", forKey: "ChatFromLaunchScreen")
-        let Storyboard : UIStoryboard = UIStoryboard(name: "OngoingRides", bundle: nil)
-        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
-        nxtVC.str_ChatStatus = ""
-        nxtVC.str_CurrentRideDriverID = userID
-        nxtVC.str_ChatType = "ToUser"
+        let Storyboard : UIStoryboard = UIStoryboard(name: "DriverByTheHour", bundle: nil)
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DBHChatViewController") as! DBHChatViewController
+        nxtVC.userID = userID
         nxtVC.vcCmgFrom  = "AppDelegate"
         self.navigationController?.pushViewController(nxtVC, animated: true)
     }
@@ -147,6 +161,8 @@ extension DBHRidePreviewViewController {
                     indicator.hideActivityIndicator()
                     self.ShowAlert(message: userdata.msg ?? "Your ride has been started" )
                     self.StartRideButton.setTitle("COMPLETE RIDE", for: .normal)
+                    self.RideStatusLabel.isHidden = false
+                    self.CnacelRideButton.isHidden = true
                 }
             } else {
                 DispatchQueue.main.async { [self] in
@@ -171,7 +187,7 @@ extension DBHRidePreviewViewController {
             if Success, let userdata = userModel {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    let alertController = UIAlertController(title: kApptitle, message: userData.msg ?? "", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: kApptitle, message: userdata.msg ?? "", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                         let Storyboard : UIStoryboard = UIStoryboard(name: "DriverByTheHour", bundle: nil)
                         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DBHFeedbackViewController") as! DBHFeedbackViewController

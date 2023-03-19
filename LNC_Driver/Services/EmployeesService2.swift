@@ -416,6 +416,28 @@ extension ApiService {
         }
     }
 }
+
+//MARK: - DBH - Chat -- DriverToUser ChattingAPI
+extension ApiService {
+    func requestForDBHDriverToUserChattingAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {
+        if Connectivity.isNotConnectedToInternet{
+            completion(false, nil, "I18n.NoInterNetString")
+        }
+        HttpRequestHelper().GET(url: API_URl.API_DBH_DRIVER_CHATWITHUSER_URL, params: perams, httpHeader: .application_json) { success, data in
+            if success {
+                do {
+                    let model = try JSONDecoder().decode(ChatData.self, from: data!)
+                    completion(true, model, nil)
+                } catch {
+                    completion(false, nil, I18n.ModelDecodeErrorString)
+                }
+            } else {
+                completion(false, nil, I18n.GetRequestFailedString)
+            }
+        }
+    }
+}
+
 //MARK: - Chat -- DriverToUserChattingAPI
 extension ApiService {
     func requestForDriverToUserChattingAPIServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, ChatData?, String?) -> ()) {

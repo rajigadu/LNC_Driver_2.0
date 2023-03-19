@@ -29,7 +29,7 @@ class DBHRideHistoryViewController: UIViewController {
         loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         self.lbl_NoListRef.isHidden = true
         
-        self.rideListAPI()
+        //self.rideListAPI()
     }
     
     @IBAction func openMenuBtnref(_ sender: Any) {
@@ -50,29 +50,23 @@ extension DBHRideHistoryViewController : UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell:DBHRideHistoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DBHRideHistoryTableViewCell", for: indexPath) as? DBHRideHistoryTableViewCell else {return UITableViewCell()}
-        var str_BookingType = ary_PaymentHistoryInfo[indexPath.row].booking_type ?? ""
-        var str_CurrentRideDateTime = ""
         
+        
+        //Date / Time
         let str_CurrentRideDate = ary_PaymentHistoryInfo[indexPath.row].otherdate ?? ""
         let str_CurrentRideTime = ary_PaymentHistoryInfo[indexPath.row].time ?? ""
-        let str_Userlastname = ary_PaymentHistoryInfo[indexPath.row].last_name ?? ""
-        let str_UserFirstname = ary_PaymentHistoryInfo[indexPath.row].first_name ?? ""
-     
-        str_CurrentRideDateTime = str_CurrentRideDate + " " + str_CurrentRideTime
-        
-        let str_userFullname = str_UserFirstname + " " + str_Userlastname
-        let pickUPAddress = ary_PaymentHistoryInfo[indexPath.row].pickup_address ?? ""
-        let dropAddress = ary_PaymentHistoryInfo[indexPath.row].drop_address ?? ""
-        
-        //Date
-        let AttributeStr = "Ride Date : " + str_CurrentRideDateTime
+        let AttributeStr = "Ride Date : " + str_CurrentRideDate + " " + str_CurrentRideTime
         let attrStri = NSMutableAttributedString.init(string:AttributeStr)
         let nsRange = NSString(string: AttributeStr).range(of: "Ride Date :", options: String.CompareOptions.caseInsensitive)
         attrStri.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange)
         cell.lbl_JourneyDateRef.attributedText = attrStri
-
-        //Name Pickup Drop
-        let AttributeStr2 = "Customer Name : " + str_userFullname + " \n\n Ride Start : " + pickUPAddress + " \n Ride End : " + dropAddress
+        
+        //UserName // Pickup Address
+        let str_Userlastname = ary_PaymentHistoryInfo[indexPath.row].last_name ?? ""
+        let str_UserFirstname = ary_PaymentHistoryInfo[indexPath.row].first_name ?? ""
+        let str_userFullname = str_UserFirstname + " " + str_Userlastname
+        let pickUPAddress = ary_PaymentHistoryInfo[indexPath.row].pickup_address ?? ""
+        let AttributeStr2 = "Customer Name : " + str_userFullname + " \n\n Ride Start : " + pickUPAddress
         let attrStri2 = NSMutableAttributedString.init(string:AttributeStr2)
         var nsRange2 = NSString(string: AttributeStr2).range(of: "Custumer Name :", options: String.CompareOptions.caseInsensitive)
         attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange2)
@@ -80,11 +74,12 @@ extension DBHRideHistoryViewController : UITableViewDelegate, UITableViewDataSou
         nsRange2 = NSString(string: AttributeStr2).range(of: "Ride Start :", options: String.CompareOptions.caseInsensitive)
         attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange2)
         
-        nsRange2 = NSString(string: AttributeStr2).range(of: "Ride End :", options: String.CompareOptions.caseInsensitive)
-        attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange2)
         cell.lbl_RideInfoRef.attributedText = attrStri2
 
 
+        
+        // Total hrs
+        
         let str_Distance = ary_PaymentHistoryInfo[indexPath.row].distance ?? "0.00"
         let distanceinFloat = Float(str_Distance)
         
@@ -95,6 +90,7 @@ extension DBHRideHistoryViewController : UITableViewDelegate, UITableViewDataSou
         cell.lbl_DistanceRef.attributedText = attrStri3
 
         
+        // Total Amount
         let str_noaddtionastops = ary_PaymentHistoryInfo[indexPath.row].unplanned_stops ?? ""
         let AttributeStr4 = "Number Of Additional Stops : " + str_noaddtionastops
         let attrStri4 = NSMutableAttributedString.init(string:AttributeStr4)
