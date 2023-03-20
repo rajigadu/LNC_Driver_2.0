@@ -52,7 +52,7 @@ protocol LateNightChauffeursDriverServiceProtocol {
     //MARK: - Activate Reward
     func requestForActivateRewardServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: ActivateRewardProgramData?, _ error: String?) -> ())
     //MARK: - DBH Ride End Api
-    func requestForDbhRideEndApiServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DbhRideStartData?, _ error: String?) -> ())
+    func requestForDbhRideEndApiServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DbhEndRideData?, _ error: String?) -> ())
     
     //MARK: - DBH Ride Start Api
     func requestForDbhRidestartApiServices(_ perams: Dictionary<String, String>, completion: @escaping (_ success: Bool, _ results: DbhRideStartData?, _ error: String?) -> ())
@@ -538,7 +538,7 @@ extension ApiService {
         if Connectivity.isNotConnectedToInternet{
             completion(false, nil, "I18n.NoInterNetString")
         }
-        HttpRequestHelper().GET(url: API_URl.API_DRIVER_DBH_RIDE_HISTORY_LIST_URL, params: perams, httpHeader: .application_json) { success, data in
+        HttpRequestHelper().POST(url: API_URl.API_DRIVER_DBH_RIDE_HISTORY_LIST_URL, params: perams, httpHeader: .application_json) { success, data in
             if success {
                 do {
                     let model = try JSONDecoder().decode(DBHRideHistoryData.self, from: data!)
@@ -597,14 +597,14 @@ extension ApiService {
 
 //MARK: - DBH Ride End Api
 extension ApiService {
-    func requestForDbhRideEndApiServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DbhRideStartData?, String?) -> ()) {
+    func requestForDbhRideEndApiServices(_ perams: Dictionary<String, String>, completion: @escaping (Bool, DbhEndRideData?, String?) -> ()) {
         if Connectivity.isNotConnectedToInternet{
             completion(false, nil, "I18n.NoInterNetString")
         }
         HttpRequestHelper().GET(url: API_URl.API_DBH_END_RIDE_URL, params: perams, httpHeader: .application_json) { success, data in
             if success {
                 do {
-                    let model = try JSONDecoder().decode(DbhRideStartData.self, from: data!)
+                    let model = try JSONDecoder().decode(DbhEndRideData.self, from: data!)
                     completion(true, model, nil)
                 } catch {
                     completion(false, nil, I18n.ModelDecodeErrorString)

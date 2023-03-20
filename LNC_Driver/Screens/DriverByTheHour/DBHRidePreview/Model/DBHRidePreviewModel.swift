@@ -28,3 +28,37 @@ struct DbhRideStartModel : Codable {
     }
 }
 
+typealias DbhEndRideData = DbhEndRideModel
+
+struct DbhEndRideModel : Codable {
+    let data : [DbhEndRideDataR]?
+    let status : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case data = "data"
+        case status = "status"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        data = try values.decodeIfPresent([DbhEndRideDataR].self, forKey: .data)
+        status = try values.decodeIfPresent(String.self, forKey: .status)
+    }
+
+}
+
+struct DbhEndRideDataR : Codable {
+    let msg : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case msg = "msg"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        msg = try values.decodeIfPresent(String.self, forKey: .msg)
+    }
+
+}

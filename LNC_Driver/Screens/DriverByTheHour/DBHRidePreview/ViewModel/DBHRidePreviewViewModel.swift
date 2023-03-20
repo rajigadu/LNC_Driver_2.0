@@ -26,7 +26,7 @@ class DBHRidePreviewViewModel : NSObject {
         }
     }
     
-    func DbhRideEndApiIntigration(perams: [String: String], complete: @escaping (Bool, DbhRideStartData?,String?)-> ()) {
+    func DbhRideEndApiIntigration(perams: [String: String], complete: @escaping (Bool, DbhEndRideData?,String?)-> ()) {
         DBHRideReservationService.requestForDbhRideEndApiServices(perams){ success, model, error in
             if success, let UserData = model {
                complete(true,UserData,nil)

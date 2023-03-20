@@ -77,9 +77,9 @@ extension RideHistoryViewController : UITableViewDelegate, UITableViewDataSource
         cell.lbl_JourneyDateRef.attributedText = attrStri
 
         //Name Pickup Drop
-        let AttributeStr2 = "Customer Name : " + str_userFullname + " \n\n Ride Start : " + pickUPAddress + " \n Ride End : " + dropAddress
+        let AttributeStr2 = "Customer Name : " + str_userFullname + " \n\nRide Start : " + pickUPAddress + " \nRide End : " + dropAddress
         let attrStri2 = NSMutableAttributedString.init(string:AttributeStr2)
-        var nsRange2 = NSString(string: AttributeStr2).range(of: "Custumer Name :", options: String.CompareOptions.caseInsensitive)
+        var nsRange2 = NSString(string: AttributeStr2).range(of: "Customer Name : ", options: String.CompareOptions.caseInsensitive)
         attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange2)
         
         nsRange2 = NSString(string: AttributeStr2).range(of: "Ride Start :", options: String.CompareOptions.caseInsensitive)
@@ -103,7 +103,7 @@ extension RideHistoryViewController : UITableViewDelegate, UITableViewDataSource
         let str_noaddtionastops = ary_PaymentHistoryInfo[indexPath.row].unplanned_stops ?? ""
         let AttributeStr4 = "Number Of Additional Stops : " + str_noaddtionastops
         let attrStri4 = NSMutableAttributedString.init(string:AttributeStr4)
-        let nsRange4 = NSString(string: AttributeStr4).range(of: "Number Of Additional Stops:", options: String.CompareOptions.caseInsensitive)
+        let nsRange4 = NSString(string: AttributeStr4).range(of: "Number Of Additional Stops : ", options: String.CompareOptions.caseInsensitive)
         attrStri4.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange4)
         cell.NumbAdditionalstopsRef.attributedText = attrStri4
 

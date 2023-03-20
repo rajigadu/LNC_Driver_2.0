@@ -177,17 +177,19 @@ extension DBHRidePreviewViewController {
 extension DBHRidePreviewViewController {
     func endRideApiService() {
         guard let rideID = assignRideDetails?.id as? String else {return}
+        guard let userID = assignRideDetails?.user_id as? String else {return}
         guard let firstName = assignRideDetails?.first_name as? String else {return}
         guard let lastName = assignRideDetails?.last_name as? String else {return}
         guard let driverID = UserDefaults.standard.string(forKey: "DriverLoginID") as? String else {return}
         indicator.showActivityIndicator()
-        let startTIme : String = convertTodaydateformate(inputDate: Date(), outputDateFormate: "yyyy-MM-dd hh:mm a")
-        let perams = ["rideid": rideID, "driverid": driverID,"time": startTIme]
+        let endTime : String = convertTodaydateformate(inputDate: Date(), outputDateFormate: "yyyy-MM-dd hh:mm a")
+        let perams = ["user_id":userID,"booking_id": rideID, "driverid": driverID,"PayDateTime": endTime,"end_time": endTime]
         self.viewModel.DbhRideEndApiIntigration(perams: perams) { Success, userModel, error in
             if Success, let userdata = userModel {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
-                    let alertController = UIAlertController(title: kApptitle, message: userdata.msg ?? "", preferredStyle: .alert)
+                    guard let msg = userdata.data?[0].msg as? String else {return}
+                    let alertController = UIAlertController(title: kApptitle, message: msg, preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
                         let Storyboard : UIStoryboard = UIStoryboard(name: "DriverByTheHour", bundle: nil)
                         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "DBHFeedbackViewController") as! DBHFeedbackViewController

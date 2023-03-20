@@ -148,7 +148,7 @@ static let API_WAITINGCHARGESSTART_URL                 = API_URl.API_SERVER_URL 
 static let API_AVAILABLE_REWARD_PROG_URL               = API_URl.API_SERVER_URL +  "reward-program-list.php?"
 static let API_ACTIVATE_REWARD_PROG_URL                = API_URl.API_SERVER_URL +  "active-reward-program.php?"
 static let API_DBH_START_RIDE_URL                = API_URl.API_SERVER_URL +  "dbh-start-ride.php?"
-static let API_DBH_END_RIDE_URL                = API_URl.API_SERVER_URL +  "dbh-end-ride.php?"
+static let API_DBH_END_RIDE_URL                = API_URl.API_SERVER_URL +  "dbh-complete-ride.php?"
 static let API_MY_REWARDS_URL                          = API_URl.API_SERVER_URL +  "my-reward-program-list.php?"
 
 static let API_HISTORY_REWARDS_URL                     = API_URl.API_SERVER_URL +  "history-reward-program-list.php?" //STATIC

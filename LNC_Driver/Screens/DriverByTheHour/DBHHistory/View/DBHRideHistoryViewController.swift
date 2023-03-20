@@ -29,7 +29,7 @@ class DBHRideHistoryViewController: UIViewController {
         loginDriverIDStr = UserDefaults.standard.string(forKey: "DriverLoginID") ?? ""
         self.lbl_NoListRef.isHidden = true
         
-        //self.rideListAPI()
+        self.rideListAPI()
     }
     
     @IBAction func openMenuBtnref(_ sender: Any) {
@@ -66,12 +66,12 @@ extension DBHRideHistoryViewController : UITableViewDelegate, UITableViewDataSou
         let str_UserFirstname = ary_PaymentHistoryInfo[indexPath.row].first_name ?? ""
         let str_userFullname = str_UserFirstname + " " + str_Userlastname
         let pickUPAddress = ary_PaymentHistoryInfo[indexPath.row].pickup_address ?? ""
-        let AttributeStr2 = "Customer Name : " + str_userFullname + " \n\n Ride Start : " + pickUPAddress
+        let AttributeStr2 = "Customer Name : " + str_userFullname + " \n\nRide Start : " + pickUPAddress
         let attrStri2 = NSMutableAttributedString.init(string:AttributeStr2)
-        var nsRange2 = NSString(string: AttributeStr2).range(of: "Custumer Name :", options: String.CompareOptions.caseInsensitive)
+        var nsRange2 = NSString(string: AttributeStr2).range(of: "Customer Name : ", options: String.CompareOptions.caseInsensitive)
         attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange2)
         
-        nsRange2 = NSString(string: AttributeStr2).range(of: "Ride Start :", options: String.CompareOptions.caseInsensitive)
+        nsRange2 = NSString(string: AttributeStr2).range(of: "Ride Start : ", options: String.CompareOptions.caseInsensitive)
         attrStri2.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange2)
         
         cell.lbl_RideInfoRef.attributedText = attrStri2
@@ -80,37 +80,26 @@ extension DBHRideHistoryViewController : UITableViewDelegate, UITableViewDataSou
         
         // Total hrs
         
-        let str_Distance = ary_PaymentHistoryInfo[indexPath.row].distance ?? "0.00"
-        let distanceinFloat = Float(str_Distance)
+        let ride_total_time = ary_PaymentHistoryInfo[indexPath.row].ride_total_time ?? "00"
+        let ride_total_minute = ary_PaymentHistoryInfo[indexPath.row].ride_total_minute ?? "00"
         
-        let AttributeStr3 = "Distance : " + str_Distance + " Miles"
+        let AttributeStr3 = "Ride Total Time : " + ride_total_time + " : " + ride_total_minute + " Hrs"
         let attrStri3 = NSMutableAttributedString.init(string:AttributeStr3)
-        let nsRange3 = NSString(string: AttributeStr3).range(of: "Distance :", options: String.CompareOptions.caseInsensitive)
+        let nsRange3 = NSString(string: AttributeStr3).range(of: "Ride Total Time : ", options: String.CompareOptions.caseInsensitive)
         attrStri3.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange3)
         cell.lbl_DistanceRef.attributedText = attrStri3
 
         
         // Total Amount
-        let str_noaddtionastops = ary_PaymentHistoryInfo[indexPath.row].unplanned_stops ?? ""
-        let AttributeStr4 = "Number Of Additional Stops : " + str_noaddtionastops
+        let hourly_rate_while_ride_completed = ary_PaymentHistoryInfo[indexPath.row].hourly_rate_while_ride_completed ?? ""
+        let AttributeStr4 = "Hourly Rate: " + hourly_rate_while_ride_completed + "/Hrs"
         let attrStri4 = NSMutableAttributedString.init(string:AttributeStr4)
-        let nsRange4 = NSString(string: AttributeStr4).range(of: "Number Of Additional Stops:", options: String.CompareOptions.caseInsensitive)
+        let nsRange4 = NSString(string: AttributeStr4).range(of: "Hourly Rate:", options: String.CompareOptions.caseInsensitive)
         attrStri4.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange4)
         cell.NumbAdditionalstopsRef.attributedText = attrStri4
 
         cell.selectionStyle = .none
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let Storyboard : UIStoryboard = UIStoryboard(name: "RidesHistory", bundle: nil)
-        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "ShowRideLocationViewController") as! ShowRideLocationViewController
-        nxtVC.ridePickUPLat = ary_PaymentHistoryInfo[indexPath.row].pickup_lat ?? ""
-        nxtVC.ridePickUPLong = ary_PaymentHistoryInfo[indexPath.row].pickup_long ?? ""
-        nxtVC.rideDropLat = ary_PaymentHistoryInfo[indexPath.row].d_lat ?? ""
-        nxtVC.rideDropLong = ary_PaymentHistoryInfo[indexPath.row].d_long ?? ""
-        nxtVC.rideDistance = ary_PaymentHistoryInfo[indexPath.row].distance ?? ""
-        self.navigationController?.pushViewController(nxtVC, animated: true)
     }
     
 }
