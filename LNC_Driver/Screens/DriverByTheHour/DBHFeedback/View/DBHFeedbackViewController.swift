@@ -86,7 +86,7 @@ extension DBHFeedbackViewController {
                 DispatchQueue.main.async { [self] in
                     indicator.hideActivityIndicator()
                     if userFeedBackData.status == "1" {
-                        self.ShowAlertWithPush(message: userFeedBackData.userData?[0].message ?? "Your feedback has been submitted.", className: "PaymentHistoryViewController", storyBoard: "RidesHistory", Animation: true)
+                        self.ShowAlertWithPush(message: userFeedBackData.userData?[0].message ?? "Your feedback has been submitted.", className: "DBHRideHistoryViewController", storyBoard: "DriverByTheHour", Animation: true)
                     } else {
                         self.showToast(message: I18n.TryAgain, font: .systemFont(ofSize: 12.0))
                     }
