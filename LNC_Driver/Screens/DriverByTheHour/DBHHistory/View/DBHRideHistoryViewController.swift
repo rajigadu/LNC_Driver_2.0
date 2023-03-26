@@ -88,11 +88,11 @@ extension DBHRideHistoryViewController : UITableViewDelegate, UITableViewDataSou
         let nsRange3 = NSString(string: AttributeStr3).range(of: "Ride Total Time : ", options: String.CompareOptions.caseInsensitive)
         attrStri3.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange3)
         cell.lbl_DistanceRef.attributedText = attrStri3
-
+       
         
         // Total Amount
         let hourly_rate_while_ride_completed = ary_PaymentHistoryInfo[indexPath.row].hourly_rate_while_ride_completed ?? ""
-        let AttributeStr4 = "Hourly Rate: " + hourly_rate_while_ride_completed + "/Hrs"
+        let AttributeStr4 = "Hourly Rate: " + "$ " + hourly_rate_while_ride_completed + "/Hrs"
         let attrStri4 = NSMutableAttributedString.init(string:AttributeStr4)
         let nsRange4 = NSString(string: AttributeStr4).range(of: "Hourly Rate:", options: String.CompareOptions.caseInsensitive)
         attrStri4.addAttributes([NSAttributedString.Key.foregroundColor : UIColor(red: 35.0/255.0, green: 159.0/255.0, blue: 98.0/255, alpha: 1.0)], range: nsRange4)
