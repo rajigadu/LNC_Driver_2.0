@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyd-36-nzE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gyd-36-nzE">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,7 +26,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssignRidesTableViewCell" rowHeight="101" id="Q8q-UA-17q" customClass="AssignRidesTableViewCell" customModule="LNC_Driver" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="101"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q8q-UA-17q" id="hPO-od-ihD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
@@ -131,7 +131,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gyd-36-nzE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wky-4j-RpQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -680,7 +680,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DBHRideHistoryTableViewCell" rowHeight="122" id="RsE-zr-3Gv" customClass="DBHRideHistoryTableViewCell" customModule="LNC_Driver" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="122"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RsE-zr-3Gv" id="3zE-He-FCj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
@@ -719,7 +719,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Additional Stops:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4D-fr-4w9">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Additional Stops:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4D-fr-4w9">
                                                             <rect key="frame" x="8" y="85" width="288" height="16"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                             <nil key="textColor"/>
@@ -810,7 +810,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YPy-JG-lOu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Pu-SK-vAu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -888,7 +888,7 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.79166666669999997" green="0.79166666669999997" blue="0.79166666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatTableViewCell" rowHeight="108" id="yx6-kq-hiA" customClass="ChatTableViewCell" customModule="LNC_Driver" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="108"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yx6-kq-hiA" id="Vtd-0G-IC2">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
@@ -1013,20 +1013,25 @@
             <point key="canvasLocation" x="4234" y="-23"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4v8-dL-MQm">
+            <size key="intrinsicContentSize" width="170" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="backgroundimage" width="400" height="700"/>
         <image name="chat" width="32" height="32"/>
         <image name="greenbubble" width="375" height="100"/>
-        <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="navigation" width="32" height="32"/>
-        <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="personIcon" width="100" height="100"/>
         <image name="phonecall" width="32" height="32"/>
         <image name="refresh" width="16" height="16"/>
         <image name="responderpic" width="128" height="128"/>
         <image name="whitebubble" width="320" height="100"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

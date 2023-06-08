@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 class DBHRidePreviewViewController: UIViewController {
 
     @IBOutlet weak var CustomerImage: UIImageView!
@@ -24,10 +24,37 @@ class DBHRidePreviewViewController: UIViewController {
         return DBHRidePreviewViewModel()
     }()
     
+    var locManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    var currentLat = ""
+    var currentLong = ""
+    var currentAddress = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        locManager.requestWhenInUseAuthorization()
+        if
+           CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+           CLLocationManager.authorizationStatus() ==  .authorizedAlways
+        {
+            currentLocation = locManager.location
+        }
+        self.getmyAddress()
+
         // Do any additional setup after loading the view.
         self.loadUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getmyAddress()
+    }
+    
+    func getmyAddress() {
+        currentLong = "\(currentLocation.coordinate.longitude)"
+        currentLat = "\(currentLocation.coordinate.latitude)"
+        self.getAdressName(coords: CLLocation(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude))
+        print(currentLong,currentLat,currentAddress)
+
     }
     
     func loadUI() {
@@ -152,9 +179,10 @@ extension DBHRidePreviewViewController {
     func startRideApiService() {
         guard let rideID = assignRideDetails?.id as? String else {return}
         guard let driverID = UserDefaults.standard.string(forKey: "DriverLoginID") as? String else {return}
+        self.getmyAddress()
         indicator.showActivityIndicator()
         let startTIme : String = convertTodaydateformate(inputDate: Date(), outputDateFormate: "yyyy-MM-dd hh:mm a")
-        let perams = ["rideid": rideID, "driverid": driverID,"time": startTIme]
+        let perams = ["rideid": rideID, "driverid": driverID,"time": startTIme,"d_address": currentAddress,"d_lat":currentLat,"d_long":currentLong]
         self.viewModel.DbhRideStartApiIntigration(perams: perams) { Success, userModel, error in
             if Success, let userdata = userModel {
                 DispatchQueue.main.async { [self] in
@@ -181,9 +209,10 @@ extension DBHRidePreviewViewController {
         guard let firstName = assignRideDetails?.first_name as? String else {return}
         guard let lastName = assignRideDetails?.last_name as? String else {return}
         guard let driverID = UserDefaults.standard.string(forKey: "DriverLoginID") as? String else {return}
+        self.getmyAddress()
         indicator.showActivityIndicator()
         let endTime : String = convertTodaydateformate(inputDate: Date(), outputDateFormate: "yyyy-MM-dd hh:mm a")
-        let perams = ["user_id":userID,"booking_id": rideID, "driverid": driverID,"PayDateTime": endTime,"end_time": endTime]
+        let perams = ["user_id":userID,"booking_id": rideID, "driverid": driverID,"PayDateTime": endTime,"end_time": endTime,"d_address": currentAddress,"d_lat":currentLat,"d_long":currentLong]
         self.viewModel.DbhRideEndApiIntigration(perams: perams) { Success, userModel, error in
             if Success, let userdata = userModel {
                 DispatchQueue.main.async { [self] in
@@ -210,4 +239,39 @@ extension DBHRidePreviewViewController {
             }
         }
     }
+    
+    func getAdressName(coords: CLLocation) {
+        CLGeocoder().reverseGeocodeLocation(coords) { (placemark, error) in
+                if error != nil {
+                    print("Hay un error")
+                } else {
+
+                    let place = placemark! as [CLPlacemark]
+                    if place.count > 0 {
+                        let place = placemark![0]
+                        var adressString : String = ""
+                        if place.thoroughfare != nil {
+                            adressString = adressString + place.thoroughfare! + ", "
+                        }
+                        if place.subThoroughfare != nil {
+                            adressString = adressString + place.subThoroughfare! + "\n"
+                        }
+                        if place.locality != nil {
+                            adressString = adressString + place.locality! + " - "
+                        }
+                        if place.postalCode != nil {
+                            adressString = adressString + place.postalCode! + "\n"
+                        }
+                        if place.subAdministrativeArea != nil {
+                            adressString = adressString + place.subAdministrativeArea! + " - "
+                        }
+                        if place.country != nil {
+                            adressString = adressString + place.country!
+                        }
+                        self.currentAddress = adressString
+                    }
+                }
+            }
+      }
+
 }
