@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA5ED6522AE98FEA00FB60AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5ED6512AE98FEA00FB60AA /* AppDelegate.swift */; };
+		BA5ED6542AE98FEA00FB60AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5ED6532AE98FEA00FB60AA /* SceneDelegate.swift */; };
+		BA5ED6562AE98FEA00FB60AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5ED6552AE98FEA00FB60AA /* ViewController.swift */; };
+		BA5ED6592AE98FEA00FB60AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5ED6572AE98FEA00FB60AA /* Main.storyboard */; };
+		BA5ED65C2AE98FEA00FB60AA /* LNCDriver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA5ED65A2AE98FEA00FB60AA /* LNCDriver.xcdatamodeld */; };
+		BA5ED65E2AE98FEB00FB60AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5ED65D2AE98FEB00FB60AA /* Assets.xcassets */; };
+		BA5ED6612AE98FEB00FB60AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5ED65F2AE98FEB00FB60AA /* LaunchScreen.storyboard */; };
+		BA5ED66C2AE98FEB00FB60AA /* LNCDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5ED66B2AE98FEB00FB60AA /* LNCDriverTests.swift */; };
+		BA5ED6762AE98FEB00FB60AA /* LNCDriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5ED6752AE98FEB00FB60AA /* LNCDriverUITests.swift */; };
+		BA5ED6782AE98FEB00FB60AA /* LNCDriverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5ED6772AE98FEB00FB60AA /* LNCDriverUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA5ED6682AE98FEB00FB60AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA5ED6462AE98FEA00FB60AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA5ED64D2AE98FEA00FB60AA;
+			remoteInfo = LNCDriver;
+		};
+		BA5ED6722AE98FEB00FB60AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA5ED6462AE98FEA00FB60AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA5ED64D2AE98FEA00FB60AA;
+			remoteInfo = LNCDriver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA5ED64E2AE98FEA00FB60AA /* LNCDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNCDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA5ED6512AE98FEA00FB60AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA5ED6532AE98FEA00FB60AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BA5ED6552AE98FEA00FB60AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA5ED6582AE98FEA00FB60AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA5ED65B2AE98FEA00FB60AA /* LNCDriver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LNCDriver.xcdatamodel; sourceTree = "<group>"; };
+		BA5ED65D2AE98FEB00FB60AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA5ED6602AE98FEB00FB60AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA5ED6622AE98FEB00FB60AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA5ED6672AE98FEB00FB60AA /* LNCDriverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LNCDriverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA5ED66B2AE98FEB00FB60AA /* LNCDriverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNCDriverTests.swift; sourceTree = "<group>"; };
+		BA5ED6712AE98FEB00FB60AA /* LNCDriverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LNCDriverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA5ED6752AE98FEB00FB60AA /* LNCDriverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNCDriverUITests.swift; sourceTree = "<group>"; };
+		BA5ED6772AE98FEB00FB60AA /* LNCDriverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNCDriverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA5ED64B2AE98FEA00FB60AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA5ED6642AE98FEB00FB60AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA5ED66E2AE98FEB00FB60AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA5ED6452AE98FEA00FB60AA = {
+			isa = PBXGroup;
+			children = (
+				BA5ED6502AE98FEA00FB60AA /* LNCDriver */,
+				BA5ED66A2AE98FEB00FB60AA /* LNCDriverTests */,
+				BA5ED6742AE98FEB00FB60AA /* LNCDriverUITests */,
+				BA5ED64F2AE98FEA00FB60AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA5ED64F2AE98FEA00FB60AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA5ED64E2AE98FEA00FB60AA /* LNCDriver.app */,
+				BA5ED6672AE98FEB00FB60AA /* LNCDriverTests.xctest */,
+				BA5ED6712AE98FEB00FB60AA /* LNCDriverUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA5ED6502AE98FEA00FB60AA /* LNCDriver */ = {
+			isa = PBXGroup;
+			children = (
+				BA5ED6512AE98FEA00FB60AA /* AppDelegate.swift */,
+				BA5ED6532AE98FEA00FB60AA /* SceneDelegate.swift */,
+				BA5ED6552AE98FEA00FB60AA /* ViewController.swift */,
+				BA5ED6572AE98FEA00FB60AA /* Main.storyboard */,
+				BA5ED65D2AE98FEB00FB60AA /* Assets.xcassets */,
+				BA5ED65F2AE98FEB00FB60AA /* LaunchScreen.storyboard */,
+				BA5ED6622AE98FEB00FB60AA /* Info.plist */,
+				BA5ED65A2AE98FEA00FB60AA /* LNCDriver.xcdatamodeld */,
+			);
+			path = LNCDriver;
+			sourceTree = "<group>";
+		};
+		BA5ED66A2AE98FEB00FB60AA /* LNCDriverTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA5ED66B2AE98FEB00FB60AA /* LNCDriverTests.swift */,
+			);
+			path = LNCDriverTests;
+			sourceTree = "<group>";
+		};
+		BA5ED6742AE98FEB00FB60AA /* LNCDriverUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BA5ED6752AE98FEB00FB60AA /* LNCDriverUITests.swift */,
+				BA5ED6772AE98FEB00FB60AA /* LNCDriverUITestsLaunchTests.swift */,
+			);
+			path = LNCDriverUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA5ED64D2AE98FEA00FB60AA /* LNCDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA5ED67B2AE98FEB00FB60AA /* Build configuration list for PBXNativeTarget "LNCDriver" */;
+			buildPhases = (
+				BA5ED64A2AE98FEA00FB60AA /* Sources */,
+				BA5ED64B2AE98FEA00FB60AA /* Frameworks */,
+				BA5ED64C2AE98FEA00FB60AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LNCDriver;
+			productName = LNCDriver;
+			productReference = BA5ED64E2AE98FEA00FB60AA /* LNCDriver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA5ED6662AE98FEB00FB60AA /* LNCDriverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA5ED67E2AE98FEB00FB60AA /* Build configuration list for PBXNativeTarget "LNCDriverTests" */;
+			buildPhases = (
+				BA5ED6632AE98FEB00FB60AA /* Sources */,
+				BA5ED6642AE98FEB00FB60AA /* Frameworks */,
+				BA5ED6652AE98FEB00FB60AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA5ED6692AE98FEB00FB60AA /* PBXTargetDependency */,
+			);
+			name = LNCDriverTests;
+			productName = LNCDriverTests;
+			productReference = BA5ED6672AE98FEB00FB60AA /* LNCDriverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BA5ED6702AE98FEB00FB60AA /* LNCDriverUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA5ED6812AE98FEB00FB60AA /* Build configuration list for PBXNativeTarget "LNCDriverUITests" */;
+			buildPhases = (
+				BA5ED66D2AE98FEB00FB60AA /* Sources */,
+				BA5ED66E2AE98FEB00FB60AA /* Frameworks */,
+				BA5ED66F2AE98FEB00FB60AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA5ED6732AE98FEB00FB60AA /* PBXTargetDependency */,
+			);
+			name = LNCDriverUITests;
+			productName = LNCDriverUITests;
+			productReference = BA5ED6712AE98FEB00FB60AA /* LNCDriverUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA5ED6462AE98FEA00FB60AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					BA5ED64D2AE98FEA00FB60AA = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					BA5ED6662AE98FEB00FB60AA = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = BA5ED64D2AE98FEA00FB60AA;
+					};
+					BA5ED6702AE98FEB00FB60AA = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = BA5ED64D2AE98FEA00FB60AA;
+					};
+				};
+			};
+			buildConfigurationList = BA5ED6492AE98FEA00FB60AA /* Build configuration list for PBXProject "LNCDriver" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA5ED6452AE98FEA00FB60AA;
+			productRefGroup = BA5ED64F2AE98FEA00FB60AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA5ED64D2AE98FEA00FB60AA /* LNCDriver */,
+				BA5ED6662AE98FEB00FB60AA /* LNCDriverTests */,
+				BA5ED6702AE98FEB00FB60AA /* LNCDriverUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA5ED64C2AE98FEA00FB60AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA5ED6612AE98FEB00FB60AA /* LaunchScreen.storyboard in Resources */,
+				BA5ED65E2AE98FEB00FB60AA /* Assets.xcassets in Resources */,
+				BA5ED6592AE98FEA00FB60AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA5ED6652AE98FEB00FB60AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA5ED66F2AE98FEB00FB60AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA5ED64A2AE98FEA00FB60AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA5ED6562AE98FEA00FB60AA /* ViewController.swift in Sources */,
+				BA5ED6522AE98FEA00FB60AA /* AppDelegate.swift in Sources */,
+				BA5ED6542AE98FEA00FB60AA /* SceneDelegate.swift in Sources */,
+				BA5ED65C2AE98FEA00FB60AA /* LNCDriver.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA5ED6632AE98FEB00FB60AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA5ED66C2AE98FEB00FB60AA /* LNCDriverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA5ED66D2AE98FEB00FB60AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA5ED6782AE98FEB00FB60AA /* LNCDriverUITestsLaunchTests.swift in Sources */,
+				BA5ED6762AE98FEB00FB60AA /* LNCDriverUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA5ED6692AE98FEB00FB60AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA5ED64D2AE98FEA00FB60AA /* LNCDriver */;
+			targetProxy = BA5ED6682AE98FEB00FB60AA /* PBXContainerItemProxy */;
+		};
+		BA5ED6732AE98FEB00FB60AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA5ED64D2AE98FEA00FB60AA /* LNCDriver */;
+			targetProxy = BA5ED6722AE98FEB00FB60AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BA5ED6572AE98FEA00FB60AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA5ED6582AE98FEA00FB60AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA5ED65F2AE98FEB00FB60AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA5ED6602AE98FEB00FB60AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA5ED6792AE98FEB00FB60AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA5ED67A2AE98FEB00FB60AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA5ED67C2AE98FEB00FB60AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LNCDriver/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA5ED67D2AE98FEB00FB60AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LNCDriver/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BA5ED67F2AE98FEB00FB60AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LNCDriver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LNCDriver";
+			};
+			name = Debug;
+		};
+		BA5ED6802AE98FEB00FB60AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LNCDriver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LNCDriver";
+			};
+			name = Release;
+		};
+		BA5ED6822AE98FEB00FB60AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LNCDriver;
+			};
+			name = Debug;
+		};
+		BA5ED6832AE98FEB00FB60AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LNC.LNCDriverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LNCDriver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA5ED6492AE98FEA00FB60AA /* Build configuration list for PBXProject "LNCDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA5ED6792AE98FEB00FB60AA /* Debug */,
+				BA5ED67A2AE98FEB00FB60AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA5ED67B2AE98FEB00FB60AA /* Build configuration list for PBXNativeTarget "LNCDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA5ED67C2AE98FEB00FB60AA /* Debug */,
+				BA5ED67D2AE98FEB00FB60AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA5ED67E2AE98FEB00FB60AA /* Build configuration list for PBXNativeTarget "LNCDriverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA5ED67F2AE98FEB00FB60AA /* Debug */,
+				BA5ED6802AE98FEB00FB60AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA5ED6812AE98FEB00FB60AA /* Build configuration list for PBXNativeTarget "LNCDriverUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA5ED6822AE98FEB00FB60AA /* Debug */,
+				BA5ED6832AE98FEB00FB60AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA5ED65A2AE98FEA00FB60AA /* LNCDriver.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA5ED65B2AE98FEA00FB60AA /* LNCDriver.xcdatamodel */,
+			);
+			currentVersion = BA5ED65B2AE98FEA00FB60AA /* LNCDriver.xcdatamodel */;
+			path = LNCDriver.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BA5ED6462AE98FEA00FB60AA /* Project object */;
+}
