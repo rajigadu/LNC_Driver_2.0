@@ -1,6 +1,0 @@
-framework module Pods_LNC_Driver {
-  umbrella header "Pods-LNC_Driver-umbrella.h"
-
-  export *
-  module * { export * }
-}
